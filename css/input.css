@@ -58,7 +58,7 @@
   }
 
   h5 {
-    @apply md:text-xl text-sm;
+    @apply md:text-2xl text-xl;
   }
 
   h6 {

@@ -24,10 +24,10 @@
             </a>
           </li>
           <li class="ms-auto flex gap-20">
-            <a href="">Home</a>
+            <a href="" class="lg:block md:hidden">Home</a>
             <a href="">Product</a>
             <a href="">Catalog</a>
-            <a href="">About us</a>
+            <a href="" class="lg:block md:hidden">About us</a>
           </li>
           <li class="flex items-center gap-6 ms-auto">
             <a href="">
@@ -49,6 +49,13 @@
               >Login</a
             >
           </li>
+          <li class="ms-auto">
+            <button class="flex flex-col gap-1">
+              <span class="w-7 h-1 bg-black"></span>
+              <span class="w-7 h-1 bg-black"></span>
+              <span class="w-7 h-1 bg-black"></span>
+            </button>
+          </li>
         </ul>
       </nav>
     </header>
@@ -66,16 +73,20 @@
     <br />
     <br />
     <br />
-    <footer class="bg-blue-Neru text-white py-20">
-      <div class="grid grid-cols-2 place-items-center relative items-center">
+    <footer class="bg-blue-Neru text-white lg:py-20 py-5">
+      <div
+        class="grid lg:grid-cols-2 grid-cols-1 lg:place-items-center relative items-center lg:gap-10 gap-5"
+      >
         <div>
           <img
             src="img/Trolly-Footer.png"
-            class="absolute left-0 -bottom-20"
+            class="lg:absolute lg:block hidden left-0 -bottom-20 lg:w-fit md:w-[70%] w-[50%]"
             alt=""
           />
         </div>
-        <div class="grid grid-cols-2 gap-24 place-content-center">
+        <div
+          class="grid lg:grid-cols-2 grid-cols-1 lg:gap-24 gap-10 place-content-center lg:p-0 p-4"
+        >
           <div class="left-content flex flex-col gap-4">
             <h5 class="font-semibold">NeruMeru</h5>
             <h6 class="text-justify">
@@ -88,55 +99,14 @@
             <h6 class="font-semibold">© Nerumeru . All rights reserved.</h6>
           </div>
           <div class="right-content flex flex-col gap-4">
-            <h5 class="font-semibold">Contact Us</h5>
-            <span class="flex gap-4 items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-phone-plus"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path
-                  d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"
-                ></path>
-                <path d="M15 6h6m-3 -3v6"></path>
-              </svg>
-              <h6>+62-812-1972-1945</h6>
-            </span>
-            <span class="flex gap-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-mail"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path
-                  d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
-                ></path>
-                <path d="M3 7l9 6l9 -6"></path>
-              </svg>
-              <h6>NeruMeru@gmail.com</h6>
-            </span>
-            <h5 class="font-semibold mt-10">Realted Links</h5>
-            <span class="flex gap-4">
-              <a href="" class="bg-white p-2 rounded-full">
+            <div class="flex flex-col gap-4">
+              <h5 class="font-semibold">Contact Us</h5>
+              <span class="flex gap-4 items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-Neru w-7"
+                  class="icon icon-tabler icon-tabler-phone-plus"
+                  width="24"
+                  height="24"
                   viewBox="0 0 24 24"
                   stroke-width="2"
                   stroke="currentColor"
@@ -146,14 +116,18 @@
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path
-                    d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"
+                    d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"
                   ></path>
+                  <path d="M15 6h6m-3 -3v6"></path>
                 </svg>
-              </a>
-              <a href="" class="bg-white p-2 rounded-full">
+                <h6>+62-812-1972-1945</h6>
+              </span>
+              <span class="flex gap-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-Neru w-7"
+                  class="icon icon-tabler icon-tabler-mail"
+                  width="24"
+                  height="24"
                   viewBox="0 0 24 24"
                   stroke-width="2"
                   stroke="currentColor"
@@ -163,36 +137,77 @@
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path
-                    d="M4 7l.867 12.143a2 2 0 0 0 2 1.857h10.276a2 2 0 0 0 2 -1.857l.867 -12.143h-16z"
+                    d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
                   ></path>
-                  <path
-                    d="M8.5 7c0 -1.653 1.5 -4 3.5 -4s3.5 2.347 3.5 4"
-                  ></path>
-                  <path
-                    d="M9.5 17c.413 .462 1 1 2.5 1s2.5 -.897 2.5 -2s-1 -1.5 -2.5 -2s-2 -1.47 -2 -2c0 -1.104 1 -2 2 -2s1.5 0 2.5 1"
-                  ></path>
+                  <path d="M3 7l9 6l9 -6"></path>
                 </svg>
-              </a>
-              <a href="" class="bg-white p-2 rounded-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-Neru w-7"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path
-                    d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
-                  ></path>
-                  <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
-                  <path d="M16.5 7.5l0 .01"></path>
-                </svg>
-              </a>
-            </span>
+                <h6>NeruMeru@gmail.com</h6>
+              </span>
+            </div>
+            <div class="flex flex-col gap-4">
+              <h5 class="font-semibold mt-10">Realted Links</h5>
+              <span class="flex gap-4">
+                <a href="" class="bg-white p-2 rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="text-blue-Neru md:w-7 w-4"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"
+                    ></path>
+                  </svg>
+                </a>
+                <a href="" class="bg-white p-2 rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="text-blue-Neru md:w-7 w-4"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M4 7l.867 12.143a2 2 0 0 0 2 1.857h10.276a2 2 0 0 0 2 -1.857l.867 -12.143h-16z"
+                    ></path>
+                    <path
+                      d="M8.5 7c0 -1.653 1.5 -4 3.5 -4s3.5 2.347 3.5 4"
+                    ></path>
+                    <path
+                      d="M9.5 17c.413 .462 1 1 2.5 1s2.5 -.897 2.5 -2s-1 -1.5 -2.5 -2s-2 -1.47 -2 -2c0 -1.104 1 -2 2 -2s1.5 0 2.5 1"
+                    ></path>
+                  </svg>
+                </a>
+                <a href="" class="bg-white p-2 rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="text-blue-Neru md:w-7 w-4"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
+                    ></path>
+                    <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                    <path d="M16.5 7.5l0 .01"></path>
+                  </svg>
+                </a>
+              </span>
+            </div>
           </div>
         </div>
       </div>
