@@ -24,6 +24,26 @@
   }
 }
 
+.navLinks-active {
+  @apply lg:top-0 lg:translate-y-0 md:top-1/4 top-1/3 translate-y-1/2 opacity-100 z-10;
+}
+
+.navCont-active {
+  @apply lg:pb-0 pb-40;
+}
+
+.nav-active > span:nth-child(1) {
+  @apply -rotate-[35deg] bg-red-500;
+}
+
+.nav-active > span:nth-child(2) {
+  @apply scale-0;
+}
+
+.nav-active > span:nth-child(3) {
+  @apply rotate-[35deg] bg-red-500;
+}
+
 /* Homepage */
 
 /* Homepage End */
@@ -58,10 +78,10 @@
   }
 
   h5 {
-    @apply md:text-2xl text-xl;
+    @apply 2xl:text-xl text-base;
   }
 
   h6 {
-    @apply md:text-lg text-sm;
+    @apply 2xl:text-base xl:text-sm md:text-base text-sm;
   }
 }

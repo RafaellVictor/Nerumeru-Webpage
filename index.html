@@ -15,26 +15,31 @@
     <title>Homepage</title>
   </head>
   <body>
-    <header>
-      <nav class="container">
+    <header
+      id="navCont"
+      class="bg-white transition-all ease-in-out duration-300 fixed top-0 inset-x-0"
+    >
+      <nav class="container relative">
         <ul class="flex items-center font-semibold">
           <li>
             <a href="">
               <img src="img/logoNerumeru.png" class="w-[70%]" alt="" />
             </a>
           </li>
-          <li class="ms-auto flex gap-20">
-            <a href="" class="lg:block md:hidden">Home</a>
+          <li
+            id="navLinks"
+            class="md:text-base text-sm transition-all ease-in-out duration-200 ms-auto flex lg:flex-row flex-col gap-4 lg:gap-20 lg:relative absolute inset-x-0 -z-10 lg:top-0 top-8 lg:opacity-100 lg:z-10 opacity-0 translate-y-0 origin-center justify-center items-center"
+          >
+            <a href="">Home</a>
             <a href="">Product</a>
             <a href="">Catalog</a>
-            <a href="" class="lg:block md:hidden">About us</a>
+            <a href="">About us</a>
           </li>
           <li class="flex items-center gap-6 ms-auto">
             <a href="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="46"
-                height="46"
+                class="shadow-lg rounded-full lg:w-11 md:w-9 w-8"
                 viewBox="0 0 46 46"
                 fill="none"
               >
@@ -45,20 +50,40 @@
                 />
               </svg>
             </a>
-            <a href="" class="bg-blue-Neru px-16 rounded-lg py-2 text-white"
+            <a
+              href=""
+              class="bg-blue-Neru lg:px-16 px-12 md:text-base text-sm rounded-lg lg:py-2 py-1 text-white"
               >Login</a
             >
-          </li>
-          <li class="ms-auto">
-            <button class="flex flex-col gap-1">
-              <span class="w-7 h-1 bg-black"></span>
-              <span class="w-7 h-1 bg-black"></span>
-              <span class="w-7 h-1 bg-black"></span>
+            <button id="navBurger" class="lg:hidden flex flex-col gap-1">
+              <span
+                class="w-7 h-1 bg-black transition-all origin-top-right ease-in-out duration-300"
+              ></span>
+              <span
+                class="w-7 h-1 bg-black transition-all ease-in-out duration-300"
+              ></span>
+              <span
+                class="w-7 h-1 bg-black transition-all origin-bottom-right ease-in-out duration-300"
+              ></span>
             </button>
           </li>
         </ul>
       </nav>
     </header>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <br />
     <br />
     <br />
@@ -80,7 +105,7 @@
         <div>
           <img
             src="img/Trolly-Footer.png"
-            class="lg:absolute lg:block hidden left-0 -bottom-20 lg:w-fit md:w-[70%] w-[50%]"
+            class="lg:absolute lg:block hidden left-0 -bottom-20 2xl:w-[45%] xl:w-[50%]"
             alt=""
           />
         </div>
@@ -96,7 +121,9 @@
               materials, every Neru Meru product is created for the comfort of
               pets and their human companions.
             </h6>
-            <h6 class="font-semibold">© Nerumeru . All rights reserved.</h6>
+            <h6 class="font-semibold xl:text-sm">
+              © Nerumeru . All rights reserved.
+            </h6>
           </div>
           <div class="right-content flex flex-col gap-4">
             <div class="flex flex-col gap-4">
@@ -104,9 +131,7 @@
               <span class="flex gap-4 items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="icon icon-tabler icon-tabler-phone-plus"
-                  width="24"
-                  height="24"
+                  class="2xl:w-6 w-4"
                   viewBox="0 0 24 24"
                   stroke-width="2"
                   stroke="currentColor"
@@ -120,14 +145,12 @@
                   ></path>
                   <path d="M15 6h6m-3 -3v6"></path>
                 </svg>
-                <h6>+62-812-1972-1945</h6>
+                <h6 class="">+62-812-1972-1945</h6>
               </span>
               <span class="flex gap-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="icon icon-tabler icon-tabler-mail"
-                  width="24"
-                  height="24"
+                  class="icon icon-tabler icon-tabler-mail 2xl:w-6 w-4"
                   viewBox="0 0 24 24"
                   stroke-width="2"
                   stroke="currentColor"
@@ -141,7 +164,7 @@
                   ></path>
                   <path d="M3 7l9 6l9 -6"></path>
                 </svg>
-                <h6>NeruMeru@gmail.com</h6>
+                <h6 class="">NeruMeru@gmail.com</h6>
               </span>
             </div>
             <div class="flex flex-col gap-4">
@@ -150,7 +173,7 @@
                 <a href="" class="bg-white p-2 rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="text-blue-Neru md:w-7 w-4"
+                    class="text-blue-Neru 2xl:w-7 xl:w-4 w-3"
                     viewBox="0 0 24 24"
                     stroke-width="2"
                     stroke="currentColor"
@@ -167,7 +190,7 @@
                 <a href="" class="bg-white p-2 rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="text-blue-Neru md:w-7 w-4"
+                    class="text-blue-Neru 2xl:w-7 xl:w-4 w-3"
                     viewBox="0 0 24 24"
                     stroke-width="2"
                     stroke="currentColor"
@@ -190,7 +213,7 @@
                 <a href="" class="bg-white p-2 rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="text-blue-Neru md:w-7 w-4"
+                    class="text-blue-Neru 2xl:w-7 xl:w-4 w-3"
                     viewBox="0 0 24 24"
                     stroke-width="2"
                     stroke="currentColor"
@@ -213,4 +236,5 @@
       </div>
     </footer>
   </body>
+  <script src="js/nav.js"></script>
 </html>
