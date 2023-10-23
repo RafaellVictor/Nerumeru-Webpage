@@ -33,7 +33,7 @@
 }
 
 .nav-active > span:nth-child(1) {
-  @apply -rotate-[35deg] bg-red-500;
+  @apply -rotate-45 bg-red-500;
 }
 
 .nav-active > span:nth-child(2) {
@@ -41,7 +41,7 @@
 }
 
 .nav-active > span:nth-child(3) {
-  @apply rotate-[35deg] bg-red-500;
+  @apply rotate-45 bg-red-500;
 }
 
 /* Homepage */
