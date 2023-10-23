@@ -22,6 +22,8 @@ module.exports = {
       colors: {
         "blue-water": "#F6F8FD",
         "blue-Neru": "#255DB4",
+        "black-neru": "#42454A",
+        "grey-neru": "#ACA9A9",
       },
 
       screens: {

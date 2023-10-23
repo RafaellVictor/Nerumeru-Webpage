@@ -24,6 +24,10 @@
   }
 }
 
+.btn-Active > div > span {
+  @apply w-full;
+}
+
 .navLinks-active {
   @apply lg:top-0 lg:translate-y-0 md:top-1/4 top-1/3 translate-y-1/2 opacity-100 z-10;
 }
@@ -42,6 +46,10 @@
 
 .nav-active > span:nth-child(3) {
   @apply rotate-45 bg-red-500;
+}
+
+.nav-ActiveCont {
+  @apply shadow-md;
 }
 
 /* Homepage */
@@ -66,15 +74,15 @@
   }
 
   h1 {
-    @apply 2xl:text-4xl xl:text-3xl md:text-3xl text-xl font-bold;
+    @apply 2xl:text-7xl xl:text-3xl md:text-3xl text-xl font-bold;
   }
 
   h2 {
-    @apply md:text-3xl text-base font-semibold;
+    @apply 3xl:text-5xl lg:text-4xl md:text-2xl text-xl;
   }
 
   h3 {
-    @apply md:text-2xl text-base font-semibold;
+    @apply md:text-2xl text-base;
   }
 
   h5 {
