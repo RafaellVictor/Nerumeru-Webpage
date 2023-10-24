@@ -462,6 +462,11 @@ section {
   padding: 1rem;
 }
 
+main {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -629,6 +634,18 @@ section {
   bottom: -1.25rem;
 }
 
+.-left-16 {
+  left: -4rem;
+}
+
+.-right-16 {
+  right: -4rem;
+}
+
+.bottom-1\/2 {
+  bottom: 50%;
+}
+
 .left-0 {
   left: 0px;
 }
@@ -667,11 +684,6 @@ section {
   margin-bottom: 2.5rem;
 }
 
-.my-24 {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
-}
-
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
@@ -690,12 +702,16 @@ section {
   margin-top: 3rem;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
 
-.mt-60 {
-  margin-top: 15rem;
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .flex {
@@ -712,6 +728,10 @@ section {
 
 .h-1 {
   height: 0.25rem;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .w-10 {
@@ -773,12 +793,25 @@ section {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.translate-y-1\/2 {
+  --tw-translate-y: 50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -799,6 +832,10 @@ section {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .gap-1 {
@@ -841,12 +878,25 @@ section {
   gap: 2rem;
 }
 
+.gap-x-2 {
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+
+.gap-y-2 {
+  row-gap: 0.5rem;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
 
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
 }
 
 .border-\[5px\] {
@@ -881,6 +931,16 @@ section {
   padding: 1rem;
 }
 
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.px-1\.5 {
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
+}
+
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
@@ -904,6 +964,16 @@ section {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
 }
 
 .py-1 {
@@ -1016,6 +1086,10 @@ section {
 
 .outline {
   outline-style: solid;
+}
+
+.outline-1 {
+  outline-width: 1px;
 }
 
 .outline-2 {
@@ -1235,8 +1309,72 @@ h6 {
 
 /* Homepage End */
 
+.swiper-custom-pagination {
+  display: flex;
+  width: 100%;
+  gap: 0.25rem;
+  padding-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .swiper-custom-pagination {
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .swiper-custom-pagination {
+    gap: 1rem;
+  }
+}
+
+.swiper-custom-pagination .swiper-pagination-bullet {
+  height: auto;
+  width: auto;
+  border-radius: 0px;
+  background-color: transparent;
+}
+
+.swiper-custom-pagination .number {
+  display: none;
+}
+
+.swiper-custom-pagination .line {
+  display: block;
+  height: 0.375rem;
+  width: 0.75rem;
+  border-radius: 0.25rem;
+  background-color: rgb(37 93 180 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 1;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .swiper-custom-pagination .line {
+    height: 0.5rem;
+    width: 1rem;
+  }
+}
+
+.swiper-custom-pagination .swiper-pagination-bullet-active .line {
+  --tw-bg-opacity: 1;
+  width: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .swiper-custom-pagination .swiper-pagination-bullet-active .line {
+    width: 3rem;
+  }
+}
+
 .hover\:opacity-100:hover {
   opacity: 1;
+}
+
+.group:hover .group-hover\:-right-0 {
+  right: -0px;
 }
 
 @media (min-width: 768px) {
@@ -1284,12 +1422,28 @@ h6 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .md\:flex-col {
     flex-direction: column;
   }
 
+  .md\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .md\:gap-2 {
+    gap: 0.5rem;
+  }
+
   .md\:gap-3 {
     gap: 0.75rem;
+  }
+
+  .md\:gap-5 {
+    gap: 1.25rem;
   }
 
   .md\:gap-8 {
@@ -1298,6 +1452,31 @@ h6 {
 
   .md\:border-8 {
     border-width: 8px;
+  }
+
+  .md\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .md\:px-3\.5 {
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+  }
+
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .md\:py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .md\:py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 
   .md\:text-2xl {
@@ -1356,6 +1535,14 @@ h6 {
     margin-right: 0px;
   }
 
+  .lg\:mt-32 {
+    margin-top: 8rem;
+  }
+
+  .lg\:mt-60 {
+    margin-top: 15rem;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -1392,6 +1579,10 @@ h6 {
     align-items: flex-start;
   }
 
+  .lg\:justify-end {
+    justify-content: flex-end;
+  }
+
   .lg\:gap-10 {
     gap: 2.5rem;
   }
@@ -1422,6 +1613,16 @@ h6 {
     padding-right: 1rem;
   }
 
+  .lg\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .lg\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .lg\:py-2 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -1435,6 +1636,11 @@ h6 {
   .lg\:py-3 {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
+  }
+
+  .lg\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .lg\:text-sm {
@@ -1516,6 +1722,14 @@ h6 {
     gap: 4rem;
   }
 
+  .\32xl\:gap-3 {
+    gap: 0.75rem;
+  }
+
+  .\32xl\:gap-3\.5 {
+    gap: 0.875rem;
+  }
+
   .\32xl\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -1553,8 +1767,16 @@ h6 {
     width: 40%;
   }
 
+  .\33xl\:gap-12 {
+    gap: 3rem;
+  }
+
   .\33xl\:gap-20 {
     gap: 5rem;
+  }
+
+  .\33xl\:gap-6 {
+    gap: 1.5rem;
   }
 
   .\33xl\:py-12 {

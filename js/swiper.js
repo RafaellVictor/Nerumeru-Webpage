@@ -31,3 +31,37 @@ let TestimonialSwiper = new Swiper(".testimonial-Content", {
     },
   },
 });
+
+let bannerSwiper = new Swiper(".banner-content ", {
+  grabCursor: true,
+  loop: true,
+  // If we need pagination
+
+  navigation: {
+    nextEl: "#next",
+    prevEl: "#prev",
+  },
+
+  pagination: {
+    el: ".swiper-custom-pagination",
+    renderBullet: function (index, className) {
+      return `<div class=${className}>
+            <span class="number">${index + 1}</span>
+            <span class="line"></span>
+            </div>`;
+    },
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  // Navigation arrows
+  breakpoints: {
+    600: {
+      slidesPerView: 1,
+    },
+    968: {
+      slidesPerView: 1,
+    },
+  },
+});
