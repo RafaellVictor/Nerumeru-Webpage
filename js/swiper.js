@@ -17,7 +17,7 @@ let TestimonialSwiper = new Swiper(".testimonial-Content", {
 
   breakpoints: {
     360: {
-      slidesPerView: 1.2,
+      slidesPerView: 1.1,
       centeredSlides: true,
     },
 

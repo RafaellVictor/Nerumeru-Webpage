@@ -625,8 +625,8 @@ section {
   bottom: -5rem;
 }
 
-.bottom-5 {
-  bottom: 1.25rem;
+.-bottom-5 {
+  bottom: -1.25rem;
 }
 
 .left-0 {
@@ -643,18 +643,6 @@ section {
 
 .top-8 {
   top: 2rem;
-}
-
-.bottom-10 {
-  bottom: 2.5rem;
-}
-
-.bottom-0 {
-  bottom: 0px;
-}
-
-.-bottom-5 {
-  bottom: -1.25rem;
 }
 
 .-z-10 {
@@ -674,9 +662,9 @@ section {
   margin-right: auto;
 }
 
-.my-20 {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .my-24 {
@@ -687,26 +675,6 @@ section {
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
-}
-
-.my-12 {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-.my-14 {
-  margin-top: 3.5rem;
-  margin-bottom: 3.5rem;
-}
-
-.my-16 {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-}
-
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
 }
 
 .ms-auto {
@@ -728,10 +696,6 @@ section {
 
 .mt-60 {
   margin-top: 15rem;
-}
-
-.mt-20 {
-  margin-top: 5rem;
 }
 
 .flex {
@@ -841,6 +805,10 @@ section {
   gap: 0.25rem;
 }
 
+.gap-1\.5 {
+  gap: 0.375rem;
+}
+
 .gap-10 {
   gap: 2.5rem;
 }
@@ -871,10 +839,6 @@ section {
 
 .gap-8 {
   gap: 2rem;
-}
-
-.gap-1\.5 {
-  gap: 0.375rem;
 }
 
 .rounded-full {
@@ -1284,11 +1248,6 @@ h6 {
     top: 0.625rem;
   }
 
-  .md\:my-20 {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-  }
-
   .md\:mt-0 {
     margin-top: 0px;
   }
@@ -1329,12 +1288,12 @@ h6 {
     flex-direction: column;
   }
 
-  .md\:gap-8 {
-    gap: 2rem;
-  }
-
   .md\:gap-3 {
     gap: 0.75rem;
+  }
+
+  .md\:gap-8 {
+    gap: 2rem;
   }
 
   .md\:border-8 {
@@ -1380,24 +1339,12 @@ h6 {
     position: relative;
   }
 
-  .lg\:bottom-0 {
-    bottom: 0px;
-  }
-
-  .lg\:top-0 {
-    top: 0px;
-  }
-
-  .lg\:bottom-10 {
-    bottom: 2.5rem;
-  }
-
   .lg\:-bottom-10 {
     bottom: -2.5rem;
   }
 
-  .lg\:-bottom-5 {
-    bottom: -1.25rem;
+  .lg\:top-0 {
+    top: 0px;
   }
 
   .lg\:z-10 {
