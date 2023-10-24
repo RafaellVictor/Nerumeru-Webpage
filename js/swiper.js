@@ -35,12 +35,8 @@ let TestimonialSwiper = new Swiper(".testimonial-Content", {
 let bannerSwiper = new Swiper(".banner-content ", {
   grabCursor: true,
   loop: true,
+  spaceBetween: 12,
   // If we need pagination
-
-  navigation: {
-    nextEl: "#next",
-    prevEl: "#prev",
-  },
 
   pagination: {
     el: ".swiper-custom-pagination",
@@ -57,11 +53,18 @@ let bannerSwiper = new Swiper(".banner-content ", {
   },
   // Navigation arrows
   breakpoints: {
+    360: {
+      slidesPerView: 1.2,
+      centeredSlides: true,
+    },
+
     600: {
-      slidesPerView: 1,
+      centeredSlides: true,
+      slidesPerView: 1.5,
     },
     968: {
-      slidesPerView: 1,
+      centeredSlides: true,
+      slidesPerView: 1.5,
     },
   },
 });
