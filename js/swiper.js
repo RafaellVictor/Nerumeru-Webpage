@@ -59,11 +59,11 @@ let bannerSwiper = new Swiper(".banner-content ", {
 
     600: {
       centeredSlides: true,
-      slidesPerView: 1.5,
+      slidesPerView: 1.1,
     },
     968: {
       centeredSlides: true,
-      slidesPerView: 1.5,
+      slidesPerView: 1.2,
     },
   },
 });
