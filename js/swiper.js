@@ -54,8 +54,7 @@ let bannerSwiper = new Swiper(".banner-content ", {
   // Navigation arrows
   breakpoints: {
     360: {
-      slidesPerView: 1.2,
-      centeredSlides: true,
+      slidesPerView: 1,
     },
 
     600: {
