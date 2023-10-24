@@ -16,7 +16,7 @@
   }
 
   section {
-    @apply my-10;
+    @apply lg:my-32 md:my-28 my-10;
   }
 
   .container {
