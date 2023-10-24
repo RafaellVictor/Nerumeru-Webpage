@@ -912,6 +912,16 @@ section {
   padding-bottom: 1.5rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.px-2\.5 {
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -938,6 +948,18 @@ section {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-\[9px\] {
+  font-size: 9px;
+}
+
+.text-\[8px\] {
+  font-size: 8px;
+}
+
+.text-\[8\.5px\] {
+  font-size: 8.5px;
 }
 
 .font-bold {
@@ -1268,6 +1290,11 @@ h6 {
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+
+  .md\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 
   .md\:tracking-\[5px\] {
