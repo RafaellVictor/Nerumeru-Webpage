@@ -37,7 +37,7 @@
 }
 
 .navCont-active {
-  @apply 3xl:pb-16 2xl:pb-12 shadow-md;
+  @apply 3xl:pb-16 pb-12 shadow-md;
 }
 .dropMenu-Active {
   @apply top-16 z-10 opacity-100;
