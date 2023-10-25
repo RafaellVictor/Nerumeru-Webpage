@@ -658,8 +658,8 @@ main {
   top: 0px;
 }
 
-.top-8 {
-  top: 2rem;
+.top-12 {
+  top: 3rem;
 }
 
 .-z-10 {
@@ -750,6 +750,10 @@ main {
   width: 1rem;
 }
 
+.w-5 {
+  width: 1.25rem;
+}
+
 .w-8 {
   width: 2rem;
 }
@@ -775,12 +779,16 @@ main {
   width: 100%;
 }
 
-.origin-bottom-right {
-  transform-origin: bottom right;
+.w-72 {
+  width: 18rem;
 }
 
-.origin-center {
-  transform-origin: center;
+.w-80 {
+  width: 20rem;
+}
+
+.origin-bottom-right {
+  transform-origin: bottom right;
 }
 
 .origin-top-right {
@@ -789,11 +797,6 @@ main {
 
 .translate-x-1\/2 {
   --tw-translate-x: 50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-y-0 {
-  --tw-translate-y: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -834,10 +837,6 @@ main {
   align-items: center;
 }
 
-.justify-center {
-  justify-content: center;
-}
-
 .justify-between {
   justify-content: space-between;
 }
@@ -860,6 +859,10 @@ main {
 
 .gap-2\.5 {
   gap: 0.625rem;
+}
+
+.gap-20 {
+  gap: 5rem;
 }
 
 .gap-3 {
@@ -972,6 +975,11 @@ main {
   padding-right: 0.625rem;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -1007,6 +1015,11 @@ main {
   padding-bottom: 0.5rem;
 }
 
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -1020,6 +1033,10 @@ main {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.pb-14 {
+  padding-bottom: 3.5rem;
 }
 
 .text-center {
@@ -1120,6 +1137,10 @@ main {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.duration-100 {
+  transition-duration: 100ms;
 }
 
 .duration-200 {
@@ -1258,7 +1279,7 @@ h6 {
 }
 
 .navLinks-active {
-  top: 0.5rem;
+  top: 1.5rem;
   z-index: 10;
   --tw-translate-y: 50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1280,19 +1301,27 @@ h6 {
 }
 
 .navCont-active {
-  padding-bottom: 14rem;
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1320px) {
   .navCont-active {
-    padding-bottom: 10rem;
+    padding-bottom: 3rem;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1600px) {
   .navCont-active {
-    padding-bottom: 0px;
+    padding-bottom: 4rem;
   }
+}
+
+.dropMenu-Active {
+  top: 4rem;
+  z-index: 10;
+  opacity: 1;
 }
 
 .nav-active > span:nth-child(1) {
@@ -1410,10 +1439,6 @@ h6 {
     display: block;
   }
 
-  .md\:hidden {
-    display: none;
-  }
-
   .md\:w-12 {
     width: 3rem;
   }
@@ -1518,6 +1543,11 @@ h6 {
     line-height: 1.5rem;
   }
 
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
   .md\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -1533,20 +1563,8 @@ h6 {
     position: absolute;
   }
 
-  .lg\:relative {
-    position: relative;
-  }
-
   .lg\:-bottom-10 {
     bottom: -2.5rem;
-  }
-
-  .lg\:top-0 {
-    top: 0px;
-  }
-
-  .lg\:z-10 {
-    z-index: 10;
   }
 
   .lg\:mx-0 {
@@ -1564,6 +1582,10 @@ h6 {
 
   .lg\:block {
     display: block;
+  }
+
+  .lg\:flex {
+    display: flex;
   }
 
   .lg\:hidden {
@@ -1590,10 +1612,6 @@ h6 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .lg\:flex-row {
-    flex-direction: row;
-  }
-
   .lg\:place-items-center {
     place-items: center;
   }
@@ -1608,10 +1626,6 @@ h6 {
 
   .lg\:gap-10 {
     gap: 2.5rem;
-  }
-
-  .lg\:gap-20 {
-    gap: 5rem;
   }
 
   .lg\:gap-24 {
@@ -1686,10 +1700,6 @@ h6 {
 
   .lg\:tracking-widest {
     letter-spacing: 0.1em;
-  }
-
-  .lg\:opacity-100 {
-    opacity: 1;
   }
 }
 
@@ -1776,6 +1786,11 @@ h6 {
     font-size: 4.5rem;
     line-height: 1;
   }
+
+  .\32xl\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 @media (min-width: 1600px) {
@@ -1819,5 +1834,10 @@ h6 {
   .\33xl\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .\33xl\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
