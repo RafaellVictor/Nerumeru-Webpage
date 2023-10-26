@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,17 +16,17 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
-    <title>Homepage</title>
+    <title>Nerumeru | Homepage</title>
   </head>
   <body>
     <header
       id="navCont"
-      class="transition-all ease-in-out duration-300 fixed top-0 inset-x-0 z-50 bg-white"
+      class="transition-all ease-in-out duration-100 fixed top-0 inset-x-0 z-50 bg-white"
     >
       <nav class="container relative">
         <ul class="flex items-center font-semibold">
           <li>
-            <a href="">
+            <a href="index.html">
               <img
                 src="img/logoNerumeru.png"
                 class="md:w-[70%] w-[45%]"
@@ -34,20 +34,115 @@
               />
             </a>
           </li>
-          <li
-            id="navLinks"
-            class="md:text-base text-sm transition-all ease-in-out duration-200 ms-auto flex lg:flex-row flex-col gap-4 lg:gap-20 lg:relative absolute inset-x-0 -z-10 lg:top-0 top-8 lg:opacity-100 lg:z-10 opacity-0 translate-y-0 origin-center justify-center items-center"
+          <div
+            class="3xl:text-lg 2xl:text-base text-sm transition-all ease-in-out duration-200 ms-auto md:flex lg:gap-20 gap-9 hidden"
           >
-            <a href="index.html">Home</a>
-            <a type="button">Product</a>
-            <a href="catalog.html">Catalog</a>
-            <a href="aboutUs.html">About us</a>
-            <a
-              href=""
-              class="bg-blue-Neru lg:px-16 px-12 md:text-base text-sm rounded-lg lg:py-2 py-1 text-white md:hidden"
-              >Login</a
-            >
-          </li>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <span
+                type="button"
+                class="dropdownNav flex gap-2 cursor-pointer pb-0"
+                >Product
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="3xl:w-6 w-5"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M6 9l6 6l6 -6"></path>
+                </svg>
+                <!-- Top-12 -->
+
+                <ul
+                  class="dropDownBox text-white text-center absolute pb-0 top-12 translate-y-1/2 inset-x-0 opacity-0 -z-10 md:block hidden transition-all ease-in-out duration-100"
+                >
+                  <li class="w-full flex gap-4 px-4 items-center">
+                    <a
+                      href="#"
+                      class="bg-blue-Neru w-80 py-2.5 rounded-md cursor-pointer"
+                      >Bedding</a
+                    >
+                    <a
+                      href="#"
+                      class="bg-blue-Neru w-80 py-2.5 rounded-md cursor-pointer"
+                      >Toys</a
+                    >
+                    <a
+                      href="#"
+                      class="bg-blue-Neru w-80 py-2.5 rounded-md cursor-pointer"
+                      >Sanitize</a
+                    >
+                    <a
+                      href="#"
+                      class="bg-blue-Neru w-80 py-2.5 rounded-md cursor-pointer"
+                      >Trolly</a
+                    >
+                    <a
+                      href="#"
+                      class="bg-blue-Neru w-80 py-2.5 rounded-md cursor-pointer"
+                      >Pillow</a
+                    >
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li>
+              <a href="catalog.html">Catalog</a>
+            </li>
+            <li>
+              <a href="aboutUs.html">Blog</a>
+            </li>
+            <li>
+              <span
+                type="button"
+                class="dropdownNav flex gap-2 cursor-pointer pb-0"
+                >Product
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="3xl:w-6 w-5"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M6 9l6 6l6 -6"></path>
+                </svg>
+                <!-- Top-12 -->
+
+                <ul
+                  class="dropDownBox 22 text-white text-center absolute pb-0 top-12 translate-y-1/2 inset-x-0 opacity-0 -z-10 md:block hidden transition-all ease-in-out duration-100"
+                >
+                  <li class="w-full flex gap-4 px-4 items-center">
+                    <a
+                      href="#"
+                      class="bg-blue-Neru w-80 py-2.5 rounded-md cursor-pointer"
+                      >Bedding</a
+                    >
+                    <a
+                      href="#"
+                      class="bg-blue-Neru w-80 py-2.5 rounded-md cursor-pointer"
+                      >Toys</a
+                    >
+                    <a
+                      href="#"
+                      class="bg-blue-Neru w-80 py-2.5 rounded-md cursor-pointer"
+                      >Sanitize</a
+                    >
+                  </li>
+                </ul>
+              </span>
+            </li>
+          </div>
           <li class="flex items-center gap-6 ms-auto">
             <a href="">
               <svg
@@ -65,11 +160,11 @@
             </a>
             <a
               href=""
-              class="bg-blue-Neru lg:px-16 px-12 md:text-base text-sm rounded-lg lg:py-2 py-1 text-white md:block hidden"
+              class="bg-blue-Neru lg:px-16 px-12 md:text-base text-sm rounded-lg lg:py-2 py-1 text-white"
               >Login</a
             >
 
-            <button id="navBurger" class="lg:hidden flex flex-col gap-1">
+            <button id="navBurger" class="md:hidden flex flex-col gap-1">
               <span
                 class="w-[23px] h-1 rounded-full bg-black transition-all origin-top-right ease-in-out duration-300"
               ></span>
@@ -83,6 +178,163 @@
           </li>
         </ul>
       </nav>
+      <div
+        id="offCanvasSm"
+        class="md:hidden fixed top-16 -z-10 left-0 h-screen w-full -translate-x-full bg-white transform ease-in-out transition-transform duration-300"
+      >
+        <div class="container nav-wrapper md:text-lg text-xs">
+          <div
+            class="bg-nav absolute -z-10 inset-0 h-full bg-no-repeat bg-contain bg-center bg-offcanvas opacity-10 -translate-y-10"
+          ></div>
+
+          <ul
+            class="md:hidden flex flex-col gap-5 text-sm transition-all ease-in-out duration-100 -z-10 font-semibold"
+          >
+            <li>
+              <a
+                href=""
+                class="hover:text-blue-Neru hover:underline hover:underline-offset-8"
+                >Home</a
+              >
+            </li>
+            <!-- pb-40 -->
+            <li class="transition-all ease-in-out duration-300 relative">
+              <span
+                class="dropdownNav flex gap-2 items-center hover:text-blue-Neru hover:underline hover:underline-offset-8"
+                >Product
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M6 9l6 6l6 -6"></path>
+                  </svg>
+                </span>
+              </span>
+              <ul
+                class="dropDownBox flex flex-col gap-3 absolute top-0 left-5 text-sm opacity-0 -z-10 transition-all ease-in-out duration-100"
+              >
+                <li>
+                  <a
+                    href=""
+                    class="hover:text-blue-Neru hover:underline hover:underline-offset-8"
+                    >Bedding</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="hover:text-blue-Neru hover:underline hover:underline-offset-8"
+                    >Toys</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="hover:text-blue-Neru hover:underline hover:underline-offset-8"
+                    >Sanitize</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="hover:text-blue-Neru hover:underline hover:underline-offset-8"
+                    >Trolly</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="hover:text-blue-Neru hover:underline hover:underline-offset-8"
+                    >Pillow</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href=""
+                class="hover:text-blue-Neru hover:underline hover:underline-offset-8"
+                >Catalog</a
+              >
+            </li>
+            <li class="transition-all ease-in-out duration-300 relative">
+              <span
+                class="dropdownNav flex gap-2 items-center hover:text-blue-Neru hover:underline hover:underline-offset-8"
+                >Product
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M6 9l6 6l6 -6"></path>
+                  </svg>
+                </span>
+              </span>
+              <ul
+                class="dropDownBox 22 flex flex-col gap-3 absolute top-0 left-5 text-sm opacity-0 -z-10 transition-all ease-in-out duration-100"
+              >
+                <li>
+                  <a
+                    href=""
+                    class="hover:text-blue-Neru hover:underline hover:underline-offset-8"
+                    >Bedding</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="hover:text-blue-Neru hover:underline hover:underline-offset-8"
+                    >Toys</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="hover:text-blue-Neru hover:underline hover:underline-offset-8"
+                    >Sanitize</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="hover:text-blue-Neru hover:underline hover:underline-offset-8"
+                    >Trolly</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="hover:text-blue-Neru hover:underline hover:underline-offset-8"
+                    >Pillow</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href=""
+                class="hover:text-blue-Neru hover:underline hover:underline-offset-8"
+                >Blog</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
     <main>
       <section class="hero">
@@ -96,12 +348,15 @@
           <div class="container relative 3xl:top-40 xl:top-20 md:top-2.5">
             <div class="flex flex-col lg:gap-6 gap-4">
               <h2 class="text-center font-extrabold text-blue-Neru">
-                Happy Pets Simple Care <br />
+                Happy Pets Simple Care
+                <br />
                 nerumeru
               </h2>
               <h6 class="text-center text-grey-neru">
-                Providing top-quality solutions for pet lovers <br />
-                with innovative , and high-quality products <br />
+                Providing top-quality solutions for pet lovers
+                <br />
+                with innovative , and high-quality products
+                <br />
                 designed for pets and their owners.
               </h6>
               <button
@@ -222,8 +477,10 @@
       <section class="testimonial relative">
         <div class="container">
           <div class="title text-center flex flex-col md:gap-3 gap-1.5">
-            <h2 class="font-extrabold">What Our Customers Says About Us</h2>
-            <h6 class="font-medium">Happy Story From Our Customers</h6>
+            <h3 class="font-extrabold">What Our Customers Says About Us</h3>
+            <h6 class="font-medium md:text-lg text-xs">
+              Happy Story From Our Customers
+            </h6>
           </div>
           <div class="swiper my-10">
             <div class="testimonial-Content">
@@ -261,16 +518,21 @@
                       />
                     </svg>
                     <h6 class="text-center">
-                      On the other hand, we denounce <br />
-                      with righteous indignation and <br />
-                      dislike men who are so beguiled <br />
-                      and demoralized by the charms <br />
+                      On the other hand, we denounce
+                      <br />
+                      with righteous indignation and
+                      <br />
+                      dislike men who are so beguiled
+                      <br />
+                      and demoralized by the charms
+                      <br />
                       of pleasure.
                     </h6>
                     <span class="flex items-center gap-4">
                       <img src="img/Image-testi.png" alt="" />
                       <h6>
-                        Serhiy Hipskyy <br />
+                        Serhiy Hipskyy
+                        <br />
                         CEO Universal
                       </h6>
                     </span>
@@ -309,16 +571,21 @@
                       />
                     </svg>
                     <h6 class="text-center">
-                      On the other hand, we denounce <br />
-                      with righteous indignation and <br />
-                      dislike men who are so beguiled <br />
-                      and demoralized by the charms <br />
+                      On the other hand, we denounce
+                      <br />
+                      with righteous indignation and
+                      <br />
+                      dislike men who are so beguiled
+                      <br />
+                      and demoralized by the charms
+                      <br />
                       of pleasure.
                     </h6>
                     <span class="flex items-center gap-4">
                       <img src="img/Image-testi.png" alt="" />
                       <h6>
-                        Serhiy Hipskyy <br />
+                        Serhiy Hipskyy
+                        <br />
                         CEO Universal
                       </h6>
                     </span>
@@ -357,16 +624,21 @@
                       />
                     </svg>
                     <h6 class="text-center">
-                      On the other hand, we denounce <br />
-                      with righteous indignation and <br />
-                      dislike men who are so beguiled <br />
-                      and demoralized by the charms <br />
+                      On the other hand, we denounce
+                      <br />
+                      with righteous indignation and
+                      <br />
+                      dislike men who are so beguiled
+                      <br />
+                      and demoralized by the charms
+                      <br />
                       of pleasure.
                     </h6>
                     <span class="flex items-center gap-4">
                       <img src="img/Image-testi.png" alt="" />
                       <h6>
-                        Serhiy Hipskyy <br />
+                        Serhiy Hipskyy
+                        <br />
                         CEO Universal
                       </h6>
                     </span>
@@ -405,16 +677,21 @@
                       />
                     </svg>
                     <h6 class="text-center">
-                      On the other hand, we denounce <br />
-                      with righteous indignation and <br />
-                      dislike men who are so beguiled <br />
-                      and demoralized by the charms <br />
+                      On the other hand, we denounce
+                      <br />
+                      with righteous indignation and
+                      <br />
+                      dislike men who are so beguiled
+                      <br />
+                      and demoralized by the charms
+                      <br />
                       of pleasure.
                     </h6>
                     <span class="flex items-center gap-4">
                       <img src="img/Image-testi.png" alt="" />
                       <h6>
-                        Serhiy Hipskyy <br />
+                        Serhiy Hipskyy
+                        <br />
                         CEO Universal
                       </h6>
                     </span>
@@ -453,16 +730,21 @@
                       />
                     </svg>
                     <h6 class="text-center">
-                      On the other hand, we denounce <br />
-                      with righteous indignation and <br />
-                      dislike men who are so beguiled <br />
-                      and demoralized by the charms <br />
+                      On the other hand, we denounce
+                      <br />
+                      with righteous indignation and
+                      <br />
+                      dislike men who are so beguiled
+                      <br />
+                      and demoralized by the charms
+                      <br />
                       of pleasure.
                     </h6>
                     <span class="flex items-center gap-4">
                       <img src="img/Image-testi.png" alt="" />
                       <h6>
-                        Serhiy Hipskyy <br />
+                        Serhiy Hipskyy
+                        <br />
                         CEO Universal
                       </h6>
                     </span>
@@ -501,16 +783,21 @@
                       />
                     </svg>
                     <h6 class="text-center">
-                      On the other hand, we denounce <br />
-                      with righteous indignation and <br />
-                      dislike men who are so beguiled <br />
-                      and demoralized by the charms <br />
+                      On the other hand, we denounce
+                      <br />
+                      with righteous indignation and
+                      <br />
+                      dislike men who are so beguiled
+                      <br />
+                      and demoralized by the charms
+                      <br />
                       of pleasure.
                     </h6>
                     <span class="flex items-center gap-4">
                       <img src="img/Image-testi.png" alt="" />
                       <h6>
-                        Serhiy Hipskyy <br />
+                        Serhiy Hipskyy
+                        <br />
                         CEO Universal
                       </h6>
                     </span>
@@ -596,7 +883,7 @@
         </div>
       </section>
     </main>
-    <footer class="bg-blue-Neru text-white lg:py-20 py-5 lg:mt-40">
+    <footer class="bg-blue-Neru text-white lg:py-20 py-5 lg:mt-60">
       <div
         class="grid lg:grid-cols-2 grid-cols-1 lg:place-items-center relative items-center lg:gap-10 gap-5"
       >
