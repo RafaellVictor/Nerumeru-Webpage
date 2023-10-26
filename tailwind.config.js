@@ -7,7 +7,9 @@ module.exports = {
     },
 
     extend: {
-      backgroundImage: {},
+      backgroundImage: {
+        offcanvas: "url('../img/Trolly-Footer.png')",
+      },
 
       keyframes: {
         mousebc: {},
