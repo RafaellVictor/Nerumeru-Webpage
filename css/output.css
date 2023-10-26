@@ -674,10 +674,6 @@ main {
   top: 4rem;
 }
 
-.top-5 {
-  top: 1.25rem;
-}
-
 .top-8 {
   top: 2rem;
 }
@@ -692,10 +688,6 @@ main {
 
 .z-50 {
   z-index: 50;
-}
-
-.-z-20 {
-  z-index: -20;
 }
 
 .mx-auto {
@@ -1240,10 +1232,6 @@ main {
   transition-duration: 500ms;
 }
 
-.duration-75 {
-  transition-duration: 75ms;
-}
-
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1409,14 +1397,20 @@ h6 {
 
 @media (min-width: 768px) {
   .dropMenu-Active {
-    top: 3rem;
+    top: 4rem;
     left: 0px;
   }
 }
 
 @media (min-width: 1320px) {
   .dropMenu-Active {
-    top: 3.5rem;
+    top: 60px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .dropMenu-Active {
+    top: 4rem;
   }
 }
 

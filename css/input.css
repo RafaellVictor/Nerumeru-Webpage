@@ -42,7 +42,7 @@
 }
 
 .dropMenu-Active {
-  @apply 2xl:top-14 md:top-12 top-10 md:left-0 z-10 opacity-100;
+  @apply 3xl:top-16 2xl:top-[60px] md:top-16 top-10 md:left-0 z-10 opacity-100;
 }
 
 .nav-active > span:nth-child(1) {
