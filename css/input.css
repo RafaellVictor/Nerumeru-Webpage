@@ -38,7 +38,7 @@
 }
 
 .pb-active {
-  @apply md:pb-0 pb-40;
+  @apply md:pb-0 pb-44;
 }
 
 .dropMenu-Active {
