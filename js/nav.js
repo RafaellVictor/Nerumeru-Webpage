@@ -76,5 +76,5 @@ const mobileMenuButton = document.getElementById("navBurger");
 const mobileMenu = document.getElementById("offCanvasSm");
 
 mobileMenuButton.addEventListener("click", () => {
-  mobileMenu.classList.toggle("-translate-x-full");
+  mobileMenu.classList.toggle("translate-x-full");
 });
