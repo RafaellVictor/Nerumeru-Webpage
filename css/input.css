@@ -32,6 +32,8 @@
   @apply w-full;
 }
 
+
+
 /*pb-[330px] */
 .navCont-active {
   @apply 3xl:pb-16 md:pb-12 shadow-md;
@@ -62,6 +64,10 @@
 }
 
 /* Homepage */
+
+.box-Active {
+  @apply opacity-100 top-10 z-10
+}
 
 /* Homepage End */
 

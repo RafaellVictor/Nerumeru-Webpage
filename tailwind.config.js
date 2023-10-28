@@ -17,10 +17,21 @@ module.exports = {
       },
 
       keyframes: {
-        mousebc: {},
+        wiggle: {
+          '0%, 100%': { transform: 'translateX(1%)' },
+          '50%': { transform: 'translateX(-1%)' },
+        },
+
+        bgSlider: {
+          '0%, 100%': { transform: '-translateX(full)' },
+          '50%': { transform: 'translateX(0)' },
+        }
+        
       },
 
-      animation: {},
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
+      },
 
       fontFamily: {
         Poppins: ["Poppins", "sans-serif"],

@@ -10,7 +10,7 @@ const currentPageElements = document.querySelectorAll(".current-page");
 
 // Define the current page and items per page
 let currentPage = 1;
-const itemsPerPage = 12; // Sesuaikan angka ini sesuai kebutuhan Anda
+let itemsPerPage = 12; // Default items per page
 
 // Function to show the items for the current page
 function showItemsForPage(page) {
@@ -63,3 +63,18 @@ function showNextPage() {
     updateCurrentPageElements();
   }
 }
+
+// Check screen size and update itemsPerPage accordingly
+function updateItemsPerPage() {
+  if (window.innerWidth >= 1200) {
+    itemsPerPage = 12; // For larger screens
+  } else {
+    itemsPerPage = 6; // For smaller screens
+  }
+  showItemsForPage(currentPage); // Update the displayed items
+  updateCurrentPageElements(); // Update the current page elements
+}
+
+// Call the updateItemsPerPage function initially and on window resize
+updateItemsPerPage();
+window.addEventListener('resize', updateItemsPerPage);
