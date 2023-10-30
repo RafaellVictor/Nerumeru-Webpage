@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/output.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <title>Nerumeru | Details Product</title>
+  </head>
+  <body>
+    <!-- pb-14 -->
+    <header id="navCont" class="transition-all ease-in-out duration-300 fixed top-0 inset-x-0 z-50 bg-white">
+      <nav class="container relative">
+        <ul class="flex items-center font-semibold">
+          <li>
+            <a href="index.html">
+              <img src="img/logoNerumeru.png" class="md:w-[70%] w-[45%]" alt="" />
+            </a>
+          </li>
+          <div class="3xl:text-lg 2xl:text-base text-sm transition-all ease-in-out duration-200 ms-auto md:flex lg:gap-20 gap-9 hidden">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <span type="button" class="dropdownNav flex gap-2 cursor-pointer pb-0"
+                >Product
+                <svg xmlns="http://www.w3.org/2000/svg" class="3xl:w-6 w-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M6 9l6 6l6 -6"></path>
+                </svg>
+                <!-- Top-12 -->
+                <ul class="dropDownBox text-white text-center absolute pb-0 top-0 translate-y-1/2 inset-x-0 opacity-0 -z-10 md:block hidden transition-all ease-in-out duration-500">
+                  <li class="w-full flex gap-4 px-4 items-center">
+                    <a href="bedding.html" class="bg-blue-Neru w-80 py-2.5 rounded-md cursor-pointer">Bedding</a>
+                    <a href="toys.html" class="bg-blue-Neru w-80 py-2.5 rounded-md cursor-pointer">Toys</a>
+                    <a href="sanitize.html" class="bg-blue-Neru w-80 py-2.5 rounded-md cursor-pointer">Sanitize</a>
+                    <a href="trolly.html" class="bg-blue-Neru w-80 py-2.5 rounded-md cursor-pointer">Trolly</a>
+                    <a href="pillow.html" class="bg-blue-Neru w-80 py-2.5 rounded-md cursor-pointer">Pillow</a>
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li>
+              <a href="catalog.html">Catalog</a>
+            </li>
+            <li>
+              <a href="aboutUs.html">Blog</a>
+            </li>
+          </div>
+          <li class="flex items-center gap-6 ms-auto">
+            <a href="">
+              <svg xmlns="http://www.w3.org/2000/svg" class="shadow-lg rounded-full lg:w-11 md:w-9 w-8" viewBox="0 0 46 46" fill="none">
+                <circle cx="23" cy="23" r="23" fill="white" />
+                <path
+                  d="M11 12.7333C11 12.5388 11.0773 12.3523 11.2148 12.2148C11.3523 12.0773 11.5389 12 11.7334 12H13.9334C14.097 12 14.2559 12.0548 14.3848 12.1555C14.5137 12.2562 14.6052 12.3971 14.6448 12.5559L15.2388 14.9333H32.2673C32.375 14.9334 32.4813 14.9572 32.5788 15.0031C32.6762 15.0489 32.7624 15.1156 32.8311 15.1985C32.8999 15.2814 32.9495 15.3784 32.9765 15.4826C33.0036 15.5869 33.0073 15.6958 32.9875 15.8016L30.7874 27.5349C30.756 27.703 30.6668 27.8548 30.5353 27.964C30.4038 28.0733 30.2382 28.1332 30.0673 28.1333H16.8668C16.6959 28.1332 16.5303 28.0733 16.3988 27.964C16.2673 27.8548 16.1782 27.703 16.1467 27.5349L13.9481 15.8236L13.3614 13.4667H11.7334C11.5389 13.4667 11.3523 13.3894 11.2148 13.2519C11.0773 13.1144 11 12.9278 11 12.7333ZM15.5497 16.4L17.4755 26.6667H29.4586L31.3844 16.4H15.5497ZM18.3336 28.1333C17.5556 28.1333 16.8094 28.4424 16.2593 28.9925C15.7092 29.5426 15.4001 30.2887 15.4001 31.0667C15.4001 31.8446 15.7092 32.5907 16.2593 33.1408C16.8094 33.691 17.5556 34 18.3336 34C19.1116 34 19.8577 33.691 20.4078 33.1408C20.9579 32.5907 21.267 31.8446 21.267 31.0667C21.267 30.2887 20.9579 29.5426 20.4078 28.9925C19.8577 28.4424 19.1116 28.1333 18.3336 28.1333ZM28.6005 28.1333C27.8226 28.1333 27.0764 28.4424 26.5263 28.9925C25.9762 29.5426 25.6671 30.2887 25.6671 31.0667C25.6671 31.8446 25.9762 32.5907 26.5263 33.1408C27.0764 33.691 27.8226 34 28.6005 34C29.3785 34 30.1247 33.691 30.6748 33.1408C31.2249 32.5907 31.534 31.8446 31.534 31.0667C31.534 30.2887 31.2249 29.5426 30.6748 28.9925C30.1247 28.4424 29.3785 28.1333 28.6005 28.1333ZM18.3336 29.6C18.7226 29.6 19.0956 29.7545 19.3707 30.0296C19.6457 30.3046 19.8003 30.6777 19.8003 31.0667C19.8003 31.4557 19.6457 31.8287 19.3707 32.1038C19.0956 32.3788 18.7226 32.5333 18.3336 32.5333C17.9446 32.5333 17.5715 32.3788 17.2964 32.1038C17.0214 31.8287 16.8668 31.4557 16.8668 31.0667C16.8668 30.6777 17.0214 30.3046 17.2964 30.0296C17.5715 29.7545 17.9446 29.6 18.3336 29.6ZM28.6005 29.6C28.9895 29.6 29.3626 29.7545 29.6377 30.0296C29.9127 30.3046 30.0673 30.6777 30.0673 31.0667C30.0673 31.4557 29.9127 31.8287 29.6377 32.1038C29.3626 32.3788 28.9895 32.5333 28.6005 32.5333C28.2115 32.5333 27.8385 32.3788 27.5634 32.1038C27.2884 31.8287 27.1338 31.4557 27.1338 31.0667C27.1338 30.6777 27.2884 30.3046 27.5634 30.0296C27.8385 29.7545 28.2115 29.6 28.6005 29.6Z"
+                  fill="#42454A"
+                />
+              </svg>
+            </a>
+            <a href="" class="bg-blue-Neru lg:px-16 px-12 md:text-base text-sm rounded-lg lg:py-2 py-1 text-white">Login</a>
+
+            <button id="navBurger" class="md:hidden flex flex-col gap-1">
+              <span class="w-[23px] h-1 rounded-full bg-black transition-all origin-top-right ease-in-out duration-300"></span>
+              <span class="w-[23px] h-1 rounded-full bg-black transition-all ease-in-out duration-300"></span>
+              <span class="w-[23px] h-1 rounded-full bg-black transition-all origin-bottom-right ease-in-out duration-300"></span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <div id="offCanvasSm" class="md:hidden fixed top-16 -z-10 left-0 h-screen w-full translate-x-full bg-white transform ease-in-out transition-transform duration-500">
+        <div class="container nav-wrapper">
+          <div class="bg-nav absolute -z-10 inset-0 h-full bg-no-repeat bg-contain bg-center bg-offcanvas opacity-10 -translate-y-10"></div>
+          <ul class="md:hidden flex flex-col gap-5 text-lg transition-all ease-in-out duration-100 -z-10 font-semibold">
+            <li>
+              <a href="index.html" class="hover:text-blue-Neru hover:underline hover:underline-offset-8">Home</a>
+            </li>
+            <!-- pb-40 -->
+            <li class="transition-all ease-in-out duration-300 relative">
+              <span class="dropdownNav flex gap-2 items-center hover:text-blue-Neru hover:underline hover:underline-offset-8"
+                >Product
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M6 9l6 6l6 -6"></path>
+                  </svg>
+                </span>
+              </span>
+              <ul class="dropDownBox flex flex-col gap-3 absolute top-2 left-5 text-base opacity-0 -z-10 transition-all ease-in-out duration-100">
+                <li>
+                  <a href="" class="hover:text-blue-Neru hover:underline hover:underline-offset-8">Bedding</a>
+                </li>
+                <li>
+                  <a href="" class="hover:text-blue-Neru hover:underline hover:underline-offset-8">Toys</a>
+                </li>
+                <li>
+                  <a href="" class="hover:text-blue-Neru hover:underline hover:underline-offset-8">Sanitize</a>
+                </li>
+                <li>
+                  <a href="" class="hover:text-blue-Neru hover:underline hover:underline-offset-8">Trolly</a>
+                </li>
+                <li>
+                  <a href="" class="hover:text-blue-Neru hover:underline hover:underline-offset-8">Pillow</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="catalog.html" class="hover:text-blue-Neru hover:underline hover:underline-offset-8">Catalog</a>
+            </li>
+
+            <li>
+              <a href="" class="hover:text-blue-Neru hover:underline hover:underline-offset-8">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="product-details">
+        <div class="container">
+            <div class="breadcrumb font-semibold">
+                <ul class="flex gap-4">
+                    <li><a href="">Home > </a></li>
+                    <li><a href="">Bedding > </a></li>
+                    <li><a href="" class="text-blue-Neru">Detail Product </a></li>
+                </ul>
+            </div>
+            <div class="item mt-5 grid md:grid-cols-2 gap-10 grid-cols-1">
+                <div class="left-content flex flex-col gap-3">
+                    <img src="img/card-item-2.png" class="w-full" alt="">
+                    <div class="grid grid-cols-4 gap-4">
+                        <img src="img/card-item-2.png" alt="">
+                        <img src="img/card-item-2.png" alt="">
+                        <img src="img/card-item-2.png" alt="">
+                        <img src="img/card-item-2.png" alt="">
+                    </div>
+                </div>
+                <div class="right-content">
+                    <div class="wrapper flex flex-col gap-4">
+                        <h2 class="font-bold">Neru One - Silver Grey</h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-28 md:w-20 w-16" viewBox="0 0 96 17" fill="none">
+                            <path
+                              d="M8.72727 0L11.0357 5.20317L17.0274 5.6535L12.4623 9.31956L13.857 14.8011L8.72727 11.8636L3.59751 14.8011L4.99222 9.31956L0.427143 5.6535L6.41888 5.20317L8.72727 0Z"
+                              fill="#FE8B75"
+                            />
+                            <path
+                              d="M28.364 0L30.6724 5.20317L36.6641 5.6535L32.0991 9.31956L33.4938 14.8011L28.364 11.8636L23.2342 14.8011L24.6289 9.31956L20.0639 5.6535L26.0556 5.20317L28.364 0Z"
+                              fill="#FE8B75"
+                            />
+                            <path
+                              d="M47.9997 0L50.3081 5.20317L56.2999 5.6535L51.7348 9.31956L53.1295 14.8011L47.9997 11.8636L42.87 14.8011L44.2647 9.31956L39.6996 5.6535L45.6913 5.20317L47.9997 0Z"
+                              fill="#FE8B75"
+                            />
+                            <path
+                              d="M67.6363 0L69.9447 5.20317L75.9365 5.6535L71.3714 9.31956L72.7661 14.8011L67.6363 11.8636L62.5066 14.8011L63.9013 9.31956L59.3362 5.6535L65.3279 5.20317L67.6363 0Z"
+                              fill="#FE8B75"
+                            />
+                            <path
+                              d="M87.2732 0L89.5816 5.20317L95.5733 5.6535L91.0082 9.31956L92.4029 14.8011L87.2732 11.8636L82.1434 14.8011L83.5381 9.31956L78.973 5.6535L84.9648 5.20317L87.2732 0Z"
+                              fill="#FE8B75"/>
+                        </svg>
+                        <h6>Rp.500,000</h6>
+                        <h6 class="flex gap-2.5 items-center font-semibold lg:text-base md:text-sm text-[11px]"> Stock <span class="stock bg-blue-Neru md:px-3 px-2.5 py-0.5 rounded-md text-white lg:text-base md:text-sm text-[11px]">26</span> </h6>
+                        <h6 class="flex gap-3">Weight <span>500g</span></h6>
+                        <hr>
+                        <h6 class="flex justify-between">Sub Total <span class="font-semibold">Rp 500.000</span></h6>
+                        <hr>
+                        <div class="quantity flex  gap-3">
+                            <span id="qty" class="flex gap-2 text-white">
+                                <div class="bg-blue-Neru w-10  h-10 flex items-center justify-center rounded-md">
+                                    -
+                                </div>
+                                <div class="outline outline-2 outline-blue-Neru text-black w-10  h-10 flex items-center justify-center rounded-md">
+                                    1
+                                </div>
+                                <div class="bg-blue-Neru w-10  h-10 flex items-center justify-center rounded-md">
+                                    +
+                                </div>
+                            </span>
+                            <button class="bg-blue-Neru w-full  rounded-md py-2 px-4 text-white lg:text-base text-sm">Tambah Ke keranjang</button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-0.5">
+                        <div class="accordion-wrapper mt-5">
+                            <div class="accordion-header  cursor-pointer flex justify-between items-center bg-blue-Neru  text-white  px-4 py-4 relative ">
+                                    <h3 class="font-medium md:text-lg text-sm">PRODUCT SPESIFICATIONS</h4>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-down md:w-7 w-4"  viewBox="0 0 24 24"   fill="white" >
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M6 10l6 6l6 -6h-12"></path>
+                                     </svg>
+                            </div>
+                            <div class="accordion-body bg-white shadow-sm ">
+                                <div class="content-wrapper  p-4">
+                                    <span class="md:text-base text-sm">
+                                        Product Size: Medium (100 cm x 75 cm x 10 cm) <br> <br>
+                                        Faom Specification: <br>
+                                            - 5 CM Soft Memory Foam (White) <br>
+                                            - 5 CM Medium Support Foam (Yellow) <br>
+                                        Inner Fabric Polyester Cotton (Dark Grey), Water <br> Resistant, Breathable with Machine Washable Cover. <br> <br>
+                                        Outer Fabric Premium Fabric made of Polyester, Super Tough, Comfortable, Soft with Machine Washable Cover and Anti Slip Fabric.
+                                        Zipper YKK (Middle-Inner) and YKK (Under-Outer)
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-wrapper">
+                            <div class="accordion-header  cursor-pointer flex justify-between items-center bg-blue-Neru  text-white  px-4 py-4 relative ">
+                                    <h3 class="font-medium  md:text-lg text-sm">WARRANTIY</h4>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-down md:w-7 w-4"  viewBox="0 0 24 24"   fill="white" >
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M6 10l6 6l6 -6h-12"></path>
+                                     </svg>
+                            </div>
+                            <div class="accordion-body bg-white shadow-sm ">
+                                <div class="content-wrapper  p-4">
+                                    <span class="md:text-base text-sm">
+                                        1 Year (Foam, 20% Deflated) - 1 year warranty for inner foam if there is a 20% decrease
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+      </section>
+      <section class="insta">
+        <div class="container">
+          <div class="title flex gap-2.5 flex-col lg:items-start items-center mb-10">
+            <h3 class="font-extrabold 3xl:text-3xl 2xl:text-2xl md:text-2xl text-xl">instagram</h3>
+            <hr class="3xl:w-20 2xl:w-16 md:w-14 w-10 md:border-8 border-[5px] border-blue-Neru rounded-sm" />
+          </div>
+          <div class="elfsight-app-74d2d199-22bd-44a0-8d1b-865bf0233c05 " data-elfsight-app-lazy></div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-blue-Neru text-white lg:py-20 py-5 lg:mt-60">
+      <div class="grid lg:grid-cols-2 grid-cols-1 lg:place-items-center relative items-center lg:gap-10 gap-5">
+        <div>
+          <img src="img/Trolly-Footer.png" class="lg:absolute lg:block hidden left-0 -bottom-20 3xl:w-[40%] 2xl:w-[45%] xl:w-[50%]" alt="" />
+        </div>
+        <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-24 gap-10 place-content-center lg:p-0 p-4">
+          <div class="left-content flex flex-col gap-4">
+            <h5 class="font-semibold">NeruMeru</h5>
+            <h6 class="text-justify">
+              Based on the love for pets, Neru Meru is here as a brand that is able to provide the best solutions for various pet needs. Innovative, precise, durable and made using the highest quality
+              materials, every Neru Meru product is created for the comfort of pets and their human companions.
+            </h6>
+            <h6 class="font-semibold xl:text-sm">© Nerumeru . All rights reserved.</h6>
+          </div>
+          <div class="right-content flex flex-col gap-4">
+            <div class="flex flex-col gap-4">
+              <h5 class="font-semibold">Contact Us</h5>
+              <span class="flex gap-4 items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="2xl:w-6 w-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"></path>
+                  <path d="M15 6h6m-3 -3v6"></path>
+                </svg>
+                <h6 class="">+62-812-1972-1945</h6>
+              </span>
+              <span class="flex gap-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-mail 2xl:w-6 w-4"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+                  <path d="M3 7l9 6l9 -6"></path>
+                </svg>
+                <h6 class="">NeruMeru@gmail.com</h6>
+              </span>
+            </div>
+            <div class="flex flex-col gap-4">
+              <h5 class="font-semibold mt-10">Realted Links</h5>
+              <span class="flex gap-4">
+                <a href="" class="bg-white p-2 rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="text-blue-Neru 2xl:w-7 xl:w-4 w-3"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+                  </svg>
+                </a>
+                <a href="" class="bg-white p-2 rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="text-blue-Neru 2xl:w-7 xl:w-4 w-3"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4 7l.867 12.143a2 2 0 0 0 2 1.857h10.276a2 2 0 0 0 2 -1.857l.867 -12.143h-16z"></path>
+                    <path d="M8.5 7c0 -1.653 1.5 -4 3.5 -4s3.5 2.347 3.5 4"></path>
+                    <path d="M9.5 17c.413 .462 1 1 2.5 1s2.5 -.897 2.5 -2s-1 -1.5 -2.5 -2s-2 -1.47 -2 -2c0 -1.104 1 -2 2 -2s1.5 0 2.5 1"></path>
+                  </svg>
+                </a>
+                <a href="" class="bg-white p-2 rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="text-blue-Neru 2xl:w-7 xl:w-4 w-3"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                    <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                    <path d="M16.5 7.5l0 .01"></path>
+                  </svg>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="js/swiper.js"></script>
+  <script src="js/button.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+  <script src="js/accordion.js"></script>
+</html>

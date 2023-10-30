@@ -33,6 +33,18 @@
 }
 
 
+@layer components {
+
+
+  .accordion-header.active i {
+      @apply transition ease-in-out duration-300;
+      transform:rotateX(180deg);
+  }
+
+  .accordion-body {
+      @apply  max-h-0 overflow-hidden transition-all duration-200 ease-in-out
+  }
+}
 
 /*pb-[330px] */
 .navCont-active {
