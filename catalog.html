@@ -75,7 +75,7 @@
       <div id="offCanvasSm" class="md:hidden fixed top-16 -z-10 left-0 h-screen w-full translate-x-full bg-white transform ease-in-out transition-transform duration-500">
         <div class="container nav-wrapper">
           <div class="bg-nav absolute -z-10 inset-0 h-full bg-no-repeat bg-contain bg-center bg-offcanvas opacity-10 -translate-y-10"></div>
-          <ul class="md:hidden flex flex-col gap-5 text-lg transition-all ease-in-out duration-100  -z-10 font-semibold">
+          <ul class="md:hidden flex flex-col gap-5 text-lg transition-all ease-in-out duration-100 -z-10 font-semibold">
             <li>
               <a href="index.html" class="hover:text-blue-Neru hover:underline hover:underline-offset-8">Home</a>
             </li>
@@ -192,36 +192,61 @@
             </svg>
           </div> -->
       </section>
-      <section class="catalog ">
-        <div class="container ">
+      <section class="catalog">
+        <div class="container">
           <div class="title text-center flex flex-col md:gap-3 gap-1.5">
             <h3 class="font-extrabold">Catalog Product</h3>
             <h6 class="font-medium md:text-lg text-xs">select the product according to your wishes</h6>
           </div>
           <div class="text-white text-center mt-12">
-            <div class="grid md:grid-cols-6 md:grid-rows-6 grid-cols-4 grid-rows-4 md:gap-4 gap-2 h-[600px] max-w-screen mx-auto lg:text-4xl md:text-xl text-sm ">
-              <div  onclick="window.location.href ='bedding.html';" class="md:col-span-4 md:row-span-4 col-span-4 row-span-1 bg-blue-Neru bg-bed-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group  cursor-pointer">
-                <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center -translate-x-full group-hover:-translate-x-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest">
+            <div class="grid md:grid-cols-6 md:grid-rows-6 grid-cols-4 grid-rows-4 md:gap-4 gap-2 h-[600px] max-w-screen mx-auto lg:text-4xl md:text-xl text-sm">
+              <div
+                onclick="window.location.href ='bedding.html';"
+                class="md:col-span-4 md:row-span-4 col-span-4 row-span-1 bg-blue-Neru bg-bed-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer"
+              >
+                <div
+                  class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center -translate-x-full group-hover:-translate-x-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"
+                >
                   NERU BEDDING
                 </div>
               </div>
-              <div onclick="window.location.href ='sanitize.html';" class="bg-blue-Neru  md:row-span-3 md:col-span-2 col-span-2 row-span-1  bg-sanitize-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group  cursor-pointer">
-                <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center translate-x-full group-hover:translate-x-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest">
+              <div
+                onclick="window.location.href ='sanitize.html';"
+                class="bg-blue-Neru md:row-span-3 md:col-span-2 col-span-2 row-span-1 bg-sanitize-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer"
+              >
+                <div
+                  class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center translate-x-full group-hover:translate-x-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"
+                >
                   NERU SANITIZE
                 </div>
               </div>
-              <div onclick="window.location.href ='trolly.html';" class="bg-blue-Neru md:col-span-2 md:row-span-5 col-span-2 row-span-2    bg-trolly-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group  cursor-pointer">
-                <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center -translate-y-full group-hover:-translate-y-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest">
+              <div
+                onclick="window.location.href ='trolly.html';"
+                class="bg-blue-Neru md:col-span-2 md:row-span-5 col-span-2 row-span-2 bg-trolly-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer"
+              >
+                <div
+                  class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center -translate-y-full group-hover:-translate-y-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"
+                >
                   NERU TROLLY
                 </div>
-              </div> 
-              <div onclick="window.location.href ='toys.html';" class="bg-blue-Neru w-full  md:col-span-2 md:row-span-4 col-span-2 bg-toys-catalog  bg-no-repeat bg-cover bg-center relative overflow-hidden group  cursor-pointer">
-                <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center translate-y-full group-hover:translate-y-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest">
+              </div>
+              <div
+                onclick="window.location.href ='toys.html';"
+                class="bg-blue-Neru w-full md:col-span-2 md:row-span-4 col-span-2 bg-toys-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer"
+              >
+                <div
+                  class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center translate-y-full group-hover:translate-y-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"
+                >
                   NERU TOYS
                 </div>
               </div>
-              <div onclick="window.location.href ='pillow.html';" class="bg-blue-Neru  md:col-span-2 md:row-span-4 col-span-4  bg-pillow-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer ">
-                <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center translate-x-full group-hover:translate-x-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest">
+              <div
+                onclick="window.location.href ='pillow.html';"
+                class="bg-blue-Neru md:col-span-2 md:row-span-4 col-span-4 bg-pillow-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer"
+              >
+                <div
+                  class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center translate-x-full group-hover:translate-x-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"
+                >
                   NERU PILLOW
                 </div>
               </div>
@@ -229,11 +254,20 @@
           </div>
         </div>
       </section>
-      <section class="all-product " id="all-product">
-        <div class="fliter-price-toggle bg-white outline outline-2 outline-slate-100  font-semibold ">
+      <section class="all-product" id="all-product">
+        <div class="fliter-price-toggle bg-white outline outline-2 outline-slate-100 font-semibold">
           <div class="wrapper flex justify-between items-center container py-8 md:text-base text-sm">
-            <button class="flex gap-4 uppercase items-center " id="filter-toggle-hidden" >
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments-horizontal md:w-6 w-5"  viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <button class="flex gap-4 uppercase items-center" id="filter-toggle-hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-adjustments-horizontal md:w-6 w-5"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M14 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
                 <path d="M4 6l8 0"></path>
@@ -244,109 +278,118 @@
                 <path d="M17 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
                 <path d="M4 18l11 0"></path>
                 <path d="M19 18l1 0"></path>
-             </svg>
-             Filter
+              </svg>
+              Filter
             </button>
             <div class="flex gap-4 relative uppercase">
-                <span id="filter-box" class="flex  gap-2 cursor-pointer">Urutkan <span class="md:block hidden">berdasarkan</span> : 
-                  <span class="flex gap-2 items-center ">Semua
-                    <svg xmlns="http://www.w3.org/2000/svg" class="3xl:w-6 w-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                      <path d="M6 9l6 6l6 -6"></path>
-                    </svg>
-                  </span>
+              <span id="filter-box" class="flex gap-2 cursor-pointer"
+                >Urutkan <span class="md:block hidden">berdasarkan</span> :
+                <span class="flex gap-2 items-center"
+                  >Semua
+                  <svg xmlns="http://www.w3.org/2000/svg" class="3xl:w-6 w-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M6 9l6 6l6 -6"></path>
+                  </svg>
                 </span>
-                <div class="opacity-0 -z-10 transition-all ease-in-out duration-300 selection-filter-price md:text-base text-xs flex flex-col absolute top-5 gap-1.5  w-full  text outline outline-1 outline-grey-neru bg-black bg-opacity-10 shadow-md py-2 px-2 text-black rounded-md">
-                  <a value="Harga Tertingi" class="bg-slate-100 hover:animate-pulse hover:bg-blue-Neru hover:text-white cursor-pointer p-2.5 rounded-md">Harga Tertingi</a>
-                  <a value="Harga Terendah" class="bg-slate-100 hover:animate-pulse hover:bg-blue-Neru hover:text-white cursor-pointer p-2.5 rounded-md">Harga Terendah</a>
-                  <a value="Harga Menegah" class="bg-slate-100 hover:animate-pulse hover:bg-blue-Neru hover:text-white cursor-pointer p-2.5 rounded-md">Semua</a>
-                </div>
+              </span>
+              <div
+                class="opacity-0 -z-10 transition-all ease-in-out duration-300 selection-filter-price md:text-base text-xs flex flex-col absolute top-5 gap-1.5 w-full text outline outline-1 outline-grey-neru bg-black bg-opacity-10 shadow-md py-2 px-2 text-black rounded-md"
+              >
+                <a value="Harga Tertingi" class="bg-slate-100 hover:animate-pulse hover:bg-blue-Neru hover:text-white cursor-pointer p-2.5 rounded-md">Harga Tertingi</a>
+                <a value="Harga Terendah" class="bg-slate-100 hover:animate-pulse hover:bg-blue-Neru hover:text-white cursor-pointer p-2.5 rounded-md">Harga Terendah</a>
+                <a value="Harga Menegah" class="bg-slate-100 hover:animate-pulse hover:bg-blue-Neru hover:text-white cursor-pointer p-2.5 rounded-md">Semua</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="container lg:p-4 p-2 md:mt-10 mt-5 flex flex-col gap-4 ">
+        <div class="container lg:p-4 p-2 md:mt-10 mt-5 flex flex-col gap-4">
           <div class="grid md:grid-cols-8 grid-cols-4 gap-16 overflow-hidden">
-            <div class="filter-item-toggle md:col-span-2 col-span-4 md:row-span-full transition-all ease-in-out duration-300 " id="filter-toggle">
+            <div class="filter-item-toggle md:col-span-2 col-span-4 md:row-span-full transition-all ease-in-out duration-300" id="filter-toggle">
               <div class="wrapper flex flex-col gap-4 lg:text-base md:text-xs text-xs">
-                <div class="filterchoose font-light ">
+                <div class="filterchoose font-light">
                   <h5 class="font-semibold uppercase">Neru Bedding</h5>
-                  <div class="flex gap-4 flex-col mt-5 ">
+                  <div class="flex gap-4 flex-col mt-5">
                     <span class="flex gap-3 items-center">
-                      <input type="checkbox" id="neru_one" name="neru_one">
+                      <input type="checkbox" id="neru_one" name="neru_one" />
                       <label for="neru_one">Neru one</label>
-                    </span>    
+                    </span>
                     <span class="flex gap-3 items-center">
-                      <input type="checkbox" id="neru_two" name="neru_two">
+                      <input type="checkbox" id="neru_two" name="neru_two" />
                       <label for="neru_two">Neru two</label>
-                    </span>    
+                    </span>
                   </div>
                 </div>
-                <hr class="mt-4  border-slate-300">
-                <div class="filterchoose font-light ">
+                <hr class="mt-4 border-slate-300" />
+                <div class="filterchoose font-light">
                   <h5 class="font-semibold uppercase">Neru toys</h5>
-                  <div class="flex gap-4 flex-col mt-5 ">
+                  <div class="flex gap-4 flex-col mt-5">
                     <span class="flex gap-3 items-center">
-                      <input type="checkbox" id="neru_ring" name="neru_ring">
+                      <input type="checkbox" id="neru_ring" name="neru_ring" />
                       <label for="neru_ring">Neru ring</label>
-                    </span>    
+                    </span>
                     <span class="flex gap-3 items-center">
-                      <input type="checkbox" id="neru_stick" name="neru_stick">
+                      <input type="checkbox" id="neru_stick" name="neru_stick" />
                       <label for="neru_stick">Neru stick</label>
-                    </span> 
+                    </span>
                     <span class="flex gap-3 items-center">
-                      <input type="checkbox" id="neru_ball" name="neru_ball">
+                      <input type="checkbox" id="neru_ball" name="neru_ball" />
                       <label for="neru_ball">Neru ball</label>
-                    </span>     
+                    </span>
                   </div>
                 </div>
-                <hr class="mt-4  border-slate-300">
-                <div class="filterchoose font-light ">
+                <hr class="mt-4 border-slate-300" />
+                <div class="filterchoose font-light">
                   <h5 class="font-semibold uppercase">Neru sanitize</h5>
-                  <div class="flex gap-4 flex-col mt-5 ">
+                  <div class="flex gap-4 flex-col mt-5">
                     <span class="flex gap-3 items-center">
-                      <input type="checkbox" id="neru_odro" name="neru_odro">
+                      <input type="checkbox" id="neru_odro" name="neru_odro" />
                       <label for="neru_odro">Neru odro</label>
-                    </span>    
+                    </span>
                     <span class="flex gap-3 items-center">
-                      <input type="checkbox" id="neru_disinfectant" name="neru_disinfectant">
+                      <input type="checkbox" id="neru_disinfectant" name="neru_disinfectant" />
                       <label for="neru_disinfectant">Neru disinfectant</label>
-                    </span> 
+                    </span>
                   </div>
                 </div>
-                <hr class="mt-4  border-slate-300">
-                <div class="filterchoose font-light ">
+                <hr class="mt-4 border-slate-300" />
+                <div class="filterchoose font-light">
                   <h5 class="font-semibold uppercase">Neru pillow</h5>
-                  <div class="flex gap-4 flex-col mt-5 ">
+                  <div class="flex gap-4 flex-col mt-5">
                     <span class="flex gap-3 items-center">
-                      <input type="checkbox" id="neru_one" name="neru_one">
+                      <input type="checkbox" id="neru_one" name="neru_one" />
                       <label for="neru_one">Neru one</label>
-                    </span>    
+                    </span>
                     <span class="flex gap-3 items-center">
-                      <input type="checkbox" id="neru_one" name="neru_one">
+                      <input type="checkbox" id="neru_one" name="neru_one" />
                       <label for="neru_one">Neru two</label>
-                    </span> 
+                    </span>
                   </div>
                 </div>
-                <hr class="mt-4  border-slate-300">
-                <div class="filterchoose font-light ">
+                <hr class="mt-4 border-slate-300" />
+                <div class="filterchoose font-light">
                   <h5 class="font-semibold uppercase">Neru trolly</h5>
-                  <div class="flex gap-4 flex-col mt-5 ">
+                  <div class="flex gap-4 flex-col mt-5">
                     <span class="flex gap-3 items-center">
-                      <input type="checkbox" id="neru_one" name="neru_one">
+                      <input type="checkbox" id="neru_one" name="neru_one" />
                       <label for="neru_one">Neru one</label>
-                    </span>    
+                    </span>
                     <span class="flex gap-3 items-center">
-                      <input type="checkbox" id="neru_two" name="neru_one">
+                      <input type="checkbox" id="neru_two" name="neru_one" />
                       <label for="neru_two">Neru two</label>
-                    </span> 
+                    </span>
                   </div>
                 </div>
-                <hr class="mt-4  border-slate-300">
+                <hr class="mt-4 border-slate-300" />
               </div>
             </div>
             <!-- Item -->
-            <div class="lg:col-span-6 md:col-span-6 col-span-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-2  mx-auto 3xl:gap-6 2xl:gap-3.5 xl:gap-2.5 md:gap-5 gap-x-2 gap-y-2 transition-all ease-in-out duration-300" id="StoreItem">
-              <div class="card-wrapper flex flex-col w-full gap-3  bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+            <div
+              class="lg:col-span-6 md:col-span-6 col-span-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-2 mx-auto 3xl:gap-6 2xl:gap-3.5 xl:gap-2.5 md:gap-5 gap-x-2 gap-y-2 transition-all ease-in-out duration-300"
+              id="StoreItem"
+            >
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -402,7 +445,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item-2.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -458,7 +503,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item4.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -514,7 +561,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item5.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -570,7 +619,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -626,7 +677,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item-2.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -682,7 +735,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item4.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -738,7 +793,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item5.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -794,7 +851,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item5.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -850,7 +909,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -906,7 +967,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item4.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -962,7 +1025,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item-2.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1018,7 +1083,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item5.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1074,7 +1141,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1130,7 +1199,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item4.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1186,7 +1257,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item-2.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1242,7 +1315,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1298,7 +1373,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item-2.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1354,7 +1431,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item4.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1410,7 +1489,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item5.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1466,7 +1547,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1522,7 +1605,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item-2.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1578,7 +1663,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item4.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1634,7 +1721,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item5.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1690,7 +1779,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1746,7 +1837,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item-2.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1802,7 +1895,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item4.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1858,7 +1953,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item5.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1914,7 +2011,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item5.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -1970,7 +2069,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -2026,7 +2127,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item4.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -2082,7 +2185,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item-2.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -2138,7 +2243,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item5.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -2194,7 +2301,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -2250,7 +2359,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item4.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -2306,7 +2417,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item-2.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -2362,7 +2475,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -2418,7 +2533,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item-2.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -2474,7 +2591,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item4.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -2530,7 +2649,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item5.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -2586,7 +2707,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -2642,7 +2765,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item-2.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -2698,7 +2823,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item4.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -2754,7 +2881,9 @@
                   </h6>
                 </div>
               </div>
-              <div class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer">
+              <div
+                class="card-wrapper flex flex-col w-full gap-3 bg-white shadow-lg rounded-md md:hover:-translate-y-1.5 hover:-translate-y-0.5 transition-all ease-in-out duration-300 cursor-pointer"
+              >
                 <img src="img/card-item5.png" class="rounded-md w-full" alt="" />
                 <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
                   <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
@@ -2811,9 +2940,9 @@
                 </div>
               </div>
             </div>
-             <!-- Item End -->
+            <!-- Item End -->
           </div>
-          <div class="pagination flex gap-2.5 justify-end ">
+          <div class="pagination flex gap-2.5 justify-end">
             <span onclick="showPreviousPage(); myFunction();" class="prev-button md:w-12 w-8 bg-blue-Neru text-center py-1 md:text-2xl text-sm rounded-lg text-white shadow-lg cursor-pointer"><</span>
             <span class="current-page md:w-12 w-8 text-center py-1 bg-white shadow-lg md:text-2xl text-sm rounded-lg outline outline-1 cursor-pointer">1</span>
             <span onclick="showNextPage();  myFunction();" class="next-button md:w-12 w-8 text-center bg-blue-Neru py-1 md:text-2xl text-sm rounded-lg text-white shadow-lg cursor-pointer">></span>
