@@ -17,36 +17,27 @@ filterBoxToggle.addEventListener('click' ,() => {
       Box.classList.toggle('box-Active');
 })
 
-filterTogglehidden.addEventListener('click' , () => {
-      filterToggle.classList.toggle('hidden')
-
-      if(filterToggle.classList.contains("hidden")) {
-            // Lg
-            storeItem.classList.remove('lg:grid-cols-3')
-            storeItem.classList.add('lg:grid-cols-4')
-            storeItem.classList.remove('lg:col-span-6')
-            storeItem.classList.add('lg:col-span-8')
-            // Lg end
-             // md
-             storeItem.classList.remove('md:grid-cols-2')
-             storeItem.classList.add('md:grid-cols-3')
-             storeItem.classList.remove('md:col-span-6')
-             storeItem.classList.add('md:col-span-8')
-             // md end
+filterTogglehidden.addEventListener('click', () => {
+      filterToggle.classList.toggle('hidden');
+      
+      // Pengaturan kelas-kelas Lg
+      if (filterToggle.classList.contains("hidden")) {
+          storeItem.classList.add('lg:grid-cols-4', 'lg:col-span-8');
+          storeItem.classList.remove('lg:grid-cols-3', 'lg:col-span-6');
       } else {
-            // Lg
-            storeItem.classList.add('lg:grid-cols-3')
-            storeItem.classList.remove('lg:grid-cols-4')
-            storeItem.classList.add('lg:col-span-6')
-            storeItem.classList.remove('lg:col-span-8')
-            // Lg end
-             // md
-             storeItem.classList.add('md:grid-cols-2')
-             storeItem.classList.remove('md:grid-cols-3')
-             storeItem.classList.add('md:col-span-6')
-             storeItem.classList.remove('md:col-span-8')
-             // md end
+          storeItem.classList.add('lg:grid-cols-3', 'lg:col-span-6');
+          storeItem.classList.remove('lg:grid-cols-4', 'lg:col-span-8');
       }
-})
+      
+      // Pengaturan kelas-kelas md
+      if (filterToggle.classList.contains("hidden")) {
+          storeItem.classList.add('md:grid-cols-3', 'md:col-span-8');
+          storeItem.classList.remove('md:grid-cols-2', 'md:col-span-6');
+      } else {
+          storeItem.classList.add('md:grid-cols-2', 'md:col-span-6');
+          storeItem.classList.remove('md:grid-cols-3', 'md:col-span-8');
+      }
+  });
+  
 
 });

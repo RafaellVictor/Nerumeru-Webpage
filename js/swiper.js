@@ -84,7 +84,7 @@ let Otherproduct = new Swiper(".otherProduct-Content", {
 
   breakpoints: {
     360: {
-      slidesPerView: 1.1,
+      slidesPerView: 2,
       centeredSlides: true,
     },
 
