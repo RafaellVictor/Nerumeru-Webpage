@@ -3,6 +3,8 @@ id="StoreItem"
 id="filter-box"
 id="filter-toggle-hidden"
 
+document.addEventListener("DOMContentLoaded", function() {
+
 const filterBoxToggle = document.getElementById('filter-box');
 const filterToggle = document.getElementById('filter-toggle');
 const filterTogglehidden = document.getElementById('filter-toggle-hidden');
@@ -46,3 +48,5 @@ filterTogglehidden.addEventListener('click' , () => {
              // md end
       }
 })
+
+});

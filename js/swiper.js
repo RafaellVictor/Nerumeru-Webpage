@@ -67,3 +67,35 @@ let bannerSwiper = new Swiper(".banner-content ", {
     },
   },
 });
+
+
+let Otherproduct = new Swiper(".otherProduct-Content", {
+
+  loop: true,
+  spaceBetween: 12,
+  grabCursor: true,
+  // If we need pagination
+
+  // Navigation arrows
+  navigation: {
+    nextEl: "#next",
+    prevEl: "#prev",
+  },
+
+  breakpoints: {
+    360: {
+      slidesPerView: 1.1,
+      centeredSlides: true,
+    },
+
+    600: {
+      slidesPerView: 1.2,
+      centeredSlides: true,
+    },
+    968: {
+      slidesPerView: 4,
+      spaceBetween: 10,
+      centeredSlides: true,
+    },
+  },
+});
