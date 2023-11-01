@@ -85,6 +85,10 @@
   @apply opacity-100 top-10 z-10
 }
 
+.box-activeAlamat {
+  @apply opacity-100 z-30
+}
+
 /* Homepage End */
 
 .swiper-custom-pagination {

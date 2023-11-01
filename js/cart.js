@@ -1,6 +1,25 @@
 const durationCargo = document.getElementById('durationCargo');
 const options = document.querySelectorAll('.durasiBox h6');
 
+
+const alamat = document.getElementById('alamat');
+const closeBox = document.getElementById('closeBox');
+const alamatBox = document.querySelector('.alamatBox');
+
+alamat.addEventListener('click', () => {
+  alamat.classList.add('active')
+  alamatBox.classList.add('box-activeAlamat')
+  
+
+
+})
+
+closeBox.addEventListener('click' , () => {
+  alamat.classList.remove('active')
+  alamatBox.classList.remove('box-activeAlamat')
+})
+
+
 const pilihanCargo = document.getElementById('CargoPilihan');
 const optionsCargoBox = document.querySelectorAll('.pilihanCargoBox h6');
 
