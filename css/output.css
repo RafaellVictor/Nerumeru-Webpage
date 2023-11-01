@@ -932,6 +932,10 @@ main {
   width: 100%;
 }
 
+.w-\[85\%\] {
+  width: 85%;
+}
+
 .origin-bottom-right {
   transform-origin: bottom right;
 }
