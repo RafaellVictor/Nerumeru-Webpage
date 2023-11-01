@@ -345,24 +345,29 @@
                 <div class="kurir bg-white px-4 py-6 flex flex-col gap-4">
                   <span class="flex justify-between items-center">
                     <h5 class="font-semibold lg:text-base text-sm">Pilih Durasi</h5>
-                    <h6 class="lg:text-base md:text-sm text-xs text-blue-Neru flex items-center gap-1.5">
+                    <h6 class="lg:text-base md:text-sm text-xs text-blue-Neru flex items-center gap-1.5 relative cursor-pointer" id="durationCargo">
                       Reguler
-                      <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-6 w-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-5 w-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                         <path d="M6 9l6 6l6 -6"></path>
                       </svg>
+                      <div class="durasiBox bg-blue-water shadow-md p-2 absolute right-0 top-4 w-52 rounded-sm opacity-0 -z-10 transition-all ease-in-out duration-300 h-36 overflow-y-auto">
+                        <h6 class="py-2 px-4  hover:bg-black hover:bg-opacity-5 md:text-base text-xs">Reguler</h6>
+                        <h6 class="py-2 px-4  hover:bg-black hover:bg-opacity-5 md:text-base text-xs">Same Day</h6>
+                        <h6 class="py-2 px-4  hover:bg-black hover:bg-opacity-5 md:text-base text-xs">Cargo</h6>
+                        <h6 class="py-2 px-4 hover:bg-black hover:bg-opacity-5 md:text-base text-xs" >Ekonomi</h6>
+                      </div>
                     </h6>
                   </span>
                   <hr />
                   <div class="wrapper flex items-center justify-between gap-6">
                     <span class="flex flex-col lg:gap-1 gap-1.5">
                       <h6 class="font-semibold lg:text-base text-sm">Kurir Pilihan</h6>
-                      <h6 class="font-light lg:text-base text-xs">
-                        J&T (Rp58.000) <br />
-                        Estimasi tiba 16 - 20 Aug
+                      <h6 class="font-light lg:text-base text-xs infoKurir w-[85%] ">
+                        J&T (Rp58.000)  Estimasi tiba 16 - 20 Aug
                       </h6>
                     </span>
-                    <h6 class="text-green-500 lg:text-base text-xs flex items-center lg:gap-1.5">
+                    <h6 class="text-green-500 lg:text-base text-xs flex items-center lg:gap-1.5 cursor-pointer relative" id="CargoPilihan">
                       ubah <span class="lg:block hidden">kurir</span>
                       <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck-delivery lg:block hidden" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -375,6 +380,24 @@
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                         <path d="M6 9l6 6l6 -6"></path>
                       </svg>
+                      <div class="pilihanCargoBox bg-blue-water shadow-md p-2 absolute right-0 top-4 -z-10 opacity-0 w-72 rounded-sm  transition-all ease-in-out duration-300 h-36 overflow-y-auto">
+                        <h6 class="py-2 px-4  hover:bg-black hover:bg-opacity-5 md:text-base text-xs">
+                          GTL (Rp21.500) <br>
+                          Estimasi tiba 10 - 12 Aug
+                        </h6>
+                        <h6 class="py-2 px-4  hover:bg-black hover:bg-opacity-5 md:text-base text-xs">
+                          SiCepat Gokil (Rp35.000) <br>
+                          Estimasi tiba 10 - 14 Aug
+                        </h6>
+                        <h6 class="py-2 px-4  hover:bg-black hover:bg-opacity-5 md:text-base text-xs">
+                          JNE (Rp65.000) <br>
+                          Estimasi tiba 17 - 21 Aug
+                        </h6>
+                        <h6 class="py-2 px-4 hover:bg-black hover:bg-opacity-5 md:text-base text-xs" >
+                          J&T (Rp58.000) <br>
+                          Estimasi tiba 16 - 20 Aug
+                        </h6>
+                      </div>
                     </h6>
                   </div>
                 </div>
@@ -479,5 +502,6 @@
   <script src="js/swiper.js"></script>
   <script src="js/button.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/cart.js"></script>
   <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 </html>

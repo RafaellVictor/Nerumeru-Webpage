@@ -75,6 +75,10 @@
   @apply shadow-md;
 }
 
+.box-CargoActive {
+  @apply top-8 opacity-100 z-10
+}
+
 /* Homepage */
 
 .box-Active {
