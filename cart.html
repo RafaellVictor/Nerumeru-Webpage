@@ -351,7 +351,7 @@
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                         <path d="M6 9l6 6l6 -6"></path>
                       </svg>
-                      <div class="durasiBox bg-blue-water shadow-md p-2 absolute right-0 top-4 w-52 rounded-sm opacity-0 -z-10 transition-all ease-in-out duration-300 h-36 overflow-y-auto">
+                      <div class="durasiBox bg-blue-water shadow-md p-2 absolute right-0 top-4 w-52 rounded-sm opacity-0 -z-10 transition-all ease-in-out duration-300 md:h-36 h-28 overflow-y-auto">
                         <h6 class="py-2 px-4  hover:bg-black hover:bg-opacity-5 md:text-base text-xs">Reguler</h6>
                         <h6 class="py-2 px-4  hover:bg-black hover:bg-opacity-5 md:text-base text-xs">Same Day</h6>
                         <h6 class="py-2 px-4  hover:bg-black hover:bg-opacity-5 md:text-base text-xs">Cargo</h6>
@@ -363,7 +363,7 @@
                   <div class="wrapper flex items-center justify-between gap-6">
                     <span class="flex flex-col lg:gap-1 gap-1.5">
                       <h6 class="font-semibold lg:text-base text-sm">Kurir Pilihan</h6>
-                      <h6 class="font-light lg:text-base text-xs infoKurir w-[85%] ">
+                      <h6 class="font-light lg:text-base text-xs infoKurir w-[65%] ">
                         J&T (Rp58.000)  Estimasi tiba 16 - 20 Aug
                       </h6>
                     </span>
@@ -401,31 +401,37 @@
                     </h6>
                   </div>
                 </div>
-                <div class="ringkasanBelanja bg-white px-4 py-6 flex flex-col gap-4">
-                  <span class="flex justify-between items-center">
-                    <h5 class="font-semibold lg:text-base text-sm">Ringkasan Belanja</h5>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-6 w-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                      <path d="M6 9l6 6l6 -6"></path>
-                    </svg>
-                  </span>
-                  <hr />
-                  <div class="wrapper flex flex-col gap-4">
-                    <span class="flex justify-between">
-                      <h6 class="lg:text-base text-sm">Neru Bedding</h6>
-                      <h6 class="lg:text-base text-sm">Rp2000</h6>
-                    </span>
-                    <span class="flex justify-between">
-                      <h6 class="lg:text-base text-sm">Ongkir</h6>
-                      <h6 class="lg:text-base text-sm">Rp2000</h6>
-                    </span>
+                <div class="accordion-wrapper">
+                  <div class="accordion-header cursor-pointer bg-white px-4 py-4 relative">
+                    <div class="wrap  flex justify-between items-center">
+                      <h5 class="font-semibold lg:text-base text-sm">Ringkasan Belanja</h5>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="3xl:w-6 w-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M6 9l6 6l6 -6"></path>
+                      </svg>
+                    </div>
+                    <hr class="mt-4" />
                   </div>
-                  <hr />
-                  <span class="flex justify-between">
-                    <h6 class="lg:text-base text-sm">Total Belanja</h6>
-                    <h6 class="lg:text-base text-sm">Rp4000</h6>
-                  </span>
-                  <a href="" class="bg-blue-Neru text-center lg:p-2 py-2 px-2 text-white font-semibold rounded-md lg:text-base text-sm" type="button">Checkout Now</a>
+                  <div class="accordion-body bg-white shadow-sm">
+                    <div class="content-wrapper p-4">
+                      <div class="wrapper flex flex-col gap-4">
+                        <span class="flex justify-between">
+                          <h6 class="lg:text-base text-sm">Neru Bedding</h6>
+                          <h6 class="lg:text-base text-sm">Rp2000</h6>
+                        </span>
+                        <span class="flex justify-between">
+                          <h6 class="lg:text-base text-sm">Ongkir</h6>
+                          <h6 class="lg:text-base text-sm">Rp2000</h6>
+                        </span>
+                        <hr />
+                        <span class="flex justify-between">
+                          <h6 class="lg:text-base text-sm">Total Belanja</h6>
+                          <h6 class="lg:text-base text-sm">Rp4000</h6>
+                        </span>
+                        <a href="" class="bg-blue-Neru text-center lg:p-2 py-2 px-2 text-white font-semibold rounded-md lg:text-base text-sm" type="button">Checkout Now</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -503,5 +509,6 @@
   <script src="js/button.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/cart.js"></script>
+  <script src="js/accordion.js"></script>
   <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 </html>

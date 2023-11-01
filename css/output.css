@@ -715,10 +715,6 @@ main {
   top: 1.25rem;
 }
 
-.top-8 {
-  top: 2rem;
-}
-
 .-z-10 {
   z-index: -10;
 }
@@ -807,22 +803,8 @@ main {
   margin-top: 1.5rem;
 }
 
-.line-clamp-2 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-}
-
-.line-clamp-3 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-}
-
-.block {
-  display: block;
+.mt-auto {
+  margin-top: auto;
 }
 
 .flex {
@@ -867,6 +849,14 @@ main {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-20 {
+  height: 5rem;
+}
+
+.h-28 {
+  height: 7rem;
 }
 
 .w-1\/2 {
@@ -925,6 +915,10 @@ main {
   width: 45%;
 }
 
+.w-\[65\%\] {
+  width: 65%;
+}
+
 .w-\[80\%\] {
   width: 80%;
 }
@@ -936,74 +930,6 @@ main {
 
 .w-full {
   width: 100%;
-}
-
-.w-28 {
-  width: 7rem;
-}
-
-.w-40 {
-  width: 10rem;
-}
-
-.w-44 {
-  width: 11rem;
-}
-
-.w-\[165px\] {
-  width: 165px;
-}
-
-.w-\[166px\] {
-  width: 166px;
-}
-
-.w-\[170px\] {
-  width: 170px;
-}
-
-.w-\[175px\] {
-  width: 175px;
-}
-
-.w-\[180px\] {
-  width: 180px;
-}
-
-.w-\[200px\] {
-  width: 200px;
-}
-
-.w-\[190px\] {
-  width: 190px;
-}
-
-.w-\[70\%\] {
-  width: 70%;
-}
-
-.w-\[90\%\] {
-  width: 90%;
-}
-
-.w-\[100\%\] {
-  width: 100%;
-}
-
-.w-\[85\%\] {
-  width: 85%;
-}
-
-.w-\[50\%\] {
-  width: 50%;
-}
-
-.w-\[60\%\] {
-  width: 60%;
-}
-
-.w-\[0\%\] {
-  width: 0%;
 }
 
 .origin-bottom-right {
@@ -1178,15 +1104,6 @@ main {
   overflow-y: auto;
 }
 
-.hyphens-manual {
-  -webkit-hyphens: manual;
-          hyphens: manual;
-}
-
-.break-words {
-  overflow-wrap: break-word;
-}
-
 .rounded-full {
   border-radius: 9999px;
 }
@@ -1253,11 +1170,6 @@ main {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-red-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-10 {
@@ -2087,6 +1999,10 @@ h6 {
 
   .md\:h-10 {
     height: 2.5rem;
+  }
+
+  .md\:h-36 {
+    height: 9rem;
   }
 
   .md\:w-12 {
