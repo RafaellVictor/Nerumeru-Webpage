@@ -716,6 +716,42 @@ main {
   top: 1.25rem;
 }
 
+.left-20 {
+  left: 5rem;
+}
+
+.-left-20 {
+  left: -5rem;
+}
+
+.-left-10 {
+  left: -2.5rem;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
+.-left-80 {
+  left: -20rem;
+}
+
+.-left-8 {
+  left: -2rem;
+}
+
+.-left-9 {
+  left: -2.25rem;
+}
+
+.-left-\[80px\] {
+  left: -80px;
+}
+
+.-left-\[72px\] {
+  left: -72px;
+}
+
 .-z-10 {
   z-index: -10;
 }
@@ -2143,6 +2179,14 @@ h6 {
 
   .md\:w-\[85\%\] {
     width: 85%;
+  }
+
+  .md\:w-5 {
+    width: 1.25rem;
+  }
+
+  .md\:w-8 {
+    width: 2rem;
   }
 
   .md\:grid-cols-2 {
