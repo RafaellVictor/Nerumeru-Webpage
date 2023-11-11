@@ -1,80 +1,80 @@
-const durationCargo = document.getElementById('durationCargo');
-const options = document.querySelectorAll('.durasiBox h6');
-
-
-const alamat = document.getElementById('alamat');
-const closeBox = document.getElementById('closeBox');
-const alamatBox = document.querySelector('.alamatBox');
-
-alamat.addEventListener('click', () => {
-  alamat.classList.add('active')
-  alamatBox.classList.add('box-activeAlamat')
-  
-
-
-})
-
-closeBox.addEventListener('click' , () => {
-  alamat.classList.remove('active')
-  alamatBox.classList.remove('box-activeAlamat')
-})
-
-
-const pilihanCargo = document.getElementById('CargoPilihan');
-const optionsCargoBox = document.querySelectorAll('.pilihanCargoBox h6');
+const durationCargo = document.getElementById("durationCargo");
+const options = document.querySelectorAll(".durasiBox h6");
+const pilihanCargo = document.getElementById("CargoPilihan");
+const optionsCargoBox = document.querySelectorAll(".pilihanCargoBox h6");
+const boxalamat = document.getElementById("BoxAlamat");
+const ubahalamat = document.getElementById("UbahAlamat");
+const boxalamatParent = boxalamat.parentNode;
+const closeBox = document.querySelector(".closeBox");
 
 // Menyimpan referensi ke elemen yang aktif saat ini
 let activeElement = null;
 
-durationCargo.addEventListener('click', () => {
+durationCargo.addEventListener("click", () => {
   if (activeElement === durationCargo) {
     // Nonaktifkan elemen jika sudah aktif
-    durationCargo.classList.remove('active');
-    durationCargo.lastElementChild.classList.remove('box-CargoActive');
+    durationCargo.classList.remove("active");
+    durationCargo.lastElementChild.classList.remove("box-CargoActive");
     activeElement = null;
   } else {
     // Nonaktifkan elemen aktif saat ini (jika ada)
     if (activeElement) {
-      activeElement.classList.remove('active');
-      activeElement.lastElementChild.classList.remove('box-CargoActive');
+      activeElement.classList.remove("active");
+      activeElement.lastElementChild.classList.remove("box-CargoActive");
     }
 
     // Aktifkan elemen yang baru
-    durationCargo.classList.add('active');
-    durationCargo.lastElementChild.classList.add('box-CargoActive');
+    durationCargo.classList.add("active");
+    durationCargo.lastElementChild.classList.add("box-CargoActive");
     activeElement = durationCargo;
   }
 });
 
 options.forEach((option) => {
-  option.addEventListener('click', () => {
+  option.addEventListener("click", () => {
     durationCargo.childNodes[0].nodeValue = option.innerText;
   });
 });
 
-pilihanCargo.addEventListener('click', () => {
+pilihanCargo.addEventListener("click", () => {
   if (activeElement === pilihanCargo) {
-    pilihanCargo.classList.remove('active');
-    pilihanCargo.lastElementChild.classList.remove('box-CargoActive');
+    pilihanCargo.classList.remove("active");
+    pilihanCargo.lastElementChild.classList.remove("box-CargoActive");
     activeElement = null;
   } else {
     if (activeElement) {
-      activeElement.classList.remove('active');
-      activeElement.lastElementChild.classList.remove('box-CargoActive');
+      activeElement.classList.remove("active");
+      activeElement.lastElementChild.classList.remove("box-CargoActive");
     }
 
-    pilihanCargo.classList.add('active');
-    pilihanCargo.lastElementChild.classList.add('box-CargoActive');
+    pilihanCargo.classList.add("active");
+    pilihanCargo.lastElementChild.classList.add("box-CargoActive");
     activeElement = pilihanCargo;
   }
 });
 
 optionsCargoBox.forEach((option) => {
-    option.addEventListener('click', () => {
-      const teksElementDiAtas = pilihanCargo.previousElementSibling;
-      if (teksElementDiAtas) {
-        teksElementDiAtas.querySelector('.infoKurir').textContent = option.innerText;
-      }
-    });
+  option.addEventListener("click", () => {
+    const teksElementDiAtas = pilihanCargo.previousElementSibling;
+    if (teksElementDiAtas) {
+      teksElementDiAtas.querySelector(".infoKurir").textContent = option.innerText;
+    }
   });
-  
+});
+
+// Alamat
+
+ubahalamat.addEventListener("click", () => {
+  ubahalamat.classList.add("active");
+  boxalamat.classList.add("box-alamat-active");
+  boxalamatParent.classList.add("box-parent-active");
+  document.body.classList.add("overflow-hidden");
+});
+
+
+closeBox.addEventListener('click' , () => {
+  ubahalamat.classList.remove("active");
+  boxalamat.classList.remove("box-alamat-active");
+  boxalamatParent.classList.remove("box-parent-active");
+  document.body.classList.remove("overflow-hidden");
+})

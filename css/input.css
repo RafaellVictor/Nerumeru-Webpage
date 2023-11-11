@@ -85,8 +85,16 @@
   @apply opacity-100 top-10 z-10
 }
 
-.box-activeAlamat {
+.box-CartActive {
   @apply opacity-100 z-30
+}
+
+.box-parent-active {
+  @apply opacity-100 bg-opacity-50  z-20
+}
+
+.box-alamat-active {
+  @apply opacity-100
 }
 
 /* Homepage End */
