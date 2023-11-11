@@ -13,6 +13,7 @@
 
   body {
     @apply bg-blue-water font-Poppins  overflow-x-hidden;
+    cursor : url(../img/Cursor.png), auto
   }
 
   section {
@@ -93,7 +94,7 @@
   @apply opacity-100 bg-opacity-50  z-20
 }
 
-.box-alamat-active {
+.box-Cart-active {
   @apply opacity-100
 }
 
@@ -160,3 +161,21 @@
     @apply 2xl:text-base xl:text-sm md:text-base text-sm;
   }
 }
+
+
+/* storeCard-active  */
+
+
+
+/* storeCard-active end */
+
+
+/* Checkbox */
+
+    /* Style for the checkbox container */
+    .active-label {
+      @apply text-blue-Neru
+    }
+/* Checkbox End */
+
+

@@ -5,7 +5,10 @@ const optionsCargoBox = document.querySelectorAll(".pilihanCargoBox h6");
 const boxalamat = document.getElementById("BoxAlamat");
 const ubahalamat = document.getElementById("UbahAlamat");
 const boxalamatParent = boxalamat.parentNode;
-const closeBox = document.querySelector(".closeBox");
+const closeBox = document.querySelectorAll(".closeBox");
+const checkoutToggle = document.getElementById("checkoutToggle");
+const PaymentBox = document.getElementById("PaymentBox");
+const PaymentBoxParent = PaymentBox.parentNode;
 
 // Menyimpan referensi ke elemen yang aktif saat ini
 let activeElement = null;
@@ -66,15 +69,47 @@ optionsCargoBox.forEach((option) => {
 
 ubahalamat.addEventListener("click", () => {
   ubahalamat.classList.add("active");
-  boxalamat.classList.add("box-alamat-active");
+  boxalamat.classList.add("box-Cart-active");
   boxalamatParent.classList.add("box-parent-active");
   document.body.classList.add("overflow-hidden");
 });
 
+closeBox.forEach((Otherclosebox) => {
+  Otherclosebox.addEventListener("click", () => {
+    ubahalamat.classList.remove("active");
+    boxalamat.classList.remove("box-Cart-active");
+    boxalamatParent.classList.remove("box-parent-active");
+    checkoutToggle.classList.remove("active");
+    PaymentBox.classList.remove("box-Cart-active");
+    PaymentBoxParent.classList.remove("box-parent-active");
+    document.body.classList.remove("overflow-hidden");
 
-closeBox.addEventListener('click' , () => {
-  ubahalamat.classList.remove("active");
-  boxalamat.classList.remove("box-alamat-active");
-  boxalamatParent.classList.remove("box-parent-active");
-  document.body.classList.remove("overflow-hidden");
-})
+  });
+});
+
+checkoutToggle.addEventListener("click", () => {
+  checkoutToggle.classList.add("active");
+  PaymentBox.classList.add("box-Cart-active");
+  PaymentBoxParent.classList.add("box-parent-active");
+  document.body.classList.add("overflow-hidden");
+});
+
+// Radio Checkbox
+
+function handleRadioChange(selectedRadio) {
+  // Menonaktifkan semua radio button kecuali yang dipilih
+  var allRadios = document.querySelectorAll('input[type="radio"][name="paymentMethod"]');
+  allRadios.forEach(function (radio) {
+    if (radio !== selectedRadio) {
+      radio.checked = false;
+    }
+  });
+
+  // Menambahkan kelas aktif pada label yang terkait dengan radio yang dipilih
+  var labels = document.querySelectorAll('label[for="' + selectedRadio.id + '"]');
+  labels.forEach(function (label) {
+    label.classList.toggle("active-label", selectedRadio.checked);
+  });
+}
+
+// Radio Checkbox end

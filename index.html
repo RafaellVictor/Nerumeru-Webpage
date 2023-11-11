@@ -42,7 +42,7 @@
               </span>
             </li>
             <li>
-              <a href="catalog.html">Catalog</a>
+              <a href="catalog.html">E-Store</a>
             </li>
             <li>
               <a href="aboutUs.html">Blog</a>
@@ -70,13 +70,13 @@
       <div id="offCanvasSm" class="md:hidden fixed top-16 -z-10 left-0 h-screen w-full translate-x-full bg-white transform ease-in-out transition-transform duration-500">
         <div class="container nav-wrapper">
           <div class="bg-nav absolute -z-10 inset-0 h-full bg-no-repeat bg-contain bg-center bg-offcanvas opacity-10 -translate-y-10"></div>
-          <ul class="md:hidden flex flex-col gap-5 text-lg transition-all ease-in-out duration-100 -z-10 font-semibold">
+          <ul class="md:hidden flex flex-col gap-5 text-lg transition-all ease-in-out duration-100 -z-10 font-semibold ">
             <li>
-              <a href="index.html" class="hover:text-blue-Neru hover:underline hover:underline-offset-8">Home</a>
+              <a href="index.html" class="hover:text-blue-Neru hover:underline hover:underline-offset-8 uppercase tracking-widest">Home</a>
             </li>
             <!-- pb-40 -->
             <li class="transition-all ease-in-out duration-300 relative">
-              <span class="dropdownNav flex gap-2 items-center hover:text-blue-Neru hover:underline hover:underline-offset-8"
+              <span class="dropdownNav flex gap-2 items-center hover:text-blue-Neru hover:underline hover:underline-offset-8 uppercase tracking-widest"
                 >Product
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -85,7 +85,7 @@
                   </svg>
                 </span>
               </span>
-              <ul class="dropDownBox flex flex-col gap-3 absolute top-2 left-5 text-base opacity-0 -z-10 transition-all ease-in-out duration-100">
+              <ul class="dropDownBox flex flex-col gap-3 absolute top-2 left-5 text-base opacity-0 -z-10 transition-all ease-in-out duration-100 uppercase tracking-widest">
                 <li>
                   <a href="" class="hover:text-blue-Neru hover:underline hover:underline-offset-8">Bedding</a>
                 </li>
@@ -104,11 +104,11 @@
               </ul>
             </li>
             <li>
-              <a href="catalog.html" class="hover:text-blue-Neru hover:underline hover:underline-offset-8">Catalog</a>
+              <a href="catalog.html" class="hover:text-blue-Neru hover:underline hover:underline-offset-8 uppercase tracking-widest">E-Store</a>
             </li>
 
             <li>
-              <a href="" class="hover:text-blue-Neru hover:underline hover:underline-offset-8">Blog</a>
+              <a href="" class="hover:text-blue-Neru hover:underline hover:underline-offset-8 uppercase tracking-widest">Blog</a>
             </li>
           </ul>
         </div>
@@ -119,11 +119,9 @@
         <img src="img/Bulat-Hero.png" class="absolute top-0 right-1/2 translate-x-1/2 -z-10 w-full md:block hidden" alt="" />
         <!-- 3xl:mt-80 2xl:mt-48 mt-10 -->
         <span class="flex md:flex-col flex-col-reverse">
-          <div class="container relative 3xl:top-36 xl:top-20 md:top-2.5">
+          <div class="container relative 3xl:top-32 xl:top-20 md:top-2.5">
             <div class="flex flex-col lg:gap-6 gap-4">
-              <h2 id="text" class="w-fit mx-auto lg:h-28 md:h-14 h-10 text-center font-extrabold leading-tight text-blue-Neru">
-                  
-              </h2>
+              <h2 id="text" class="w-fit mx-auto 3xl:h-28 2xl:h-[85px] md:h-14 h-10 text-center font-extrabold leading-tight text-blue-Neru"></h2>
               <h6 class="text-center text-grey-neru">
                 Providing top-quality solutions for pet lovers
                 <br />
@@ -132,7 +130,10 @@
                 designed for pets and their owners.
               </h6>
               <button class="bg-blue-Neru w-fit mx-auto lg:px-16 lg:py-3 px-8 py-2 md:text-base text-xs text-white font-bold rounded-full">Explore Now</button>
-              <button class="outline outline-2 w-fit mx-auto outline-grey-neru text-grey-neru lg:px-4 px-2.5 lg:text-sm text-xs py-1.5 font-bold rounded-full">Shop Collection</button>
+              <a class="cursor-pointer outline hover:outline-none hover:text-white outline-2 relative w-fit mx-auto group outline-grey-neru text-grey-neru transition-all ease-linear duration-200 lg:px-4 px-2.5 lg:text-sm text-xs py-1.5 font-bold rounded-full overflow-hidden"
+                >Shop Collection
+                <div class="-z-10 w-full h-full flex items-center justify-center text-white bg-blue-Neru absolute rounded-full inset-x-0 top-0 -translate-x-full group-hover:translate-x-0 transition-all ease-linear duration-200"></div>
+              </a>
             </div>
           </div>
           <div class="container 3xl:mt-48 2xl:mt-24 xl:mt-20 md:mt-0 mt-5">
@@ -479,6 +480,6 @@
   <script src="js/button.js"></script>
   <script src="js/nav.js"></script>
   <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-  <!-- <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script> -->
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
   <script src="js/Typing-Text.js"></script>
 </html>

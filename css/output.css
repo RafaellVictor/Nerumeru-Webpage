@@ -444,6 +444,7 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgb(246 248 253 / var(--tw-bg-opacity));
   font-family: Poppins, sans-serif;
+  cursor : url(../img/Cursor.png), auto;
 }
 
 section {
@@ -743,6 +744,10 @@ main {
   grid-column: span 4 / span 4;
 }
 
+.col-span-6 {
+  grid-column: span 6 / span 6;
+}
+
 .row-span-1 {
   grid-row: span 1 / span 1;
 }
@@ -892,6 +897,10 @@ main {
   width: 13rem;
 }
 
+.w-6 {
+  width: 1.5rem;
+}
+
 .w-72 {
   width: 18rem;
 }
@@ -982,6 +991,16 @@ main {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .cursor-pointer {
@@ -1123,6 +1142,11 @@ main {
 
 .rounded-sm {
   border-radius: 0.125rem;
+}
+
+.rounded-t-none {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
 .border-2 {
@@ -1491,6 +1515,10 @@ main {
   opacity: 0.3;
 }
 
+.opacity-100 {
+  opacity: 1;
+}
+
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -1822,7 +1850,7 @@ h6 {
   opacity: 1;
 }
 
-.box-alamat-active {
+.box-Cart-active {
   opacity: 1;
 }
 
@@ -1887,6 +1915,21 @@ h6 {
     width: 3rem;
   }
 }
+
+/* storeCard-active  */
+
+/* storeCard-active end */
+
+/* Checkbox */
+
+/* Style for the checkbox container */
+
+.active-label {
+  --tw-text-opacity: 1;
+  color: rgb(37 93 180 / var(--tw-text-opacity));
+}
+
+/* Checkbox End */
 
 .hover\:-translate-y-0:hover {
   --tw-translate-y: -0px;
@@ -1998,12 +2041,12 @@ h6 {
     grid-column: span 5 / span 5;
   }
 
-  .md\:col-span-8 {
-    grid-column: span 8 / span 8;
-  }
-
   .md\:col-span-6 {
     grid-column: span 6 / span 6;
+  }
+
+  .md\:col-span-8 {
+    grid-column: span 8 / span 8;
   }
 
   .md\:row-span-3 {
@@ -2295,10 +2338,6 @@ h6 {
     display: none;
   }
 
-  .lg\:h-28 {
-    height: 7rem;
-  }
-
   .lg\:h-8 {
     height: 2rem;
   }
@@ -2537,6 +2576,10 @@ h6 {
     margin-top: 12rem;
   }
 
+  .\32xl\:h-\[85px\] {
+    height: 85px;
+  }
+
   .\32xl\:w-16 {
     width: 4rem;
   }
@@ -2592,8 +2635,8 @@ h6 {
 }
 
 @media (min-width: 1600px) {
-  .\33xl\:top-36 {
-    top: 9rem;
+  .\33xl\:top-32 {
+    top: 8rem;
   }
 
   .\33xl\:mt-48 {
@@ -2602,6 +2645,10 @@ h6 {
 
   .\33xl\:mt-80 {
     margin-top: 20rem;
+  }
+
+  .\33xl\:h-28 {
+    height: 7rem;
   }
 
   .\33xl\:w-20 {
@@ -2628,6 +2675,10 @@ h6 {
     gap: 4rem;
   }
 
+  .\33xl\:gap-5 {
+    gap: 1.25rem;
+  }
+
   .\33xl\:gap-6 {
     gap: 1.5rem;
   }
@@ -2647,3 +2698,5 @@ h6 {
     line-height: 1.75rem;
   }
 }
+
+

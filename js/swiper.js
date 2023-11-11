@@ -68,9 +68,7 @@ let bannerSwiper = new Swiper(".banner-content ", {
   },
 });
 
-
 let Otherproduct = new Swiper(".otherProduct-Content", {
-
   loop: true,
   spaceBetween: 12,
   grabCursor: true,
@@ -99,3 +97,40 @@ let Otherproduct = new Swiper(".otherProduct-Content", {
     },
   },
 });
+
+// Coverflow
+
+var swiper = new Swiper(".ProductCoverflow-content", {
+  effect: 'coverflow',
+  grabCursor: true,
+  centeredSlides: true,
+  loop: true,
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 100,
+    modifier: 4.5,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    360: {
+      slidesPerView: 2,
+
+    },
+
+    600: {
+      slidesPerView: 1.2,
+
+    },
+    968: {
+      slidesPerView: 2.5,
+      spaceBetween: 10,
+
+    },
+  },
+});
+
+// Coverflow end
