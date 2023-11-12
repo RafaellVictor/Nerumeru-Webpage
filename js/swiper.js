@@ -104,16 +104,24 @@ var swiper = new Swiper(".ProductCoverflow-content", {
   effect: 'coverflow',
   grabCursor: true,
   centeredSlides: true,
+  slideShadows:false,
   loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+
   coverflowEffect: {
-    rotate: 0,
+    rotate: -4,
     stretch: 0,
     depth: 100,
     modifier: 4.5,
+    slideShadows : true,
   },
   pagination: {
-    el: '.swiper-pagination',
+    el: '.swiper-custom-pagination-WhatsOn',
     clickable: true,
+    dynamicBullets : true,
   },
   breakpoints: {
     360: {
@@ -122,13 +130,11 @@ var swiper = new Swiper(".ProductCoverflow-content", {
     },
 
     600: {
-      slidesPerView: 1.2,
+      slidesPerView: 2,
 
     },
     968: {
       slidesPerView: 2.5,
-      spaceBetween: 10,
-
     },
   },
 });

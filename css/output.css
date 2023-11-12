@@ -672,6 +672,14 @@ main {
   right: -4rem;
 }
 
+.-right-3 {
+  right: -0.75rem;
+}
+
+.-top-2 {
+  top: -0.5rem;
+}
+
 .bottom-1\/2 {
   bottom: 50%;
 }
@@ -728,12 +736,12 @@ main {
   z-index: 10;
 }
 
-.z-30 {
-  z-index: 30;
+.z-20 {
+  z-index: 20;
 }
 
-.z-50 {
-  z-index: 50;
+.z-30 {
+  z-index: 30;
 }
 
 .col-span-2 {
@@ -1356,6 +1364,11 @@ main {
   padding-bottom: 0.625rem;
 }
 
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -1376,6 +1389,16 @@ main {
   padding-bottom: 2rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
 .pb-0 {
   padding-bottom: 0px;
 }
@@ -1386,6 +1409,10 @@ main {
 
 .pb-40 {
   padding-bottom: 10rem;
+}
+
+.pb-12 {
+  padding-bottom: 3rem;
 }
 
 .text-center {
@@ -1507,6 +1534,10 @@ main {
   opacity: 0.1;
 }
 
+.opacity-100 {
+  opacity: 1;
+}
+
 .opacity-30 {
   opacity: 0.3;
 }
@@ -1599,6 +1630,10 @@ main {
 
 .duration-500 {
   transition-duration: 500ms;
+}
+
+.duration-700 {
+  transition-duration: 700ms;
 }
 
 .ease-in-out {
@@ -1858,6 +1893,8 @@ h6 {
 
 /* Homepage End */
 
+/* Paggination */
+
 .swiper-custom-pagination {
   display: flex;
   width: 100%;
@@ -1917,6 +1954,17 @@ h6 {
     width: 3rem;
   }
 }
+
+#WhatsOn .swiper-custom-pagination-WhatsOn {
+  z-index: 20;
+}
+
+#WhatsOn .swiper-custom-pagination-WhatsOn .swiper-pagination-bullet {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 93 180 / var(--tw-bg-opacity));
+}
+
+/* Paggination End */
 
 /* storeCard-active  */
 
@@ -1991,15 +2039,21 @@ h6 {
 
 /* Checkbox End */
 
-@keyframes pulse {
-  50% {
-    opacity: .5;
-  }
+/* Bedding Custom Bed */
+
+.boxbeddingCustom-Active {
+  opacity: 1;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hover\:animate-pulse:hover {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.BoxparentBedding-Active {
+  z-index: 20;
+  --tw-bg-opacity: 0.5;
 }
+
+/* Bedding Custom Bed End */
 
 .hover\:bg-black:hover {
   --tw-bg-opacity: 1;
@@ -2093,10 +2147,6 @@ h6 {
 
   .md\:col-span-6 {
     grid-column: span 6 / span 6;
-  }
-
-  .md\:col-span-8 {
-    grid-column: span 8 / span 8;
   }
 
   .md\:row-span-3 {
@@ -2730,6 +2780,11 @@ h6 {
   .\33xl\:py-12 {
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+
+  .\33xl\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   .\33xl\:text-3xl {
