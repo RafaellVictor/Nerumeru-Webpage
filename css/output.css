@@ -716,42 +716,6 @@ main {
   top: 1.25rem;
 }
 
-.left-20 {
-  left: 5rem;
-}
-
-.-left-20 {
-  left: -5rem;
-}
-
-.-left-10 {
-  left: -2.5rem;
-}
-
-.bottom-0 {
-  bottom: 0px;
-}
-
-.-left-80 {
-  left: -20rem;
-}
-
-.-left-8 {
-  left: -2rem;
-}
-
-.-left-9 {
-  left: -2.25rem;
-}
-
-.-left-\[80px\] {
-  left: -80px;
-}
-
-.-left-\[72px\] {
-  left: -72px;
-}
-
 .-z-10 {
   z-index: -10;
 }
@@ -778,10 +742,6 @@ main {
 
 .col-span-4 {
   grid-column: span 4 / span 4;
-}
-
-.col-span-6 {
-  grid-column: span 6 / span 6;
 }
 
 .row-span-1 {
@@ -911,6 +871,10 @@ main {
 
 .w-16 {
   width: 4rem;
+}
+
+.w-2 {
+  width: 0.5rem;
 }
 
 .w-3 {
@@ -1551,10 +1515,6 @@ main {
   opacity: 0.3;
 }
 
-.opacity-100 {
-  opacity: 1;
-}
-
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -1954,6 +1914,64 @@ h6 {
 
 /* storeCard-active  */
 
+.copylinkShare-Active {
+  left: -2.75rem;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .copylinkShare-Active {
+    left: -1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .copylinkShare-Active {
+    left: -2.25rem;
+  }
+}
+
+.waShare-Active {
+  left: -22px;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .waShare-Active {
+    left: -59px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .waShare-Active {
+    left: -72px;
+  }
+}
+
+.instaShare-Active {
+  left: -66px;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .instaShare-Active {
+    left: -90px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .instaShare-Active {
+    left: -109px;
+  }
+}
+
+.shareTrigger-Active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(37 93 180 / var(--tw-text-opacity));
+}
+
 /* storeCard-active end */
 
 /* Checkbox */
@@ -2181,14 +2199,6 @@ h6 {
     width: 85%;
   }
 
-  .md\:w-5 {
-    width: 1.25rem;
-  }
-
-  .md\:w-8 {
-    width: 2rem;
-  }
-
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2394,12 +2404,20 @@ h6 {
     width: 7rem;
   }
 
+  .lg\:w-4 {
+    width: 1rem;
+  }
+
   .lg\:w-5 {
     width: 1.25rem;
   }
 
   .lg\:w-6 {
     width: 1.5rem;
+  }
+
+  .lg\:w-7 {
+    width: 1.75rem;
   }
 
   .lg\:w-8 {

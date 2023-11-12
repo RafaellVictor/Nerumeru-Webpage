@@ -165,7 +165,22 @@
 
 /* storeCard-active  */
 
+  .copylinkShare-Active{
+    @apply lg:-left-9 md:-left-7 -left-11 z-10
+  }
 
+  
+  .waShare-Active {
+    @apply lg:-left-[72px] md:-left-[59px] -left-[22px] z-10
+  }
+  
+  .instaShare-Active {
+    @apply lg:-left-[109px] md:-left-[90px] -left-[66px] z-10
+  }
+
+  .shareTrigger-Active {
+    @apply bg-white text-blue-Neru
+  }
 
 /* storeCard-active end */
 
