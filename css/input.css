@@ -80,6 +80,10 @@
   @apply top-8 opacity-100 z-10
 }
 
+.navDrop-Active > svg {
+  @apply rotate-180
+}
+
 /* Homepage */
 
 .box-Active {
