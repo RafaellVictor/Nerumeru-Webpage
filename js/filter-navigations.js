@@ -1,43 +1,51 @@
-id="filter-toggle"
-id="StoreItem"
-id="filter-box"
-id="filter-toggle-hidden"
-
-document.addEventListener("DOMContentLoaded", function() {
-
-const filterBoxToggle = document.getElementById('filter-box');
-const filterToggle = document.getElementById('filter-toggle');
-const filterTogglehidden = document.getElementById('filter-toggle-hidden');
-const storeItem = document.getElementById('StoreItem');
-
-filterBoxToggle.addEventListener('click' ,() => {
-      filterBoxToggle.classList.toggle("Filter-Active")
-
-      Box = filterBoxToggle.nextElementSibling
-      Box.classList.toggle('box-Active');
-})
-
-filterTogglehidden.addEventListener('click', () => {
-      filterToggle.classList.toggle('hidden');
-      
+document.addEventListener("DOMContentLoaded", function () {
+    const filterBoxToggle = document.getElementById("filter-box");
+    const filterToggle = document.getElementById("filter-toggle");
+    const filterTogglehidden = document.getElementById("filter-toggle-hidden");
+    const storeItem = document.getElementById("StoreItem");
+  
+    filterBoxToggle.addEventListener("click", () => {
+      toggleClass(filterBoxToggle, "Filter-Active");
+  
+      const Box = filterBoxToggle.nextElementSibling;
+      toggleClass(Box, "box-Active");
+    });
+  
+    filterTogglehidden.addEventListener("click", () => {
+      toggleClass(filterToggle, "hidden");
+  
       // Pengaturan kelas-kelas Lg
-      if (filterToggle.classList.contains("hidden")) {
-          storeItem.classList.add('lg:grid-cols-4', 'lg:col-span-8');
-          storeItem.classList.remove('lg:grid-cols-3', 'lg:col-span-6');
-      } else {
-          storeItem.classList.add('lg:grid-cols-3', 'lg:col-span-6');
-          storeItem.classList.remove('lg:grid-cols-4', 'lg:col-span-8');
-      }
-      
+      const lgClassToAdd = filterToggle.classList.contains("hidden")
+        ? ["lg:grid-cols-4", "lg:col-span-8"]
+        : ["lg:grid-cols-3", "lg:col-span-6"];
+  
+      const lgClassToRemove = filterToggle.classList.contains("hidden")
+        ? ["lg:grid-cols-3", "lg:col-span-6"]
+        : ["lg:grid-cols-4", "lg:col-span-8"];
+  
+      toggleClassList(storeItem, lgClassToAdd, lgClassToRemove);
+  
       // Pengaturan kelas-kelas md
-      if (filterToggle.classList.contains("hidden")) {
-          storeItem.classList.add('md:grid-cols-3', 'md:col-span-8');
-          storeItem.classList.remove('md:grid-cols-2', 'md:col-span-6');
-      } else {
-          storeItem.classList.add('md:grid-cols-2', 'md:col-span-6');
-          storeItem.classList.remove('md:grid-cols-3', 'md:col-span-8');
-      }
+      const mdClassToAdd = filterToggle.classList.contains("hidden")
+        ? ["md:grid-cols-3", "md:col-span-8"]
+        : ["md:grid-cols-2", "md:col-span-6"];
+  
+      const mdClassToRemove = filterToggle.classList.contains("hidden")
+        ? ["md:grid-cols-2", "md:col-span-6"]
+        : ["md:grid-cols-3", "md:col-span-8"];
+  
+      toggleClassList(storeItem, mdClassToAdd, mdClassToRemove);
+    });
+  
+    // Fungsi untuk menambah atau menghapus kelas pada elemen
+    function toggleClass(element, className) {
+      element.classList.toggle(className);
+    }
+  
+    // Fungsi untuk menambah atau menghapus sekelompok kelas pada elemen
+    function toggleClassList(element, classToAdd, classToRemove) {
+      element.classList.add(...classToAdd);
+      element.classList.remove(...classToRemove);
+    }
   });
   
-
-});

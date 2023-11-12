@@ -11,6 +11,8 @@ shareTriggers.forEach((shareTrigger, index) => {
     // Toggle class 'shareTrigger-Active' for the clicked element
     shareTrigger.classList.toggle("shareTrigger-Active");
 
+    document.body.classList.add("overflow-hidden");
+
     // Toggle class 'waShare-Active' for the clicked element
     waShares[index].classList.toggle("waShare-Active");
 

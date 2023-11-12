@@ -13,7 +13,7 @@
 
   body {
     @apply bg-blue-water font-Poppins  overflow-x-hidden;
-    cursor : url(../img/Cursor.png), auto
+    cursor: url(../img/Cursor.png), auto;
   }
 
   section {
@@ -33,17 +33,14 @@
   @apply w-full;
 }
 
-
 @layer components {
-
-
   .accordion-header.active i {
-      @apply transition ease-in-out duration-300;
-      transform:rotateX(180deg);
+    @apply transition ease-in-out duration-300;
+    transform: rotateX(180deg);
   }
 
   .accordion-body {
-      @apply  max-h-0 overflow-hidden transition-all duration-200 ease-in-out
+    @apply max-h-0 overflow-hidden transition-all duration-200 ease-in-out;
   }
 }
 
@@ -77,33 +74,33 @@
 }
 
 .box-CargoActive {
-  @apply top-8 opacity-100 z-10
+  @apply top-8 opacity-100 z-10;
 }
 
 .navDrop-Active > svg {
-  @apply rotate-180
+  @apply rotate-180;
 }
 
 /* Homepage */
 
 .box-Active {
-  @apply opacity-100 top-10 z-10
+  @apply opacity-100 top-10 z-10;
 }
 
 .Filter-Active > span > svg {
-  @apply rotate-180
+  @apply rotate-180;
 }
 
 .box-CartActive {
-  @apply opacity-100 z-30
+  @apply opacity-100 z-30;
 }
 
 .box-parent-active {
-  @apply opacity-100 bg-opacity-50  z-20
+  @apply opacity-100 bg-opacity-50  z-20;
 }
 
 .box-Cart-active {
-  @apply opacity-100
+  @apply opacity-100;
 }
 
 /* Homepage End */
@@ -135,16 +132,14 @@
 }
 
 #WhatsOn .swiper-custom-pagination-WhatsOn {
-  @apply z-20 
+  @apply z-20;
 }
 
 #WhatsOn .swiper-custom-pagination-WhatsOn .swiper-pagination-bullet {
-  @apply bg-blue-Neru 
+  @apply bg-blue-Neru;
 }
 
 /* Paggination End */
-
-
 
 @layer utilities {
   /* .text-stroke  {
@@ -184,49 +179,54 @@
   }
 }
 
-
 /* storeCard-active  */
 
-  .copylinkShare-Active{
-    @apply lg:-left-9 md:-left-7 -left-11 z-10
-  }
+.copylinkShare-Active {
+  @apply lg:-left-9 md:-left-7 -left-11 z-10;
+}
 
-  
-  .waShare-Active {
-    @apply lg:-left-[72px] md:-left-[59px] -left-[22px] z-10
-  }
-  
-  .instaShare-Active {
-    @apply lg:-left-[109px] md:-left-[90px] -left-[66px] z-10
-  }
+.waShare-Active {
+  @apply lg:-left-[72px] md:-left-[59px] -left-[22px] z-10;
+}
 
-  .shareTrigger-Active {
-    @apply bg-white text-blue-Neru
-  }
+.instaShare-Active {
+  @apply lg:-left-[109px] md:-left-[90px] -left-[66px] z-10;
+}
+
+.shareTrigger-Active {
+  @apply bg-white text-blue-Neru;
+}
 
 /* storeCard-active end */
 
-
 /* Checkbox */
 
-    /* Style for the checkbox container */
-    .active-label {
-      @apply text-blue-Neru
-    }
+/* Style for the checkbox container */
+.active-label {
+  @apply text-blue-Neru;
+}
 /* Checkbox End */
 
+/* Filter */
 
+.filterBox-Active {
+  @apply md:grid-cols-4 col-span-8  ;
+}
+
+/* .filter-toggle-active {
+    @apply relative translate-x-0 z-20 h-full
+} */
+
+/* Filter End */
 
 /* Bedding Custom Bed */
 
 .boxbeddingCustom-Active {
-    @apply opacity-100 transition-all ease-in-out duration-300
+  @apply opacity-100 transition-all ease-in-out duration-300;
 }
 
 .BoxparentBedding-Active {
-  @apply bg-opacity-50  z-20
+  @apply bg-opacity-50  z-20;
 }
 
 /* Bedding Custom Bed End */
-
-
