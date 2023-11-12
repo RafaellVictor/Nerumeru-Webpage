@@ -1836,6 +1836,11 @@ h6 {
   opacity: 1;
 }
 
+.Filter-Active > span > svg {
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .box-CartActive {
   z-index: 30;
   opacity: 1;
@@ -1985,16 +1990,6 @@ h6 {
 }
 
 /* Checkbox End */
-
-.hover\:-translate-y-0:hover {
-  --tw-translate-y: -0px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.hover\:-translate-y-0\.5:hover {
-  --tw-translate-y: -0.125rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
 
 @keyframes pulse {
   50% {
@@ -2343,16 +2338,6 @@ h6 {
 
   .md\:tracking-\[5px\] {
     letter-spacing: 5px;
-  }
-
-  .md\:hover\:-translate-y-1:hover {
-    --tw-translate-y: -0.25rem;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .md\:hover\:-translate-y-1\.5:hover {
-    --tw-translate-y: -0.375rem;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 }
 

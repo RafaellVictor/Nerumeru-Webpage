@@ -90,6 +90,10 @@
   @apply opacity-100 top-10 z-10
 }
 
+.Filter-Active > span > svg {
+  @apply rotate-180
+}
+
 .box-CartActive {
   @apply opacity-100 z-30
 }
