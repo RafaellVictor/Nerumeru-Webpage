@@ -87,7 +87,7 @@ let Otherproduct = new Swiper(".otherProduct-Content", {
     },
 
     600: {
-      slidesPerView: 1.2,
+      slidesPerView: 3,
       centeredSlides: true,
     },
     968: {
