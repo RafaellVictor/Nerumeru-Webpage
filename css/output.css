@@ -1364,11 +1364,6 @@ main {
   padding-bottom: 0.625rem;
 }
 
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -1389,18 +1384,12 @@ main {
   padding-bottom: 2rem;
 }
 
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
 .pb-0 {
   padding-bottom: 0px;
+}
+
+.pb-12 {
+  padding-bottom: 3rem;
 }
 
 .pb-14 {
@@ -1409,10 +1398,6 @@ main {
 
 .pb-40 {
   padding-bottom: 10rem;
-}
-
-.pb-12 {
-  padding-bottom: 3rem;
 }
 
 .text-center {
@@ -2775,11 +2760,6 @@ h6 {
 
   .\33xl\:gap-6 {
     gap: 1.5rem;
-  }
-
-  .\33xl\:py-12 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
   }
 
   .\33xl\:py-20 {
