@@ -239,3 +239,13 @@
 .active-parentBG {
   @apply translate-x-0 bg-opacity-25
 }
+
+/* Payment Waiting List */
+
+#HowToPay > .accordion-body > .content-wrapper  > ul {
+
+  @apply list-decimal
+
+}
+
+/* Payment Waiting List end */
