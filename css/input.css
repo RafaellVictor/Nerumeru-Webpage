@@ -84,7 +84,7 @@
 /* Homepage */
 
 .box-Active {
-  @apply opacity-100 top-10 z-10;
+  @apply opacity-100 top-10 z-30;
 }
 
 .Filter-Active > span > svg {
@@ -230,3 +230,12 @@
 }
 
 /* Bedding Custom Bed End */
+
+
+.active-left {
+  @apply translate-x-0
+}
+
+.active-parentBG {
+  @apply translate-x-0 bg-opacity-50
+}

@@ -216,7 +216,7 @@
       <section class="all-product" id="all-product">
         <div class="fliter-price-toggle bg-white outline outline-2 outline-slate-100 font-semibold">
           <div class="wrapper flex justify-between items-center container py-8 md:text-base text-sm">
-            <button class="flex gap-4 uppercase items-center" id="filter-toggle-hidden">
+            <button class="flex gap-4 uppercase items-center filter-toggle-sm" id="filter-toggle-hidden">
               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments-horizontal md:w-6 w-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M14 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
@@ -1349,6 +1349,1108 @@
             <span onclick="showNextPage();  myFunction();" class="next-button md:w-12 w-8 text-center bg-blue-Neru py-1 md:text-2xl text-sm rounded-lg text-white shadow-lg cursor-pointer">></span>
           </div>
         </div>
+        <div class="container p-0 md:hidden flex flex-col gap-4">
+          <div class="grid grid-cols-1 relative gap-x-16 ">
+              <div class="bg-black absolute w-full h-full transition-all ease-in-out duration-300 -translate-x-full inset-y-0 z-10 bg-opacity-0">
+                <div class="filter-item-toggle transition-all ease-in-out duration-300 w-[90%]  -translate-x-full shadow-lg h-full  bg-white  p-4" id="filter-toggleSM">
+                  <div class="wrapper opacity-100 rel flex flex-col gap-4 lg:text-base md:text-xs text-xs">
+                    <div class="filterchoose font-light">
+                      <h5 class="font-semibold uppercase">Neru Bedding</h5>
+                      <div class="flex gap-4 flex-col mt-5">
+                        <span class="flex gap-3 items-center group">
+                          <input type="checkbox" id="neru_one" class="cursor-pointer" name="neru_one" />
+                          <label for="neru_one" class="cursor-pointer">Neru one</label>
+                        </span>
+                        <span class="flex gap-3 items-center">
+                          <input type="checkbox" id="neru_two" class="cursor-pointer" name="neru_two" />
+                          <label for="neru_two" class="cursor-pointer">Neru two</label>
+                        </span>
+                      </div>
+                    </div>
+                    <hr class="mt-4 border-slate-300" />
+                    <div class="filterchoose font-light">
+                      <h5 class="font-semibold uppercase">Neru toys</h5>
+                      <div class="flex gap-4 flex-col mt-5">
+                        <span class="flex gap-3 items-center">
+                          <input type="checkbox" id="neru_ring" class="cursor-pointer" name="neru_ring" />
+                          <label for="neru_ring" class="cursor-pointer">Neru ring</label>
+                        </span>
+                        <span class="flex gap-3 items-center">
+                          <input type="checkbox" id="neru_stick" class="cursor-pointer" name="neru_stick" />
+                          <label for="neru_stick" class="cursor-pointer">Neru stick</label>
+                        </span>
+                        <span class="flex gap-3 items-center">
+                          <input type="checkbox" id="neru_ball" class="cursor-pointer" name="neru_ball" />
+                          <label for="neru_ball" class="cursor-pointer">Neru ball</label>
+                        </span>
+                      </div>
+                    </div>
+                    <hr class="mt-4 border-slate-300" />
+                    <div class="filterchoose font-light">
+                      <h5 class="font-semibold uppercase">Neru sanitize</h5>
+                      <div class="flex gap-4 flex-col mt-5">
+                        <span class="flex gap-3 items-center">
+                          <input type="checkbox" id="neru_odro" class="cursor-pointer" name="neru_odro" />
+                          <label for="neru_odro" class="cursor-pointer">Neru odro</label>
+                        </span>
+                        <span class="flex gap-3 items-center">
+                          <input type="checkbox" id="neru_disinfectant" class="cursor-pointer" name="neru_disinfectant" />
+                          <label for="neru_disinfectant" class="cursor-pointer">Neru disinfectant</label>
+                        </span>
+                      </div>
+                    </div>
+                    <hr class="mt-4 border-slate-300" />
+                    <div class="filterchoose font-light">
+                      <h5 class="font-semibold uppercase">Neru pillow</h5>
+                      <div class="flex gap-4 flex-col mt-5">
+                        <span class="flex gap-3 items-center">
+                          <input type="checkbox" id="neru_one" class="cursor-pointer" name="neru_one" />
+                          <label for="neru_one" class="cursor-pointer">Neru one</label>
+                        </span>
+                        <span class="flex gap-3 items-center">
+                          <input type="checkbox" id="neru_one" class="cursor-pointer" name="neru_one" />
+                          <label for="neru_one" class="cursor-pointer">Neru two</label>
+                        </span>
+                      </div>
+                    </div>
+                    <hr class="mt-4 border-slate-300" />
+                    <div class="filterchoose font-light">
+                      <h5 class="font-semibold uppercase">Neru trolly</h5>
+                      <div class="flex gap-4 flex-col mt-5">
+                        <span class="flex gap-3 items-center">
+                          <input type="checkbox" id="neru_one" class="cursor-pointer" name="neru_one" />
+                          <label for="neru_one" class="cursor-pointer">Neru one</label>
+                        </span>
+                        <span class="flex gap-3 items-center">
+                          <input type="checkbox" id="neru_two" class="cursor-pointer" name="neru_one" />
+                          <label for="neru_two" class="cursor-pointer">Neru two</label>
+                        </span>
+                      </div>
+                    </div>
+                    <hr class="mt-4 border-slate-300" />
+                  </div>
+                </div>
+              </div>
+          
+            <!-- Item -->
+            <div class="grid p-2 grid-cols-2 mx-auto 3xl:gap-6 2xl:gap-3.5 xl:gap-2.5 md:gap-5 gap-x-2 gap-y-2 transition-all ease-in-out duration-300" id="StoreItemSM">
+              <div class="h-fit card-wrapper flex flex-col w-full gap-3 bg-white rounded-md transition-all ease-in-out duration-300">
+                <img src="img/card-item.png" onclick="window.location.href ='detail-product.html';" class="cursor-pointer rounded-md w-full" alt="" />
+                <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
+                  <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
+                  <span class="flex justify-between items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-28 md:w-20 w-16" viewBox="0 0 96 17" fill="none">
+                      <path d="M8.72727 0L11.0357 5.20317L17.0274 5.6535L12.4623 9.31956L13.857 14.8011L8.72727 11.8636L3.59751 14.8011L4.99222 9.31956L0.427143 5.6535L6.41888 5.20317L8.72727 0Z" fill="#FE8B75" />
+                      <path d="M28.364 0L30.6724 5.20317L36.6641 5.6535L32.0991 9.31956L33.4938 14.8011L28.364 11.8636L23.2342 14.8011L24.6289 9.31956L20.0639 5.6535L26.0556 5.20317L28.364 0Z" fill="#FE8B75" />
+                      <path d="M47.9997 0L50.3081 5.20317L56.2999 5.6535L51.7348 9.31956L53.1295 14.8011L47.9997 11.8636L42.87 14.8011L44.2647 9.31956L39.6996 5.6535L45.6913 5.20317L47.9997 0Z" fill="#FE8B75" />
+                      <path d="M67.6363 0L69.9447 5.20317L75.9365 5.6535L71.3714 9.31956L72.7661 14.8011L67.6363 11.8636L62.5066 14.8011L63.9013 9.31956L59.3362 5.6535L65.3279 5.20317L67.6363 0Z" fill="#FE8B75" />
+                      <path d="M87.2732 0L89.5816 5.20317L95.5733 5.6535L91.0082 9.31956L92.4029 14.8011L87.2732 11.8636L82.1434 14.8011L83.5381 9.31956L78.973 5.6535L84.9648 5.20317L87.2732 0Z" fill="#FE8B75" />
+                    </svg>
+                    <h6 class="flex gap-2.5 items-center font-semibold lg:text-base md:text-sm text-[11px]">
+                      Stock
+                      <span class="stock bg-blue-Neru md:px-3 px-2.5 py-0.5 rounded-md text-white lg:text-base md:text-sm text-[11px]">26</span>
+                    </h6>
+                  </span>
+                  <h6 class="flex justify-between items-center mt-2 font-medium lg:text-lg md:text-sm text-[11px]">
+                    Rp350,000
+                    <span class=" relative">
+                      <a class="cursor-pointer group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="shareToggle bg-blue-Neru p-1.5 transition-all ease-in-out duration-300 rounded-full lg:w-7 md:w-6 w-5 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M8.7 10.7l6.6 -3.4"></path>
+                          <path d="M8.7 13.3l6.6 3.4"></path>
+                        </svg>
+                      </a>
+                      <a href="wa.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="waShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M9 15l6 -6"></path>
+                          <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
+                          <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+                        </svg>
+                      </a>
+                      <a href="copylink.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="copylinkShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-700 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
+                          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
+                        </svg>
+                      </a>
+                      <a href="insta.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="instaShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                          <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M16.5 7.5l0 .01"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </h6>
+                </div>
+              </div>
+              <div class="h-fit card-wrapper flex flex-col w-full gap-3 bg-white rounded-md transition-all ease-in-out duration-300">
+                <img src="img/card-item-2.png" onclick="window.location.href ='detail-product.html';" class="cursor-pointer rounded-md w-full" alt="" />
+                <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
+                  <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
+                  <span class="flex justify-between items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-28 md:w-20 w-16" viewBox="0 0 96 17" fill="none">
+                      <path d="M8.72727 0L11.0357 5.20317L17.0274 5.6535L12.4623 9.31956L13.857 14.8011L8.72727 11.8636L3.59751 14.8011L4.99222 9.31956L0.427143 5.6535L6.41888 5.20317L8.72727 0Z" fill="#FE8B75" />
+                      <path d="M28.364 0L30.6724 5.20317L36.6641 5.6535L32.0991 9.31956L33.4938 14.8011L28.364 11.8636L23.2342 14.8011L24.6289 9.31956L20.0639 5.6535L26.0556 5.20317L28.364 0Z" fill="#FE8B75" />
+                      <path d="M47.9997 0L50.3081 5.20317L56.2999 5.6535L51.7348 9.31956L53.1295 14.8011L47.9997 11.8636L42.87 14.8011L44.2647 9.31956L39.6996 5.6535L45.6913 5.20317L47.9997 0Z" fill="#FE8B75" />
+                      <path d="M67.6363 0L69.9447 5.20317L75.9365 5.6535L71.3714 9.31956L72.7661 14.8011L67.6363 11.8636L62.5066 14.8011L63.9013 9.31956L59.3362 5.6535L65.3279 5.20317L67.6363 0Z" fill="#FE8B75" />
+                      <path d="M87.2732 0L89.5816 5.20317L95.5733 5.6535L91.0082 9.31956L92.4029 14.8011L87.2732 11.8636L82.1434 14.8011L83.5381 9.31956L78.973 5.6535L84.9648 5.20317L87.2732 0Z" fill="#FE8B75" />
+                    </svg>
+                    <h6 class="flex gap-2.5 items-center font-semibold lg:text-base md:text-sm text-[11px]">
+                      Stock
+                      <span class="stock bg-blue-Neru md:px-3 px-2.5 py-0.5 rounded-md text-white lg:text-base md:text-sm text-[11px]">26</span>
+                    </h6>
+                  </span>
+                  <h6 class="flex justify-between items-center mt-2 font-medium lg:text-lg md:text-sm text-[11px]">
+                    Rp350,000
+                    <span class=" relative">
+                      <a class="cursor-pointer group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="shareToggle bg-blue-Neru p-1.5 transition-all ease-in-out duration-300 rounded-full lg:w-7 md:w-6 w-5 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M8.7 10.7l6.6 -3.4"></path>
+                          <path d="M8.7 13.3l6.6 3.4"></path>
+                        </svg>
+                      </a>
+                      <a href="wa.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="waShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M9 15l6 -6"></path>
+                          <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
+                          <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+                        </svg>
+                      </a>
+                      <a href="copylink.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="copylinkShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-700 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
+                          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
+                        </svg>
+                      </a>
+                      <a href="insta.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="instaShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                          <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M16.5 7.5l0 .01"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </h6>
+                </div>
+              </div>
+              <div class="h-fit card-wrapper flex flex-col w-full gap-3 bg-white rounded-md transition-all ease-in-out duration-300">
+                <img src="img/card-item4.png" onclick="window.location.href ='detail-product.html';" class="cursor-pointer rounded-md w-full" alt="" />
+                <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
+                  <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
+                  <span class="flex justify-between items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-28 md:w-20 w-16" viewBox="0 0 96 17" fill="none">
+                      <path d="M8.72727 0L11.0357 5.20317L17.0274 5.6535L12.4623 9.31956L13.857 14.8011L8.72727 11.8636L3.59751 14.8011L4.99222 9.31956L0.427143 5.6535L6.41888 5.20317L8.72727 0Z" fill="#FE8B75" />
+                      <path d="M28.364 0L30.6724 5.20317L36.6641 5.6535L32.0991 9.31956L33.4938 14.8011L28.364 11.8636L23.2342 14.8011L24.6289 9.31956L20.0639 5.6535L26.0556 5.20317L28.364 0Z" fill="#FE8B75" />
+                      <path d="M47.9997 0L50.3081 5.20317L56.2999 5.6535L51.7348 9.31956L53.1295 14.8011L47.9997 11.8636L42.87 14.8011L44.2647 9.31956L39.6996 5.6535L45.6913 5.20317L47.9997 0Z" fill="#FE8B75" />
+                      <path d="M67.6363 0L69.9447 5.20317L75.9365 5.6535L71.3714 9.31956L72.7661 14.8011L67.6363 11.8636L62.5066 14.8011L63.9013 9.31956L59.3362 5.6535L65.3279 5.20317L67.6363 0Z" fill="#FE8B75" />
+                      <path d="M87.2732 0L89.5816 5.20317L95.5733 5.6535L91.0082 9.31956L92.4029 14.8011L87.2732 11.8636L82.1434 14.8011L83.5381 9.31956L78.973 5.6535L84.9648 5.20317L87.2732 0Z" fill="#FE8B75" />
+                    </svg>
+                    <h6 class="flex gap-2.5 items-center font-semibold lg:text-base md:text-sm text-[11px]">
+                      Stock
+                      <span class="stock bg-blue-Neru md:px-3 px-2.5 py-0.5 rounded-md text-white lg:text-base md:text-sm text-[11px]">26</span>
+                    </h6>
+                  </span>
+                  <h6 class="flex justify-between items-center mt-2 font-medium lg:text-lg md:text-sm text-[11px]">
+                    Rp350,000
+                    <span class=" relative">
+                      <a class="cursor-pointer group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="shareToggle bg-blue-Neru p-1.5 transition-all ease-in-out duration-300 rounded-full lg:w-7 md:w-6 w-5 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M8.7 10.7l6.6 -3.4"></path>
+                          <path d="M8.7 13.3l6.6 3.4"></path>
+                        </svg>
+                      </a>
+                      <a href="wa.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="waShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M9 15l6 -6"></path>
+                          <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
+                          <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+                        </svg>
+                      </a>
+                      <a href="copylink.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="copylinkShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-700 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
+                          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
+                        </svg>
+                      </a>
+                      <a href="insta.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="instaShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                          <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M16.5 7.5l0 .01"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </h6>
+                </div>
+              </div>
+              <div class="h-fit card-wrapper flex flex-col w-full gap-3 bg-white rounded-md transition-all ease-in-out duration-300">
+                <img src="img/card-item.png" onclick="window.location.href ='detail-product.html';" class="cursor-pointer rounded-md w-full" alt="" />
+                <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
+                  <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
+                  <span class="flex justify-between items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-28 md:w-20 w-16" viewBox="0 0 96 17" fill="none">
+                      <path d="M8.72727 0L11.0357 5.20317L17.0274 5.6535L12.4623 9.31956L13.857 14.8011L8.72727 11.8636L3.59751 14.8011L4.99222 9.31956L0.427143 5.6535L6.41888 5.20317L8.72727 0Z" fill="#FE8B75" />
+                      <path d="M28.364 0L30.6724 5.20317L36.6641 5.6535L32.0991 9.31956L33.4938 14.8011L28.364 11.8636L23.2342 14.8011L24.6289 9.31956L20.0639 5.6535L26.0556 5.20317L28.364 0Z" fill="#FE8B75" />
+                      <path d="M47.9997 0L50.3081 5.20317L56.2999 5.6535L51.7348 9.31956L53.1295 14.8011L47.9997 11.8636L42.87 14.8011L44.2647 9.31956L39.6996 5.6535L45.6913 5.20317L47.9997 0Z" fill="#FE8B75" />
+                      <path d="M67.6363 0L69.9447 5.20317L75.9365 5.6535L71.3714 9.31956L72.7661 14.8011L67.6363 11.8636L62.5066 14.8011L63.9013 9.31956L59.3362 5.6535L65.3279 5.20317L67.6363 0Z" fill="#FE8B75" />
+                      <path d="M87.2732 0L89.5816 5.20317L95.5733 5.6535L91.0082 9.31956L92.4029 14.8011L87.2732 11.8636L82.1434 14.8011L83.5381 9.31956L78.973 5.6535L84.9648 5.20317L87.2732 0Z" fill="#FE8B75" />
+                    </svg>
+                    <h6 class="flex gap-2.5 items-center font-semibold lg:text-base md:text-sm text-[11px]">
+                      Stock
+                      <span class="stock bg-blue-Neru md:px-3 px-2.5 py-0.5 rounded-md text-white lg:text-base md:text-sm text-[11px]">26</span>
+                    </h6>
+                  </span>
+                  <h6 class="flex justify-between items-center mt-2 font-medium lg:text-lg md:text-sm text-[11px]">
+                    Rp350,000
+                    <span class=" relative">
+                      <a class="cursor-pointer group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="shareToggle bg-blue-Neru p-1.5 transition-all ease-in-out duration-300 rounded-full lg:w-7 md:w-6 w-5 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M8.7 10.7l6.6 -3.4"></path>
+                          <path d="M8.7 13.3l6.6 3.4"></path>
+                        </svg>
+                      </a>
+                      <a href="wa.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="waShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M9 15l6 -6"></path>
+                          <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
+                          <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+                        </svg>
+                      </a>
+                      <a href="copylink.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="copylinkShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-700 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
+                          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
+                        </svg>
+                      </a>
+                      <a href="insta.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="instaShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                          <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M16.5 7.5l0 .01"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </h6>
+                </div>
+              </div>
+              <div class="h-fit card-wrapper flex flex-col w-full gap-3 bg-white rounded-md transition-all ease-in-out duration-300">
+                <img src="img/card-item-2.png" onclick="window.location.href ='detail-product.html';" class="cursor-pointer rounded-md w-full" alt="" />
+                <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
+                  <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
+                  <span class="flex justify-between items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-28 md:w-20 w-16" viewBox="0 0 96 17" fill="none">
+                      <path d="M8.72727 0L11.0357 5.20317L17.0274 5.6535L12.4623 9.31956L13.857 14.8011L8.72727 11.8636L3.59751 14.8011L4.99222 9.31956L0.427143 5.6535L6.41888 5.20317L8.72727 0Z" fill="#FE8B75" />
+                      <path d="M28.364 0L30.6724 5.20317L36.6641 5.6535L32.0991 9.31956L33.4938 14.8011L28.364 11.8636L23.2342 14.8011L24.6289 9.31956L20.0639 5.6535L26.0556 5.20317L28.364 0Z" fill="#FE8B75" />
+                      <path d="M47.9997 0L50.3081 5.20317L56.2999 5.6535L51.7348 9.31956L53.1295 14.8011L47.9997 11.8636L42.87 14.8011L44.2647 9.31956L39.6996 5.6535L45.6913 5.20317L47.9997 0Z" fill="#FE8B75" />
+                      <path d="M67.6363 0L69.9447 5.20317L75.9365 5.6535L71.3714 9.31956L72.7661 14.8011L67.6363 11.8636L62.5066 14.8011L63.9013 9.31956L59.3362 5.6535L65.3279 5.20317L67.6363 0Z" fill="#FE8B75" />
+                      <path d="M87.2732 0L89.5816 5.20317L95.5733 5.6535L91.0082 9.31956L92.4029 14.8011L87.2732 11.8636L82.1434 14.8011L83.5381 9.31956L78.973 5.6535L84.9648 5.20317L87.2732 0Z" fill="#FE8B75" />
+                    </svg>
+                    <h6 class="flex gap-2.5 items-center font-semibold lg:text-base md:text-sm text-[11px]">
+                      Stock
+                      <span class="stock bg-blue-Neru md:px-3 px-2.5 py-0.5 rounded-md text-white lg:text-base md:text-sm text-[11px]">26</span>
+                    </h6>
+                  </span>
+                  <h6 class="flex justify-between items-center mt-2 font-medium lg:text-lg md:text-sm text-[11px]">
+                    Rp350,000
+                    <span class=" relative">
+                      <a class="cursor-pointer group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="shareToggle bg-blue-Neru p-1.5 transition-all ease-in-out duration-300 rounded-full lg:w-7 md:w-6 w-5 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M8.7 10.7l6.6 -3.4"></path>
+                          <path d="M8.7 13.3l6.6 3.4"></path>
+                        </svg>
+                      </a>
+                      <a href="wa.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="waShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M9 15l6 -6"></path>
+                          <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
+                          <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+                        </svg>
+                      </a>
+                      <a href="copylink.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="copylinkShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-700 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
+                          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
+                        </svg>
+                      </a>
+                      <a href="insta.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="instaShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                          <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M16.5 7.5l0 .01"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </h6>
+                </div>
+              </div>
+              <div class="h-fit card-wrapper flex flex-col w-full gap-3 bg-white rounded-md transition-all ease-in-out duration-300">
+                <img src="img/card-item4.png" onclick="window.location.href ='detail-product.html';" class="cursor-pointer rounded-md w-full" alt="" />
+                <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
+                  <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
+                  <span class="flex justify-between items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-28 md:w-20 w-16" viewBox="0 0 96 17" fill="none">
+                      <path d="M8.72727 0L11.0357 5.20317L17.0274 5.6535L12.4623 9.31956L13.857 14.8011L8.72727 11.8636L3.59751 14.8011L4.99222 9.31956L0.427143 5.6535L6.41888 5.20317L8.72727 0Z" fill="#FE8B75" />
+                      <path d="M28.364 0L30.6724 5.20317L36.6641 5.6535L32.0991 9.31956L33.4938 14.8011L28.364 11.8636L23.2342 14.8011L24.6289 9.31956L20.0639 5.6535L26.0556 5.20317L28.364 0Z" fill="#FE8B75" />
+                      <path d="M47.9997 0L50.3081 5.20317L56.2999 5.6535L51.7348 9.31956L53.1295 14.8011L47.9997 11.8636L42.87 14.8011L44.2647 9.31956L39.6996 5.6535L45.6913 5.20317L47.9997 0Z" fill="#FE8B75" />
+                      <path d="M67.6363 0L69.9447 5.20317L75.9365 5.6535L71.3714 9.31956L72.7661 14.8011L67.6363 11.8636L62.5066 14.8011L63.9013 9.31956L59.3362 5.6535L65.3279 5.20317L67.6363 0Z" fill="#FE8B75" />
+                      <path d="M87.2732 0L89.5816 5.20317L95.5733 5.6535L91.0082 9.31956L92.4029 14.8011L87.2732 11.8636L82.1434 14.8011L83.5381 9.31956L78.973 5.6535L84.9648 5.20317L87.2732 0Z" fill="#FE8B75" />
+                    </svg>
+                    <h6 class="flex gap-2.5 items-center font-semibold lg:text-base md:text-sm text-[11px]">
+                      Stock
+                      <span class="stock bg-blue-Neru md:px-3 px-2.5 py-0.5 rounded-md text-white lg:text-base md:text-sm text-[11px]">26</span>
+                    </h6>
+                  </span>
+                  <h6 class="flex justify-between items-center mt-2 font-medium lg:text-lg md:text-sm text-[11px]">
+                    Rp350,000
+                    <span class=" relative">
+                      <a class="cursor-pointer group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="shareToggle bg-blue-Neru p-1.5 transition-all ease-in-out duration-300 rounded-full lg:w-7 md:w-6 w-5 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M8.7 10.7l6.6 -3.4"></path>
+                          <path d="M8.7 13.3l6.6 3.4"></path>
+                        </svg>
+                      </a>
+                      <a href="wa.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="waShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M9 15l6 -6"></path>
+                          <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
+                          <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+                        </svg>
+                      </a>
+                      <a href="copylink.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="copylinkShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-700 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
+                          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
+                        </svg>
+                      </a>
+                      <a href="insta.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="instaShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                          <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M16.5 7.5l0 .01"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </h6>
+                </div>
+              </div>
+              <div class="h-fit card-wrapper flex flex-col w-full gap-3 bg-white rounded-md transition-all ease-in-out duration-300">
+                <img src="img/card-item.png" onclick="window.location.href ='detail-product.html';" class="cursor-pointer rounded-md w-full" alt="" />
+                <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
+                  <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
+                  <span class="flex justify-between items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-28 md:w-20 w-16" viewBox="0 0 96 17" fill="none">
+                      <path d="M8.72727 0L11.0357 5.20317L17.0274 5.6535L12.4623 9.31956L13.857 14.8011L8.72727 11.8636L3.59751 14.8011L4.99222 9.31956L0.427143 5.6535L6.41888 5.20317L8.72727 0Z" fill="#FE8B75" />
+                      <path d="M28.364 0L30.6724 5.20317L36.6641 5.6535L32.0991 9.31956L33.4938 14.8011L28.364 11.8636L23.2342 14.8011L24.6289 9.31956L20.0639 5.6535L26.0556 5.20317L28.364 0Z" fill="#FE8B75" />
+                      <path d="M47.9997 0L50.3081 5.20317L56.2999 5.6535L51.7348 9.31956L53.1295 14.8011L47.9997 11.8636L42.87 14.8011L44.2647 9.31956L39.6996 5.6535L45.6913 5.20317L47.9997 0Z" fill="#FE8B75" />
+                      <path d="M67.6363 0L69.9447 5.20317L75.9365 5.6535L71.3714 9.31956L72.7661 14.8011L67.6363 11.8636L62.5066 14.8011L63.9013 9.31956L59.3362 5.6535L65.3279 5.20317L67.6363 0Z" fill="#FE8B75" />
+                      <path d="M87.2732 0L89.5816 5.20317L95.5733 5.6535L91.0082 9.31956L92.4029 14.8011L87.2732 11.8636L82.1434 14.8011L83.5381 9.31956L78.973 5.6535L84.9648 5.20317L87.2732 0Z" fill="#FE8B75" />
+                    </svg>
+                    <h6 class="flex gap-2.5 items-center font-semibold lg:text-base md:text-sm text-[11px]">
+                      Stock
+                      <span class="stock bg-blue-Neru md:px-3 px-2.5 py-0.5 rounded-md text-white lg:text-base md:text-sm text-[11px]">26</span>
+                    </h6>
+                  </span>
+                  <h6 class="flex justify-between items-center mt-2 font-medium lg:text-lg md:text-sm text-[11px]">
+                    Rp350,000
+                    <span class=" relative">
+                      <a class="cursor-pointer group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="shareToggle bg-blue-Neru p-1.5 transition-all ease-in-out duration-300 rounded-full lg:w-7 md:w-6 w-5 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M8.7 10.7l6.6 -3.4"></path>
+                          <path d="M8.7 13.3l6.6 3.4"></path>
+                        </svg>
+                      </a>
+                      <a href="wa.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="waShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M9 15l6 -6"></path>
+                          <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
+                          <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+                        </svg>
+                      </a>
+                      <a href="copylink.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="copylinkShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-700 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
+                          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
+                        </svg>
+                      </a>
+                      <a href="insta.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="instaShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                          <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M16.5 7.5l0 .01"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </h6>
+                </div>
+              </div>
+              <div class="h-fit card-wrapper flex flex-col w-full gap-3 bg-white rounded-md transition-all ease-in-out duration-300">
+                <img src="img/card-item-2.png" onclick="window.location.href ='detail-product.html';" class="cursor-pointer rounded-md w-full" alt="" />
+                <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
+                  <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
+                  <span class="flex justify-between items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-28 md:w-20 w-16" viewBox="0 0 96 17" fill="none">
+                      <path d="M8.72727 0L11.0357 5.20317L17.0274 5.6535L12.4623 9.31956L13.857 14.8011L8.72727 11.8636L3.59751 14.8011L4.99222 9.31956L0.427143 5.6535L6.41888 5.20317L8.72727 0Z" fill="#FE8B75" />
+                      <path d="M28.364 0L30.6724 5.20317L36.6641 5.6535L32.0991 9.31956L33.4938 14.8011L28.364 11.8636L23.2342 14.8011L24.6289 9.31956L20.0639 5.6535L26.0556 5.20317L28.364 0Z" fill="#FE8B75" />
+                      <path d="M47.9997 0L50.3081 5.20317L56.2999 5.6535L51.7348 9.31956L53.1295 14.8011L47.9997 11.8636L42.87 14.8011L44.2647 9.31956L39.6996 5.6535L45.6913 5.20317L47.9997 0Z" fill="#FE8B75" />
+                      <path d="M67.6363 0L69.9447 5.20317L75.9365 5.6535L71.3714 9.31956L72.7661 14.8011L67.6363 11.8636L62.5066 14.8011L63.9013 9.31956L59.3362 5.6535L65.3279 5.20317L67.6363 0Z" fill="#FE8B75" />
+                      <path d="M87.2732 0L89.5816 5.20317L95.5733 5.6535L91.0082 9.31956L92.4029 14.8011L87.2732 11.8636L82.1434 14.8011L83.5381 9.31956L78.973 5.6535L84.9648 5.20317L87.2732 0Z" fill="#FE8B75" />
+                    </svg>
+                    <h6 class="flex gap-2.5 items-center font-semibold lg:text-base md:text-sm text-[11px]">
+                      Stock
+                      <span class="stock bg-blue-Neru md:px-3 px-2.5 py-0.5 rounded-md text-white lg:text-base md:text-sm text-[11px]">26</span>
+                    </h6>
+                  </span>
+                  <h6 class="flex justify-between items-center mt-2 font-medium lg:text-lg md:text-sm text-[11px]">
+                    Rp350,000
+                    <span class=" relative">
+                      <a class="cursor-pointer group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="shareToggle bg-blue-Neru p-1.5 transition-all ease-in-out duration-300 rounded-full lg:w-7 md:w-6 w-5 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M8.7 10.7l6.6 -3.4"></path>
+                          <path d="M8.7 13.3l6.6 3.4"></path>
+                        </svg>
+                      </a>
+                      <a href="wa.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="waShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M9 15l6 -6"></path>
+                          <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
+                          <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+                        </svg>
+                      </a>
+                      <a href="copylink.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="copylinkShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-700 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
+                          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
+                        </svg>
+                      </a>
+                      <a href="insta.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="instaShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                          <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M16.5 7.5l0 .01"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </h6>
+                </div>
+              </div>
+              <div class="h-fit card-wrapper flex flex-col w-full gap-3 bg-white rounded-md transition-all ease-in-out duration-300">
+                <img src="img/card-item4.png" onclick="window.location.href ='detail-product.html';" class="cursor-pointer rounded-md w-full" alt="" />
+                <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
+                  <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
+                  <span class="flex justify-between items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-28 md:w-20 w-16" viewBox="0 0 96 17" fill="none">
+                      <path d="M8.72727 0L11.0357 5.20317L17.0274 5.6535L12.4623 9.31956L13.857 14.8011L8.72727 11.8636L3.59751 14.8011L4.99222 9.31956L0.427143 5.6535L6.41888 5.20317L8.72727 0Z" fill="#FE8B75" />
+                      <path d="M28.364 0L30.6724 5.20317L36.6641 5.6535L32.0991 9.31956L33.4938 14.8011L28.364 11.8636L23.2342 14.8011L24.6289 9.31956L20.0639 5.6535L26.0556 5.20317L28.364 0Z" fill="#FE8B75" />
+                      <path d="M47.9997 0L50.3081 5.20317L56.2999 5.6535L51.7348 9.31956L53.1295 14.8011L47.9997 11.8636L42.87 14.8011L44.2647 9.31956L39.6996 5.6535L45.6913 5.20317L47.9997 0Z" fill="#FE8B75" />
+                      <path d="M67.6363 0L69.9447 5.20317L75.9365 5.6535L71.3714 9.31956L72.7661 14.8011L67.6363 11.8636L62.5066 14.8011L63.9013 9.31956L59.3362 5.6535L65.3279 5.20317L67.6363 0Z" fill="#FE8B75" />
+                      <path d="M87.2732 0L89.5816 5.20317L95.5733 5.6535L91.0082 9.31956L92.4029 14.8011L87.2732 11.8636L82.1434 14.8011L83.5381 9.31956L78.973 5.6535L84.9648 5.20317L87.2732 0Z" fill="#FE8B75" />
+                    </svg>
+                    <h6 class="flex gap-2.5 items-center font-semibold lg:text-base md:text-sm text-[11px]">
+                      Stock
+                      <span class="stock bg-blue-Neru md:px-3 px-2.5 py-0.5 rounded-md text-white lg:text-base md:text-sm text-[11px]">26</span>
+                    </h6>
+                  </span>
+                  <h6 class="flex justify-between items-center mt-2 font-medium lg:text-lg md:text-sm text-[11px]">
+                    Rp350,000
+                    <span class=" relative">
+                      <a class="cursor-pointer group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="shareToggle bg-blue-Neru p-1.5 transition-all ease-in-out duration-300 rounded-full lg:w-7 md:w-6 w-5 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M8.7 10.7l6.6 -3.4"></path>
+                          <path d="M8.7 13.3l6.6 3.4"></path>
+                        </svg>
+                      </a>
+                      <a href="wa.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="waShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M9 15l6 -6"></path>
+                          <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
+                          <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+                        </svg>
+                      </a>
+                      <a href="copylink.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="copylinkShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-700 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
+                          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
+                        </svg>
+                      </a>
+                      <a href="insta.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="instaShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                          <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M16.5 7.5l0 .01"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </h6>
+                </div>
+              </div>
+              <div class="h-fit card-wrapper flex flex-col w-full gap-3 bg-white rounded-md transition-all ease-in-out duration-300">
+                <img src="img/card-item.png" onclick="window.location.href ='detail-product.html';" class="cursor-pointer rounded-md w-full" alt="" />
+                <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
+                  <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
+                  <span class="flex justify-between items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-28 md:w-20 w-16" viewBox="0 0 96 17" fill="none">
+                      <path d="M8.72727 0L11.0357 5.20317L17.0274 5.6535L12.4623 9.31956L13.857 14.8011L8.72727 11.8636L3.59751 14.8011L4.99222 9.31956L0.427143 5.6535L6.41888 5.20317L8.72727 0Z" fill="#FE8B75" />
+                      <path d="M28.364 0L30.6724 5.20317L36.6641 5.6535L32.0991 9.31956L33.4938 14.8011L28.364 11.8636L23.2342 14.8011L24.6289 9.31956L20.0639 5.6535L26.0556 5.20317L28.364 0Z" fill="#FE8B75" />
+                      <path d="M47.9997 0L50.3081 5.20317L56.2999 5.6535L51.7348 9.31956L53.1295 14.8011L47.9997 11.8636L42.87 14.8011L44.2647 9.31956L39.6996 5.6535L45.6913 5.20317L47.9997 0Z" fill="#FE8B75" />
+                      <path d="M67.6363 0L69.9447 5.20317L75.9365 5.6535L71.3714 9.31956L72.7661 14.8011L67.6363 11.8636L62.5066 14.8011L63.9013 9.31956L59.3362 5.6535L65.3279 5.20317L67.6363 0Z" fill="#FE8B75" />
+                      <path d="M87.2732 0L89.5816 5.20317L95.5733 5.6535L91.0082 9.31956L92.4029 14.8011L87.2732 11.8636L82.1434 14.8011L83.5381 9.31956L78.973 5.6535L84.9648 5.20317L87.2732 0Z" fill="#FE8B75" />
+                    </svg>
+                    <h6 class="flex gap-2.5 items-center font-semibold lg:text-base md:text-sm text-[11px]">
+                      Stock
+                      <span class="stock bg-blue-Neru md:px-3 px-2.5 py-0.5 rounded-md text-white lg:text-base md:text-sm text-[11px]">26</span>
+                    </h6>
+                  </span>
+                  <h6 class="flex justify-between items-center mt-2 font-medium lg:text-lg md:text-sm text-[11px]">
+                    Rp350,000
+                    <span class=" relative">
+                      <a class="cursor-pointer group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="shareToggle bg-blue-Neru p-1.5 transition-all ease-in-out duration-300 rounded-full lg:w-7 md:w-6 w-5 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M8.7 10.7l6.6 -3.4"></path>
+                          <path d="M8.7 13.3l6.6 3.4"></path>
+                        </svg>
+                      </a>
+                      <a href="wa.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="waShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M9 15l6 -6"></path>
+                          <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
+                          <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+                        </svg>
+                      </a>
+                      <a href="copylink.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="copylinkShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-700 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
+                          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
+                        </svg>
+                      </a>
+                      <a href="insta.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="instaShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                          <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M16.5 7.5l0 .01"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </h6>
+                </div>
+              </div>
+              <div class="h-fit card-wrapper flex flex-col w-full gap-3 bg-white rounded-md transition-all ease-in-out duration-300">
+                <img src="img/card-item-2.png" onclick="window.location.href ='detail-product.html';" class="cursor-pointer rounded-md w-full" alt="" />
+                <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
+                  <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
+                  <span class="flex justify-between items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-28 md:w-20 w-16" viewBox="0 0 96 17" fill="none">
+                      <path d="M8.72727 0L11.0357 5.20317L17.0274 5.6535L12.4623 9.31956L13.857 14.8011L8.72727 11.8636L3.59751 14.8011L4.99222 9.31956L0.427143 5.6535L6.41888 5.20317L8.72727 0Z" fill="#FE8B75" />
+                      <path d="M28.364 0L30.6724 5.20317L36.6641 5.6535L32.0991 9.31956L33.4938 14.8011L28.364 11.8636L23.2342 14.8011L24.6289 9.31956L20.0639 5.6535L26.0556 5.20317L28.364 0Z" fill="#FE8B75" />
+                      <path d="M47.9997 0L50.3081 5.20317L56.2999 5.6535L51.7348 9.31956L53.1295 14.8011L47.9997 11.8636L42.87 14.8011L44.2647 9.31956L39.6996 5.6535L45.6913 5.20317L47.9997 0Z" fill="#FE8B75" />
+                      <path d="M67.6363 0L69.9447 5.20317L75.9365 5.6535L71.3714 9.31956L72.7661 14.8011L67.6363 11.8636L62.5066 14.8011L63.9013 9.31956L59.3362 5.6535L65.3279 5.20317L67.6363 0Z" fill="#FE8B75" />
+                      <path d="M87.2732 0L89.5816 5.20317L95.5733 5.6535L91.0082 9.31956L92.4029 14.8011L87.2732 11.8636L82.1434 14.8011L83.5381 9.31956L78.973 5.6535L84.9648 5.20317L87.2732 0Z" fill="#FE8B75" />
+                    </svg>
+                    <h6 class="flex gap-2.5 items-center font-semibold lg:text-base md:text-sm text-[11px]">
+                      Stock
+                      <span class="stock bg-blue-Neru md:px-3 px-2.5 py-0.5 rounded-md text-white lg:text-base md:text-sm text-[11px]">26</span>
+                    </h6>
+                  </span>
+                  <h6 class="flex justify-between items-center mt-2 font-medium lg:text-lg md:text-sm text-[11px]">
+                    Rp350,000
+                    <span class=" relative">
+                      <a class="cursor-pointer group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="shareToggle bg-blue-Neru p-1.5 transition-all ease-in-out duration-300 rounded-full lg:w-7 md:w-6 w-5 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M8.7 10.7l6.6 -3.4"></path>
+                          <path d="M8.7 13.3l6.6 3.4"></path>
+                        </svg>
+                      </a>
+                      <a href="wa.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="waShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M9 15l6 -6"></path>
+                          <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
+                          <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+                        </svg>
+                      </a>
+                      <a href="copylink.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="copylinkShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-700 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
+                          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
+                        </svg>
+                      </a>
+                      <a href="insta.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="instaShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                          <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M16.5 7.5l0 .01"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </h6>
+                </div>
+              </div>
+              <div class="h-fit card-wrapper flex flex-col w-full gap-3 bg-white rounded-md transition-all ease-in-out duration-300">
+                <img src="img/card-item4.png" onclick="window.location.href ='detail-product.html';" class="cursor-pointer rounded-md w-full" alt="" />
+                <div class="card-body md:py-3 py-2 2xl:px-6 xl:px-3 md:px-3.5 px-1.5 flex flex-col md:gap-2 gap-1">
+                  <h6 class="font-semibold lg:text-lg md:text-base text-[11px]">Neru Pettie - Orthopendic</h6>
+                  <span class="flex justify-between items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-28 md:w-20 w-16" viewBox="0 0 96 17" fill="none">
+                      <path d="M8.72727 0L11.0357 5.20317L17.0274 5.6535L12.4623 9.31956L13.857 14.8011L8.72727 11.8636L3.59751 14.8011L4.99222 9.31956L0.427143 5.6535L6.41888 5.20317L8.72727 0Z" fill="#FE8B75" />
+                      <path d="M28.364 0L30.6724 5.20317L36.6641 5.6535L32.0991 9.31956L33.4938 14.8011L28.364 11.8636L23.2342 14.8011L24.6289 9.31956L20.0639 5.6535L26.0556 5.20317L28.364 0Z" fill="#FE8B75" />
+                      <path d="M47.9997 0L50.3081 5.20317L56.2999 5.6535L51.7348 9.31956L53.1295 14.8011L47.9997 11.8636L42.87 14.8011L44.2647 9.31956L39.6996 5.6535L45.6913 5.20317L47.9997 0Z" fill="#FE8B75" />
+                      <path d="M67.6363 0L69.9447 5.20317L75.9365 5.6535L71.3714 9.31956L72.7661 14.8011L67.6363 11.8636L62.5066 14.8011L63.9013 9.31956L59.3362 5.6535L65.3279 5.20317L67.6363 0Z" fill="#FE8B75" />
+                      <path d="M87.2732 0L89.5816 5.20317L95.5733 5.6535L91.0082 9.31956L92.4029 14.8011L87.2732 11.8636L82.1434 14.8011L83.5381 9.31956L78.973 5.6535L84.9648 5.20317L87.2732 0Z" fill="#FE8B75" />
+                    </svg>
+                    <h6 class="flex gap-2.5 items-center font-semibold lg:text-base md:text-sm text-[11px]">
+                      Stock
+                      <span class="stock bg-blue-Neru md:px-3 px-2.5 py-0.5 rounded-md text-white lg:text-base md:text-sm text-[11px]">26</span>
+                    </h6>
+                  </span>
+                  <h6 class="flex justify-between items-center mt-2 font-medium lg:text-lg md:text-sm text-[11px]">
+                    Rp350,000
+                    <span class=" relative">
+                      <a class="cursor-pointer group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="shareToggle bg-blue-Neru p-1.5 transition-all ease-in-out duration-300 rounded-full lg:w-7 md:w-6 w-5 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M8.7 10.7l6.6 -3.4"></path>
+                          <path d="M8.7 13.3l6.6 3.4"></path>
+                        </svg>
+                      </a>
+                      <a href="wa.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="waShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M9 15l6 -6"></path>
+                          <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
+                          <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+                        </svg>
+                      </a>
+                      <a href="copylink.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="copylinkShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-700 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
+                          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
+                        </svg>
+                      </a>
+                      <a href="insta.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="instaShare absolute top-0 lg:w-7 md:w-6 w-5 bg-blue-Neru rounded-full transition-all ease-in-out duration-500 -z-10 text-white p-1.5 left-0"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                          <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                          <path d="M16.5 7.5l0 .01"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </h6>
+                </div>
+              </div>
+            </div>
+            <!-- Item End -->
+          </div>
+          <div class="pagination p-2 flex gap-2.5 justify-end">
+            <span onclick="showPreviousPage(); myFunction();" class="prev-button md:w-12 w-8 bg-blue-Neru text-center py-1 md:text-2xl text-sm rounded-lg text-white shadow-lg cursor-pointer"><</span>
+            <span class="current-page md:w-12 w-8 text-center py-1 bg-white shadow-lg md:text-2xl text-sm rounded-lg outline outline-1 cursor-pointer">1</span>
+            <span onclick="showNextPage();  myFunction();" class="next-button md:w-12 w-8 text-center bg-blue-Neru py-1 md:text-2xl text-sm rounded-lg text-white shadow-lg cursor-pointer">></span>
+          </div>
+        </div>
       </section>
       <section class="share-card"></section>
       <section class="insta">
@@ -1433,5 +2535,6 @@
   <script src="js/nav.js"></script>
   <script src="js/share.js"></script>
   <script src="js/filter-navigations.js"></script>
+  <script src="js/filternavSm.js"></script>
   <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 </html>
