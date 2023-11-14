@@ -59,10 +59,10 @@ let bannerSwiper = new Swiper(".banner-content ", {
     nextEl: "#next",
     prevEl: "#prev",
   },
-  autoplay: {
-    delay: 9000,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 2000,
+  //   disableOnInteraction: false,
+  // },
   // Navigation arrows
   breakpoints: {
     360: {
