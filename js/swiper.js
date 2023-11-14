@@ -35,7 +35,8 @@ let TestimonialSwiper = new Swiper(".testimonial-Content", {
 let bannerSwiper = new Swiper(".banner-content ", {
   grabCursor: true,
   loop: true,
-  spaceBetween: 12,
+  // speed: 600,
+  // parallax: true,
   // If we need pagination
 
   pagination: {
@@ -46,9 +47,20 @@ let bannerSwiper = new Swiper(".banner-content ", {
             <span class="line"></span>
             </div>`;
     },
+    clickable: true,
+  },
+
+  effect: 'fade', // Use fade effect
+  fadeEffect: {
+    crossFade: true
+  },
+
+  navigation: {
+    nextEl: "#next",
+    prevEl: "#prev",
   },
   autoplay: {
-    delay: 2500,
+    delay: 9000,
     disableOnInteraction: false,
   },
   // Navigation arrows
@@ -59,18 +71,17 @@ let bannerSwiper = new Swiper(".banner-content ", {
 
     600: {
       centeredSlides: true,
-      slidesPerView: 1.1,
+      slidesPerView: 1,
     },
     968: {
       centeredSlides: true,
-      slidesPerView: 1.2,
+      slidesPerView: 1,
     },
   },
 });
 
 let Otherproduct = new Swiper(".otherProduct-Content", {
   loop: true,
-  spaceBetween: 12,
   grabCursor: true,
   // If we need pagination
 
@@ -83,11 +94,13 @@ let Otherproduct = new Swiper(".otherProduct-Content", {
   breakpoints: {
     360: {
       slidesPerView: 2,
+      spaceBetween: 6,
       centeredSlides: true,
     },
 
     600: {
       slidesPerView: 3,
+      spaceBetween: 9,
       centeredSlides: true,
     },
     968: {
