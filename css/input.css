@@ -217,6 +217,10 @@
   @apply md:grid-cols-4 col-span-8  ;
 }
 
+.filter-overlay-active {
+  @apply translate-y-0 shadow-lg 
+}
+
 /* .filter-toggle-active {
     @apply relative translate-x-0 z-20 h-full
 } */
