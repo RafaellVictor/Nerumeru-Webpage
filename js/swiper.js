@@ -93,7 +93,7 @@ let Otherproduct = new Swiper(".otherProduct-Content", {
 
   breakpoints: {
     360: {
-      slidesPerView: 2,
+      slidesPerView: 1.9,
       spaceBetween: 6,
       centeredSlides: true,
     },
@@ -135,6 +135,40 @@ var swiper = new Swiper(".ProductCoverflow-content", {
     el: '.swiper-custom-pagination-WhatsOn',
     clickable: true,
     dynamicBullets : true,
+  },
+  breakpoints: {
+    360: {
+      slidesPerView: 2,
+
+    },
+
+    600: {
+      slidesPerView: 2,
+
+    },
+    968: {
+      slidesPerView: 2.5,
+    },
+  },
+});
+
+var swiper = new Swiper(".EventCoverflow-content", {
+  effect: 'coverflow',
+  grabCursor: true,
+  centeredSlides: true,
+  slideShadows:false,
+  loop: true,
+  autoplay: {
+    delay: 1500,
+    disableOnInteraction: false,
+  },
+
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 75,
+    modifier: 3,
+    slideShadows : true,
   },
   breakpoints: {
     360: {

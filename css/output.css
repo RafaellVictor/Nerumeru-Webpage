@@ -677,12 +677,12 @@ main {
   top: -0.5rem;
 }
 
-.bottom-1\/2 {
-  bottom: 50%;
+.bottom-0 {
+  bottom: 0px;
 }
 
-.bottom-10 {
-  bottom: 2.5rem;
+.bottom-1\/2 {
+  bottom: 50%;
 }
 
 .bottom-4 {
@@ -733,10 +733,6 @@ main {
   top: 89px;
 }
 
-.bottom-0 {
-  bottom: 0px;
-}
-
 .-z-10 {
   z-index: -10;
 }
@@ -759,10 +755,6 @@ main {
 
 .z-50 {
   z-index: 50;
-}
-
-.z-40 {
-  z-index: 40;
 }
 
 .col-span-2 {
@@ -976,6 +968,10 @@ main {
   width: 20rem;
 }
 
+.w-\[22px\] {
+  width: 22px;
+}
+
 .w-\[23px\] {
   width: 23px;
 }
@@ -1007,6 +1003,26 @@ main {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[70\%\] {
+  width: 70%;
+}
+
+.w-\[100\%\] {
+  width: 100%;
+}
+
+.max-w-screen-sm {
+  max-width: 640px;
+}
+
+.max-w-screen-md {
+  max-width: 768px;
+}
+
+.max-w-screen-lg {
+  max-width: 1024px;
 }
 
 .origin-bottom-right {
@@ -1190,6 +1206,14 @@ main {
 
 .gap-9 {
   gap: 2.25rem;
+}
+
+.gap-12 {
+  gap: 3rem;
+}
+
+.gap-20 {
+  gap: 5rem;
 }
 
 .gap-x-16 {
@@ -1602,8 +1626,20 @@ main {
   line-height: 1.25;
 }
 
+.leading-normal {
+  line-height: 1.5;
+}
+
 .tracking-widest {
   letter-spacing: 0.1em;
+}
+
+.tracking-normal {
+  letter-spacing: 0em;
+}
+
+.tracking-wide {
+  letter-spacing: 0.025em;
 }
 
 .text-black {
@@ -1988,7 +2024,7 @@ h6 {
 }
 
 .box-parent-active {
-  z-index: 20;
+  z-index: 30;
   --tw-bg-opacity: 0.5;
   opacity: 1;
 }
@@ -2086,7 +2122,7 @@ h6 {
 /* storeCard-active  */
 
 .copylinkShare-Active {
-  left: -2.75rem;
+  left: -46px;
   z-index: 10;
 }
 
@@ -2120,7 +2156,7 @@ h6 {
 }
 
 .instaShare-Active {
-  left: -66px;
+  left: -70px;
   z-index: 10;
 }
 
@@ -2192,7 +2228,7 @@ h6 {
 }
 
 .BoxparentBedding-Active {
-  z-index: 20;
+  z-index: 30;
   --tw-bg-opacity: 0.5;
 }
 
@@ -2565,6 +2601,14 @@ h6 {
 
   .md\:gap-8 {
     gap: 2rem;
+  }
+
+  .md\:gap-20 {
+    gap: 5rem;
+  }
+
+  .md\:gap-10 {
+    gap: 2.5rem;
   }
 
   .md\:place-self-end {
@@ -2941,6 +2985,10 @@ h6 {
 }
 
 @media (min-width: 1320px) {
+  .\32xl\:right-3 {
+    right: 0.75rem;
+  }
+
   .\32xl\:mt-24 {
     margin-top: 6rem;
   }
@@ -3029,6 +3077,10 @@ h6 {
 }
 
 @media (min-width: 1600px) {
+  .\33xl\:right-6 {
+    right: 1.5rem;
+  }
+
   .\33xl\:top-32 {
     top: 8rem;
   }

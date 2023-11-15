@@ -96,7 +96,7 @@
 }
 
 .box-parent-active {
-  @apply opacity-100 bg-opacity-50  z-20;
+  @apply opacity-100 bg-opacity-50  z-30;
 }
 
 .box-Cart-active {
@@ -186,7 +186,7 @@
 /* storeCard-active  */
 
 .copylinkShare-Active {
-  @apply lg:-left-9 md:-left-7 -left-11 z-10;
+  @apply lg:-left-9 md:-left-7 -left-[46px] z-10;
 }
 
 .waShare-Active {
@@ -194,7 +194,7 @@
 }
 
 .instaShare-Active {
-  @apply lg:-left-[109px] md:-left-[90px] -left-[66px] z-10;
+  @apply lg:-left-[109px] md:-left-[90px] -left-[70px] z-10;
 }
 
 .shareTrigger-Active {
@@ -234,7 +234,7 @@
 }
 
 .BoxparentBedding-Active {
-  @apply bg-opacity-50  z-20;
+  @apply bg-opacity-50  z-30;
 }
 
 /* Bedding Custom Bed End */
