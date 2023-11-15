@@ -18,19 +18,29 @@ module.exports = {
 
       keyframes: {
         wiggle: {
-          '0%, 100%': { transform: 'translateX(1%)' },
-          '50%': { transform: 'translateX(-1%)' },
+          '0%, 100%': { transform: 'translateX(7%)' },
+          '50%': { transform: 'translateX(-7%)' },
         },
 
         bgSlider: {
           '0%, 100%': { transform: '-translateX(full)' },
           '50%': { transform: 'translateX(0)' },
-        }
+        },
+
+        mousebc: {
+          "0%, 100%": {
+            transform: "translateY(0)",
+          },
+          "50%": {
+            transform: "translateY(2.5px)",
+          },
+        },
         
       },
 
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
+        mosueBounce: "mousebc 1s infinite",
       },
 
       fontFamily: {

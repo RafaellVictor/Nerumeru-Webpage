@@ -255,3 +255,20 @@
 }
 
 /* Payment Waiting List end */
+
+
+.insta-active {
+  @apply 3xl:bottom-64 2xl:bottom-52 bottom-[178px]
+}
+
+.wa-active {
+  @apply 3xl:bottom-44 2xl:bottom-36 bottom-[124px]
+}
+
+.shope-active {
+  @apply 3xl:bottom-24 2xl:bottom-20 bottom-[70px]
+}
+
+.floatBTN-Active {
+
+}
