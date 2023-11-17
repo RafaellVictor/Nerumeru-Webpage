@@ -272,3 +272,24 @@
 .floatBTN-Active {
 
 }
+
+.togglePesanan-active > svg {
+  @apply rotate-180
+}
+
+.BoxPesanan-Active {
+  @apply opacity-100 z-10 top-12
+}
+
+
+.DropDownBox-Active {
+  @apply opacity-100 transition-all ease-in-out duration-500 z-10
+}
+
+.active-DropProfile > span > svg {
+  @apply rotate-180 
+}
+
+.activeParentBox {
+  @apply pb-28
+}
