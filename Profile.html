@@ -113,101 +113,175 @@
       </div>
     </header>
     <main>
-      <section class="paymentwatingList lg:mt-44 md:mt-32">
-        <div class="container">
-          <div class="breadcrumb font-semibold">
-            <ul class="flex gap-4 items-center md:text-base text-sm">
-              <li><a href="">Home > </a></li>
-              <li><a href="">Cart > </a></li>
-              <li><a href="" class="text-blue-Neru"> Payment Waiting list</a></li>
-            </ul>
-          </div>
-          <div class="grid grid-cols-5 mt-6 gap-6">
-            <div class="lg:col-span-3 col-span-5">
-              <div class="wrapper rounded-lg border-[1px] border-grey-neru">
-                <div class="head rounded-lg rounded-b-none p-4 bg-blue-Neru text-white">
-                  <h6 class="font-bold">BCA Virtual Account</h6>
-                </div>
-                <hr class="border-grey-neru" />
-                <div class="body bg-white rounded-lg rounded-t-none p-4 flex flex-col gap-6">
-                  <div class="flex flex-col gap-2">
-                    <h6>Nomor Virtual Account</h6>
-                    <span class="flex justify-between items-center">
-                      <h6 class="font-bold">01872309818478179</h6>
-                      <a href="" class="text-blue-Neru font-semibold flex items-center gap-1">
-                        Salin
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                          <path d="M8 8m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z"></path>
-                          <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2"></path>
-                        </svg>
-                      </a>
-                    </span>
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <h6>Total Pembayaran</h6>
-                    <span class="flex justify-between items-center">
-                      <h6 class="font-bold">Rp.9.000.000</h6>
-                      <a href="" class="text-blue-Neru font-semibold flex items-center gap-1">
-                        Lihat Detail
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-description" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                          <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
-                          <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
-                          <path d="M9 17h6"></path>
-                          <path d="M9 13h6"></path>
-                        </svg>
-                      </a>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <span class="flex md:gap-4 gap-1 items-center text-center mt-3">
-                <a href="" class="relative group overflow-hidden p-3 transition-all ease-in-out duration-300 hover:text-white text-blue-Neru rounded-lg w-full border-[1px] font-semibold border-blue-Neru md:text-sm text-[11px]"
-                  >Cek status pembayaran
-                  <div class="-z-10 w-full h-full rounded-md flex items-center justify-center text-white bg-blue-Neru absolute inset-x-0 top-0 -translate-x-full group-hover:translate-x-0 transition-all ease-linear duration-200"></div>
-                </a>
-                <a href="" class="p-3 bg-blue-Neru text-white rounded-lg w-full font-semibold md:text-sm text-[11px]">Belanja lagi</a>
-              </span>
-            </div>
-            <div class="lg:col-span-2 col-span-5">
-              <div class="wrapper py-4 bg-white rounded-lg border-[1px] border-grey-neru">
-                <div class="body bg-white rounded-lg rounded-t-none p-4 flex flex-col gap-3 text-center">
-                  <h6>Selesaikan Pembayaran Dalam</h6>
-                  <h6 class="text-blue-Neru font-semibold">23:45:30</h6>
-                  <h6>Batas Akhir Pembayaran</h6>
-                  <h6 class="font-bold">Senin , 7 agustus 2023 07:24 AM</h6>
-                </div>
-              </div>
-              <h6 class="font-semibold text-blue-Neru my-4">Cara Pembayaran</h6>
-              <div class="accordion-wrapper rounded-lg border-grey-neru border-[1px]" id="HowToPay">
-                <div class="accordion-header rounded-lg cursor-pointer bg-white px-4 py-4 relative">
-                  <div class="wrap flex justify-between items-center">
-                    <h5 class="font-semibold lg:text-base text-sm">ATM BCA</h5>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-5 w-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                      <path d="M6 9l6 6l6 -6"></path>
+      <section class="profle lg:mt-44 md:mt-32">
+        <!-- Lg Profile Mode -->
+        <div class="container grid grid-cols-8 gap-5">
+          <div class="lg:col-span-2 col-span-8 row-span-6 px-8 py-8 bg-white rounded-md">
+            <div class="sticky top-32">
+              <div class="head flex items-center gap-6">
+                <img src="img/Image.png" class="w-[15%]" alt="" />
+                <span class="flex flex-col">
+                  <h6 class="font-medium">Immanuel Christian Hirani</h6>
+                  <span class="flex items-center gap-2 text-grey-neru">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M12 15l8.385 -8.415a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3z" />
+                      <path d="M16 5l3 3" />
+                      <path d="M9 7.07a7 7 0 0 0 1 13.93a7 7 0 0 0 6.929 -6" />
                     </svg>
-                  </div>
-                  <hr class="border-grey-neru mt-4" />
+                    <h6 class="flex gap-1 items-center">Ubah Profile</h6>
+                  </span>
+                </span>
+              </div>
+              <hr class="my-4" />
+              <span class="lg:hidden flex gap-12 items-center justify-center">
+                <h5 class="hover:underline underline-offset-8 md:text-lg text-base">Akun</h5>
+                <hr class="border-[1px] h-4 border-separate border-black" />
+                <h5 class="hover:underline underline-offset-8  md:text-lg text-base">Pesanan</h5>
+              </span>
+              <div class="body lg:block hidden">
+                <ul>
+                  <li class="font-semibold">
+                    <span class="flex justify-between">
+                      <a href="">Akun</a>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M6 9l6 6l6 -6" />
+                      </svg>
+                    </span>
+                  </li>
+                  <ul class="flex flex-col gap-3 mt-3 ml-6">
+                    <li><a href="">Profil</a></li>
+                    <li><a href="">Alamat</a></li>
+                    <li><a href="">Ubah Password</a></li>
+                  </ul>
+                </ul>
+                <ul class="mt-3">
+                  <li class="font-semibold"><a href="">Pesanan Saya</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-6 col-span-8 bg-white p-8 rounded-md">
+            <div class="head flex flex-col gap-1">
+              <h6 class="font-semibold">Profile Saya</h6>
+            </div>
+            <hr class="my-4" />
+            <div class="body lg:grid grid-cols-6 flex flex-col-reverse gap-12 lg:py-0 py-6 lg:items-center items-start mt-6">
+              <form class="flex flex-col gap-4 w-full col-span-4">
+                <div class="flex md:flex-row flex-col md:gap-6 gap-4">
+                  <label for="" class="md:w-28 w-24"><h6>Username</h6></label>
+                  <label for=""><h6>Zhaprael668</h6></label>
                 </div>
-                <div class="accordion-body rounded-lg bg-white shadow-sm">
-                  <div class="content-wrapper p-4">
-                    <ul class="ml-4 flex flex-col gap-1.5">
-                      <li>Masukkan Kartu ATM BCA & PIN</li>
-                      <li>Pilih menu Transaksi Lainnya > Transfer > ke Rekening BCA Virtual Account</li>
-                      <li>Masukkan 5 angka kode perusahaan untuk Tokopedia (80777) dan Nomor HP yang terdaftar di akun Tokopedia Anda (Contoh: 80777081314801945)</li>
-                      <li>Di halaman konfirmasi, pastikan detil pembayaran sudah sesuai seperti No WA, Nama, Perusahaan/Produk dan Total Tagihan</li>
-                      <li>Masukkan Jumlah Transfer sesuai dengan Total Tagihan</li>
-                      <li>Ikuti instruksi untuk menyelesaikan transaksi</li>
-                      <li>Simpan struk transaksi sebagai bukti pembayaran</li>
-                    </ul>
-                  </div>
+                <hr class="lg:hidden" />
+                <div class="flex md:flex-row lg:items-center flex-col md:gap-6 gap-4">
+                  <label for="" class="md:w-28 w-24"><h6>Name</h6></label>
+                  <input type="text" class="2xl:text-base xl:text-sm md:text-base text-sm md:w-1/2 w-full outline-none border-[1px] shadow-inner border-grey-neru p-2" placeholder="Immanuel Christian Hirani" />
+                </div>
+                <hr class="lg:hidden" />
+                <div class="flex md:flex-row flex-col md:gap-6 gap-4">
+                  <label for="" class="md:w-28 w-24"><h6>Email</h6></label>
+                  <span class="flex md:gap-3 gap-1.5 items-center text-grey-neru">
+                    <label for="" class="underline"><h6>nuel.hirani8@gmail.com</h6></label>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="md:w-6 w-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M12 15l8.385 -8.415a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3z" />
+                      <path d="M16 5l3 3" />
+                      <path d="M9 7.07a7 7 0 0 0 1 13.93a7 7 0 0 0 6.929 -6" />
+                    </svg>
+                  </span>
+                </div>
+                <hr class="lg:hidden" />
+                <div class="flex md:flex-row flex-col md:gap-6 gap-4">
+                  <label for="" class="md:w-28 w-24"><h6>No Telephone</h6></label>
+                  <span class="flex md:gap-3 gap-1.5 items-center text-grey-neru">
+                    <label for="" class="underline"><h6>0813-1480-1945</h6></label>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="md:w-6 w-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M12 15l8.385 -8.415a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3z" />
+                      <path d="M16 5l3 3" />
+                      <path d="M9 7.07a7 7 0 0 0 1 13.93a7 7 0 0 0 6.929 -6" />
+                    </svg>
+                  </span>
+                </div>
+              </form>
+              <div class="col-span-2 w-full flex flex-col gap-4 items-center">
+                <img src="img/Person Test.png" class="md:w-32 md:h-32 w-24 h-24 object-cover rounded-full" alt="" />
+                <label class="border-[1px] border-grey-neru flex justify-between font-spartanMedium items-center p-2">
+                  <h6>Pilih Gambar</h6>
+                  <input type="file" class="hidden" />
+                </label>
+                <span class="lg:w-1/2 w-full">
+                  <h6 class="text-center">Ukuran gambar: maks. 1 MB Format gambar: .JPEG, .PNG</h6>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-6 col-span-8 row-span-4 bg-white p-8 rounded-md">
+            <div class="head ">
+              <h6 class="font-semibold">Alamat Saya</h6>
+            </div>
+            <hr class="my-4" />
+            <div class="user-informations bg-white flex flex-col  gap-4">
+              <div class="flex md:flex-row flex-col justify-between items-center gap-4">
+                <div class="wrapper lg:w-1/2 w-full flex flex-col gap-2">
+                  <span class="flex md:flex-row flex-col lg:items-center items-start gap-2">
+                    <h6 class="font-semibold">Immanuel Christian Hirani</h6>
+                    <hr class="md:block hidden border-[1px] h-4 border-separate border-black" />
+                    <h6 class="font-light">(0813-1480-1495)</h6>
+                  </span>
+                  <h6 class="font-light lg:text-base text-sm">Jalan Kakap Raya No.155, RT.1/RW.3, Karawaci Baru, Karawaci (Rumah hijau besar) KARAWACI, KOTA TANGERANG, BANTEN, ID, 15116</h6>
+                </div>
+                <div class="flex gap-2 items-center md:w-1/2 w-full md:justify-end justify-start">
+                  <a id="UbahAlamat" class="lg:text-base text-sm flex gap-1 items-center text-green-500 cursor-pointer">
+                    <h6>Ubah Alamat</h6>
+                  </a>
+                  <hr class="border-[1px] h-4 border-separate border-black" />
+                  <a id="UbahAlamat" class="lg:text-base text-sm flex gap-1 items-center text-red-500 cursor-pointer">
+                    <h6>Hapus</h6>
+                  </a>
                 </div>
               </div>
+              <hr />
+            </div>
+          </div>
+          <div class="lg:col-span-6 col-span-8 bg-white p-8 rounded-md">
+            <div class="head flex gap-1 items-center justify-between">
+              <h6 class="font-semibold">Ubah Password</h6>
+            </div>
+            <hr class="my-4" />
+            <div class="user-informations bg-white flex flex-col gap-4">
+              <div class="flex md:flex-row w-full flex-col gap-6 lg:items-center items-start">
+                <label for="" class="w-40"><h6>Password</h6></label>
+                <span class="flex items-center gap-4">
+                  <input type="text" class="w-full outline-none border-[1px] shadow-inner border-grey-neru p-2" placeholder="********" />
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
+                    <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" />
+                    <path d="M3 3l18 18" />
+                  </svg>
+                </span>
+              </div>
+              <div class="flex md:flex-row flex-col gap-6 lg:items-center items-start">
+                <label for="" class="w-40"><h6>Confirm Password</h6></label>
+                <span class="flex items-center gap-4">
+                  <input type="text" class="w-full outline-none border-[1px] shadow-inner border-grey-neru p-2" placeholder="********" />
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
+                    <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" />
+                    <path d="M3 3l18 18" />
+                  </svg>
+                </span>
+              </div>
+              <hr />
             </div>
           </div>
         </div>
+        <!-- Lg Profile Mode End -->
+        <!-- Md & Sm -->
+        <!-- Md & Sm end -->
       </section>
       <section class="floating-btn">
         <div class="wrapper container flex flex-col gap-1.5 w-fit z-20 3xl:right-6 2xl:right-3 right-0 fixed bottom-0" id="FloatingBtn">
@@ -318,8 +392,8 @@
   <script src="js/swiper.js"></script>
   <script src="js/button.js"></script>
   <script src="js/nav.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/accordion.js"></script>
   <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script src="js/Typing-Text.js"></script>
   <script src="js/floatingbtn.js"></script>
 </html>
