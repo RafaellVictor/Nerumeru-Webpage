@@ -74,7 +74,7 @@
 }
 
 .box-CargoActive {
-  @apply top-8 opacity-100 z-10;
+  @apply top-8 opacity-100 z-10 transition-all ease-in-out duration-300;
 }
 
 .navDrop-Active > svg {
