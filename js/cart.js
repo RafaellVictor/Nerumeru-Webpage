@@ -6,9 +6,12 @@ const boxalamat = document.getElementById("BoxAlamat");
 const ubahalamat = document.getElementById("UbahAlamat");
 const boxalamatParent = boxalamat.parentNode;
 const closeBox = document.querySelectorAll(".closeBox");
+const closeBoxFeatAlamat = document.querySelector(".closeBoxFeatUbahAlamat");
 const checkoutToggle = document.getElementById("checkoutToggle");
 const PaymentBox = document.getElementById("PaymentBox");
 const PaymentBoxParent = PaymentBox.parentNode;
+const UbahAlamatToggle = document.getElementById("UbahAlamatToggle-Feat");
+const FeatUbahAlamat = document.getElementById("Feat-UbahAlamat");
 
 // Menyimpan referensi ke elemen yang aktif saat ini
 let activeElement = null;
@@ -83,7 +86,6 @@ closeBox.forEach((Otherclosebox) => {
     PaymentBox.classList.remove("box-Cart-active");
     PaymentBoxParent.classList.remove("box-parent-active");
     document.body.classList.remove("overflow-hidden");
-
   });
 });
 
@@ -113,3 +115,15 @@ function handleRadioChange(selectedRadio) {
 }
 
 // Radio Checkbox end
+
+closeBoxFeatAlamat.addEventListener('click' , () => {
+  boxalamat.classList.remove('hidden')
+  FeatUbahAlamat.classList.add('hidden')
+})
+
+
+
+UbahAlamatToggle.addEventListener('click' ,() => {
+  FeatUbahAlamat.classList.remove('hidden')
+  boxalamat.classList.add('hidden')
+})
