@@ -1392,6 +1392,10 @@ main {
   border-radius: 0.125rem;
 }
 
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
 .rounded-b-none {
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -2856,6 +2860,10 @@ h6 {
     width: 85%;
   }
 
+  .md\:w-full {
+    width: 100%;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3147,6 +3155,10 @@ h6 {
 
   .lg\:w-\[650px\] {
     width: 650px;
+  }
+
+  .lg\:w-3\/4 {
+    width: 75%;
   }
 
   .lg\:grid-cols-2 {
