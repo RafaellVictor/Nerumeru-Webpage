@@ -293,3 +293,13 @@
 .activeParentBox {
   @apply pb-28
 }
+
+
+
+/* Admin */
+
+#searchAdminNavbar::placeholder {
+  @apply text-blue-Neru font-medium
+}
+
+/* Admin end */
