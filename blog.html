@@ -403,9 +403,9 @@
           </div>
         </div>
       </section>
-      <section class="video">
-        <div class="container relative">
-          <div class="w-3/5 mx-auto rounded-xl overflow-hidden">
+      <section class="video mx-auto lg:w-3/4 md:w-full">
+        <div class="container">
+          <div class="rounded-xl overflow-hidden player">
             <div class="plyr__video-embed" id="player">
               <iframe
                 src="https://www.youtube.com/watch?v=bTqVqk7FSmY"
@@ -413,10 +413,10 @@
                 allowtransparency
                 allow="autoplay"
               ></iframe>
-              <div class="plyr__control--overlaid text">
-                <p>Neru Meru Productions</p>
 
-                <p id="duration"></p>
+              <div class="plyr__control--overlaid text font-semibold">
+                <h6 id="title"></h6>
+                <h6 id="duration"></h6>
               </div>
             </div>
           </div>
@@ -1124,7 +1124,23 @@
     </footer>
     <script src="js/plyr.js"></script>
     <script>
-      const player = new Plyr("#player");
+      const player = new Plyr("#player", {
+        controls: [
+          "play-large", // The large play button in the center
+          // "restart", // Restart playback
+          // "rewind", // Rewind by the seek time (default 10 seconds)
+          "play", // Play/pause playback
+          // "fast-forward", // Fast forward by the seek time (default 10 seconds)
+          "progress", // The progress bar and scrubber for playback and buffering
+          "current-time", // The current time of playback
+          "duration", // The full duration of the media
+          "mute", // Toggle mute
+          "volume", // Volume control
+          "settings", // Settings menu
+          // "download", // Show a download button with a link to either the current source or a custom URL you specify in your options
+          "fullscreen",
+        ],
+      });
     </script>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

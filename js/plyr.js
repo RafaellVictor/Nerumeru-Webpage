@@ -1313,11 +1313,6 @@
       },
       formatTime(e = 0, t = !1) {
         if (!S.number(e)) return e;
-        document.getElementById("duration").innerHTML = Ee(
-          e,
-          Ce(this.duration) > 0,
-          t
-        );
 
         return Ee(e, Ce(this.duration) > 0, t);
       },
@@ -1364,6 +1359,7 @@
                     : ((s / n) * 100).toFixed(2)),
                 "timeupdate" === e.type &&
                   Pe.setRange.call(this, this.elements.inputs.seek, t);
+
               break;
             case "playing":
             case "progress":
@@ -1379,6 +1375,7 @@
             const e = Pe.formatTime(this.currentTime),
               i = Pe.formatTime(this.duration),
               s = ve.get("seekLabel", this.config);
+            document.getElementById("duration").innerHTML = i;
             t.setAttribute(
               "aria-valuetext",
               s.replace("{currentTime}", e).replace("{duration}", i)
@@ -3972,6 +3969,7 @@
                 (this.config.title = t),
                   Fe.setTitle.call(this),
                   (this.embed.ratio = he(s, i));
+                document.getElementById("title").innerHTML = t;
               }
               ue.call(this);
             })
