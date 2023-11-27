@@ -1599,7 +1599,7 @@ a.plyr__control:before {
 }
 
 .BoxNavAdmin-Active {
-  @apply transition-all ease-out duration-300 opacity-100 z-10 
+  @apply transition-all ease-out duration-300 opacity-100 
 }
 
 .navAdmin-active {
@@ -1608,5 +1608,9 @@ a.plyr__control:before {
 
 .NavAdminToggle-active > svg {
   @apply rotate-180
+}
+
+.BoxNotifications-Active {
+  @apply opacity-100 top-10 -z-40 
 }
 /* Admin end */
