@@ -697,8 +697,8 @@ main {
   left: 0px;
 }
 
-.left-20 {
-  left: 5rem;
+.left-14 {
+  left: 3.5rem;
 }
 
 .left-3 {
@@ -755,10 +755,6 @@ main {
 
 .top-5 {
   top: 1.25rem;
-}
-
-.left-14 {
-  left: 3.5rem;
 }
 
 .-z-10 {
@@ -1188,12 +1184,6 @@ main {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.scale-0 {
-  --tw-scale-x: 0;
-  --tw-scale-y: 0;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -1465,10 +1455,6 @@ main {
 
 .border-opacity-0 {
   --tw-border-opacity: 0;
-}
-
-.border-opacity-100 {
-  --tw-border-opacity: 1;
 }
 
 .bg-black {
@@ -1820,10 +1806,6 @@ main {
   font-weight: 500;
 }
 
-.font-normal {
-  font-weight: 400;
-}
-
 .font-semibold {
   font-weight: 600;
 }
@@ -1898,24 +1880,12 @@ main {
   text-decoration-line: underline;
 }
 
-.no-underline {
-  text-decoration-line: none;
-}
-
 .underline-offset-8 {
   text-underline-offset: 8px;
 }
 
 .underline-offset-\[14px\] {
   text-underline-offset: 14px;
-}
-
-.underline-offset-4 {
-  text-underline-offset: 4px;
-}
-
-.underline-offset-0 {
-  text-underline-offset: 0px;
 }
 
 .opacity-0 {
@@ -2045,10 +2015,6 @@ main {
 
 .ease-linear {
   transition-timing-function: linear;
-}
-
-.ease-out {
-  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
 /* .text-stroke  {
@@ -4120,15 +4086,31 @@ a.plyr__control:before {
 
 /* Vidio Player Css  End */
 
-.hover\:scale-100:hover {
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
+/* Admin */
+
+.parentAdminNav-Active {
+  margin-bottom: 480px;
+}
+
+.BoxNavAdmin-Active {
+  z-index: 10;
+  opacity: 1;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.navAdmin-active {
+  --tw-border-opacity: 1;
+}
+
+.NavAdminToggle-active > svg {
+  --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.hover\:border-opacity-100:hover {
-  --tw-border-opacity: 1;
-}
+/* Admin end */
 
 .hover\:bg-black:hover {
   --tw-bg-opacity: 1;
@@ -4142,10 +4124,6 @@ a.plyr__control:before {
 
 .hover\:bg-opacity-5:hover {
   --tw-bg-opacity: 0.05;
-}
-
-.hover\:pb-\[480px\]:hover {
-  padding-bottom: 480px;
 }
 
 .hover\:text-blue-Neru:hover {
@@ -4173,10 +4151,6 @@ a.plyr__control:before {
 .hover\:outline-none:hover {
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-.group:hover .group-hover\:z-10 {
-  z-index: 10;
 }
 
 .group:hover .group-hover\:-translate-x-0 {
@@ -4222,14 +4196,6 @@ a.plyr__control:before {
 .group:hover .group-hover\:rotate-180 {
   --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:opacity-100 {
-  opacity: 1;
-}
-
-.group:hover .group-hover\:duration-300 {
-  transition-duration: 300ms;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1588,3 +1588,25 @@ a.plyr__control:before {
 }
 
 /* Vidio Player Css  End */
+
+
+
+
+/* Admin */
+
+.parentAdminNav-Active {
+    @apply  mb-[480px]
+}
+
+.BoxNavAdmin-Active {
+  @apply transition-all ease-out duration-300 opacity-100 z-10 
+}
+
+.navAdmin-active {
+  @apply border-opacity-100
+}
+
+.NavAdminToggle-active > svg {
+  @apply rotate-180
+}
+/* Admin end */
