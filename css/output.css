@@ -705,6 +705,10 @@ main {
   left: 1.25rem;
 }
 
+.left-9 {
+  left: 2.25rem;
+}
+
 .right-0 {
   right: 0px;
 }
@@ -751,6 +755,10 @@ main {
 
 .top-5 {
   top: 1.25rem;
+}
+
+.left-10 {
+  left: 2.5rem;
 }
 
 .-z-10 {
@@ -837,11 +845,6 @@ main {
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
-}
-
-.mx-20 {
-  margin-left: 5rem;
-  margin-right: 5rem;
 }
 
 .mb-0 {
@@ -1536,10 +1539,6 @@ main {
 
 .bg-trolly-catalog {
   background-image: url('../img/card-item-bg-trolly.png');
-}
-
-.bg-none {
-  background-image: none;
 }
 
 .bg-contain {
