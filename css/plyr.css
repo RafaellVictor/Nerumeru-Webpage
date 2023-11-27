@@ -29,6 +29,10 @@
   --plyr-color-main: rgb(37 93 180 / var(--tw-bg-opacity));
 }
 
+:root {
+  /* --plyr-control-icon-size: 80px; */
+}
+
 .plyr {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;

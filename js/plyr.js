@@ -3971,7 +3971,7 @@
                 (this.config.title = t),
                   Fe.setTitle.call(this),
                   (this.embed.ratio = he(s, i));
-                document.getElementById("title").innerHTML = t;
+                // document.getElementById("title").innerHTML = t;
               }
               ue.call(this);
             })
