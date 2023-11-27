@@ -1108,7 +1108,7 @@ a.plyr__control:before {
   padding: calc(var(--plyr-control-spacing, 10px) * 1.5);
   position: absolute;
   top: 50%;
-  left: 15%;
+  left: 50%;
   transform: translate(-50%, -50%);
   transition: 0.3s;
   z-index: 2;
@@ -1120,8 +1120,7 @@ a.plyr__control:before {
 
 .plyr__control--overlaid.text {
   background: none;
-  left: 42%;
-  margin-left: 35px;
+  /* margin-left: 35px; */
 }
 @media (max-width: 768px) {
   .plyr__control--overlaid {
