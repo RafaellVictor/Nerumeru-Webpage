@@ -14,6 +14,7 @@ module.exports = {
         'sanitize-catalog': "url('../img/card-item5.png')",
         'trolly-catalog': "url('../img/card-item-bg-trolly.png')",
         'pillow-catalog': "url('../img/pillow-bg.png')",
+        'forest': "url('../img/bg-forest.jpg')",
       },
 
       keyframes: {
@@ -53,6 +54,7 @@ module.exports = {
         "black-neru": "#42454A",
         "white-neru": "#F5F5F5",
         "grey-neru": "#ACA9A9",
+        "blue-Login-Form" : "#C5D9EB"
       },
 
       screens: {

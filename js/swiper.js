@@ -166,7 +166,7 @@ var swiper = new Swiper(".EventCoverflow-content", {
   coverflowEffect: {
     rotate: 0,
     stretch: 0,
-    depth: 75,
+    depth: 70,
     modifier: 3,
     slideShadows : true,
   },

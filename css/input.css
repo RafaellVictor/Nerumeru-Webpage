@@ -59,7 +59,7 @@
 }
 
 .dropMenu-Active {
-  @apply 3xl:top-16 2xl:top-[60px] md:top-16 top-[52px] md:left-0 z-10 opacity-100;
+  @apply 3xl:top-16 2xl:top-[60px] md:top-16 top-[52px] md:left-0 z-10 opacity-100 transition-all ease-in-out duration-500;
 }
 
 .nav-active > span:nth-child(1) {
@@ -238,6 +238,7 @@
   @apply opacity-100 transition-all ease-in-out duration-300;
 }
 
+
 .BoxparentBedding-Active {
   @apply bg-opacity-50  z-30;
 }
@@ -301,7 +302,27 @@
   @apply text-blue-Neru font-medium;
 }
 
+.inputLogin::placeholder {
+  @apply text-white  font-semibold;
+}
+
+.inputregister::placeholder {
+  @apply text-white  font-semibold;
+}
+
 /* Admin end */
+
+/* Login */
+
+.BoxRegis-active {
+  @apply translate-y-0 opacity-100 visible
+}
+
+.RememberMe::checkbox {
+  @apply border-none bg-transparent outline-none
+}
+
+/* Login end */
 
 /* Vidio Player Css  */
 
