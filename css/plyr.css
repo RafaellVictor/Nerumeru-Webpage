@@ -1122,22 +1122,10 @@ a.plyr__control:before {
   position: relative;
 }
 
-.plyr__control--overlaid.text {
+/* .plyr__control--overlaid.text {
   background: none;
 
-  /* margin-left: 35px; */
-}
-
-@media (max-width: 768px) {
-  .plyr__control--overlaid {
-    left: 50%;
-  }
-
-  .plyr__control--overlaid.text #title,
-  #duration {
-    display: none !important;
-  }
-}
+} */
 
 .plyr__control--overlaid:focus,
 .plyr__control--overlaid:hover {

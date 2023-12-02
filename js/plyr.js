@@ -1375,7 +1375,7 @@
             const e = Pe.formatTime(this.currentTime),
               i = Pe.formatTime(this.duration),
               s = ve.get("seekLabel", this.config);
-            document.getElementById("duration").innerHTML = i;
+            // document.getElementById("duration").innerHTML = i;
             t.setAttribute(
               "aria-valuetext",
               s.replace("{currentTime}", e).replace("{duration}", i)
@@ -1698,9 +1698,10 @@
         (this.elements.controls = null),
           S.array(this.config.controls) &&
             this.config.controls.includes("play-large") &&
-            document
-              .getElementById("wrap")
-              .appendChild(i.call(this, "play-large"));
+            this.elements.container.appendChild(i.call(this, "play-large"));
+        // document
+        //   .getElementById("wrap")
+        //   .appendChild(i.call(this, "play-large"));
         const c = $("div", D(this.config.selectors.controls.wrapper));
         this.elements.controls = c;
         const u = { class: "plyr__controls__item" };
