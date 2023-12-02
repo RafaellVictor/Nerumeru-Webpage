@@ -7,27 +7,18 @@ const pesananBox = document.getElementById("pesanaBox");
 const dropdownProfile = document.querySelectorAll(".dropdownProfile");
 const dropBoxProfile = document.querySelector(".dropdownBoxProfile");
 
-dropdownProfile.forEach(otherToggle => {
-    otherToggle.addEventListener('mouseenter', () => {
-        const ParentProflieDropdown = otherToggle.parentNode;
-        otherToggle.classList.add('active-DropProfile');
-        ParentProflieDropdown.classList.add('activeParentBox');
-        dropBoxProfile.classList.add('DropDownBox-Active');
-    });
+dropdownProfile.forEach((otherToggle) => {
+  const ParentProflieDropdown = otherToggle.parentNode;
+  ParentProflieDropdown.classList.add("activeParentBox");
+  dropBoxProfile.classList.add("DropDownBox-Active");
 
-    const dropdownContainer = dropBoxProfile.parentElement; // Mengambil container dari dropdown
-
-    dropdownContainer.addEventListener('mouseleave', () => {
-        dropdownProfile.forEach(toggle => {
-            toggle.classList.remove('active-DropProfile');
-            toggle.parentNode.classList.remove('activeParentBox');
-        });
-        dropBoxProfile.classList.remove('DropDownBox-Active');
-    });
+  otherToggle.addEventListener("click", () => {
+    const ParentProflie = otherToggle.parentNode;
+    otherToggle.classList.toggle("active-DropProfile");
+    ParentProflie.classList.toggle("activeParentBox");
+    dropBoxProfile.classList.toggle("DropDownBox-Active");
+  });
 });
-
-
-
 
 AkunToggle.forEach((otherToggle) => {
   otherToggle.addEventListener("click", () => {

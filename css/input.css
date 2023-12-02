@@ -49,6 +49,10 @@
   display: none;
 }
 
+/* body::-webkit-scrollbar {
+  @apply hidden
+} */
+
 /*pb-[330px] */
 .navCont-active {
   @apply 3xl:pb-16 md:pb-12 shadow-md;

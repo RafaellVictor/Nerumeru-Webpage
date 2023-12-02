@@ -30,7 +30,7 @@
                   <path d="M6 9l6 6l6 -6"></path>
                 </svg>
                 <!-- Top-12 -->
-                <ul class="dropDownBox text-white text-center absolute pb-0 top-0 translate-y-1/2 inset-x-0 opacity-0 -z-10 md:block hidden transition-all ease-in-out duration-300">
+                <ul class="dropDownBox text-white text-center absolute pb-0 top-12 translate-y-1/2 inset-x-0 opacity-0 -z-10 md:block hidden transition-all ease-in-out duration-300">
                   <li class="w-full flex gap-4 px-4 items-center">
                     <a href="bedding.html" class="bg-blue-Neru w-80 py-2.5 rounded-md cursor-pointer">Bedding</a>
                     <a href="toys.html" class="bg-blue-Neru w-80 py-2.5 rounded-md cursor-pointer">Toys</a>
@@ -124,13 +124,13 @@
                   <span class="flex flex-col">
                     <h6 class="font-medium">Immanuel Christian Hirani</h6>
                     <span class="flex items-center gap-2 text-grey-neru">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M12 15l8.385 -8.415a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3z" />
-                        <path d="M16 5l3 3" />
-                        <path d="M9 7.07a7 7 0 0 0 1 13.93a7 7 0 0 0 6.929 -6" />
+                        <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                        <path d="M9 12h12l-3 -3" />
+                        <path d="M18 15l3 -3" />
                       </svg>
-                      <h6 class="flex gap-1 items-center">Ubah Profile</h6>
+                      <a href="login_Register.html"><h6 class="flex gap-1 items-center">Logout</h6></a>
                     </span>
                   </span>
                 </div>
@@ -221,12 +221,19 @@
                     </div>
                   </div>
                 </div>
-                <div id="Alamat" class="bg-white p-8 rounded-md">
-                  <div class="head">
+                <div id="Alamat" class="bg-white p-8 rounded-md flex flex-col gap-6">
+                  <div class="head flex justify-between items-center">
                     <h6 class="font-semibold">Alamat Saya</h6>
+                    <span class="flex justify-between items-center px-4 py-2 bg-blue-Neru rounded-lg font-semibold text-white gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 5l0 14" />
+                        <path d="M5 12l14 0" />
+                      </svg>
+                      <a class=""><h6 class="md:text-sm text-xs">Tambah Alamat</h6></a>
+                    </span>
                   </div>
-                  <hr class="my-4" />
-                  <div class="user-informations bg-white flex flex-col gap-4">
+                  <div class="user-informations flex flex-col gap-4 border-2 p-6 rounded-lg border-blue-Neru  bg-blue-Neru bg-opacity-5">
                     <div class="flex md:flex-row flex-col justify-between items-center gap-4">
                       <div class="wrapper lg:w-1/2 w-full flex flex-col gap-2">
                         <span class="flex md:flex-row flex-col lg:items-center items-start gap-2">
@@ -235,18 +242,50 @@
                           <h6 class="font-light">(0813-1480-1495)</h6>
                         </span>
                         <h6 class="font-light lg:text-base text-sm">Jalan Kakap Raya No.155, RT.1/RW.3, Karawaci Baru, Karawaci (Rumah hijau besar) KARAWACI, KOTA TANGERANG, BANTEN, ID, 15116</h6>
+                        <div class="flex gap-2 items-center md:w-1/2 w-full justify-start mt-4">
+                          <a id="UbahAlamat" class="lg:text-base text-sm flex gap-1 items-center text-green-500 cursor-pointer">
+                            <h6>Ubah Alamat</h6>
+                          </a>
+                          <hr class="border-[1px] h-4 border-separate border-black" />
+                          <a id="UbahAlamat" class="lg:text-base text-sm flex gap-1 items-center text-red-500 cursor-pointer">
+                            <h6>Hapus</h6>
+                          </a>
+                        </div>
                       </div>
-                      <div class="flex gap-2 items-center md:w-1/2 w-full md:justify-end justify-start">
-                        <a id="UbahAlamat" class="lg:text-base text-sm flex gap-1 items-center text-green-500 cursor-pointer">
-                          <h6>Ubah Alamat</h6>
-                        </a>
-                        <hr class="border-[1px] h-4 border-separate border-black" />
-                        <a id="UbahAlamat" class="lg:text-base text-sm flex gap-1 items-center text-red-500 cursor-pointer">
-                          <h6>Hapus</h6>
+                      <div class="flex gap-2 items-center md:w-1/2 w-full md:justify-end justify-start mt-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="md:block hidden w-6 text-blue-Neru"  viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                          <path d="M5 12l5 5l10 -10" />
+                        </svg>
+                        <button class="bg-blue-Neru md:hidden block rounded-lg p-2 text-xs text-white font-medium w-full">Alamat Terpilih</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="user-informations bg-white flex flex-col gap-4 border-2 p-6 rounded-lg">
+                    <div class="flex md:flex-row flex-col justify-between items-center gap-4">
+                      <div class="wrapper lg:w-1/2 w-full flex flex-col gap-2">
+                        <span class="flex md:flex-row flex-col lg:items-center items-start gap-2">
+                          <h6 class="font-semibold">Immanuel Christian Hirani</h6>
+                          <hr class="md:block hidden border-[1px] h-4 border-separate border-black" />
+                          <h6 class="font-light">(0813-1480-1495)</h6>
+                        </span>
+                        <h6 class="font-light lg:text-base text-sm">Jalan Kakap Raya No.155, RT.1/RW.3, Karawaci Baru, Karawaci (Rumah hijau besar) KARAWACI, KOTA TANGERANG, BANTEN, ID, 15116</h6>
+                        <div class="flex gap-2 items-center md:w-1/2 w-full justify-start mt-4">
+                          <a id="UbahAlamat" class="lg:text-base text-sm flex gap-1 items-center text-green-500 cursor-pointer">
+                            <h6>Ubah Alamat</h6>
+                          </a>
+                          <hr class="border-[1px] h-4 border-separate border-black" />
+                          <a id="UbahAlamat" class="lg:text-base text-sm flex gap-1 items-center text-red-500 cursor-pointer">
+                            <h6>Hapus</h6>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="flex gap-2 items-center md:w-1/2 w-full md:justify-end justify-start mt-4">
+                        <a id="UbahAlamat" class="md:bg-blue-Neru rounded-lg px-4 text-center justify-center py-2 lg:text-base text-sm flex gap-1 items-center text-black md:border-0 border-2 md:text-white md:w-fit w-full  cursor-pointer">
+                          <h6 class="md:text-sm text-xs">Pilih Alamat</h6>
                         </a>
                       </div>
                     </div>
-                    <hr />
                   </div>
                 </div>
                 <div id="Password" class="bg-white p-8 rounded-md">
