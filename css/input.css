@@ -63,7 +63,7 @@
 }
 
 .dropMenu-Active {
-  @apply 3xl:top-16 2xl:top-[60px] md:top-16 top-[52px] md:left-0 z-10 opacity-100 transition-all ease-in-out duration-500;
+  @apply 3xl:top-16 2xl:top-[60px] md:top-16 top-[52px] md:left-0 visible;
 }
 
 .nav-active > span:nth-child(1) {
