@@ -63,7 +63,7 @@
 }
 
 .dropMenu-Active {
-  @apply 3xl:top-16 2xl:top-[60px] md:top-16 top-[52px] md:left-0 visible;
+  @apply 3xl:top-16 2xl:top-[60px] md:top-16 z-20 top-[52px] md:left-0 visible transition-all ease-in-out duration-500 opacity-100;
 }
 
 .nav-active > span:nth-child(1) {
@@ -194,17 +194,11 @@
 
 /* storeCard-active  */
 
-.copylinkShare-Active {
-  @apply lg:-left-9 md:-left-7 -left-[46px] z-10;
-}
 
 .waShare-Active {
-  @apply lg:-left-[72px] md:-left-[59px] -left-[22px] z-10;
+  @apply lg:-left-8 md:-left-[59px] -left-[22px] z-10;
 }
 
-.instaShare-Active {
-  @apply lg:-left-[109px] md:-left-[90px] -left-[70px] z-10;
-}
 
 .shareTrigger-Active {
   @apply bg-white text-blue-Neru;

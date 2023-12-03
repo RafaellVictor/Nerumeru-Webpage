@@ -29,6 +29,16 @@ AkunToggle.forEach((otherToggle) => {
 
 PesananToggle.forEach((otherToggle) => {
   otherToggle.addEventListener("click", () => {
+    // Menghapus item 2
+    dropdownProfile.forEach((item) => {
+      const ParentProfile = item.parentNode;
+      const dropBoxProfile = document.querySelector(".dropdownBoxProfile");
+
+      ParentProfile.classList.remove("activeParentBox");
+      dropBoxProfile.classList.remove("DropDownBox-Active");
+    });
+
+    // Mengubah konten lainnya sesuai kebutuhan
     AkunBox.classList.add("hidden");
     pesananBox.classList.remove("hidden");
   });

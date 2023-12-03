@@ -733,6 +733,10 @@ main {
   top: 50%;
 }
 
+.top-10 {
+  top: 2.5rem;
+}
+
 .top-12 {
   top: 3rem;
 }
@@ -982,6 +986,10 @@ main {
 
 .h-8 {
   height: 2rem;
+}
+
+.h-\[120px\] {
+  height: 120px;
 }
 
 .h-\[170px\] {
@@ -2268,6 +2276,11 @@ h6 {
 .dropMenu-Active {
   visibility: visible;
   top: 52px;
+  z-index: 20;
+  opacity: 1;
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (min-width: 768px) {
@@ -2448,23 +2461,6 @@ h6 {
 
 /* storeCard-active  */
 
-.copylinkShare-Active {
-  left: -46px;
-  z-index: 10;
-}
-
-@media (min-width: 768px) {
-  .copylinkShare-Active {
-    left: -1.75rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .copylinkShare-Active {
-    left: -2.25rem;
-  }
-}
-
 .waShare-Active {
   left: -22px;
   z-index: 10;
@@ -2478,24 +2474,7 @@ h6 {
 
 @media (min-width: 1024px) {
   .waShare-Active {
-    left: -72px;
-  }
-}
-
-.instaShare-Active {
-  left: -70px;
-  z-index: 10;
-}
-
-@media (min-width: 768px) {
-  .instaShare-Active {
-    left: -90px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .instaShare-Active {
-    left: -109px;
+    left: -2rem;
   }
 }
 
@@ -4652,6 +4631,14 @@ a.plyr__control:before {
     padding: 2rem;
   }
 
+  .md\:p-6 {
+    padding: 1.5rem;
+  }
+
+  .md\:p-16 {
+    padding: 4rem;
+  }
+
   .md\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -4784,6 +4771,10 @@ a.plyr__control:before {
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:h-40 {
+    height: 10rem;
   }
 
   .lg\:h-8 {
@@ -4928,6 +4919,10 @@ a.plyr__control:before {
 
   .lg\:p-5 {
     padding: 1.25rem;
+  }
+
+  .lg\:p-8 {
+    padding: 2rem;
   }
 
   .lg\:px-10 {
