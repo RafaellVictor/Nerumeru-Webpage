@@ -1112,7 +1112,7 @@
               (n.iconPressed = "exit-fullscreen");
             break;
           case "play-large":
-            (i.class += ` ${this.config.classNames.control}--overlaid`),
+            (i.class += ` ${this.config.classNames.control}--overlaid button`),
               (s = "play"),
               (n.label = "play"),
               (n.icon = "play");
@@ -1313,7 +1313,6 @@
       },
       formatTime(e = 0, t = !1) {
         if (!S.number(e)) return e;
-
         return Ee(e, Ce(this.duration) > 0, t);
       },
       updateTimeDisplay(e = null, t = 0, i = !1) {
@@ -1359,7 +1358,6 @@
                     : ((s / n) * 100).toFixed(2)),
                 "timeupdate" === e.type &&
                   Pe.setRange.call(this, this.elements.inputs.seek, t);
-
               break;
             case "playing":
             case "progress":
@@ -1375,7 +1373,6 @@
             const e = Pe.formatTime(this.currentTime),
               i = Pe.formatTime(this.duration),
               s = ve.get("seekLabel", this.config);
-            document.getElementById("duration").innerHTML = i;
             t.setAttribute(
               "aria-valuetext",
               s.replace("{currentTime}", e).replace("{duration}", i)
@@ -3969,7 +3966,6 @@
                 (this.config.title = t),
                   Fe.setTitle.call(this),
                   (this.embed.ratio = he(s, i));
-                document.getElementById("title").innerHTML = t;
               }
               ue.call(this);
             })
@@ -5620,23 +5616,20 @@
     return (st.defaults = ((nt = Le), JSON.parse(JSON.stringify(nt)))), st;
   });
 
-
-
-
-  const player = new Plyr("#player", {
-    controls: [
-      "play-large", // The large play button in the center
-      // "restart", // Restart playback
-      // "rewind", // Rewind by the seek time (default 10 seconds)
-      "play", // Play/pause playback
-      // "fast-forward", // Fast forward by the seek time (default 10 seconds)
-      "progress", // The progress bar and scrubber for playback and buffering
-      "current-time", // The current time of playback
-      "duration", // The full duration of the media
-      "mute", // Toggle mute
-      "volume", // Volume control
-      "settings", // Settings menu
-      // "download", // Show a download button with a link to either the current source or a custom URL you specify in your options
-      "fullscreen",
-    ],
-  });
+const player = new Plyr("#player", {
+  controls: [
+    "play-large", // The large play button in the center
+    // "restart", // Restart playback
+    // "rewind", // Rewind by the seek time (default 10 seconds)
+    "play", // Play/pause playback
+    // "fast-forward", // Fast forward by the seek time (default 10 seconds)
+    "progress", // The progress bar and scrubber for playback and buffering
+    "current-time", // The current time of playback
+    "duration", // The full duration of the media
+    "mute", // Toggle mute
+    "volume", // Volume control
+    "settings", // Settings menu
+    // "download", // Show a download button with a link to either the current source or a custom URL you specify in your options
+    "fullscreen",
+  ],
+});
