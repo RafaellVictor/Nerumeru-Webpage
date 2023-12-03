@@ -745,10 +745,6 @@ main {
   top: 4rem;
 }
 
-.top-2 {
-  top: 0.5rem;
-}
-
 .top-20 {
   top: 5rem;
 }
@@ -1693,10 +1689,6 @@ main {
 
 .p-6 {
   padding: 1.5rem;
-}
-
-.p-8 {
-  padding: 2rem;
 }
 
 .px-1 {
@@ -4641,16 +4633,12 @@ a.plyr__control:before {
     padding: 1rem;
   }
 
-  .md\:p-8 {
-    padding: 2rem;
-  }
-
   .md\:p-6 {
     padding: 1.5rem;
   }
 
-  .md\:p-16 {
-    padding: 4rem;
+  .md\:p-8 {
+    padding: 2rem;
   }
 
   .md\:px-12 {
