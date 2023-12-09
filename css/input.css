@@ -372,6 +372,12 @@ input[type="number"]::-webkit-inner-spin-button,
   --plyr-control-icon-size: 30px;
 }
 
+@media (max-width: 640px) {
+  .player > #player > .button {
+    --plyr-control-icon-size: 24px;
+  }
+}
+
 .plyr {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
