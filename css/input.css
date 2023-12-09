@@ -48,6 +48,14 @@
   display: none;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
+
 /* body::-webkit-scrollbar {
   @apply hidden
 } */
@@ -317,6 +325,15 @@
 }
 
 /* Login end */
+
+
+/* Cart Interactions  */
+
+.BoxSuccesActiveCart {
+  @apply visible opacity-100 top-24;
+}
+
+/* Cart Interactions  End */
 
 /* Vidio Player Css  */
 

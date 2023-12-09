@@ -1958,6 +1958,16 @@ main {
   color: rgb(245 245 245 / var(--tw-text-opacity));
 }
 
+.text-green-200 {
+  --tw-text-opacity: 1;
+  color: rgb(187 247 208 / var(--tw-text-opacity));
+}
+
+.text-yellow-400 {
+  --tw-text-opacity: 1;
+  color: rgb(250 204 21 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -2236,6 +2246,13 @@ h6 {
 
 #SidebarAdmin::-webkit-scrollbar {
   display: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
 }
 
 /* body::-webkit-scrollbar {
@@ -2694,6 +2711,16 @@ h6 {
 }
 
 /* Login end */
+
+/* Cart Interactions  */
+
+.BoxSuccesActiveCart {
+  visibility: visible;
+  top: 6rem;
+  opacity: 1;
+}
+
+/* Cart Interactions  End */
 
 /* Vidio Player Css  */
 
@@ -4587,6 +4614,10 @@ a.plyr__control:before {
     height: fit-content;
   }
 
+  .md\:h-8 {
+    height: 2rem;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -4654,6 +4685,10 @@ a.plyr__control:before {
 
   .md\:w-full {
     width: 100%;
+  }
+
+  .md\:w-8 {
+    width: 2rem;
   }
 
   .md\:grid-cols-2 {
@@ -4742,10 +4777,6 @@ a.plyr__control:before {
 
   .md\:place-self-end {
     place-self: end;
-  }
-
-  .md\:rounded-md {
-    border-radius: 0.375rem;
   }
 
   .md\:border-0 {
@@ -4915,6 +4946,10 @@ a.plyr__control:before {
     height: 2rem;
   }
 
+  .lg\:h-10 {
+    height: 2.5rem;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -4969,6 +5004,10 @@ a.plyr__control:before {
 
   .lg\:w-\[650px\] {
     width: 650px;
+  }
+
+  .lg\:w-10 {
+    width: 2.5rem;
   }
 
   .lg\:max-w-screen-xl {
@@ -5271,6 +5310,11 @@ a.plyr__control:before {
     gap: 0.875rem;
   }
 
+  .\32xl\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .\32xl\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -5369,6 +5413,11 @@ a.plyr__control:before {
 
   .\33xl\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .\33xl\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .\33xl\:py-20 {
