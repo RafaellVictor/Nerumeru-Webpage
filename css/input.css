@@ -69,7 +69,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .Navlink-Active {
-  @apply text-blue-Neru
+  @apply text-blue-Neru;
 }
 
 .dropMenu-Active {
@@ -1637,7 +1637,7 @@ a.plyr__control:before {
 /* Vidio Player Css  End */
 
 .ButtonAdminMenuActive {
-    @apply bg-blue-Neru rounded-md text-white 
+  @apply bg-blue-Neru rounded-md text-white;
 }
 
 /* Admin */
@@ -1647,7 +1647,7 @@ a.plyr__control:before {
 }
 
 .BoxNavAdmin-Active {
-  @apply  visible top-20 opacity-100 transition-all ease-out duration-500;
+  @apply visible top-20 opacity-100 transition-all ease-out duration-500;
 }
 
 .navAdmin-active {
@@ -1661,4 +1661,36 @@ a.plyr__control:before {
 .BoxNotifications-Active {
   @apply opacity-100 top-10 visible;
 }
+
+#myTable_filter.dataTables_filter > label {
+  @apply font-medium flex gap-2 items-center;
+}
+
+#myTable_length.dataTables_length > label {
+  @apply flex gap-2 items-center font-medium;
+}
+
+
+#myTable_filter.dataTables_filter > label > input {
+  @apply outline-none px-4;
+}
+
+#myTable_length.dataTables_length > label > select {
+  @apply outline-none  text-white bg-blue-Neru border-black border-2 rounded-md   text-center;
+}
+
+#myTable_paginate.dataTables_paginate.paging_simple_numbers  {
+  @apply  mt-4 hover:bg-none;
+}
+
+
+#myTable_info.dataTables_info  {
+  @apply font-medium mt-4
+}
+
+#myTable > tbody > tr > td {
+  @apply py-4
+}
+
+
 /* Admin end */
