@@ -49,12 +49,11 @@
 }
 
 input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    appearance: none;
-    margin: 0;
-  }
-
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
 
 /* body::-webkit-scrollbar {
   @apply hidden
@@ -69,8 +68,12 @@ input[type="number"]::-webkit-inner-spin-button,
   @apply md:pb-0 pb-48;
 }
 
+.Navlink-Active {
+  @apply text-blue-Neru
+}
+
 .dropMenu-Active {
-  @apply 3xl:top-16 2xl:top-[60px] md:top-16 z-20 top-[52px] md:left-0 visible transition-all ease-in-out duration-500 opacity-100;
+  @apply 3xl:top-16 2xl:top-[60px] md:top-16 z-20 top-[52px] md:left-0 visible transition-all ease-in-out duration-700 opacity-100;
 }
 
 .nav-active > span:nth-child(1) {
@@ -326,7 +329,6 @@ input[type="number"]::-webkit-inner-spin-button,
 
 /* Login end */
 
-
 /* Cart Interactions  */
 
 .BoxSuccesActiveCart {
@@ -524,11 +526,7 @@ input[type="number"]::-webkit-inner-spin-button,
 }
 .plyr__control:focus-visible {
   outline: 2px dashed #00b2ff;
-  outline: 2px dashed
-    var(
-      --plyr-focus-visible-color,
-      var(--plyr-color-main, var(--plyr-color-main, #00b2ff))
-    );
+  outline: 2px dashed var(--plyr-focus-visible-color, var(--plyr-color-main, var(--plyr-color-main, #00b2ff)));
   outline-offset: 2px;
 }
 a.plyr__control {
@@ -637,10 +635,7 @@ a.plyr__control:before {
   height: 0;
   position: absolute;
   right: 14px;
-  right: calc(
-    var(--plyr-control-icon-size, 18px) / 2 + var(--plyr-control-spacing, 10px) *
-      0.7 - var(--plyr-menu-arrow-size, 4px) / 2
-  );
+  right: calc(var(--plyr-control-icon-size, 18px) / 2 + var(--plyr-control-spacing, 10px) * 0.7 - var(--plyr-menu-arrow-size, 4px) / 2);
   top: 100%;
   width: 0;
 }
@@ -664,8 +659,7 @@ a.plyr__control:before {
   font-size: 13px;
   font-size: var(--plyr-font-size-menu, var(--plyr-font-size-small, 13px));
   padding: 4.66667px 10.5px;
-  padding: calc(var(--plyr-control-spacing, 10px) * 0.7 / 1.5)
-    calc(var(--plyr-control-spacing, 10px) * 0.7 * 1.5);
+  padding: calc(var(--plyr-control-spacing, 10px) * 0.7 / 1.5) calc(var(--plyr-control-spacing, 10px) * 0.7 * 1.5);
   -webkit-user-select: none;
   user-select: none;
   width: 100%;
@@ -691,10 +685,7 @@ a.plyr__control:before {
   border-left-color: #728197;
   border-left-color: var(--plyr-menu-arrow-color, #728197);
   right: 6.5px;
-  right: calc(
-    var(--plyr-control-spacing, 10px) * 0.7 * 1.5 -
-      var(--plyr-menu-item-arrow-size, 4px)
-  );
+  right: calc(var(--plyr-control-spacing, 10px) * 0.7 * 1.5 - var(--plyr-menu-item-arrow-size, 4px));
 }
 .plyr__menu__container .plyr__control--forward:focus-visible:after,
 .plyr__menu__container .plyr__control--forward:hover:after {
@@ -717,10 +708,7 @@ a.plyr__control:before {
   border-right-color: #728197;
   border-right-color: var(--plyr-menu-arrow-color, #728197);
   left: 6.5px;
-  left: calc(
-    var(--plyr-control-spacing, 10px) * 0.7 * 1.5 -
-      var(--plyr-menu-item-arrow-size, 4px)
-  );
+  left: calc(var(--plyr-control-spacing, 10px) * 0.7 * 1.5 - var(--plyr-menu-item-arrow-size, 4px));
 }
 .plyr__menu__container .plyr__control--back:before {
   background: #dcdfe5;
@@ -773,21 +761,15 @@ a.plyr__control:before {
     opacity 0.3s ease;
   width: 6px;
 }
-.plyr__menu__container
-  .plyr__control[role="menuitemradio"][aria-checked="true"]:before {
+.plyr__menu__container .plyr__control[role="menuitemradio"][aria-checked="true"]:before {
   background: #00b2ff;
-  background: var(
-    --plyr-control-toggle-checked-background,
-    var(--plyr-color-main, var(--plyr-color-main, #00b2ff))
-  );
+  background: var(--plyr-control-toggle-checked-background, var(--plyr-color-main, var(--plyr-color-main, #00b2ff)));
 }
-.plyr__menu__container
-  .plyr__control[role="menuitemradio"][aria-checked="true"]:after {
+.plyr__menu__container .plyr__control[role="menuitemradio"][aria-checked="true"]:after {
   opacity: 1;
   transform: translateY(-50%) scale(1);
 }
-.plyr__menu__container
-  .plyr__control[role="menuitemradio"]:focus-visible:before,
+.plyr__menu__container .plyr__control[role="menuitemradio"]:focus-visible:before,
 .plyr__menu__container .plyr__control[role="menuitemradio"]:hover:before {
   background: #23282f1a;
 }
@@ -810,16 +792,10 @@ a.plyr__control:before {
   border-radius: 26px;
   border-radius: calc(var(--plyr-range-thumb-height, 13px) * 2);
   color: #00b2ff;
-  color: var(
-    --plyr-range-fill-background,
-    var(--plyr-color-main, var(--plyr-color-main, #00b2ff))
-  );
+  color: var(--plyr-range-fill-background, var(--plyr-color-main, var(--plyr-color-main, #00b2ff)));
   display: block;
   height: 19px;
-  height: calc(
-    var(--plyr-range-thumb-active-shadow-width, 3px) * 2 +
-      var(--plyr-range-thumb-height, 13px)
-  );
+  height: calc(var(--plyr-range-thumb-active-shadow-width, 3px) * 2 + var(--plyr-range-thumb-height, 13px));
   margin: 0;
   min-width: 0;
   padding: 0;
@@ -829,11 +805,7 @@ a.plyr__control:before {
 .plyr--full-ui input[type="range"]::-webkit-slider-runnable-track {
   background: #0000;
   background-image: linear-gradient(90deg, currentColor 0, #0000 0);
-  background-image: linear-gradient(
-    to right,
-    currentColor var(--value, 0),
-    #0000 var(--value, 0)
-  );
+  background-image: linear-gradient(to right, currentColor var(--value, 0), #0000 var(--value, 0));
   border: 0;
   border-radius: 2.5px;
   border-radius: calc(var(--plyr-range-track-height, 5px) / 2);
@@ -854,18 +826,11 @@ a.plyr__control:before {
   box-shadow:
     0 1px 1px #23282f26,
     0 0 0 1px #23282f33;
-  box-shadow: var(
-    --plyr-range-thumb-shadow,
-    0 1px 1px #23282f26,
-    0 0 0 1px #23282f33
-  );
+  box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px #23282f26, 0 0 0 1px #23282f33);
   height: 13px;
   height: var(--plyr-range-thumb-height, 13px);
   margin-top: -4px;
-  margin-top: calc(
-    (var(--plyr-range-thumb-height, 13px) - var(--plyr-range-track-height, 5px)) /
-      2 * -1
-  );
+  margin-top: calc((var(--plyr-range-thumb-height, 13px) - var(--plyr-range-track-height, 5px)) / 2 * -1);
   position: relative;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
@@ -891,11 +856,7 @@ a.plyr__control:before {
   box-shadow:
     0 1px 1px #23282f26,
     0 0 0 1px #23282f33;
-  box-shadow: var(
-    --plyr-range-thumb-shadow,
-    0 1px 1px #23282f26,
-    0 0 0 1px #23282f33
-  );
+  box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px #23282f26, 0 0 0 1px #23282f33);
   height: 13px;
   height: var(--plyr-range-thumb-height, 13px);
   position: relative;
@@ -946,11 +907,7 @@ a.plyr__control:before {
   box-shadow:
     0 1px 1px #23282f26,
     0 0 0 1px #23282f33;
-  box-shadow: var(
-    --plyr-range-thumb-shadow,
-    0 1px 1px #23282f26,
-    0 0 0 1px #23282f33
-  );
+  box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px #23282f26, 0 0 0 1px #23282f33);
   height: 13px;
   height: var(--plyr-range-thumb-height, 13px);
   margin-top: 0;
@@ -969,40 +926,24 @@ a.plyr__control:before {
 .plyr--full-ui input[type="range"]:focus {
   outline: 0;
 }
-.plyr--full-ui
-  input[type="range"]:focus-visible::-webkit-slider-runnable-track {
+.plyr--full-ui input[type="range"]:focus-visible::-webkit-slider-runnable-track {
   outline: 2px dashed #00b2ff;
-  outline: 2px dashed
-    var(
-      --plyr-focus-visible-color,
-      var(--plyr-color-main, var(--plyr-color-main, #00b2ff))
-    );
+  outline: 2px dashed var(--plyr-focus-visible-color, var(--plyr-color-main, var(--plyr-color-main, #00b2ff)));
   outline-offset: 2px;
 }
 .plyr--full-ui input[type="range"]:focus-visible::-moz-range-track {
   outline: 2px dashed #00b2ff;
-  outline: 2px dashed
-    var(
-      --plyr-focus-visible-color,
-      var(--plyr-color-main, var(--plyr-color-main, #00b2ff))
-    );
+  outline: 2px dashed var(--plyr-focus-visible-color, var(--plyr-color-main, var(--plyr-color-main, #00b2ff)));
   outline-offset: 2px;
 }
 .plyr--full-ui input[type="range"]:focus-visible::-ms-track {
   outline: 2px dashed #00b2ff;
-  outline: 2px dashed
-    var(
-      --plyr-focus-visible-color,
-      var(--plyr-color-main, var(--plyr-color-main, #00b2ff))
-    );
+  outline: 2px dashed var(--plyr-focus-visible-color, var(--plyr-color-main, var(--plyr-color-main, #00b2ff)));
   outline-offset: 2px;
 }
 .plyr__poster {
   background-color: #000;
-  background-color: var(
-    --plyr-video-background,
-    var(--plyr-video-background, #000)
-  );
+  background-color: var(--plyr-video-background, var(--plyr-video-background, #000));
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -1018,8 +959,7 @@ a.plyr__control:before {
 .plyr--stopped.plyr__poster-enabled .plyr__poster {
   opacity: 1;
 }
-.plyr--youtube.plyr--paused.plyr__poster-enabled:not(.plyr--stopped)
-  .plyr__poster {
+.plyr--youtube.plyr--paused.plyr__poster-enabled:not(.plyr--stopped) .plyr__poster {
   display: none;
 }
 .plyr__time {
@@ -1056,8 +996,7 @@ a.plyr__control:before {
   margin-bottom: calc(var(--plyr-control-spacing, 10px) / 2 * 2);
   opacity: 0;
   padding: 5px 7.5px;
-  padding: calc(var(--plyr-control-spacing, 10px) / 2)
-    calc(var(--plyr-control-spacing, 10px) / 2 * 1.5);
+  padding: calc(var(--plyr-control-spacing, 10px) / 2) calc(var(--plyr-control-spacing, 10px) / 2 * 1.5);
   pointer-events: none;
   position: absolute;
   transform: translate(-50%, 10px) scale(0.8);
@@ -1074,8 +1013,7 @@ a.plyr__control:before {
   border-right: 4px solid #0000;
   border-right: var(--plyr-tooltip-arrow-size, 4px) solid #0000;
   border-top: 4px solid #fff;
-  border-top: var(--plyr-tooltip-arrow-size, 4px) solid
-    var(--plyr-tooltip-background, #fff);
+  border-top: var(--plyr-tooltip-arrow-size, 4px) solid var(--plyr-tooltip-background, #fff);
   bottom: -4px;
   bottom: calc(var(--plyr-tooltip-arrow-size, 4px) * -1);
   content: "";
@@ -1102,15 +1040,9 @@ a.plyr__control:before {
   transform-origin: 0 100%;
 }
 .plyr__controls > .plyr__control:first-child .plyr__tooltip:before,
-.plyr__controls
-  > .plyr__control:first-child
-  + .plyr__control
-  .plyr__tooltip:before {
+.plyr__controls > .plyr__control:first-child + .plyr__control .plyr__tooltip:before {
   left: 16px;
-  left: calc(
-    var(--plyr-control-icon-size, 18px) / 2 + var(--plyr-control-spacing, 10px) *
-      0.7
-  );
+  left: calc(var(--plyr-control-icon-size, 18px) / 2 + var(--plyr-control-spacing, 10px) * 0.7);
 }
 .plyr__controls > .plyr__control:last-child .plyr__tooltip {
   left: auto;
@@ -1121,25 +1053,13 @@ a.plyr__control:before {
 .plyr__controls > .plyr__control:last-child .plyr__tooltip:before {
   left: auto;
   right: 16px;
-  right: calc(
-    var(--plyr-control-icon-size, 18px) / 2 + var(--plyr-control-spacing, 10px) *
-      0.7
-  );
+  right: calc(var(--plyr-control-icon-size, 18px) / 2 + var(--plyr-control-spacing, 10px) * 0.7);
   transform: translateX(50%);
 }
 .plyr__controls > .plyr__control:first-child .plyr__tooltip--visible,
-.plyr__controls
-  > .plyr__control:first-child
-  + .plyr__control
-  .plyr__tooltip--visible,
-.plyr__controls
-  > .plyr__control:first-child
-  + .plyr__control:focus-visible
-  .plyr__tooltip,
-.plyr__controls
-  > .plyr__control:first-child
-  + .plyr__control:hover
-  .plyr__tooltip,
+.plyr__controls > .plyr__control:first-child + .plyr__control .plyr__tooltip--visible,
+.plyr__controls > .plyr__control:first-child + .plyr__control:focus-visible .plyr__tooltip,
+.plyr__controls > .plyr__control:first-child + .plyr__control:hover .plyr__tooltip,
 .plyr__controls > .plyr__control:first-child:focus-visible .plyr__tooltip,
 .plyr__controls > .plyr__control:first-child:hover .plyr__tooltip,
 .plyr__controls > .plyr__control:last-child .plyr__tooltip--visible,
@@ -1212,30 +1132,11 @@ a.plyr__control:before {
 }
 .plyr--loading .plyr__progress__buffer {
   animation: plyr-progress 1s linear infinite;
-  background-image: linear-gradient(
-    -45deg,
-    #23282f99 25%,
-    #0000 0,
-    #0000 50%,
-    #23282f99 0,
-    #23282f99 75%,
-    #0000 0,
-    #0000
-  );
-  background-image: linear-gradient(
-    -45deg,
-    var(--plyr-progress-loading-background, #23282f99) 25%,
-    #0000 25%,
-    #0000 50%,
-    var(--plyr-progress-loading-background, #23282f99) 50%,
-    var(--plyr-progress-loading-background, #23282f99) 75%,
-    #0000 75%,
-    #0000
-  );
+  background-image: linear-gradient(-45deg, #23282f99 25%, #0000 0, #0000 50%, #23282f99 0, #23282f99 75%, #0000 0, #0000);
+  background-image: linear-gradient(-45deg, var(--plyr-progress-loading-background, #23282f99) 25%, #0000 25%, #0000 50%, var(--plyr-progress-loading-background, #23282f99) 50%, var(--plyr-progress-loading-background, #23282f99) 75%, #0000 75%, #0000);
   background-repeat: repeat-x;
   background-size: 25px 25px;
-  background-size: var(--plyr-progress-loading-size, 25px)
-    var(--plyr-progress-loading-size, 25px);
+  background-size: var(--plyr-progress-loading-size, 25px) var(--plyr-progress-loading-size, 25px);
   color: #0000;
 }
 .plyr--video.plyr--loading .plyr__progress__buffer {
@@ -1290,33 +1191,21 @@ a.plyr__control:before {
 .plyr--audio .plyr__control:hover,
 .plyr--audio .plyr__control[aria-expanded="true"] {
   background: #00b2ff;
-  background: var(
-    --plyr-audio-control-background-hover,
-    var(--plyr-color-main, var(--plyr-color-main, #00b2ff))
-  );
+  background: var(--plyr-audio-control-background-hover, var(--plyr-color-main, var(--plyr-color-main, #00b2ff)));
   color: #fff;
   color: var(--plyr-audio-control-color-hover, #fff);
 }
 .plyr--full-ui.plyr--audio input[type="range"]::-webkit-slider-runnable-track {
   background-color: #c1c8d199;
-  background-color: var(
-    --plyr-audio-range-track-background,
-    var(--plyr-audio-progress-buffered-background, #c1c8d199)
-  );
+  background-color: var(--plyr-audio-range-track-background, var(--plyr-audio-progress-buffered-background, #c1c8d199));
 }
 .plyr--full-ui.plyr--audio input[type="range"]::-moz-range-track {
   background-color: #c1c8d199;
-  background-color: var(
-    --plyr-audio-range-track-background,
-    var(--plyr-audio-progress-buffered-background, #c1c8d199)
-  );
+  background-color: var(--plyr-audio-range-track-background, var(--plyr-audio-progress-buffered-background, #c1c8d199));
 }
 .plyr--full-ui.plyr--audio input[type="range"]::-ms-track {
   background-color: #c1c8d199;
-  background-color: var(
-    --plyr-audio-range-track-background,
-    var(--plyr-audio-progress-buffered-background, #c1c8d199)
-  );
+  background-color: var(--plyr-audio-range-track-background, var(--plyr-audio-progress-buffered-background, #c1c8d199));
 }
 .plyr--full-ui.plyr--audio input[type="range"]:active::-webkit-slider-thumb {
   box-shadow:
@@ -1325,8 +1214,7 @@ a.plyr__control:before {
     0 0 0 3px #23282f1a;
   box-shadow:
     var(--plyr-range-thumb-shadow, 0 1px 1px #23282f26, 0 0 0 1px #23282f33),
-    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px)
-      var(--plyr-audio-range-thumb-active-shadow-color, #23282f1a);
+    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px) var(--plyr-audio-range-thumb-active-shadow-color, #23282f1a);
 }
 .plyr--full-ui.plyr--audio input[type="range"]:active::-moz-range-thumb {
   box-shadow:
@@ -1335,8 +1223,7 @@ a.plyr__control:before {
     0 0 0 3px #23282f1a;
   box-shadow:
     var(--plyr-range-thumb-shadow, 0 1px 1px #23282f26, 0 0 0 1px #23282f33),
-    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px)
-      var(--plyr-audio-range-thumb-active-shadow-color, #23282f1a);
+    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px) var(--plyr-audio-range-thumb-active-shadow-color, #23282f1a);
 }
 .plyr--full-ui.plyr--audio input[type="range"]:active::-ms-thumb {
   box-shadow:
@@ -1345,8 +1232,7 @@ a.plyr__control:before {
     0 0 0 3px #23282f1a;
   box-shadow:
     var(--plyr-range-thumb-shadow, 0 1px 1px #23282f26, 0 0 0 1px #23282f33),
-    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px)
-      var(--plyr-audio-range-thumb-active-shadow-color, #23282f1a);
+    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px) var(--plyr-audio-range-thumb-active-shadow-color, #23282f1a);
 }
 .plyr--audio .plyr__progress__buffer {
   color: #c1c8d199;
@@ -1396,10 +1282,7 @@ a.plyr__control:before {
 }
 .plyr--video .plyr__controls {
   background: linear-gradient(#0000, #000000bf);
-  background: var(
-    --plyr-video-controls-background,
-    linear-gradient(#0000, #000000bf)
-  );
+  background: var(--plyr-video-controls-background, linear-gradient(#0000, #000000bf));
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
   bottom: 0;
@@ -1434,19 +1317,13 @@ a.plyr__control:before {
 .plyr--video .plyr__control:hover,
 .plyr--video .plyr__control[aria-expanded="true"] {
   background: #00b2ff;
-  background: var(
-    --plyr-video-control-background-hover,
-    var(--plyr-color-main, var(--plyr-color-main, #00b2ff))
-  );
+  background: var(--plyr-video-control-background-hover, var(--plyr-color-main, var(--plyr-color-main, #00b2ff)));
   color: #fff;
   color: var(--plyr-video-control-color-hover, #fff);
 }
 .plyr__control--overlaid {
   background: #00b2ff;
-  background: var(
-    --plyr-video-control-background-hover,
-    var(--plyr-color-main, var(--plyr-color-main, #00b2ff))
-  );
+  background: var(--plyr-video-control-background-hover, var(--plyr-color-main, var(--plyr-color-main, #00b2ff)));
   border: 0;
   border-radius: 100%;
   color: #fff;
@@ -1479,24 +1356,15 @@ a.plyr__control:before {
 }
 .plyr--full-ui.plyr--video input[type="range"]::-webkit-slider-runnable-track {
   background-color: #ffffff40;
-  background-color: var(
-    --plyr-video-range-track-background,
-    var(--plyr-video-progress-buffered-background, #ffffff40)
-  );
+  background-color: var(--plyr-video-range-track-background, var(--plyr-video-progress-buffered-background, #ffffff40));
 }
 .plyr--full-ui.plyr--video input[type="range"]::-moz-range-track {
   background-color: #ffffff40;
-  background-color: var(
-    --plyr-video-range-track-background,
-    var(--plyr-video-progress-buffered-background, #ffffff40)
-  );
+  background-color: var(--plyr-video-range-track-background, var(--plyr-video-progress-buffered-background, #ffffff40));
 }
 .plyr--full-ui.plyr--video input[type="range"]::-ms-track {
   background-color: #ffffff40;
-  background-color: var(
-    --plyr-video-range-track-background,
-    var(--plyr-video-progress-buffered-background, #ffffff40)
-  );
+  background-color: var(--plyr-video-range-track-background, var(--plyr-video-progress-buffered-background, #ffffff40));
 }
 .plyr--full-ui.plyr--video input[type="range"]:active::-webkit-slider-thumb {
   box-shadow:
@@ -1505,8 +1373,7 @@ a.plyr__control:before {
     0 0 0 3px #ffffff80;
   box-shadow:
     var(--plyr-range-thumb-shadow, 0 1px 1px #23282f26, 0 0 0 1px #23282f33),
-    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px)
-      var(--plyr-audio-range-thumb-active-shadow-color, #ffffff80);
+    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px) var(--plyr-audio-range-thumb-active-shadow-color, #ffffff80);
 }
 .plyr--full-ui.plyr--video input[type="range"]:active::-moz-range-thumb {
   box-shadow:
@@ -1515,8 +1382,7 @@ a.plyr__control:before {
     0 0 0 3px #ffffff80;
   box-shadow:
     var(--plyr-range-thumb-shadow, 0 1px 1px #23282f26, 0 0 0 1px #23282f33),
-    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px)
-      var(--plyr-audio-range-thumb-active-shadow-color, #ffffff80);
+    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px) var(--plyr-audio-range-thumb-active-shadow-color, #ffffff80);
 }
 .plyr--full-ui.plyr--video input[type="range"]:active::-ms-thumb {
   box-shadow:
@@ -1525,8 +1391,7 @@ a.plyr__control:before {
     0 0 0 3px #ffffff80;
   box-shadow:
     var(--plyr-range-thumb-shadow, 0 1px 1px #23282f26, 0 0 0 1px #23282f33),
-    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px)
-      var(--plyr-audio-range-thumb-active-shadow-color, #ffffff80);
+    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px) var(--plyr-audio-range-thumb-active-shadow-color, #ffffff80);
 }
 .plyr--video .plyr__progress__buffer {
   color: #ffffff40;
@@ -1667,8 +1532,7 @@ a.plyr__control:before {
   border-right: 4px solid #0000;
   border-right: var(--plyr-tooltip-arrow-size, 4px) solid #0000;
   border-top: 4px solid #fff;
-  border-top: var(--plyr-tooltip-arrow-size, 4px) solid
-    var(--plyr-tooltip-background, #fff);
+  border-top: var(--plyr-tooltip-arrow-size, 4px) solid var(--plyr-tooltip-background, #fff);
   bottom: -4px;
   bottom: calc(var(--plyr-tooltip-arrow-size, 4px) * -1);
   content: "";
@@ -1707,10 +1571,7 @@ a.plyr__control:before {
 }
 .plyr__preview-thumb__time-container {
   background: linear-gradient(#0000, #000000bf);
-  background: var(
-    --plyr-video-controls-background,
-    linear-gradient(#0000, #000000bf)
-  );
+  background: var(--plyr-video-controls-background, linear-gradient(#0000, #000000bf));
   border-bottom-left-radius: 7px;
   border-bottom-left-radius: calc(var(--plyr-menu-radius, 8px) - 1px);
   border-bottom-right-radius: 7px;
@@ -1775,6 +1636,10 @@ a.plyr__control:before {
 
 /* Vidio Player Css  End */
 
+.ButtonAdminMenuActive {
+    @apply bg-blue-Neru rounded-md text-white 
+}
+
 /* Admin */
 
 .parentAdminNav-Active {
@@ -1782,7 +1647,7 @@ a.plyr__control:before {
 }
 
 .BoxNavAdmin-Active {
-  @apply transition-all ease-out duration-300 opacity-100;
+  @apply  visible top-20 opacity-100 transition-all ease-out duration-500;
 }
 
 .navAdmin-active {
@@ -1794,6 +1659,6 @@ a.plyr__control:before {
 }
 
 .BoxNotifications-Active {
-  @apply opacity-100 top-10 -z-40;
+  @apply opacity-100 top-10 visible;
 }
 /* Admin end */

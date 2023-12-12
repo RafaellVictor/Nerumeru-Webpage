@@ -78,3 +78,49 @@ const mobileMenu = document.getElementById("offCanvasSm");
 mobileMenuButton.addEventListener("click", () => {
   mobileMenu.classList.toggle("translate-x-full");
 });
+
+
+// Navlink Active Navbar
+const pathName = window.location.pathname;
+const pageName = pathName.split("/").pop();
+// Navlink
+if (pageName === "index.html") {
+  document.querySelectorAll(".HomepageNav").forEach(function (element) {
+    element.classList.add("Navlink-Active");
+  });
+}
+
+if (pageName === "bedding.html") {
+  document.querySelectorAll(".ProductNav").forEach(function (element) {
+    element.classList.add("Navlink-Active");
+  });
+}
+
+if (pageName === "toys.html") {
+  document.querySelectorAll(".ProductNav").forEach(function (element) {
+    element.classList.add("Navlink-Active");
+  });
+}
+
+
+if (pageName === "catalog.html") {
+  document.querySelectorAll(".CatalogNav").forEach(function (element) {
+    element.classList.add("Navlink-Active");
+  });
+}
+
+if (pageName === "blog.html") {
+  document.querySelectorAll(".BlogNav").forEach(function (element) {
+    element.classList.add("Navlink-Active");
+  });
+}
+
+if (pageName === "detail-product.html") {
+  document.querySelectorAll(".ProductNav").forEach(function (element) {
+    element.classList.add("Navlink-Active");
+  });
+}
+
+// Navlink end
+
+// Navlink Active Navbar End
