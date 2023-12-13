@@ -1662,34 +1662,39 @@ a.plyr__control:before {
   @apply opacity-100 top-10 visible;
 }
 
-#myTable_filter.dataTables_filter > label {
+.dataTables_filter > label {
   @apply font-medium flex gap-2 items-center;
 }
 
-#myTable_length.dataTables_length > label {
+.dataTables_length > label {
   @apply flex gap-2 items-center font-medium;
 }
 
 
-#myTable_filter.dataTables_filter > label > input {
+.dataTables_filter > label > input {
   @apply outline-none px-4;
 }
 
-#myTable_length.dataTables_length > label > select {
-  @apply outline-none  text-white bg-blue-Neru border-black border-2 rounded-md   text-center;
+.dataTables_length > label > select {
+  @apply outline-none   bg-blue-Neru border-black border-2 rounded-md   text-center;
 }
 
-#myTable_paginate.dataTables_paginate.paging_simple_numbers  {
+.dataTables_length > label > select {
+  @apply outline-none  bg-blue-Neru border-black border-2 rounded-md   text-center;
+}
+
+
+.dataTables_paginate.paging_simple_numbers  {
   @apply  mt-4 hover:bg-none;
 }
 
 
-#myTable_info.dataTables_info  {
+.dataTables_info  {
   @apply font-medium mt-4
 }
 
-#myTable > tbody > tr > td {
-  @apply py-4
+.Active-BoxTable {
+  @apply block;
 }
 
 
