@@ -713,10 +713,6 @@ main {
   left: 1.25rem;
 }
 
-.left-\[500px\] {
-  left: 500px;
-}
-
 .right-0 {
   right: 0px;
 }
@@ -727,6 +723,10 @@ main {
 
 .right-5 {
   right: 1.25rem;
+}
+
+.right-\[40\%\] {
+  right: 40%;
 }
 
 .top-0 {
@@ -767,18 +767,6 @@ main {
 
 .top-5 {
   top: 1.25rem;
-}
-
-.left-1\/2 {
-  left: 50%;
-}
-
-.right-\[60\%\] {
-  right: 60%;
-}
-
-.right-\[40\%\] {
-  right: 40%;
 }
 
 .-z-10 {
@@ -1468,6 +1456,10 @@ main {
 
 .self-end {
   align-self: flex-end;
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 .overflow-hidden {
@@ -5400,26 +5392,6 @@ a.plyr__control:before {
 
   .\33xl\:top-32 {
     top: 8rem;
-  }
-
-  .\33xl\:right-\[30\%\] {
-    right: 30%;
-  }
-
-  .\33xl\:right-\[20\%\] {
-    right: 20%;
-  }
-
-  .\33xl\:right-\[60\%\] {
-    right: 60%;
-  }
-
-  .\33xl\:right-\[50\%\] {
-    right: 50%;
-  }
-
-  .\33xl\:right-\[40\%\] {
-    right: 40%;
   }
 
   .\33xl\:mt-48 {
