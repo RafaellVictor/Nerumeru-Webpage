@@ -25,7 +25,8 @@ navBarAdmin.forEach((othernav) => {
 const pathName = window.location.pathname;
 const pageName = pathName.split("/").pop();
 // Navlink
-if (pageName === "Homepage-Admin.html") {
+
+if (pageName === "Admin-Homepage.php") {
   document.querySelectorAll(".FrontendNav").forEach(function (element) {
     element.classList.add("navAdmin-active");
     const ParentBox = NavDrop.parentNode;
@@ -37,7 +38,8 @@ if (pageName === "Homepage-Admin.html") {
   });
 }
 
-if (pageName === "Dashboard-Admin.html") {
+
+if (pageName === "Admin-Dashboard.php") {
   document.querySelectorAll(".DashboardNav").forEach(function (element) {
     element.classList.add("navAdmin-active");
   });
@@ -55,3 +57,24 @@ NavDrop.addEventListener("click", () => {
   NavdropNextElement.classList.toggle("BoxNavAdmin-Active");
   ParentBox.classList.toggle("parentAdminNav-Active");
 });
+
+
+
+  const NotificationBoxDelete = document.getElementById("TrashNotifications");
+  const CancelDelete = document.getElementById("CancelDelete");
+  const TogglerTrash = document.querySelectorAll(".HapusDataToggler");
+
+  TogglerTrash.forEach((OtherTrash) => {
+    OtherTrash.addEventListener("click", () => {
+      NotificationBoxDelete.classList.add("NofiDeleteBoxActive");
+    });
+  });
+
+  CancelDelete.addEventListener("click", () => {
+    NotificationBoxDelete.classList.remove("NofiDeleteBoxActive");
+  });
+
+  function cancelDelete() {
+    // Sembunyikan popup
+    document.getElementById("TrashNotifications").classList.add("invisible");
+  }
