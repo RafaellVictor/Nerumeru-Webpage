@@ -104,11 +104,11 @@ $nerumeru = query("SELECT * FROM herosection");
                     <tr class="text-center">
                       <td class="w-14"><?= $i ?></td>
                       <td class="w-14"><?= $neru["hero_id"] ?></td>
-                      <td class="w-60"><img src="<?= $neru["hero_img"] ?>" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                      <td><?= $neru["hero_insert_date"] ?></td>
-                      <td><?= $neru["hero_lastUpdate_date"] ?></td>
+                      <td class="w-60"><img src="<?= $neru["hero_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td><?= $neru["insert_date"] ?></td>
+                      <td><?= $neru["lastUpdate_date"] ?></td>
                       <td class="">
-                        <?php if ($neru["hero_status"] == 1) : ?>
+                        <?php if ($neru["status"] == 1) : ?>
                           <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
                           <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
                         <?php else : ?>
@@ -118,8 +118,8 @@ $nerumeru = query("SELECT * FROM herosection");
                       </td>
                       <td>
                         <span class="flex items-center gap-2 justify-center">
-                          <a href="Admin-hero-UpdateData.php?hero_id=<?= $neru["hero_id"] ?>" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
+                          <a href="Admin-hero-UpdateData.php?hero_id=<?= $neru["hero_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -141,9 +141,9 @@ $nerumeru = query("SELECT * FROM herosection");
               <table id="myTable2" class="myTableDisplay py-6 display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
+                    <th class="border-[1px] border-black-neru border-opacity-30">No</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Img</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30">Details Content</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">insert on</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Last update</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Status</th>
@@ -151,74 +151,32 @@ $nerumeru = query("SELECT * FROM herosection");
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/Dog.png" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td><a href="Admin-hero-UpdateData.php" class="bg-blue-Neru px-3 py-2 text-white rounded-lg text-sm w-fit">Lihat Details</a></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/Dog.png" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td><a href="Admin-hero-UpdateData.php" class="bg-blue-Neru px-3 py-2 text-white rounded-lg text-sm w-fit">Lihat Details</a></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/Dog.png" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td><a href="Admin-hero-UpdateData.php" class="bg-blue-Neru px-3 py-2 text-white rounded-lg text-sm w-fit">Lihat Details</a></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/Dog.png" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td><a href="Admin-hero-UpdateData.php" class="bg-blue-Neru px-3 py-2 text-white rounded-lg text-sm w-fit">Lihat Details</a></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
+                  <?php $i = 1 ?>
+                  <?php foreach ($nerumeru as $neru) : ?>
+                    <tr class="text-center">
+                      <td class="w-14"><?= $i ?></td>
+                      <td class="w-14"><?= $neru["hero_id"] ?></td>
+                      <td class="w-60"><img src="<?= $neru["hero_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td><?= $neru["insert_date"] ?></td>
+                      <td><?= $neru["lastUpdate_date"] ?></td>
+                      <td class="">
+                        <?php if ($neru["status"] == 1) : ?>
+                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
+                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
+                        <?php else : ?>
+                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</a>
+                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Non Aktif</a>
+                        <?php endif; ?>
+                      </td>
+                      <td>
+                        <span class="flex items-center gap-2 justify-center">
+                          <a href="Admin-hero-UpdateData.php?hero_id=<?= $neru["hero_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                        </span>
+                      </td>
+                    </tr>
+                    <?php $i++ ?>
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
@@ -235,9 +193,9 @@ $nerumeru = query("SELECT * FROM herosection");
               <table id="myTable3" class="myTableDisplay py-6 display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
+                    <th class="border-[1px] border-black-neru border-opacity-30">No</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Img</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30">Details Content</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">insert on</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Last update</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Status</th>
@@ -245,91 +203,32 @@ $nerumeru = query("SELECT * FROM herosection");
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/card-item-2.png" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td><a href="Admin-hero-UpdateData.php" class="bg-blue-Neru px-3 py-2 text-white rounded-lg text-sm w-fit">Lihat Details</a></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/card-item-2.png" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td><a href="Admin-hero-UpdateData.php" class="bg-blue-Neru px-3 py-2 text-white rounded-lg text-sm w-fit">Lihat Details</a></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/card-item-2.png" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td><a href="Admin-hero-UpdateData.php" class="bg-blue-Neru px-3 py-2 text-white rounded-lg text-sm w-fit">Lihat Details</a></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/card-item-2.png" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td><a href="Admin-hero-UpdateData.php" class="bg-blue-Neru px-3 py-2 text-white rounded-lg text-sm w-fit">Lihat Details</a></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/card-item-2.png" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td><a href="Admin-hero-UpdateData.php" class="bg-blue-Neru px-3 py-2 text-white rounded-lg text-sm w-fit">Lihat Details</a></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
+                  <?php $i = 1 ?>
+                  <?php foreach ($nerumeru as $neru) : ?>
+                    <tr class="text-center">
+                      <td class="w-14"><?= $i ?></td>
+                      <td class="w-14"><?= $neru["hero_id"] ?></td>
+                      <td class="w-60"><img src="<?= $neru["hero_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td><?= $neru["insert_date"] ?></td>
+                      <td><?= $neru["lastUpdate_date"] ?></td>
+                      <td class="">
+                        <?php if ($neru["status"] == 1) : ?>
+                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
+                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
+                        <?php else : ?>
+                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</a>
+                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Non Aktif</a>
+                        <?php endif; ?>
+                      </td>
+                      <td>
+                        <span class="flex items-center gap-2 justify-center">
+                          <a href="Admin-hero-UpdateData.php?hero_id=<?= $neru["hero_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                        </span>
+                      </td>
+                    </tr>
+                    <?php $i++ ?>
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
@@ -346,6 +245,7 @@ $nerumeru = query("SELECT * FROM herosection");
               <table id="myTable4" class="myTableDisplay py-6 display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
+                    <th class="border-[1px] border-black-neru border-opacity-30">No</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Img</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">insert on</th>
@@ -355,86 +255,32 @@ $nerumeru = query("SELECT * FROM herosection");
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/WhatOnNerumeru/agustus 2.jpg" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/WhatOnNerumeru/agustus 2.jpg" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/WhatOnNerumeru/agustus 2.jpg" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/WhatOnNerumeru/agustus 2.jpg" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/WhatOnNerumeru/agustus 2.jpg" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
+                  <?php $i = 1 ?>
+                  <?php foreach ($nerumeru as $neru) : ?>
+                    <tr class="text-center">
+                      <td class="w-14"><?= $i ?></td>
+                      <td class="w-14"><?= $neru["hero_id"] ?></td>
+                      <td class="w-60"><img src="<?= $neru["hero_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td><?= $neru["insert_date"] ?></td>
+                      <td><?= $neru["lastUpdate_date"] ?></td>
+                      <td class="">
+                        <?php if ($neru["status"] == 1) : ?>
+                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
+                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
+                        <?php else : ?>
+                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</a>
+                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Non Aktif</a>
+                        <?php endif; ?>
+                      </td>
+                      <td>
+                        <span class="flex items-center gap-2 justify-center">
+                          <a href="Admin-hero-UpdateData.php?hero_id=<?= $neru["hero_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                        </span>
+                      </td>
+                    </tr>
+                    <?php $i++ ?>
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
@@ -448,13 +294,12 @@ $nerumeru = query("SELECT * FROM herosection");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable5" class="myTableDisplay py-6 display table hover order-column row-border stripe">
-                <thead class="whitespace-nowrap">
+              <table id="myTable5" class="myTableDisplay py-6 display nowrap table hover order-column row-border stripe">
+                <thead>
                   <tr class="bg-blue-Neru text-white">
+                    <th class="border-[1px] border-black-neru border-opacity-30">No</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30">Title-1</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30">Title-2</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30">Desc</th>
+                    <th class="border-[1px] border-black-neru border-opacity-30">Img</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">insert on</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Last update</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Status</th>
@@ -462,28 +307,32 @@ $nerumeru = query("SELECT * FROM herosection");
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td>Nerumeru</td>
-                    <td>寝る メル</td>
-                    <td class="line-clamp-6 overflow-y-auto">
-                      In This Pandemic Era For Almost 2 Years, More Pets Adopted In Lovers' Homes Animals In Indonesia. This Trend Is Taking Effect In Increasing Awareness Of The Importance Of Quality Products For Pets. In Order To Answer This Need, Neru Meru Is Here As A Brand That Is Able To
-                      Compete In The Domestic Market And Internationally With Experience And Technology With Japanese Quality Standards Based On The Love For Pets, Neru Meru Is Here As A Brand That Is Able To Provide The Best Solutions For Various Pet Needs. Innovative, Precise, Durable And Made
-                      Using The Highest Quality Materials, Every Neru Meru Product Is Created For The Comfort Of Pets And Their Human Companions.
-                    </td>
-                    <td class="whitespace-nowrap">12-April-2020</td>
-                    <td class="whitespace-nowrap">12-mei-2020</td>
-                    <td class="whitespace-nowrap">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
+                  <?php $i = 1 ?>
+                  <?php foreach ($nerumeru as $neru) : ?>
+                    <tr class="text-center">
+                      <td class="w-14"><?= $i ?></td>
+                      <td class="w-14"><?= $neru["hero_id"] ?></td>
+                      <td class="w-60"><img src="<?= $neru["hero_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td><?= $neru["insert_date"] ?></td>
+                      <td><?= $neru["lastUpdate_date"] ?></td>
+                      <td class="">
+                        <?php if ($neru["status"] == 1) : ?>
+                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
+                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
+                        <?php else : ?>
+                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</a>
+                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Non Aktif</a>
+                        <?php endif; ?>
+                      </td>
+                      <td>
+                        <span class="flex items-center gap-2 justify-center">
+                          <a href="Admin-hero-UpdateData.php?hero_id=<?= $neru["hero_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                        </span>
+                      </td>
+                    </tr>
+                    <?php $i++ ?>
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
@@ -500,9 +349,9 @@ $nerumeru = query("SELECT * FROM herosection");
               <table id="myTable6" class="myTableDisplay py-6 display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
+                    <th class="border-[1px] border-black-neru border-opacity-30">No</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Img</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30">Details Content</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">insert on</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Last update</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Status</th>
@@ -510,91 +359,32 @@ $nerumeru = query("SELECT * FROM herosection");
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/Person Test.png" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td><a href="Admin-hero-UpdateData.php" class="bg-blue-Neru px-3 py-2 text-white rounded-lg text-sm w-fit">Lihat Details</a></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/Person Test.png" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td><a href="Admin-hero-UpdateData.php" class="bg-blue-Neru px-3 py-2 text-white rounded-lg text-sm w-fit">Lihat Details</a></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/Person Test.png" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td><a href="Admin-hero-UpdateData.php" class="bg-blue-Neru px-3 py-2 text-white rounded-lg text-sm w-fit">Lihat Details</a></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/Person Test.png" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td><a href="Admin-hero-UpdateData.php" class="bg-blue-Neru px-3 py-2 text-white rounded-lg text-sm w-fit">Lihat Details</a></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr class="text-center">
-                    <td class="w-14">1</td>
-                    <td class="w-64"><img src="img/Person Test.png" class="w-[50%] object-contain mx-auto" alt="" /></td>
-                    <td><a href="Admin-hero-UpdateData.php" class="bg-blue-Neru px-3 py-2 text-white rounded-lg text-sm w-fit">Lihat Details</a></td>
-                    <td>12-April-2020</td>
-                    <td>12-mei-2020</td>
-                    <td class="">
-                      <button class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</button>
-                      <button class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs">Non Aktif</button>
-                    </td>
-                    <td>
-                      <span class="flex items-center gap-2 justify-center">
-                        <a href="Admin-hero-UpdateData.php" class="text-green-400 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                        <a class="HapusDataToggler text-red-400 text-2xl cursor-pointer"><i class="ti ti-trash"></i></a>
-                      </span>
-                    </td>
-                  </tr>
+                  <?php $i = 1 ?>
+                  <?php foreach ($nerumeru as $neru) : ?>
+                    <tr class="text-center">
+                      <td class="w-14"><?= $i ?></td>
+                      <td class="w-14"><?= $neru["hero_id"] ?></td>
+                      <td class="w-60"><img src="<?= $neru["hero_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td><?= $neru["insert_date"] ?></td>
+                      <td><?= $neru["lastUpdate_date"] ?></td>
+                      <td class="">
+                        <?php if ($neru["status"] == 1) : ?>
+                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
+                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
+                        <?php else : ?>
+                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</a>
+                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Non Aktif</a>
+                        <?php endif; ?>
+                      </td>
+                      <td>
+                        <span class="flex items-center gap-2 justify-center">
+                          <a href="Admin-hero-UpdateData.php?hero_id=<?= $neru["hero_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                        </span>
+                      </td>
+                    </tr>
+                    <?php $i++ ?>
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>

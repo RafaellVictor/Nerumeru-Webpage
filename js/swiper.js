@@ -17,18 +17,44 @@ let TestimonialSwiper = new Swiper(".testimonial-Content", {
 
   breakpoints: {
     360: {
-      slidesPerView: 1.1,
+      slidesPerView: 1,
       centeredSlides: true,
     },
 
-    600: {
+    430: {
       slidesPerView: 1.2,
       centeredSlides: true,
     },
-    968: {
-      slidesPerView: 3,
-      spaceBetween: 32,
+
+    540: {
+      slidesPerView: 1.5,
+      centeredSlides: true,
     },
+
+    768: {
+      slidesPerView:1.8,
+      spaceBetween: 16,
+      centeredSlides: true,
+    },
+
+    912: {
+      slidesPerView:1.8,
+      spaceBetween: 16,
+      centeredSlides: true,
+    },
+
+    1024: {
+      slidesPerView: 2.2,
+      spaceBetween: 16,
+      centeredSlides: true,
+    },
+
+    1280: {
+      slidesPerView: 3,
+      spaceBetween: 16,
+      centeredSlides: true,
+    },
+    
   },
 });
 

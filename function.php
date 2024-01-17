@@ -29,7 +29,7 @@ function insertHero($data)
     $hero_subtitle = htmlspecialchars($data["hero_subtitle"]);
     $hero_button1 = htmlspecialchars($data["hero_button1"]);
     $hero_button2 = htmlspecialchars($data["hero_button2"]);
-    $hero_status = $data["hero_status"];
+    $status = $data["status"];
 
     $query = "INSERT INTO herosection 
     VALUES (
@@ -43,7 +43,7 @@ function insertHero($data)
         '$hero_img',
         NOW(),
         NOW(),
-        '$hero_status'
+        '$status'
     )";
 
 
@@ -63,7 +63,7 @@ function updateHero($data)
     $hero_subtitle = htmlspecialchars($data["hero_subtitle"]);
     $hero_button1 = htmlspecialchars($data["hero_button1"]);
     $hero_button2 = htmlspecialchars($data["hero_button2"]);
-    $hero_status = $data["hero_status"];
+    $status = $data["status"];
 
     $query = "UPDATE herosection SET 
                 hero_img = '$hero_img', 
@@ -73,9 +73,9 @@ function updateHero($data)
                 hero_subtitle = '$hero_subtitle', 
                 hero_button1 = '$hero_button1', 
                 hero_button2 = '$hero_button2', 
-                hero_insert_date = NOW(),
-                hero_lastUpdate_date = NOW(),
-                hero_status = $hero_status
+                insert_date = NOW(),
+                lastUpdate_date = NOW(),
+                status = '$status'
               WHERE hero_id = $hero_id";
 
     mysqli_query($conn, $query);

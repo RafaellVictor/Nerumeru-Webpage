@@ -100,9 +100,9 @@ if (isset($_POST["submit"])) {
                     <input class="w-full p-2 outline-none border-2" value="<?= $nerumeru["hero_button1"] ?>" name="hero_button1" placeholder="Explore Now" type="text" />
                     <label for="">Button 2</label>
                     <input class="w-full p-2 outline-none border-2" value="<?= $nerumeru["hero_button2"] ?>" name="hero_button2" placeholder="Shop Collections" type="text" />
-                    <select class="w-full p-2 outline-none border-2" name="hero_status" id="hero_status">
-                      <option> <?= $nerumeru["hero_status"] ?>
-                        <?php if($nerumeru["hero_status"] === "1") : ?>
+                    <select class="w-full p-2 outline-none border-2" name="status" id="status">
+                      <option> <?= $nerumeru["status"] ?>
+                        <?php if($nerumeru["status"] === "1") : ?>
                           <?= "= Item Active" ?>
                         <?php else: ?>
                           <?= "= Item Non-Active" ?>
