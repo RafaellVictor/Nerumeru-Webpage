@@ -29,7 +29,7 @@
                         <path d="M9 12h12l-3 -3" />
                         <path d="M18 15l3 -3" />
                       </svg>
-                      <a href="login_Register.html"><h6 class="flex gap-1 items-center">Logout</h6></a>
+                      <a href="login_Register.php"><h6 class="flex gap-1 items-center">Logout</h6></a>
                     </span>
                   </span>
                 </div>

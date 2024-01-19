@@ -1147,6 +1147,10 @@ main {
   height: 2.5rem;
 }
 
+.h-11 {
+  height: 2.75rem;
+}
+
 .h-2 {
   height: 0.5rem;
 }
@@ -2707,10 +2711,6 @@ main {
   --tw-bg-opacity: 0.7;
 }
 
-.bg-opacity-80 {
-  --tw-bg-opacity: 0.8;
-}
-
 .bg-bed-catalog {
   background-image: url('../img/card-item-bg.png');
 }
@@ -2724,19 +2724,19 @@ main {
 }
 
 .bg-pillow-catalog {
-  background-image: url('../img/pillow-bg.png');
+  background-image: url("../img/pillow-bg.png");
 }
 
 .bg-sanitize-catalog {
-  background-image: url('../img/card-item5.png');
+  background-image: url("../img/card-item5.png");
 }
 
 .bg-toys-catalog {
-  background-image: url('../img/card-item-bg-toys.png');
+  background-image: url("../img/card-item-bg-toys.png");
 }
 
 .bg-trolly-catalog {
-  background-image: url('../img/card-item-bg-trolly.png');
+  background-image: url("../img/card-item-bg-trolly.png");
 }
 
 .decoration-slice {
@@ -6253,8 +6253,8 @@ a.plyr__control:before {
     height: 300px;
   }
 
-  .md\:h-\[72px\] {
-    height: 72px;
+  .md\:h-\[56px\] {
+    height: 56px;
   }
 
   .md\:h-fit {
@@ -6308,6 +6308,10 @@ a.plyr__control:before {
 
   .md\:w-\[30\%\] {
     width: 30%;
+  }
+
+  .md\:w-\[43\%\] {
+    width: 43%;
   }
 
   .md\:w-\[50\%\] {
@@ -7037,8 +7041,8 @@ a.plyr__control:before {
     height: 7rem;
   }
 
-  .\33xl\:h-\[180px\] {
-    height: 180px;
+  .\33xl\:h-\[160px\] {
+    height: 160px;
   }
 
   .\33xl\:h-\[370px\] {

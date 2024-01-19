@@ -3,27 +3,25 @@
 require "function.php";
 
 
-$id = $_GET['hero_id'];
-
-$nerumeru = query("SELECT * FROM herosection WHERE hero_id = $id")[0];
-
 if (isset($_POST["submit"])) {
-  if (updateHero($_POST) > 0) {
+  if (insertwhyus($_POST) > 0) {
     echo
     "<script>
-        alert('Data berhasil di Ubah');
+        alert('Data berhasil di Tambahkan');
         document.location.href = 'Admin-Homepage.php';
     </script>";
   } else {
     echo
     "<script>
-        alert('Data Gagal di Ubah');
+        alert('Data Gagal di Tambahkan');
         document.location.href = 'Admin-Homepage.php';
     </script>";
   }
 }
 
 ?>
+
+
 
 <!doctype html>
 <html lang="en">
@@ -80,42 +78,21 @@ if (isset($_POST["submit"])) {
               <form class="w-full" action="" method="post">
                 <div class="grid grid-cols-2 gap-6">
                   <div class="flex flex-col w-full gap-3">
-                    <input type="hidden" name="hero_id" value="<?= $nerumeru["hero_id"] ?>">
                     <div class="w-full flex flex-col gap-4  bg-white-neru rounded-md border-2 p-3">
-                      <img class="mx-auto" src="<?= $nerumeru["hero_img"] ?>" alt="" />
-                      <input type="file" />
-                      <input type="text" class="w-full p-2 outline-none border-2" name="hero_img" value="<?= $nerumeru["hero_img"] ?>" />
+                      <img src="img/Save.png" class=" mx-auto" alt="">
+                      <label for="">whyus Img <span class="text-red-500 font-medium">(Note : 2 Type File input file & link img)</span> </label>
+                      <input type="file">
+                      <input class="w-full p-2 outline-none border-2" type="text" name="whyus_img" />
                     </div>
                     <label for="">Title 1</label>
-                    <input class="w-full p-2 outline-none border-2" value="<?= $nerumeru["hero_title1"] ?>" name="hero_title1" placeholder="Nerumeru's Delightful Pets" type="text" />
-                    <label for="">Title 2</label>
-                    <input class="w-full p-2 outline-none border-2" value="<?= $nerumeru["hero_title2"] ?>" name="hero_title2" placeholder="Nerumeru's Delightful Pets" type="text" />
-                    <label for="">Title 3</label>
-                    <input class="w-full p-2 outline-none border-2" value="<?= $nerumeru["hero_title3"] ?>" name="hero_title3" placeholder="Nerumeru's Delightful Pets" type="text" />
+                    <input required class="w-full p-2 outline-none border-2" name="whyus_title" placeholder="Nerumeru's Delightful Pets" type="text" />
                   </div>
                   <div class="flex flex-col w-full gap-3">
                     <label for="">Subtitle</label>
-                    <textarea name="hero_subtitle" class="p-2 outline-none border-2 text-start" id="" placeholder="Your Subtitle" cols="30" rows="10"><?= $nerumeru["hero_subtitle"] ?></textarea>
-                    <label for="">Button 1</label>
-                    <input class="w-full p-2 outline-none border-2" value="<?= $nerumeru["hero_button1"] ?>" name="hero_button1" placeholder="Explore Now" type="text" />
-                    <label for="">Button 2</label>
-                    <input class="w-full p-2 outline-none border-2" value="<?= $nerumeru["hero_button2"] ?>" name="hero_button2" placeholder="Shop Collections" type="text" />
-                    <select class="w-full p-2 outline-none border-2" name="status" id="status">
-                      <option> <?= $nerumeru["status"] ?>
-                        <?php if($nerumeru["status"] === "1") : ?>
-                          <?= "= Item Active" ?>
-                        <?php else: ?>
-                          <?= "= Item Non-Active" ?>
-                        <?php endif; ?>
-                      </option>
-                      <optgroup label="Active">
-                        <option value="1">1</option>
-                      </optgroup>
-                      <optgroup label="Non-Active">
-                        <option value="0">0</option>
-                      </optgroup>
-                    </select>
-                    <button type="submit" name="submit" class="bg-green-400 p-2 rounded-md text-white font-semibold w-fit self-end">Update Data</button>
+                    <textarea required class="p-2 outline-none border-2 text-start" name="whyus_subtitle" placeholder="Your Subtitle" cols="30" rows="10"></textarea>
+                    <label for="">Status Content</label>
+                    <input required class="w-full p-2 outline-none border-2" name="status" value="0" readonly type="text" />
+                    <button type="submit" name="submit" class="bg-green-400 p-2 rounded-md text-white font-semibold w-fit self-end">Tambah Data</button>
                   </div>
                 </div>
               </form>

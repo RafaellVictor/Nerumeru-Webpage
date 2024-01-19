@@ -2,7 +2,9 @@
 
 require "function.php";
 
-$nerumeru = query("SELECT * FROM herosection");
+$hero = query("SELECT * FROM herosection");
+$whyus = query("SELECT * FROM whyus");
+$recommend = query("SELECT * FROM recommendsection")
 
 ?>
 
@@ -20,7 +22,7 @@ $nerumeru = query("SELECT * FROM herosection");
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
   <link href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css" rel="stylesheet" />
   <link href="https://cdn.datatables.net/buttons/2.3.5/css/buttons.dataTables.min.css" rel="stylesheet" />
-  <title>Nerumeru | Admin - Homepage</title>
+  <title>hero | Admin - Homepage</title>
 </head>
 
 <body>
@@ -65,7 +67,7 @@ $nerumeru = query("SELECT * FROM herosection");
                   <h6 class="menu-item">Recomend Product</h6>
                 </button>
                 <button class="ButtonTogglerActive px-6 py-2 font-semibold transition-all ease-in-out duration-300">
-                  <h6 class="menu-item">Whats on nerumeru</h6>
+                  <h6 class="menu-item">Whats on hero</h6>
                 </button>
                 <button class="ButtonTogglerActive px-6 py-2 font-semibold transition-all ease-in-out duration-300">
                   <h6 class="menu-item">Bio neru</h6>
@@ -100,7 +102,7 @@ $nerumeru = query("SELECT * FROM herosection");
                 </thead>
                 <tbody>
                   <?php $i = 1 ?>
-                  <?php foreach ($nerumeru as $neru) : ?>
+                  <?php foreach ($hero as $neru) : ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $i ?></td>
                       <td class="w-14"><?= $neru["hero_id"] ?></td>
@@ -109,17 +111,17 @@ $nerumeru = query("SELECT * FROM herosection");
                       <td><?= $neru["lastUpdate_date"] ?></td>
                       <td class="">
                         <?php if ($neru["status"] == 1) : ?>
-                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
-                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
+                          <a href="status.php?hero_id=<?= $neru["hero_id"] ?>&status=<?= $neru["status"] ?>" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
+                          <a href="status.php?hero_id=<?= $neru["hero_id"] ?>&status=<?= $neru["status"] ?>" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
                         <?php else : ?>
-                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</a>
-                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Non Aktif</a>
+                          <a href="status.php?hero_id=<?= $neru["hero_id"] ?>&status=<?= $neru["status"] ?>" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</a>
+                          <a href="status.php?hero_id=<?= $neru["hero_id"] ?>&status=<?= $neru["status"] ?>" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Non Aktif</a>
                         <?php endif; ?>
                       </td>
                       <td>
                         <span class="flex items-center gap-2 justify-center">
                           <a href="Admin-hero-UpdateData.php?hero_id=<?= $neru["hero_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?hero_id =<?= $neru["hero_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -130,7 +132,7 @@ $nerumeru = query("SELECT * FROM herosection");
             </div>
             <div id="WhyusSection" class="container hidden BoxTableData bg-white rounded-lg shadow-md 3xl:h-[700px] 2xl:h-[480px] overflow-y-auto mt-4">
               <div class="wrapperAddData mb-6 w-fit">
-                <a href="Admin-hero-insertData.html" class="bg-blue-Neru w-fit text-white px-3 rounded-lg py-2 cursor-pointer font-semibold text-base flex items-center gap-3">
+                <a href="Admin-whyus-insertData.php" class="bg-blue-Neru w-fit text-white px-3 rounded-lg py-2 cursor-pointer font-semibold text-base flex items-center gap-3">
                   <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-plus-filled w-7" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M12 2l.324 .001l.318 .004l.616 .017l.299 .013l.579 .034l.553 .046c4.785 .464 6.732 2.411 7.196 7.196l.046 .553l.034 .579c.005 .098 .01 .198 .013 .299l.017 .616l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.464 4.785 -2.411 6.732 -7.196 7.196l-.553 .046l-.579 .034c-.098 .005 -.198 .01 -.299 .013l-.616 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.785 -.464 -6.732 -2.411 -7.196 -7.196l-.046 -.553l-.034 -.579a28.058 28.058 0 0 1 -.013 -.299l-.017 -.616c-.003 -.21 -.005 -.424 -.005 -.642l.001 -.324l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.464 -4.785 2.411 -6.732 7.196 -7.196l.553 -.046l.579 -.034c.098 -.005 .198 -.01 .299 -.013l.616 -.017c.21 -.003 .424 -.005 .642 -.005zm0 6a1 1 0 0 0 -1 1v2h-2l-.117 .007a1 1 0 0 0 .117 1.993h2v2l.007 .117a1 1 0 0 0 1.993 -.117v-2h2l.117 -.007a1 1 0 0 0 -.117 -1.993h-2v-2l-.007 -.117a1 1 0 0 0 -.993 -.883z" fill="currentColor" stroke-width="0" />
@@ -152,26 +154,26 @@ $nerumeru = query("SELECT * FROM herosection");
                 </thead>
                 <tbody>
                   <?php $i = 1 ?>
-                  <?php foreach ($nerumeru as $neru) : ?>
+                  <?php foreach ($whyus as $whys) : ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $i ?></td>
-                      <td class="w-14"><?= $neru["hero_id"] ?></td>
-                      <td class="w-60"><img src="<?= $neru["hero_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
-                      <td><?= $neru["insert_date"] ?></td>
-                      <td><?= $neru["lastUpdate_date"] ?></td>
+                      <td class="w-14"><?= $whys["whyus_id"] ?></td>
+                      <td class="w-60"><img src="<?= $whys["whyus_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td><?= $whys["insert_date"] ?></td>
+                      <td><?= $whys["lastUpdate_date"] ?></td>
                       <td class="">
-                        <?php if ($neru["status"] == 1) : ?>
-                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
-                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
+                        <?php if ($whys["status"] == 1) : ?>
+                          <a href="status.php?whyus_id=<?= $whys["whyus_id"] ?>&status=<?= $whys["status"] ?>" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
+                          <a href="status.php?whyus_id=<?= $whys["whyus_id"] ?>&status=<?= $whys["status"] ?>" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
                         <?php else : ?>
-                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</a>
-                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Non Aktif</a>
+                          <a href="status.php?whyus_id=<?= $whys["whyus_id"] ?>&status=<?= $whys["status"] ?>" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</a>
+                          <a href="status.php?whyus_id=<?= $whys["whyus_id"] ?>&status=<?= $whys["status"] ?>" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Non Aktif</a>
                         <?php endif; ?>
                       </td>
                       <td>
                         <span class="flex items-center gap-2 justify-center">
-                          <a href="Admin-hero-UpdateData.php?hero_id=<?= $neru["hero_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                          <a href="Admin-whyus-UpdateData.php?whyus_id=<?= $whys["whyus_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?whyus_id=<?= $whys["whyus_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -182,7 +184,7 @@ $nerumeru = query("SELECT * FROM herosection");
             </div>
             <div id="ProductRecomendationSection" class="container hidden BoxTableData bg-white rounded-lg shadow-md 3xl:h-[700px] 2xl:h-[480px] overflow-y-auto mt-4">
               <div class="wrapperAddData mb-6 w-fit">
-                <a href="Admin-hero-insertData.html" class="bg-blue-Neru w-fit text-white px-3 rounded-lg py-2 cursor-pointer font-semibold text-base flex items-center gap-3">
+                <a href="Admin-recomend-insertData.php" class="bg-blue-Neru w-fit text-white px-3 rounded-lg py-2 cursor-pointer font-semibold text-base flex items-center gap-3">
                   <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-plus-filled w-7" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M12 2l.324 .001l.318 .004l.616 .017l.299 .013l.579 .034l.553 .046c4.785 .464 6.732 2.411 7.196 7.196l.046 .553l.034 .579c.005 .098 .01 .198 .013 .299l.017 .616l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.464 4.785 -2.411 6.732 -7.196 7.196l-.553 .046l-.579 .034c-.098 .005 -.198 .01 -.299 .013l-.616 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.785 -.464 -6.732 -2.411 -7.196 -7.196l-.046 -.553l-.034 -.579a28.058 28.058 0 0 1 -.013 -.299l-.017 -.616c-.003 -.21 -.005 -.424 -.005 -.642l.001 -.324l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.464 -4.785 2.411 -6.732 7.196 -7.196l.553 -.046l.579 -.034c.098 -.005 .198 -.01 .299 -.013l.616 -.017c.21 -.003 .424 -.005 .642 -.005zm0 6a1 1 0 0 0 -1 1v2h-2l-.117 .007a1 1 0 0 0 .117 1.993h2v2l.007 .117a1 1 0 0 0 1.993 -.117v-2h2l.117 -.007a1 1 0 0 0 -.117 -1.993h-2v-2l-.007 -.117a1 1 0 0 0 -.993 -.883z" fill="currentColor" stroke-width="0" />
@@ -204,26 +206,26 @@ $nerumeru = query("SELECT * FROM herosection");
                 </thead>
                 <tbody>
                   <?php $i = 1 ?>
-                  <?php foreach ($nerumeru as $neru) : ?>
+                  <?php foreach ($recommend as $recom) : ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $i ?></td>
-                      <td class="w-14"><?= $neru["hero_id"] ?></td>
-                      <td class="w-60"><img src="<?= $neru["hero_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
-                      <td><?= $neru["insert_date"] ?></td>
-                      <td><?= $neru["lastUpdate_date"] ?></td>
+                      <td class="w-14"><?= $recom["recommend_id"] ?></td>
+                      <td class="w-60"><img src="<?= $recom["recommend_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td><?= $recom["insert_date"] ?></td>
+                      <td><?= $recom["lastupdate_date"] ?></td>
                       <td class="">
-                        <?php if ($neru["status"] == 1) : ?>
-                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
-                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
+                        <?php if ($recom["status"] == 1) : ?>
+                          <a href="status.php?recommend_id=<?= $recom["recommend_id"] ?>&status=<?= $recom["status"] ?>" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
+                          <a href="status.php?recommend_id=<?= $recom["recommend_id"] ?>&status=<?= $recom["status"] ?>" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
                         <?php else : ?>
-                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</a>
-                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Non Aktif</a>
+                          <a href="status.php?recommend_id=<?= $recom["recommend_id"] ?>&status=<?= $recom["status"] ?>" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</a>
+                          <a href="status.php?recommend_id=<?= $recom["recommend_id"] ?>&status=<?= $recom["status"] ?>" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Non Aktif</a>
                         <?php endif; ?>
                       </td>
                       <td>
                         <span class="flex items-center gap-2 justify-center">
-                          <a href="Admin-hero-UpdateData.php?hero_id=<?= $neru["hero_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                          <a href="Admin-recomend-UpdateData.php?recommend_id=<?= $recom['recommend_id'] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?recommend_id=<?= $recom["recommend_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -232,9 +234,9 @@ $nerumeru = query("SELECT * FROM herosection");
                 </tbody>
               </table>
             </div>
-            <div id="WhatsOnNerumeruSection" class="container hidden BoxTableData bg-white rounded-lg shadow-md 3xl:h-[700px] 2xl:h-[480px] overflow-y-auto mt-4">
+            <div id="WhatsOnheroSection" class="container hidden BoxTableData bg-white rounded-lg shadow-md 3xl:h-[700px] 2xl:h-[480px] overflow-y-auto mt-4">
               <div class="wrapperAddData mb-6 w-fit">
-                <a href="Admin-hero-insertData.html" class="bg-blue-Neru w-fit text-white px-3 rounded-lg py-2 cursor-pointer font-semibold text-base flex items-center gap-3">
+                <a href="Admin-recomend-insertData.php" class="bg-blue-Neru w-fit text-white px-3 rounded-lg py-2 cursor-pointer font-semibold text-base flex items-center gap-3">
                   <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-plus-filled w-7" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M12 2l.324 .001l.318 .004l.616 .017l.299 .013l.579 .034l.553 .046c4.785 .464 6.732 2.411 7.196 7.196l.046 .553l.034 .579c.005 .098 .01 .198 .013 .299l.017 .616l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.464 4.785 -2.411 6.732 -7.196 7.196l-.553 .046l-.579 .034c-.098 .005 -.198 .01 -.299 .013l-.616 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.785 -.464 -6.732 -2.411 -7.196 -7.196l-.046 -.553l-.034 -.579a28.058 28.058 0 0 1 -.013 -.299l-.017 -.616c-.003 -.21 -.005 -.424 -.005 -.642l.001 -.324l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.464 -4.785 2.411 -6.732 7.196 -7.196l.553 -.046l.579 -.034c.098 -.005 .198 -.01 .299 -.013l.616 -.017c.21 -.003 .424 -.005 .642 -.005zm0 6a1 1 0 0 0 -1 1v2h-2l-.117 .007a1 1 0 0 0 .117 1.993h2v2l.007 .117a1 1 0 0 0 1.993 -.117v-2h2l.117 -.007a1 1 0 0 0 -.117 -1.993h-2v-2l-.007 -.117a1 1 0 0 0 -.993 -.883z" fill="currentColor" stroke-width="0" />
@@ -256,26 +258,26 @@ $nerumeru = query("SELECT * FROM herosection");
                 </thead>
                 <tbody>
                   <?php $i = 1 ?>
-                  <?php foreach ($nerumeru as $neru) : ?>
+                  <?php foreach ($recommend as $recom) : ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $i ?></td>
-                      <td class="w-14"><?= $neru["hero_id"] ?></td>
-                      <td class="w-60"><img src="<?= $neru["hero_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
-                      <td><?= $neru["insert_date"] ?></td>
-                      <td><?= $neru["lastUpdate_date"] ?></td>
+                      <td class="w-14"><?= $recom["recommend_id"] ?></td>
+                      <td class="w-60"><img src="<?= $recom["recommend_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td><?= $recom["insert_date"] ?></td>
+                      <td><?= $recom["lastupdate_date"] ?></td>
                       <td class="">
-                        <?php if ($neru["status"] == 1) : ?>
-                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
-                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
+                        <?php if ($recom["status"] == 1) : ?>
+                          <a href="status.php?recommend_id=<?= $recom["recommend_id"] ?>&status=<?= $recom["status"] ?>" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
+                          <a href="status.php?recommend_id=<?= $recom["recommend_id"] ?>&status=<?= $recom["status"] ?>" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
                         <?php else : ?>
-                          <a href="" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</a>
-                          <a href="" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Non Aktif</a>
+                          <a href="status.php?recommend_id=<?= $recom["recommend_id"] ?>&status=<?= $recom["status"] ?>" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</a>
+                          <a href="status.php?recommend_id=<?= $recom["recommend_id"] ?>&status=<?= $recom["status"] ?>" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Non Aktif</a>
                         <?php endif; ?>
                       </td>
                       <td>
                         <span class="flex items-center gap-2 justify-center">
-                          <a href="Admin-hero-UpdateData.php?hero_id=<?= $neru["hero_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                          <a href="Admin-recomend-UpdateData.php?recommend_id=<?= $recom['recommend_id'] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?recommend_id=<?= $recom["recommend_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -286,7 +288,7 @@ $nerumeru = query("SELECT * FROM herosection");
             </div>
             <div id="BioNeruSection" class="container hidden BoxTableData bg-white rounded-lg shadow-md 3xl:h-[700px] 2xl:h-[480px] overflow-y-auto mt-4">
               <div class="wrapperAddData mb-6 w-fit">
-                <a href="Admin-hero-insertData.html" class="bg-blue-Neru w-fit text-white px-3 rounded-lg py-2 cursor-pointer font-semibold text-base flex items-center gap-3">
+                <a href="Admin-hero-insertData.php" class="bg-blue-Neru w-fit text-white px-3 rounded-lg py-2 cursor-pointer font-semibold text-base flex items-center gap-3">
                   <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-plus-filled w-7" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M12 2l.324 .001l.318 .004l.616 .017l.299 .013l.579 .034l.553 .046c4.785 .464 6.732 2.411 7.196 7.196l.046 .553l.034 .579c.005 .098 .01 .198 .013 .299l.017 .616l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.464 4.785 -2.411 6.732 -7.196 7.196l-.553 .046l-.579 .034c-.098 .005 -.198 .01 -.299 .013l-.616 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.785 -.464 -6.732 -2.411 -7.196 -7.196l-.046 -.553l-.034 -.579a28.058 28.058 0 0 1 -.013 -.299l-.017 -.616c-.003 -.21 -.005 -.424 -.005 -.642l.001 -.324l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.464 -4.785 2.411 -6.732 7.196 -7.196l.553 -.046l.579 -.034c.098 -.005 .198 -.01 .299 -.013l.616 -.017c.21 -.003 .424 -.005 .642 -.005zm0 6a1 1 0 0 0 -1 1v2h-2l-.117 .007a1 1 0 0 0 .117 1.993h2v2l.007 .117a1 1 0 0 0 1.993 -.117v-2h2l.117 -.007a1 1 0 0 0 -.117 -1.993h-2v-2l-.007 -.117a1 1 0 0 0 -.993 -.883z" fill="currentColor" stroke-width="0" />
@@ -308,7 +310,7 @@ $nerumeru = query("SELECT * FROM herosection");
                 </thead>
                 <tbody>
                   <?php $i = 1 ?>
-                  <?php foreach ($nerumeru as $neru) : ?>
+                  <?php foreach ($hero as $neru) : ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $i ?></td>
                       <td class="w-14"><?= $neru["hero_id"] ?></td>
@@ -338,7 +340,7 @@ $nerumeru = query("SELECT * FROM herosection");
             </div>
             <div id="TestimonialSection" class="container hidden BoxTableData bg-white rounded-lg shadow-md 3xl:h-[700px] 2xl:h-[480px] overflow-y-auto mt-4">
               <div class="wrapperAddData mb-6 w-fit">
-                <a href="Admin-hero-insertData.html" class="bg-blue-Neru w-fit text-white px-3 rounded-lg py-2 cursor-pointer font-semibold text-base flex items-center gap-3">
+                <a href="Admin-hero-insertData.php" class="bg-blue-Neru w-fit text-white px-3 rounded-lg py-2 cursor-pointer font-semibold text-base flex items-center gap-3">
                   <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-plus-filled w-7" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M12 2l.324 .001l.318 .004l.616 .017l.299 .013l.579 .034l.553 .046c4.785 .464 6.732 2.411 7.196 7.196l.046 .553l.034 .579c.005 .098 .01 .198 .013 .299l.017 .616l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.464 4.785 -2.411 6.732 -7.196 7.196l-.553 .046l-.579 .034c-.098 .005 -.198 .01 -.299 .013l-.616 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.785 -.464 -6.732 -2.411 -7.196 -7.196l-.046 -.553l-.034 -.579a28.058 28.058 0 0 1 -.013 -.299l-.017 -.616c-.003 -.21 -.005 -.424 -.005 -.642l.001 -.324l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.464 -4.785 2.411 -6.732 7.196 -7.196l.553 -.046l.579 -.034c.098 -.005 .198 -.01 .299 -.013l.616 -.017c.21 -.003 .424 -.005 .642 -.005zm0 6a1 1 0 0 0 -1 1v2h-2l-.117 .007a1 1 0 0 0 .117 1.993h2v2l.007 .117a1 1 0 0 0 1.993 -.117v-2h2l.117 -.007a1 1 0 0 0 -.117 -1.993h-2v-2l-.007 -.117a1 1 0 0 0 -.993 -.883z" fill="currentColor" stroke-width="0" />
@@ -360,7 +362,7 @@ $nerumeru = query("SELECT * FROM herosection");
                 </thead>
                 <tbody>
                   <?php $i = 1 ?>
-                  <?php foreach ($nerumeru as $neru) : ?>
+                  <?php foreach ($hero as $neru) : ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $i ?></td>
                       <td class="w-14"><?= $neru["hero_id"] ?></td>
@@ -388,7 +390,7 @@ $nerumeru = query("SELECT * FROM herosection");
                 </tbody>
               </table>
             </div>
-            <form action="hapus.php" method="get">
+            <!-- <form action="hapus.php" method="get">
               <div id="TrashNotifications" class="gap-4 translate-x-1/2 right-[40%] z-20 fixed invisible top-0 w-96 flex flex-col justify-center items-center border-2 border-blue-Neru rounded-lg backdrop-blur-lg h-32">
                 <h6>Yakin Ingin Hapus Data?</h6>
                 <input type="hidden" name="hero_id" value="<?= $neru["hero_id"] ?>">
@@ -397,7 +399,7 @@ $nerumeru = query("SELECT * FROM herosection");
                   <button id="CancelDelete" type="reset" class="bg-blue-Neru text-white py-2 rounded-md px-6 font-semibold">Tidak</button>
                 </div>
               </div>
-            </form>
+            </form> -->
           </div>
         </div>
         <!-- Main Menu End -->

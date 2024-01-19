@@ -46,19 +46,19 @@
               <div thumbsSlider="" class="swiper mySwiper mt-2">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <img src="img/card-item-2.png" class="cursor-pointer w-full object-fill 3xl:h-[180px] 2xl:h-[130px] xl:h-[120px] h-[75px] " alt="" />
+                    <img src="img/card-item-2.png" class="cursor-pointer w-full object-fill 3xl:h-[160px] 2xl:h-[130px] xl:h-[120px] h-[75px] " alt="" />
                   </div>
                   <div class="swiper-slide">
-                    <img src="img/card-item.png" class="cursor-pointer w-full object-fill 3xl:h-[180px] 2xl:h-[130px] xl:h-[120px] h-[75px] " alt="" />
+                    <img src="img/card-item.png" class="cursor-pointer w-full object-fill 3xl:h-[160px] 2xl:h-[130px] xl:h-[120px] h-[75px] " alt="" />
                   </div>
                   <div class="swiper-slide">
-                    <img src="img/card-item3.png" class="cursor-pointer w-full object-fill 3xl:h-[180px] 2xl:h-[130px] xl:h-[120px] h-[75px] " alt="" />
+                    <img src="img/card-item3.png" class="cursor-pointer w-full object-fill 3xl:h-[160px] 2xl:h-[130px] xl:h-[120px] h-[75px] " alt="" />
                   </div>
                   <div class="swiper-slide">
-                    <img src="img/card-item5.png" class="cursor-pointer w-full object-fill 3xl:h-[180px] 2xl:h-[130px] xl:h-[120px] h-[75px] " alt="" />
+                    <img src="img/card-item5.png" class="cursor-pointer w-full object-fill 3xl:h-[160px] 2xl:h-[130px] xl:h-[120px] h-[75px] " alt="" />
                   </div>
                   <div class="swiper-slide">
-                    <img src="img/card-item4.png" class="cursor-pointer w-full object-fill 3xl:h-[180px] 2xl:h-[130px] xl:h-[120px] h-[75px]" alt="" />
+                    <img src="img/card-item4.png" class="cursor-pointer w-full object-fill 3xl:h-[160px] 2xl:h-[130px] xl:h-[120px] h-[75px]" alt="" />
                   </div>
                 </div>
               </div>
