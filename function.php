@@ -225,3 +225,130 @@ function deleteProductRecom($id)
     return mysqli_affected_rows($conn);
 }
 // product recommended Function End
+
+
+// Event Function 
+function insertEvent($data)
+{
+    global $conn;
+    $event_img = htmlspecialchars($data["event_img"]);
+    $event_type = htmlspecialchars($data["event_type"]);
+
+    $status = $data["status"];
+
+    $query = "INSERT INTO neru_event
+    VALUES (
+        '',
+        '$event_type',
+        '$event_img',
+        '$status',
+        NOW(),
+        NOW()
+    )";
+
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+function updateEvent($data)
+{
+    global $conn;
+
+    $event_id = $data["event_id"];
+    $event_img = htmlspecialchars($data["event_img"]);
+    $event_type = htmlspecialchars($data["event_type"]);
+    $status = $data["status"];
+
+    $query = "UPDATE neru_event SET 
+                event_type = '$event_type',
+                event_img = '$event_img', 
+                status = '$status',
+                insert_date = NOW(),
+                lastUpdate_date = NOW()
+              WHERE event_id = $event_id";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+
+function deleteEvent($id)
+{
+
+    global $conn;
+
+    $query = "DELETE FROM neru_event WHERE event_id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+// Event Function End
+
+
+// Event Function 
+function insertBio($data)
+{
+    global $conn;
+
+    $bio_title = htmlspecialchars($data["bio_title"]);
+    $bio_subtitle = htmlspecialchars($data["bio_subtitle"]);
+    $bio_full = htmlspecialchars($data["bio_full"]);
+
+
+    $status = $data["status"];
+
+    $query = "INSERT INTO bio
+    VALUES (
+        '',
+        '$bio_title',
+        '$bio_subtitle',
+        '$bio_full',
+        '$status',
+        NOW(),
+        NOW()
+    )";
+
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+function updateBio($data)
+{
+    global $conn;
+
+    $bio_id = $data["bio_id"];
+    $bio_title = htmlspecialchars($data["bio_title"]);
+    $bio_subtitle = htmlspecialchars($data["bio_subtitle"]);
+    $bio_full = htmlspecialchars($data["bio_full"]);
+    $status = $data["status"];
+
+    $query = "UPDATE bio SET 
+                bio_title = '$bio_title',
+                bio_subtitle = '$bio_subtitle',
+                bio_full = '$bio_full',
+                status = '$status',
+                insert_date = NOW(),
+                lastUpdate_date = NOW()
+              WHERE bio_id = $bio_id";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+
+function deleteBio($id)
+{
+
+    global $conn;
+
+    $query = "DELETE FROM bio WHERE bio_id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+// Event Function End
+

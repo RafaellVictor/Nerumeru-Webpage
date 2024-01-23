@@ -1340,6 +1340,10 @@ main {
   width: 23px;
 }
 
+.w-\[30\%\] {
+  width: 30%;
+}
+
 .w-\[35\%\] {
   width: 35%;
 }
@@ -2711,32 +2715,12 @@ main {
   --tw-bg-opacity: 0.7;
 }
 
-.bg-bed-catalog {
-  background-image: url('../img/card-item-bg.png');
-}
-
 .bg-forest {
   background-image: url('../img/bg-forest.jpg');
 }
 
 .bg-offcanvas {
   background-image: url('../img/Trolly-Footer.png');
-}
-
-.bg-pillow-catalog {
-  background-image: url("../img/pillow-bg.png");
-}
-
-.bg-sanitize-catalog {
-  background-image: url("../img/card-item5.png");
-}
-
-.bg-toys-catalog {
-  background-image: url("../img/card-item-bg-toys.png");
-}
-
-.bg-trolly-catalog {
-  background-image: url("../img/card-item-bg-trolly.png");
 }
 
 .decoration-slice {
@@ -3227,8 +3211,8 @@ main {
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
 }
 
-.leading-tight {
-  line-height: 1.25;
+.leading-loose {
+  line-height: 2;
 }
 
 .tracking-widest {
@@ -4264,9 +4248,6 @@ input[type="number"]::-webkit-outer-spin-button {
   .shope-active {
     bottom: 6rem;
   }
-}
-
-.floatBTN-Active {
 }
 
 .togglePesanan-active > svg {
@@ -5881,7 +5862,7 @@ a.plyr__control:before {
 /* Admin */
 
 .parentAdminNav-Active {
-  margin-bottom: 480px;
+  margin-bottom: 260px;
 }
 
 .BoxNavAdmin-Active {
@@ -6710,8 +6691,8 @@ a.plyr__control:before {
     gap: 1.25rem;
   }
 
-  .lg\:gap-6 {
-    gap: 1.5rem;
+  .lg\:gap-7 {
+    gap: 1.75rem;
   }
 
   .lg\:p-0 {
@@ -6781,6 +6762,11 @@ a.plyr__control:before {
   .lg\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .lg\:text-4xl {
@@ -6886,6 +6872,10 @@ a.plyr__control:before {
     gap: 1.25rem;
   }
 
+  .xl\:gap-6 {
+    gap: 1.5rem;
+  }
+
   .xl\:p-9 {
     padding: 2.25rem;
   }
@@ -6935,8 +6925,8 @@ a.plyr__control:before {
     height: 550px;
   }
 
-  .\32xl\:h-\[85px\] {
-    height: 85px;
+  .\32xl\:h-\[76px\] {
+    height: 76px;
   }
 
   .\32xl\:w-16 {
@@ -6999,6 +6989,11 @@ a.plyr__control:before {
     line-height: 2rem;
   }
 
+  .\32xl\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
   .\32xl\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -7037,8 +7032,8 @@ a.plyr__control:before {
     margin-top: 20rem;
   }
 
-  .\33xl\:h-28 {
-    height: 7rem;
+  .\33xl\:h-\[100px\] {
+    height: 100px;
   }
 
   .\33xl\:h-\[160px\] {
@@ -7085,6 +7080,10 @@ a.plyr__control:before {
     gap: 4rem;
   }
 
+  .\33xl\:gap-4 {
+    gap: 1rem;
+  }
+
   .\33xl\:gap-5 {
     gap: 1.25rem;
   }
@@ -7116,6 +7115,11 @@ a.plyr__control:before {
   .\33xl\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .\33xl\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 
   .\33xl\:text-7xl {

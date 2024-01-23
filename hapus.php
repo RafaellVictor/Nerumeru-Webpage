@@ -58,3 +58,39 @@ if (isset($_GET['recommend_id'])) {
         </script>";
     }
 }
+
+
+if (isset($_GET['event_id'])) {
+    $id_event = $_GET['event_id'];
+    if (deleteEvent($id_event) > 0) {
+        echo
+        "<script>
+            alert('Data berhasil di hapus');
+            document.location.href = 'Admin-Homepage.php';
+        </script>";
+    } else {
+        echo
+        "<script>
+            alert('Data Gagal di hapus');
+            document.location.href = 'Admin-Homepage.php';
+        </script>";
+    }
+}
+
+
+if (isset($_GET['bio_id'])) {
+    $id_bio = $_GET['bio_id'];
+    if (deleteBio($id_bio) > 0) {
+        echo
+        "<script>
+            alert('Data berhasil di hapus');
+            document.location.href = 'Admin-Homepage.php';
+        </script>";
+    } else {
+        echo
+        "<script>
+            alert('Data Gagal di hapus');
+            document.location.href = 'Admin-Homepage.php';
+        </script>";
+    }
+}

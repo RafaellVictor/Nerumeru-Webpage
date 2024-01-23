@@ -81,8 +81,8 @@ $(document).ready(function () {
       responsive: true,
       autoWidth: false, // Set autoWidth to false
       lengthMenu: [
-        [5, 10 , 20],
-        ["5", "10" , "20"],
+        [10 , 20],
+        ["10" , "20"],
       ], // Mengembalikan opsi 20, 50, 80, dan 100
       language: {
         // Konfigurasi bahasa lainnya

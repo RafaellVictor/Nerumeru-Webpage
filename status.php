@@ -61,3 +61,44 @@ if(isset($_GET['recommend_id']) && isset($_GET['status'])){ // Mengecek apakah p
         echo "Error update data: " . mysqli_error($conn); // Menampilkan pesan error
     }
 }
+
+
+if(isset($_GET['event_id']) && isset($_GET['status'])){ // Mengecek apakah parameter id dan status ada di URL
+    $idhero = $_GET['event_id']; // Mengambil nilai id dari URL
+    $status = $_GET['status']; // Mengambil nilai status dari URL
+
+    // Mengubah status menjadi lawan dari status saat ini (0 menjadi 1 atau 1 menjadi 0)
+    $newStatus = ($status == 1) ? 0 : 1;
+
+    $query = "UPDATE neru_event SET status='$newStatus' WHERE event_id='$idhero'"; // Query update status banner
+    $running = mysqli_query($conn, $query); // Menjalankan query
+
+    if($running){
+        echo "<script>alert('Data berhasil diupdate')</script>"; // Menampilkan pesan sukses
+        header('Location:Admin-Homepage.php'); // Redirect ke halaman homebanner.php
+        exit();
+    }
+    else{
+        echo "Error update data: " . mysqli_error($conn); // Menampilkan pesan error
+    }
+}
+
+if(isset($_GET['bio_id']) && isset($_GET['status'])){ // Mengecek apakah parameter id dan status ada di URL
+    $idhero = $_GET['bio_id']; // Mengambil nilai id dari URL
+    $status = $_GET['status']; // Mengambil nilai status dari URL
+
+    // Mengubah status menjadi lawan dari status saat ini (0 menjadi 1 atau 1 menjadi 0)
+    $newStatus = ($status == 1) ? 0 : 1;
+
+    $query = "UPDATE bio SET status='$newStatus' WHERE bio_id='$idhero'"; // Query update status banner
+    $running = mysqli_query($conn, $query); // Menjalankan query
+
+    if($running){
+        echo "<script>alert('Data berhasil diupdate')</script>"; // Menampilkan pesan sukses
+        header('Location:Admin-Homepage.php'); // Redirect ke halaman homebanner.php
+        exit();
+    }
+    else{
+        echo "Error update data: " . mysqli_error($conn); // Menampilkan pesan error
+    }
+}
