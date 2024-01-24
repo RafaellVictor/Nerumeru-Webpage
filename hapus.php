@@ -66,6 +66,23 @@ if (isset($_GET['event_id'])) {
         echo
         "<script>
             alert('Data berhasil di hapus');
+            document.location.href = 'Admin-Blog.php';
+        </script>";
+    } else {
+        echo
+        "<script>
+            alert('Data Gagal di hapus');
+            document.location.href = 'Admin-Blog.php';
+        </script>";
+    }
+}
+
+if (isset($_GET['news_id'])) {
+    $id_news = $_GET['news_id'];
+    if (deleteEvent($id_news) > 0) {
+        echo
+        "<script>
+            alert('Data berhasil di hapus');
             document.location.href = 'Admin-Homepage.php';
         </script>";
     } else {
@@ -91,6 +108,23 @@ if (isset($_GET['bio_id'])) {
         "<script>
             alert('Data Gagal di hapus');
             document.location.href = 'Admin-Homepage.php';
+        </script>";
+    }
+}
+
+if (isset($_GET['blog_id'])) {
+    $id_blog = $_GET['blog_id'];
+    if (deleteBlogIcon($id_blog) > 0) {
+        echo
+        "<script>
+            alert('Data berhasil di hapus');
+            document.location.href = 'Admin-Blog.php';
+        </script>";
+    } else {
+        echo
+        "<script>
+            alert('Data Gagal di hapus');
+            document.location.href = 'Admin-Blog.php';
         </script>";
     }
 }

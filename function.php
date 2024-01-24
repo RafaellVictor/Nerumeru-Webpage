@@ -352,3 +352,63 @@ function deleteBio($id)
 }
 // Event Function End
 
+
+// Event Function 
+function insertBlogIcon($data)
+{
+    global $conn;
+
+    $blog_icon = htmlspecialchars($data["blog_icon"]);
+    $blog_icon_title = htmlspecialchars($data["blog_icon_title"]);
+    $status = $data["status"];
+
+    $query = "INSERT INTO blog
+    VALUES (
+        '',
+        '$blog_icon',
+        '$blog_icon_title',
+        '',
+        '$status',
+        NOW(),
+        NOW()
+    )";
+
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+function updateBlogIcon($data)
+{
+    global $conn;
+
+    $blog_id = $data["blog_id"];
+    $blog_icon = htmlspecialchars($data["blog_icon"]);
+    $blog_icon_title = htmlspecialchars($data["blog_icon_title"]);
+    $status = $data["status"];
+
+    $query = "UPDATE blog SET 
+                blog_icon = '$blog_icon',
+                blog_icon_title = '$blog_icon_title',
+                status = '$status',
+                insert_date = NOW(),
+                lastUpdate_date = NOW()
+              WHERE blog_id = $blog_id";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+
+function deleteBlogIcon($id)
+{
+
+    global $conn;
+
+    $query = "DELETE FROM blog WHERE blog_id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+// Event Function End

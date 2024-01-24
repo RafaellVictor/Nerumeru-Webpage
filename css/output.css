@@ -1340,8 +1340,8 @@ main {
   width: 23px;
 }
 
-.w-\[30\%\] {
-  width: 30%;
+.w-\[25\%\] {
+  width: 25%;
 }
 
 .w-\[35\%\] {
@@ -1379,6 +1379,10 @@ main {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[30\%\] {
+  width: 30%;
 }
 
 .max-w-screen-lg {
@@ -5862,7 +5866,7 @@ a.plyr__control:before {
 /* Admin */
 
 .parentAdminNav-Active {
-  margin-bottom: 260px;
+  margin-bottom: 300px;
 }
 
 .BoxNavAdmin-Active {

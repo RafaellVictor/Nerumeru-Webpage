@@ -5,12 +5,11 @@ require "function.php";
 $hero = query("SELECT * FROM herosection");
 $whyus = query("SELECT * FROM whyus");
 $recommend = query("SELECT * FROM recommendsection");
-$event = query("SELECT * FROM neru_event WHERE event_type='event'");
+$event = query("SELECT * FROM neru_event WHERE event_type='news'");
 $news = query("SELECT * FROM recommendsection");
 $bioNeru = query("SELECT * FROM bio");
 
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -91,7 +90,7 @@ $bioNeru = query("SELECT * FROM bio");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable" class="myTableDisplay py-6 display nowrap table hover order-column row-border stripe">
+              <table id="myTable" class="myTableDisplay 3xl:text-lg text-sm py-6 display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
 
@@ -143,7 +142,7 @@ $bioNeru = query("SELECT * FROM bio");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable2" class="myTableDisplay py-6 display nowrap table hover order-column row-border stripe">
+              <table id="myTable2" class="myTableDisplay py-6 3xl:text-lg text-sm display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
 
@@ -195,7 +194,7 @@ $bioNeru = query("SELECT * FROM bio");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable3" class="myTableDisplay py-6 display nowrap table hover order-column row-border stripe">
+              <table id="myTable3" class="myTableDisplay py-6 3xl:text-lg text-sm display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
 
@@ -247,7 +246,7 @@ $bioNeru = query("SELECT * FROM bio");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable4" class="myTableDisplay py-6 display nowrap table hover order-column row-border stripe">
+              <table id="myTable4" class="myTableDisplay 3xl:text-lg text-sm py-6 display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
@@ -269,17 +268,17 @@ $bioNeru = query("SELECT * FROM bio");
                       <td><?= $evnt["lastUpdate_date"] ?></td>
                       <td class="">
                         <?php if ($evnt["status"] == 1) : ?>
-                          <a href="status.php?event_id=<?= $evnt["event_id"] ?>&status=<?= $evnt["status"] ?>" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
-                          <a href="status.php?event_id=<?= $evnt["event_id"] ?>&status=<?= $evnt["status"] ?>" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
+                          <a href="status.php?news_id=<?= $evnt["event_id"] ?>&status=<?= $evnt["status"] ?>" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
+                          <a href="status.php?news_id=<?= $evnt["event_id"] ?>&status=<?= $evnt["status"] ?>" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
                         <?php else : ?>
-                          <a href="status.php?event_id=<?= $evnt["event_id"] ?>&status=<?= $evnt["status"] ?>" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</a>
-                          <a href="status.php?event_id=<?= $evnt["event_id"] ?>&status=<?= $evnt["status"] ?>" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Non Aktif</a>
+                          <a href="status.php?news_id=<?= $evnt["event_id"] ?>&status=<?= $evnt["status"] ?>" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</a>
+                          <a href="status.php?news_id=<?= $evnt["event_id"] ?>&status=<?= $evnt["status"] ?>" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Non Aktif</a>
                         <?php endif; ?>
                       </td>
                       <td>
                         <span class="flex items-center gap-2 justify-center">
-                          <a href="Admin-event-UpdateData.php?event_id=<?= $evnt['event_id'] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?event_id=<?= $evnt["event_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                          <a href="Admin-event-UpdateData.php?news_id=<?= $evnt['event_id'] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?news_id=<?= $evnt["event_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -298,7 +297,7 @@ $bioNeru = query("SELECT * FROM bio");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable5" class="myTableDisplay py-6 display  table hover order-column row-border stripe">
+              <table id="myTable5" class="myTableDisplay py-6 display 3xl:text-lg text-sm    table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
@@ -317,9 +316,9 @@ $bioNeru = query("SELECT * FROM bio");
                       <td class="w-14 "><?= $bio["bio_id"] ?></td>
                       <td class="w-42 "><?= $bio["bio_title"] ?></td>
                       <td class="w-42 "><?= $bio["bio_Subtitle"] ?></td>
-                      <td class="w-[30%] text-sm">
+                      <td class="3xl:w-[30%] w-[25%]  ">
                         <div class="h-36 text-justify overflow-y-auto">
-                          <h6><?= $bio["bio_full"] ?></h6>
+                          <h6 class="text-sm"><?= $bio["bio_full"] ?></h6>
                         </div>
                       </td>
                       <td class=""><?= $bio["insert_date"] ?></td>

@@ -1640,7 +1640,7 @@ a.plyr__control:before {
 /* Admin */
 
 .parentAdminNav-Active {
-  @apply mb-[260px];
+  @apply mb-[300px];
 }
 
 .BoxNavAdmin-Active {

@@ -105,7 +105,7 @@ require "function.php";
         </div>
         <div class="swiper ProductCoverflow-content mt-12" id="WhatsOn">
           <div class="swiper-wrapper pb-12">
-            <?php $eventneru = query("SELECT * FROM neru_event WHERE event_type = 'event' AND status = 1") ?>
+            <?php $eventneru = query("SELECT * FROM neru_event WHERE event_type = 'news' AND status = 1") ?>
             <?php foreach ($eventneru as $event) : ?>
               <div class="swiper-slide">
                 <img src="<?= $event["event_img"] ?>" />
