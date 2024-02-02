@@ -357,7 +357,7 @@ function deleteBio($id)
 function insertBlogIcon($data)
 {
     global $conn;
-
+    $blog_type = htmlspecialchars($data["blog_type"]);
     $blog_icon = htmlspecialchars($data["blog_icon"]);
     $blog_icon_title = htmlspecialchars($data["blog_icon_title"]);
     $status = $data["status"];
@@ -365,6 +365,7 @@ function insertBlogIcon($data)
     $query = "INSERT INTO blog
     VALUES (
         '',
+        '$blog_type',
         '$blog_icon',
         '$blog_icon_title',
         '',
@@ -383,11 +384,13 @@ function updateBlogIcon($data)
     global $conn;
 
     $blog_id = $data["blog_id"];
+    $blog_type = htmlspecialchars($data["blog_type"]);
     $blog_icon = htmlspecialchars($data["blog_icon"]);
     $blog_icon_title = htmlspecialchars($data["blog_icon_title"]);
     $status = $data["status"];
 
     $query = "UPDATE blog SET 
+                blog_type = '$blog_type',
                 blog_icon = '$blog_icon',
                 blog_icon_title = '$blog_icon_title',
                 status = '$status',
@@ -412,3 +415,73 @@ function deleteBlogIcon($id)
     return mysqli_affected_rows($conn);
 }
 // Event Function End
+
+
+
+// Banner 
+function insertBanner($data)
+{
+    global $conn;
+    $banner_img = htmlspecialchars($data["banner_img"]);
+    $banner_title = htmlspecialchars($data["banner_title"]);
+    $banner_subtitle = htmlspecialchars($data["banner_subtitle"]);
+    $banner_button = htmlspecialchars($data["banner_button"]);
+    $status = $data["status"];
+
+    $query = "INSERT INTO banner
+    VALUES (
+        '',
+        '$banner_img ',
+        '$banner_title',
+        '$banner_subtitle',
+        '$banner_button',
+        '',
+        '$status',
+        NOW(),
+        NOW()
+    )";
+
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+function updateBanner($data)
+{
+    global $conn;
+
+    $banner_id = $data["banner_id"];
+    $banner_img = htmlspecialchars($data["banner_img"]);
+    $banner_title = htmlspecialchars($data["banner_title"]);
+    $banner_subtitle = htmlspecialchars($data["banner_subtitle"]);
+    $banner_button = htmlspecialchars($data["banner_button"]);
+    $status = $data["status"];
+
+    $query = "UPDATE blog SET 
+                banner_img = '$banner_img',
+                banner_title = '$banner_title',
+                banner_subtitle = '$banner_subtitle',
+                banner_button = '$banner_button',
+                status = '$status',
+                insert_date = NOW(),
+                lastUpdate_date = NOW()
+              WHERE banner_id = $banner_id";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+
+function deleteBanner($id)
+{
+
+    global $conn;
+
+    $query = "DELETE FROM banner WHERE banner_id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+// banner end
+

@@ -11,13 +11,13 @@ if (isset($_POST["submit"])) {
         echo
         "<script>
         alert('Data berhasil di Ubah');
-        document.location.href = 'Admin-Homepage.php';
+        document.location.href = 'Admin-Blog.php';
     </script>";
     } else {
         echo
         "<script>
         alert('Data Gagal di Ubah');
-        document.location.href = 'Admin-Homepage.php';
+        document.location.href = 'Admin-Blog.php';
     </script>";
     }
 }
@@ -100,6 +100,12 @@ if (isset($_POST["submit"])) {
                                     <div class="flex flex-col w-full gap-3">
                                         <label for="">Blog Icon Title</label>
                                         <input class="w-full p-2 outline-none border-2" type="text" name="blog_icon_title" value="<?= $blog["blog_icon_title"] ?>" />
+                                        <label for="">Blog Type</label>
+                                        <select name="blog_type" class="w-full p-2 outline-none border-2">
+                                            <option value="<?= $blog["blog_type"] ?>"><?= $blog["blog_type"] ?></option>
+                                            <option value="icon">icon</option>
+                                            <option value="vidio">vidio</option>
+                                        </select>
                                         <label for="">Status Content</label>
                                         <select class="w-full p-2 outline-none border-2" name="status" id="status">
                                             <option> <?= $blog["status"] ?>

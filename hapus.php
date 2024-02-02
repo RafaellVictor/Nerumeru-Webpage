@@ -128,3 +128,20 @@ if (isset($_GET['blog_id'])) {
         </script>";
     }
 }
+
+if (isset($_GET['banner_id'])) {
+    $id_banner = $_GET['banner_id'];
+    if (deleteBanner($id_banner) > 0) {
+        echo
+        "<script>
+            alert('Data berhasil di hapus');
+            document.location.href = 'Admin-Banner.php';
+        </script>";
+    } else {
+        echo
+        "<script>
+            alert('Data Gagal di hapus');
+            document.location.href = 'Admin-Banner.php';
+        </script>";
+    }
+}

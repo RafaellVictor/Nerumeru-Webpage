@@ -190,8 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function checkLoopSlides() {
     let swiperSlidesCount = document.querySelectorAll(".ProductCoverflow-content .swiper-slide").length;
 
-    return swiperSlidesCount > 3
-
+    return swiperSlidesCount > 3;
   }
 
   function checkCenteredSlides() {
@@ -203,36 +202,56 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-var swiper = new Swiper(".EventCoverflow-content", {
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
-  slideShadows: false,
-  loop: true,
-  autoplay: {
-    delay: 1500,
-    disableOnInteraction: false,
-  },
-
-  coverflowEffect: {
-    rotate: 0,
-    stretch: 0,
-    depth: 70,
-    modifier: 3,
-    slideShadows: true,
-  },
-  breakpoints: {
-    360: {
-      slidesPerView: 2,
+document.addEventListener("DOMContentLoaded", function () {
+  var swiper = new Swiper(".EventCoverflow-content", {
+    effect: "coverflow",
+    grabCursor: false,
+    slideShadows: false,
+    autoplay: {
+      delay: 1500,
+      disableOnInteraction: false,
     },
 
-    600: {
-      slidesPerView: 2,
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 70,
+      modifier: 3,
+      slideShadows: true,
     },
-    968: {
-      slidesPerView: 2.5,
+    breakpoints: {
+      360: {
+        slidesPerView: 3,
+        loop: checkLoopSlides(),
+        centeredSlides: checkCenteredSlides(),
+      },
+
+      600: {
+        slidesPerView: 3,
+        loop: checkLoopSlides(),
+        centeredSlides: checkCenteredSlides(),
+      },
+      968: {
+        slidesPerView: 3,
+        loop: checkLoopSlides(),
+        centeredSlides: checkCenteredSlides(),
+      },
     },
-  },
+  });
+
+  function checkLoopSlides() {
+    let swiperSlidesCount = document.querySelectorAll(".EventCoverflow-content .swiper-slide").length;
+
+    return swiperSlidesCount > 3;
+  }
+
+  function checkCenteredSlides() {
+    // Get the number of swiper slides inside .location-content
+    let swiperSlidesCount = document.querySelectorAll(".EventCoverflow-content .swiper-slide").length;
+
+    // Check if the count is greater than 3
+    return swiperSlidesCount > 3;
+  }
 });
 
 // Coverflow end
@@ -250,3 +269,96 @@ var swiper2 = new Swiper(".mySwiper2", {
     swiper: swiper,
   },
 });
+
+let filterContent = new Swiper(".filter-content", {
+
+  grabCursor: true,
+  
+  navigation: {
+    nextEl: "#nextFilterSm",
+    prevEl: "#prevFilterSm",
+  },
+
+  breakpoints: {
+    360: {
+      slidesPerView: 2.2,
+      spaceBetween: 6,
+    },
+
+    430: {
+      slidesPerView: 2.4,
+      spaceBetween: 6,
+    },
+
+    540: {
+      slidesPerView: 1.8,
+
+    },
+
+    768: {
+      slidesPerView: 3.2,
+      spaceBetween: 10,
+
+    },
+
+    1024: {
+      slidesPerView: 3.5,
+      spaceBetween: 10,
+
+    },
+
+    1920: {
+      slidesPerView: 3.8,
+      spaceBetween: 10,
+    
+    },
+  },
+
+});
+
+let filterContentSm = new Swiper(".filter-contentSm", {
+
+  grabCursor: true,
+  
+  navigation: {
+    nextEl: "#nextFilterSm2",
+    prevEl: "#prevFilterSm2",
+  },
+
+  breakpoints: {
+    360: {
+      slidesPerView: 2.2,
+      spaceBetween: 6,
+    },
+
+    430: {
+      slidesPerView: 2.4,
+      spaceBetween: 6,
+    },
+
+    540: {
+      slidesPerView: 1.8,
+
+    },
+
+    768: {
+      slidesPerView: 3.2,
+      spaceBetween: 10,
+
+    },
+
+    1024: {
+      slidesPerView: 3.5,
+      spaceBetween: 10,
+
+    },
+
+    1920: {
+      slidesPerView: 3.8,
+      spaceBetween: 10,
+    
+    },
+  },
+
+});
+

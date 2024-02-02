@@ -137,3 +137,24 @@ if (isset($_GET['blog_id']) && isset($_GET['status'])) { // Mengecek apakah para
         echo "Error update data: " . mysqli_error($conn); // Menampilkan pesan error
     }
 }
+
+
+if (isset($_GET['banner_id']) && isset($_GET['status'])) { // Mengecek apakah parameter id dan status ada di URL
+    $idBanner = $_GET['banner_id']; // Mengambil nilai id dari URL
+    $status = $_GET['status']; // Mengambil nilai status dari URL
+
+    // Mengubah status menjadi lawan dari status saat ini (0 menjadi 1 atau 1 menjadi 0)
+    $newStatus = ($status == 1) ? 0 : 1;
+
+    $query = "UPDATE banner SET status='$newStatus' WHERE banner_id='$idBanner'"; // Query update status banner
+    $running = mysqli_query($conn, $query); // Menjalankan query
+
+    if ($running) {
+        echo "<script>alert('Data berhasil diupdate')</script>"; // Menampilkan pesan sukses
+        header('Location:Admin-Banner.php'); // Redirect ke halaman homebanner.php
+        exit();
+    } else {
+        echo "Error update data: " . mysqli_error($conn); // Menampilkan pesan error
+    }
+}
+

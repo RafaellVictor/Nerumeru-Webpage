@@ -95,7 +95,12 @@ if (isset($_POST["submit"])) {
                                     </div>
                                     <div class="flex flex-col w-full gap-3">
                                         <label for="">Blog Title Icon</label>
-                                        <input required class="w-full p-2 outline-none border-2" name="blog_title_icon" type="text" />
+                                        <input required class="w-full p-2 outline-none border-2" name="blog_icon_title" type="text" />
+                                        <label for="">Blog Type</label>
+                                        <select name="blog_type" class="w-full p-2 outline-none border-2">
+                                            <option value="icon">icon</option>
+                                            <option value="vidio">vidio</option>
+                                        </select>
                                         <label for="">Status Content</label>
                                         <input required class="w-full p-2 outline-none border-2" name="status" value="0" readonly type="text" />
                                         <button type="submit" name="submit" class="bg-green-400 p-2 rounded-md text-white font-semibold w-fit self-end">Tambah Data</button>

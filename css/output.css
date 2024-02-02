@@ -800,10 +800,6 @@ main {
   top: 4rem;
 }
 
-.top-20 {
-  top: 5rem;
-}
-
 .top-28 {
   top: 7rem;
 }
@@ -1151,6 +1147,14 @@ main {
   height: 2.75rem;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
+.h-14 {
+  height: 3.5rem;
+}
+
 .h-2 {
   height: 0.5rem;
 }
@@ -1254,6 +1258,10 @@ main {
 
 .w-10 {
   width: 2.5rem;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .w-14 {
@@ -1381,12 +1389,12 @@ main {
   width: 100%;
 }
 
-.w-\[30\%\] {
-  width: 30%;
-}
-
 .max-w-screen-lg {
   max-width: 1024px;
+}
+
+.max-w-screen-sm {
+  max-width: 640px;
 }
 
 .flex-shrink {
@@ -5954,6 +5962,24 @@ a.plyr__control:before {
 
 /* Admin end */
 
+.filterBox-Active {
+  grid-column: span 8 / span 8;
+}
+
+@media (min-width: 768px) {
+  .filterBox-Active {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.filter-overlay-active {
+  --tw-translate-y: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     padding: 1rem;
@@ -6062,8 +6088,16 @@ a.plyr__control:before {
   text-align: center;
 }
 
+.group:hover .group-hover\:top-0 {
+  top: 0px;
+}
+
 .group:hover .group-hover\:z-20 {
   z-index: 20;
+}
+
+.group:hover .group-hover\:flex {
+  display: flex;
 }
 
 .group:hover .group-hover\:-translate-x-0 {
@@ -6140,10 +6174,6 @@ a.plyr__control:before {
 
   .md\:top-2\.5 {
     top: 0.625rem;
-  }
-
-  .md\:top-\[89px\] {
-    top: 89px;
   }
 
   .md\:col-span-2 {
@@ -6322,6 +6352,10 @@ a.plyr__control:before {
 
   .md\:w-full {
     width: 100%;
+  }
+
+  .md\:max-w-screen-xl {
+    max-width: 1200px;
   }
 
   .md\:grid-cols-2 {
@@ -6533,6 +6567,10 @@ a.plyr__control:before {
 
   .lg\:right-9 {
     right: 2.25rem;
+  }
+
+  .lg\:top-20 {
+    top: 5rem;
   }
 
   .lg\:col-span-2 {
@@ -6832,6 +6870,14 @@ a.plyr__control:before {
     margin-top: 15rem;
   }
 
+  .xl\:block {
+    display: block;
+  }
+
+  .xl\:hidden {
+    display: none;
+  }
+
   .xl\:h-\[120px\] {
     height: 120px;
   }
@@ -6858,6 +6904,10 @@ a.plyr__control:before {
 
   .xl\:w-\[55\%\] {
     width: 55%;
+  }
+
+  .xl\:max-w-screen-md {
+    max-width: 768px;
   }
 
   .xl\:grid-cols-4 {
@@ -6887,6 +6937,11 @@ a.plyr__control:before {
   .xl\:px-3 {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+  }
+
+  .xl\:py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .xl\:text-base {
@@ -6951,10 +7006,6 @@ a.plyr__control:before {
 
   .\32xl\:w-\[45\%\] {
     width: 45%;
-  }
-
-  .\32xl\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .\32xl\:gap-10 {
@@ -7078,6 +7129,10 @@ a.plyr__control:before {
 
   .\33xl\:w-\[45\%\] {
     width: 45%;
+  }
+
+  .\33xl\:max-w-screen-lg {
+    max-width: 1024px;
   }
 
   .\33xl\:gap-16 {

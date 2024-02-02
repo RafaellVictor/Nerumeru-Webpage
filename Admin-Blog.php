@@ -2,7 +2,8 @@
 
 require "function.php";
 
-$Blogs = query("SELECT * FROM blog");
+$Blogs = query("SELECT * FROM blog WHERE blog_type = 'icon';");
+$Vidios = query("SELECT * FROM blog WHERE blog_type = 'vidio';");
 $events = query("SELECT * FROM neru_event WHERE event_type = 'event'");
 
 ?>
@@ -76,7 +77,7 @@ $events = query("SELECT * FROM neru_event WHERE event_type = 'event'");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable" class="myTableDisplay 3xl:text-lg text-sm py-6 display nowrap table hover order-column row-border stripe">
+              <table id="myTable2" class="myTableDisplay 3xl:text-lg text-sm py-6 display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
@@ -91,7 +92,7 @@ $events = query("SELECT * FROM neru_event WHERE event_type = 'event'");
                   <?php foreach ($Blogs as $blogicon) : ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $blogicon["blog_id"] ?></td>
-                      <td class="w-60"><img src="<?= $blogicon["blog_icon"] ?>" class="w-[25%] object-contain mx-auto" alt="" /></td>
+                      <td class="w-60 bg-blue-Neru"><img src="<?= $blogicon["blog_icon"] ?>" class="w-[25%] object-contain mx-auto" alt="" /></td>
                       <td><?= $blogicon["insert_date"] ?></td>
                       <td><?= $blogicon["lastUpdate_date"] ?></td>
                       <td class="">
@@ -106,7 +107,7 @@ $events = query("SELECT * FROM neru_event WHERE event_type = 'event'");
                       <td>
                         <span class="flex items-center gap-2 justify-center">
                           <a href="Admin-blogicon-UpdateData.php?blog_id=<?= $blogicon["blog_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?blog_id =<?= $blogicon["blog_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?blog_id=<?= $blogicon["blog_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -124,7 +125,7 @@ $events = query("SELECT * FROM neru_event WHERE event_type = 'event'");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable2" class="myTableDisplay 3xl:text-lg text-sm py-6 display nowrap table hover order-column row-border stripe">
+              <table id="myTable" class="myTableDisplay 3xl:text-lg text-sm py-6 display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
@@ -136,10 +137,10 @@ $events = query("SELECT * FROM neru_event WHERE event_type = 'event'");
                   </tr>
                 </thead>
                 <tbody>
-                  <?php foreach ($Blogs as $blogvidio) : ?>
+                  <?php foreach ($Vidios as $blogvidio) : ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $blogvidio["blog_id"] ?></td>
-                      <td class="w-60"><img src="<?= $blogvidio["blog_vidio"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td class="w-60"><video poster="" controls  src="<?= $blogvidio["blog_vidio"] ?>"></video></td>
                       <td><?= $blogvidio["insert_date"] ?></td>
                       <td><?= $blogvidio["lastUpdate_date"] ?></td>
                       <td class="">
@@ -164,7 +165,7 @@ $events = query("SELECT * FROM neru_event WHERE event_type = 'event'");
             </div>
             <div id="BlogEvent" class="container hidden BoxTableData bg-white rounded-lg shadow-md 3xl:h-[700px] 2xl:h-[480px] overflow-y-auto mt-4">
               <div class="wrapperAddData mb-6 w-fit">
-                <a href="Admin-eventend-insertData.php" class="bg-blue-Neru w-fit text-white px-3 rounded-lg py-2 cursor-pointer font-semibold text-base flex items-center gap-3">
+                <a href="Admin-event-insertData.php" class="bg-blue-Neru w-fit text-white px-3 rounded-lg py-2 cursor-pointer font-semibold text-base flex items-center gap-3">
                   <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-plus-filled w-7" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M12 2l.324 .001l.318 .004l.616 .017l.299 .013l.579 .034l.553 .046c4.785 .464 6.732 2.411 7.196 7.196l.046 .553l.034 .579c.005 .098 .01 .198 .013 .299l.017 .616l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.464 4.785 -2.411 6.732 -7.196 7.196l-.553 .046l-.579 .034c-.098 .005 -.198 .01 -.299 .013l-.616 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.785 -.464 -6.732 -2.411 -7.196 -7.196l-.046 -.553l-.034 -.579a28.058 28.058 0 0 1 -.013 -.299l-.017 -.616c-.003 -.21 -.005 -.424 -.005 -.642l.001 -.324l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.464 -4.785 2.411 -6.732 7.196 -7.196l.553 -.046l.579 -.034c.098 -.005 .198 -.01 .299 -.013l.616 -.017c.21 -.003 .424 -.005 .642 -.005zm0 6a1 1 0 0 0 -1 1v2h-2l-.117 .007a1 1 0 0 0 .117 1.993h2v2l.007 .117a1 1 0 0 0 1.993 -.117v-2h2l.117 -.007a1 1 0 0 0 -.117 -1.993h-2v-2l-.007 -.117a1 1 0 0 0 -.993 -.883z" fill="currentColor" stroke-width="0" />
@@ -177,7 +178,7 @@ $events = query("SELECT * FROM neru_event WHERE event_type = 'event'");
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Img</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30">Event type</th>
+                    <th class="border-[1px] border-black-neru border-opacity-30">Type</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">insert on</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Last update</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Status</th>
