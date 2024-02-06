@@ -225,3 +225,89 @@ function deleteProductRecom($id)
     return mysqli_affected_rows($conn);
 }
 // product recommended Function End
+
+// Product function
+// =========================
+// Bedding  
+function insertBedding($data)
+{
+    global $conn;
+    $product_img = htmlspecialchars($data["product_img"]);
+    $product_type = htmlspecialchars($data["product_type"]);
+    $product_name = htmlspecialchars($data["product_name"]);
+    $product_stock = htmlspecialchars($data["product_stock"]);
+    $product_color = htmlspecialchars($data["product_color"]);
+    $product_price = htmlspecialchars($data["product_price"]);
+    $product_specification = htmlspecialchars($data["product_specification"]);
+    $product_weight = htmlspecialchars($data["product_weight"]);
+    $product_warranty = htmlspecialchars($data["product_warranty"]);
+    $product_rating = htmlspecialchars($data["product_rating"]);
+    $status = $data["status"];
+
+
+    $query = "INSERT INTO product 
+    VALUES (
+        '',
+        '$product_img',
+        '$product_type',
+        '$product_name',
+        '$product_stock',
+        '$product_color',
+        '$product_price',
+        '$product_specification',
+        '$product_weight',
+        '$product_warranty',
+        '$product_rating',
+        NOW(),
+        NOW(),
+        '$status'
+    )";
+
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+function updateBedding($data)
+{
+    global $conn;
+
+    $product_id = $data["product_id"];
+    $product_type = htmlspecialchars($data["product_type"]);
+    $product_name = htmlspecialchars($data["product_name"]);
+    $product_color = htmlspecialchars($data["product_color"]);
+    $product_price = htmlspecialchars($data["product_price"]);
+    $product_stock = htmlspecialchars($data["product_stock"]);
+    $product_specification = htmlspecialchars($data["product_specification"]);
+    $product_weight = htmlspecialchars($data["product_weight"]);
+    $product_warranty = htmlspecialchars($data["product_warranty"]);
+    $product_rating = htmlspecialchars($data["product_rating"]);
+
+    $query = "UPDATE products SET 
+                product_type = '$product_type', 
+                product_name = '$product_name', 
+                product_color = '$product_color', 
+                product_price = '$product_price', 
+                product_stock = '$product_stock', 
+                product_specification = '$product_specification', 
+                product_weight = '$product_weight', 
+                product_warranty = '$product_warranty', 
+                product_rating = '$product_rating', 
+              WHERE product_id = $product_id";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+function deleteBedding($id)
+{
+
+    global $conn;
+
+    $query = "DELETE FROM products WHERE product_id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+// Product function  End

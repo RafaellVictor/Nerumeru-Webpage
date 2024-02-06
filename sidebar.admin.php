@@ -31,7 +31,7 @@
                     <h6 class="font-medium text-blue-Neru">Dashboard</h6>
                   </span>
                 </div>
-                <div class="flex flex-col navBarAdmin cursor-pointer items-center justify-start w-full px-3 text-gray-800 border-l-8 border-blue-Neru border-opacity-0 transition-all ease-in-out duration-300 dark:text-white" href="#">
+                <div class="flex flex-col ProductsNav navBarAdmin cursor-pointer items-center justify-start w-full px-3 text-gray-800 border-l-8 border-blue-Neru border-opacity-0 transition-all ease-in-out duration-300 dark:text-white" href="#">
                   <span class="mx-2 text-sm font-medium w-full p-3 bg-white-neru rounded-lg flex items-center gap-6">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 15 15" fill="none">
                       <path d="M12.8027 8.8249L8.82903 12.7996C8.72609 12.9027 8.60384 12.9844 8.46928 13.0402C8.33472 13.096 8.19049 13.1248 8.04483 13.1248C7.89916 13.1248 7.75493 13.096 7.62037 13.0402C7.48581 12.9844 7.36357 12.9027 7.26063 12.7996L2.5 8.04326V2.49976H8.04206L12.8027 7.26163C13.0091 7.46936 13.125 7.75036 13.125 8.04326C13.125 8.33616 13.0091 8.61717 12.8027 8.8249V8.8249Z" stroke="#2762BE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />

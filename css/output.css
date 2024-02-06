@@ -2711,32 +2711,12 @@ main {
   --tw-bg-opacity: 0.7;
 }
 
-.bg-bed-catalog {
-  background-image: url('../img/card-item-bg.png');
-}
-
 .bg-forest {
   background-image: url('../img/bg-forest.jpg');
 }
 
 .bg-offcanvas {
   background-image: url('../img/Trolly-Footer.png');
-}
-
-.bg-pillow-catalog {
-  background-image: url("../img/pillow-bg.png");
-}
-
-.bg-sanitize-catalog {
-  background-image: url("../img/card-item5.png");
-}
-
-.bg-toys-catalog {
-  background-image: url("../img/card-item-bg-toys.png");
-}
-
-.bg-trolly-catalog {
-  background-image: url("../img/card-item-bg-trolly.png");
 }
 
 .decoration-slice {
