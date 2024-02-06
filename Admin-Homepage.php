@@ -93,7 +93,6 @@ $bioNeru = query("SELECT * FROM bio");
               <table id="myTable" class="myTableDisplay 3xl:text-lg text-sm py-6 display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
-
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Img</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">insert on</th>
@@ -103,12 +102,10 @@ $bioNeru = query("SELECT * FROM bio");
                   </tr>
                 </thead>
                 <tbody>
-
                   <?php foreach ($hero as $neru) : ?>
                     <tr class="text-center">
-
                       <td class="w-14"><?= $neru["hero_id"] ?></td>
-                      <td class="w-60"><img src="<?= $neru["hero_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td class="w-60"><img src="img/<?= $neru["hero_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
                       <td><?= $neru["insert_date"] ?></td>
                       <td><?= $neru["lastUpdate_date"] ?></td>
                       <td class="">
@@ -123,7 +120,7 @@ $bioNeru = query("SELECT * FROM bio");
                       <td>
                         <span class="flex items-center gap-2 justify-center">
                           <a href="Admin-hero-UpdateData.php?hero_id=<?= $neru["hero_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?hero_id =<?= $neru["hero_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?hero_id=<?= $neru["hero_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -160,7 +157,7 @@ $bioNeru = query("SELECT * FROM bio");
                     <tr class="text-center">
 
                       <td class="w-14"><?= $whys["whyus_id"] ?></td>
-                      <td class="w-60"><img src="<?= $whys["whyus_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td class="w-60"><img src="img/<?= $whys["whyus_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
                       <td><?= $whys["insert_date"] ?></td>
                       <td><?= $whys["lastUpdate_date"] ?></td>
                       <td class="">

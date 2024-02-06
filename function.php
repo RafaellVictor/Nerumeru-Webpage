@@ -22,7 +22,13 @@ function query($query)
 function insertHero($data)
 {
     global $conn;
+
+    // Upload Gambar
     $hero_img = htmlspecialchars($data["hero_img"]);
+    if (!$hero_img) {
+        return false;
+    }
+
     $hero_title1 = htmlspecialchars($data["hero_title1"]);
     $hero_title2 = htmlspecialchars($data["hero_title2"]);
     $hero_title3 = htmlspecialchars($data["hero_title3"]);
@@ -51,12 +57,22 @@ function insertHero($data)
     return mysqli_affected_rows($conn);
 }
 
+
+
 function updateHero($data)
 {
     global $conn;
 
     $hero_id = $data["hero_id"];
     $hero_img = htmlspecialchars($data["hero_img"]);
+    $hero_imgLama = htmlspecialchars($data["gambarLama"]);
+
+    if($_FILES['gambar']['error'] === 4) {
+        $hero_img = $hero_imgLama;
+    } else {
+        $hero_img = upload();
+    }
+    
     $hero_title1 = htmlspecialchars($data["hero_title1"]);
     $hero_title2 = htmlspecialchars($data["hero_title2"]);
     $hero_title3 = htmlspecialchars($data["hero_title3"]);
@@ -104,6 +120,10 @@ function insertwhyus($data)
     $whyus_title = htmlspecialchars($data["whyus_title"]);
     $whyus_subtitle = htmlspecialchars($data["whyus_subtitle"]);
 
+    if(!$whyus_img) {
+        return false;
+    }
+
 
     $status = $data["status"];
 
@@ -131,6 +151,14 @@ function updatewhyus($data)
 
     $whyus_id = $data["whyus_id"];
     $whyus_img = htmlspecialchars($data["whyus_img"]);
+    $whyus_imgLama = htmlspecialchars($data["gambarLama"]);
+
+    if($_FILES['gambar']['error'] === 4) {
+            $whyus_img = $whyus_imgLama;
+    } else {
+        $whyus_img = upload();
+    }
+
     $whyus_title = htmlspecialchars($data["whyus_title"]);
     $whyus_subtitle = htmlspecialchars($data["whyus_subtitle"]);
     $status = $data["status"];
@@ -485,3 +513,42 @@ function deleteBanner($id)
 }
 // banner end
 
+
+
+
+function upload()
+{
+    $namaFile = $_FILES["gambar"]["name"];
+    // $error = $_FILES["gambar"]["error"];
+    $size = $_FILES["gambar"]["size"];
+    $tmpName = $_FILES["gambar"]["tmp_name"];
+
+    // Pengecekan Apakah yang di-upload adalah gambar
+    $extensiGambarValid = ["jpg", "png", "jpeg", "svg"];
+    $extensiGambar = explode(".", $namaFile);
+    $extensiGambar = strtolower(end($extensiGambar));
+
+    if (!in_array($extensiGambar, $extensiGambarValid)) {
+        echo "<script>alert('Yang Anda Upload Bukan Gambar');</script>";
+        return false;
+    }
+
+    // Pengecekan Ukuran Size Dari Gambar 
+    if ($size > 2000000) {
+        echo "<script>alert('Ukuran Gambar Terlalu Besar');</script>";
+        return false;
+    }
+
+    // Generate Nama file baru
+    $namaFilebaru = uniqid();
+    $namaFilebaru .= '.';
+    $namaFilebaru .= $extensiGambar;
+
+    // Lolos Pengecekan , Gambar Siap di-upload 
+    if (move_uploaded_file($tmpName, "img/" . $namaFilebaru)) {
+        return $namaFile;
+    } else {
+        echo "<script>alert('Gagal mengunggah gambar');</script>";
+        return false;
+    }
+}

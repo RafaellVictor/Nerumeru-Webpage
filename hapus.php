@@ -5,19 +5,16 @@ require "function.php";
 
 if (isset($_GET['hero_id'])) {
     $id_hero = $_GET['hero_id'];
-
     if (deleteHero($id_hero) > 0) {
-        echo
-        "<script>
-            alert('Data berhasil di hapus');
-            document.location.href = 'Admin-Homepage.php';
-        </script>";
+        echo "<script>
+                alert('Data berhasil dihapus');
+                window.location.href = 'Admin-Homepage.php';
+              </script>";
     } else {
-        echo
-        "<script>
-            alert('Data Gagal di hapus');
-            document.location.href = 'Admin-Homepage.php';
-        </script>";
+        echo "<script>
+                alert('Data gagal dihapus');
+                window.location.href = 'Admin-Homepage.php';
+              </script>";
     }
 }
 

@@ -79,7 +79,7 @@
                     <div class="swiper-slide">
                       <div class="relative rounded-lg cursor-pointer group overflow-hidden w-full  h-20">
                         <img src="img/banner-BED.png" class="rounded-lg object-cover h-full w-full" alt="">
-                        <div class="overlay-item rounded-t-lg rounded-b-none bg-black bg-opacity-50 h-full w-full absolute top-14 group-hover:top-0 group-hover:flex flex-col justify-center  transition-all ease-in-out duration-500 z-10 text-center mx-auto inset-x-0  text-white">
+                        <div class="overlay-item rounded-t-lg rounded-b-none bg-black bg-opacity-50 h-full w-full absolute top-14  transition-all ease-in-out duration-500 z-10 text-center mx-auto inset-x-0  text-white">
                           <h6>Bedding</h6>
                         </div>
                       </div>
@@ -87,7 +87,7 @@
                     <div class="swiper-slide">
                       <div class="relative rounded-lg cursor-pointer group overflow-hidden w-full  h-20">
                         <img src="img/banner-TOYS.png" class="rounded-lg object-cover h-full w-full" alt="">
-                        <div class="overlay-item rounded-t-lg rounded-b-none bg-black bg-opacity-50 h-full w-full absolute top-14 group-hover:top-0 group-hover:flex flex-col justify-center  transition-all ease-in-out duration-500 z-10 text-center mx-auto inset-x-0  text-white">
+                        <div class="overlay-item rounded-t-lg rounded-b-none bg-black bg-opacity-50 h-full w-full absolute top-14  transition-all ease-in-out duration-500 z-10 text-center mx-auto inset-x-0  text-white">
                           <h6>Toys</h6>
                         </div>
                       </div>
@@ -95,7 +95,7 @@
                     <div class="swiper-slide">
                       <div class="relative rounded-lg cursor-pointer group overflow-hidden w-full  h-20">
                         <img src="img/card-item5.png" class="rounded-lg object-cover h-full w-full" alt="">
-                        <div class="overlay-item rounded-t-lg rounded-b-none bg-black bg-opacity-50 h-full w-full absolute top-14 group-hover:top-0 group-hover:flex flex-col justify-center  transition-all ease-in-out duration-500 z-10 text-center mx-auto inset-x-0  text-white">
+                        <div class="overlay-item rounded-t-lg rounded-b-none bg-black bg-opacity-50 h-full w-full absolute top-14  transition-all ease-in-out duration-500 z-10 text-center mx-auto inset-x-0  text-white">
                           <h6>Sanitize</h6>
                         </div>
                       </div>
@@ -103,7 +103,7 @@
                     <div class="swiper-slide">
                       <div class="relative rounded-lg cursor-pointer group overflow-hidden w-full  h-20">
                         <img src="img/banner-Trolly.png" class="rounded-lg object-cover h-full w-full" alt="">
-                        <div class="overlay-item rounded-t-lg rounded-b-none bg-black bg-opacity-50 h-full w-full absolute top-14 group-hover:top-0 group-hover:flex flex-col justify-center  transition-all ease-in-out duration-500 z-10 text-center mx-auto inset-x-0  text-white">
+                        <div class="overlay-item rounded-t-lg rounded-b-none bg-black bg-opacity-50 h-full w-full absolute top-14  transition-all ease-in-out duration-500 z-10 text-center mx-auto inset-x-0  text-white">
                           <h6>Trolly</h6>
                         </div>
                       </div>
@@ -111,7 +111,7 @@
                     <div class="swiper-slide">
                       <div class="relative rounded-lg cursor-pointer group overflow-hidden w-full  h-20">
                         <img src="img/pillow-bg.png" class="rounded-lg object-cover h-full w-full" alt="">
-                        <div class="overlay-item rounded-t-lg rounded-b-none bg-black bg-opacity-50 h-full w-full absolute top-14 group-hover:top-0 group-hover:flex flex-col justify-center  transition-all ease-in-out duration-500 z-10 text-center mx-auto inset-x-0  text-white">
+                        <div class="overlay-item rounded-t-lg rounded-b-none bg-black bg-opacity-50 h-full w-full absolute top-14  transition-all ease-in-out duration-500 z-10 text-center mx-auto inset-x-0  text-white">
                           <h6>Pillow</h6>
                         </div>
                       </div>

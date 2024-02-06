@@ -45,7 +45,7 @@ require "function.php";
           </div>
         </div>
         <div class="container 3xl:mt-48 2xl:mt-24 xl:mt-20 md:mt-0 mt-5">
-          <img id="heroimg" src="<?= $hero_section["hero_img"] ?>" class="mx-auto xl:w-[55%] transition-transform ease-in-out duration-300 md:w-[60%] w-fit h-[45%]" alt="" />
+          <img id="heroimg" src="img/<?= $hero_section["hero_img"] ?>" class="mx-auto xl:w-[55%] transition-transform ease-in-out duration-300 md:w-[60%] w-fit h-[45%]" alt="" />
         </div>
       </span>
     </section>
@@ -59,8 +59,8 @@ require "function.php";
           <?php $whyus = query("SELECT * FROM whyus WHERE status=1;") ?>
           <?php foreach ($whyus as $whys) : ?>
             <div class="text-center relative group overflow-hidden cursor-pointer">
-              <img src="<?= $whys["whyus_img"] ?>" class="w-full object-fill" alt="" />
-              <div class="absolute -translate-y-full group-hover:translate-y-0 transition-all ease-in-out duration-200 n h-full inset-0 bg-blue-Neru bg-opacity-70 text-white p-4 flex items-center flex-col lg:gap-4 md:gap-2 gap-1 justify-center">
+              <img src="img/<?= $whys["whyus_img"] ?>" class="w-full object-fill" alt="" />
+              <div class="absolute -translate-y-full group-hover:translate-y-0 transition-all ease-in-out duration-300 n h-full inset-0 bg-blue-Neru bg-opacity-70 text-white p-4 flex items-center flex-col lg:gap-4 md:gap-2 gap-1 justify-center">
                 <h6 class="font-bold lg:text-base md:text-xs text-[8px]"><?= $whys["whyus_title"] ?></h6>
                 <h6 class="lg:text-sm md:text-xs text-[8px] font-medium lg:text-center text-justify line-clamp-4"><?= $whys["whyus_subtitle"] ?></h6>
               </div>
