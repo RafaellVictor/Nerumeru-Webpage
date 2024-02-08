@@ -142,7 +142,6 @@ $bioNeru = query("SELECT * FROM bio");
               <table id="myTable2" class="myTableDisplay py-6 3xl:text-lg text-sm display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
-
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Img</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">insert on</th>
@@ -194,7 +193,6 @@ $bioNeru = query("SELECT * FROM bio");
               <table id="myTable3" class="myTableDisplay py-6 3xl:text-lg text-sm display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
-
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Img</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">insert on</th>
@@ -204,12 +202,10 @@ $bioNeru = query("SELECT * FROM bio");
                   </tr>
                 </thead>
                 <tbody>
-
                   <?php foreach ($recommend as $recom) : ?>
                     <tr class="text-center">
-
                       <td class="w-14"><?= $recom["recommend_id"] ?></td>
-                      <td class="w-60"><img src="<?= $recom["recommend_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td class="w-60"><img src="img/<?= $recom["recommend_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
                       <td><?= $recom["insert_date"] ?></td>
                       <td><?= $recom["lastupdate_date"] ?></td>
                       <td class="">
@@ -228,7 +224,6 @@ $bioNeru = query("SELECT * FROM bio");
                         </span>
                       </td>
                     </tr>
-
                   <?php endforeach; ?>
                 </tbody>
               </table>
@@ -259,17 +254,17 @@ $bioNeru = query("SELECT * FROM bio");
                   <?php foreach ($event as $evnt) : ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $evnt["event_id"] ?></td>
-                      <td class="w-60"><img src="<?= $evnt["event_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td class="w-60"><img src="img/WhatOnNerumeru/<?= $evnt["event_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
                       <td class="w-60"><?= $evnt["event_type"] ?></td>
                       <td><?= $evnt["insert_date"] ?></td>
                       <td><?= $evnt["lastUpdate_date"] ?></td>
                       <td class="">
                         <?php if ($evnt["status"] == 1) : ?>
-                          <a href="status.php?news_id=<?= $evnt["event_id"] ?>&status=<?= $evnt["status"] ?>" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
-                          <a href="status.php?news_id=<?= $evnt["event_id"] ?>&status=<?= $evnt["status"] ?>" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
+                          <a href="status.php?event_id=<?= $evnt["event_id"] ?>&status=<?= $evnt["status"] ?>" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Aktif</a>
+                          <a href="status.php?event_id=<?= $evnt["event_id"] ?>&status=<?= $evnt["status"] ?>" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Non Aktif</a>
                         <?php else : ?>
-                          <a href="status.php?news_id=<?= $evnt["event_id"] ?>&status=<?= $evnt["status"] ?>" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</a>
-                          <a href="status.php?news_id=<?= $evnt["event_id"] ?>&status=<?= $evnt["status"] ?>" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Non Aktif</a>
+                          <a href="status.php?event_id=<?= $evnt["event_id"] ?>&status=<?= $evnt["status"] ?>" class="badge bg-green-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-20">Aktif</a>
+                          <a href="status.php?event_id=<?= $evnt["event_id"] ?>&status=<?= $evnt["status"] ?>" class="badge bg-red-400 rounded-md w-fit px-2 py-1 mx-auto text-white font-semibold text-xs opacity-100">Non Aktif</a>
                         <?php endif; ?>
                       </td>
                       <td>

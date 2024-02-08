@@ -75,7 +75,7 @@ $vidios = query("SELECT * FROM blog WHERE status = '1' AND blog_type = 'vidio' ;
             <?php $eventneru = query("SELECT * FROM neru_event WHERE event_type = 'event' AND status = 1") ?>
             <?php foreach ($eventneru as $event) : ?>
               <div class="swiper-slide">
-                <img src="<?= $event["event_img"] ?>" />
+                <img src="img/WhatOnNerumeru/<?= $event["event_img"] ?>" />
               </div>
             <?php endforeach; ?>
           </div>

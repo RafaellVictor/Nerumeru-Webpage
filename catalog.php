@@ -157,7 +157,7 @@
           </div>
         </div>
       </div>
-      <div id="overlay-Filter-Moderen" class="absolute -translate-y-full transition-all ease-in-out duration-300 lg:top-20 top-16  z-10 w-full">
+      <div id="overlay-Filter-Moderen" class="absolute lg:hidden -translate-y-full transition-all ease-in-out duration-300 lg:top-20 top-16  z-10 w-full">
         <div class="bg-white">
           <div class=" text-center container h-fit">
             <div id="filterBox" class="md:max-w-screen-xl  max-w-screen-sm  w-full">
@@ -711,8 +711,7 @@
           </div>
         </div>
         <div class="pagination flex gap-2.5 justify-end">
-          <span onclick="showPreviousPage(); myFunction();" class="prev-button md:w-12 w-8 bg-blue-Neru text-center py-1 md:text-2xl text-sm rounded-lg text-white shadow-lg cursor-pointer">
-            << /span>
+          <span onclick="showPreviousPage(); myFunction();" class="prev-button md:w-12 w-8 bg-blue-Neru text-center py-1 md:text-2xl text-sm rounded-lg text-white shadow-lg cursor-pointer"><</span>
               <input type="number" class="current-page md:w-12 w-8 text-center py-1 bg-white shadow-lg md:text-2xl text-sm rounded-lg outline outline-1" min="0" max="9" value="1">
               <span onclick="showNextPage();  myFunction();" class="next-button md:w-12 w-8 text-center bg-blue-Neru py-1 md:text-2xl text-sm rounded-lg text-white shadow-lg cursor-pointer">></span>
         </div>

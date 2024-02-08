@@ -74,7 +74,7 @@ if (isset($_GET['event_id']) && isset($_GET['status'])) { // Mengecek apakah par
 
     if ($running) {
         echo "<script>alert('Data berhasil diupdate')</script>"; // Menampilkan pesan sukses
-        header('Location:Admin-Blog.php'); // Redirect ke halaman homebanner.php
+        header('Location:Admin-Homepage.php'); // Redirect ke halaman homebanner.php
         exit();
     } else {
         echo "Error update data: " . mysqli_error($conn); // Menampilkan pesan error

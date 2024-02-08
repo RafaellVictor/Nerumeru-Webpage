@@ -34,7 +34,7 @@ require "function.php";
       <span class="flex md:flex-col flex-col-reverse">
         <div class="container relative 3xl:top-32 xl:top-20 md:top-2.5">
           <div class="flex flex-col items-center 3xl:gap-4 xl:gap-6 lg:gap-7 gap-4">
-            <h2 id="text" class="3xl:text-5xl 2xl:text-4xl lg:text-3xl md:text-2xl text-xl md:w-[43%] w-[80%]  mx-auto 3xl:h-[100px] 2xl:h-[76px]  md:h-[56px] h-11 text-center font-extrabold leading-loose text-blue-Neru"></h2>
+            <h2 id="text" class="3xl:text-5xl 2xl:text-4xl lg:text-3xl md:text-2xl text-xl md:w-[43%] w-[80%]  mx-auto 3xl:h-[100px] 2xl:h-[76px]  md:h-[56px] h-11 text-center font-extrabold  text-blue-Neru"></h2>
             <h6 class="text-center text-grey-neru xl:w-[30%] md:w-[50%] w-fit">
               <?= $hero_section["hero_subtitle"] ?>
             </h6>
@@ -78,19 +78,19 @@ require "function.php";
         <div class="text-white text-center mt-12">
           <?php $productRecommend = query("SELECT * FROM recommendsection WHERE status=1;") ?>
           <div class="grid md:grid-cols-6 md:grid-rows-6 grid-cols-4 grid-rows-4 md:gap-4 gap-2 h-[600px] max-w-screen mx-auto lg:text-4xl md:text-xl text-sm">
-            <div onclick="window.location.href ='bedding.php';" style="background-image: url('<?= $productRecommend[0]["recommend_img"] ?>')" ; class="md:col-span-4 md:row-span-4 col-span-4 row-span-1 bg-blue-Neru  bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
+            <div onclick="window.location.href ='bedding.php';" style="background-image: url('img/<?= $productRecommend[0]["recommend_img"] ?>')" ; class="md:col-span-4 md:row-span-4 col-span-4 row-span-1 bg-blue-Neru  bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
               <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center -translate-x-full group-hover:-translate-x-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"><?= $productRecommend[0]["recommend_title"] ?></div>
             </div>
-            <div onclick="window.location.href ='sanitize.php';" style="background-image: url('<?= $productRecommend[2]["recommend_img"] ?>')" ; class="bg-blue-Neru md:row-span-3 md:col-span-2 col-span-2 row-span-1 bg-sanitize-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
+            <div onclick="window.location.href ='sanitize.php';" style="background-image: url('img/<?= $productRecommend[2]["recommend_img"] ?>')" ; class="bg-blue-Neru md:row-span-3 md:col-span-2 col-span-2 row-span-1 bg-sanitize-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
               <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center translate-x-full group-hover:translate-x-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"><?= $productRecommend[2]["recommend_title"] ?></div>
             </div>
-            <div onclick="window.location.href ='trolly.php';" style="background-image: url('<?= $productRecommend[4]["recommend_img"] ?>')" ; class="bg-blue-Neru md:col-span-2 md:row-span-5 col-span-2 row-span-2 bg-trolly-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
+            <div onclick="window.location.href ='trolly.php';" style="background-image: url('img/<?= $productRecommend[4]["recommend_img"] ?>')" ; class="bg-blue-Neru md:col-span-2 md:row-span-5 col-span-2 row-span-2 bg-trolly-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
               <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center -translate-y-full group-hover:-translate-y-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"><?= $productRecommend[4]["recommend_title"] ?></div>
             </div>
-            <div onclick="window.location.href ='toys.php';" style="background-image: url('<?= $productRecommend[1]["recommend_img"] ?>')" ; class="bg-blue-Neru w-full md:col-span-2 md:row-span-4 col-span-2 bg-toys-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
+            <div onclick="window.location.href ='toys.php';" style="background-image: url('img/<?= $productRecommend[1]["recommend_img"] ?>')" ; class="bg-blue-Neru w-full md:col-span-2 md:row-span-4 col-span-2 bg-toys-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
               <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center translate-y-full group-hover:translate-y-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"><?= $productRecommend[1]["recommend_title"] ?></div>
             </div>
-            <div onclick="window.location.href ='pillow.php';" style="background-image: url('<?= $productRecommend[3]["recommend_img"] ?>')" ; class="bg-blue-Neru md:col-span-2 md:row-span-4 col-span-4 bg-pillow-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
+            <div onclick="window.location.href ='pillow.php';" style="background-image: url('img/<?= $productRecommend[3]["recommend_img"] ?>')" ; class="bg-blue-Neru md:col-span-2 md:row-span-4 col-span-4 bg-pillow-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
               <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center translate-x-full group-hover:translate-x-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"><?= $productRecommend[3]["recommend_title"] ?></div>
             </div>
           </div>
@@ -108,7 +108,7 @@ require "function.php";
             <?php $eventneru = query("SELECT * FROM neru_event WHERE event_type = 'news' AND status = 1") ?>
             <?php foreach ($eventneru as $event) : ?>
               <div class="swiper-slide">
-                <img src="<?= $event["event_img"] ?>" />
+                <img src="img/WhatOnNerumeru/<?= $event["event_img"] ?>" />
               </div>
             <?php endforeach; ?>
           </div>
@@ -116,7 +116,7 @@ require "function.php";
         </div>
       </div>
     </section>
-    <section class="bio bg-blue-Neru 3xl:py-20 py-6">
+    <section class="bio bg-blue-Neru 3xl:py-20 lg:py-16 py-6">
       <?php $bioneru = query("SELECT * FROM bio WHERE status = 1") ?>
       <div class="container">
         <div class="grid md:grid-cols-2 grid-cols-1 text-white gap-6">

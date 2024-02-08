@@ -78,14 +78,15 @@ if (isset($_POST["submit"])) {
                                     </svg>
                                 </a>
                             </div>
-                            <form class="w-full" action="" method="post">
+                            <form class="w-full" action="" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="recommend_id" value="<?= $recommend["recommend_id"] ?>">
+                                <input type="hidden" name="gambarLama" value="<?= $recommend["recommend_img"] ?>">
                                 <div class="grid grid-cols-2 gap-6">
                                     <div class="flex flex-col w-full gap-3">
                                         <div class="w-full flex flex-col gap-4  bg-white-neru rounded-md border-2 p-3">
-                                            <img src="img/Save.png" class=" mx-auto" alt="">
+                                            <img src="img/<?= $recommend["recommend_img"] ?>" class="mx-auto" alt="">
                                             <label for="">recommend Img <span class="text-red-500 font-medium">(Note : 2 Type File input file & link img)</span> </label>
-                                            <input type="file">
+                                            <input type="file" name="gambar">
                                             <input class="w-full p-2 outline-none border-2" type="text" name="recommend_img" value="<?= $recommend["recommend_img"] ?>" />
                                         </div>
                                         <label for="">Title 1</label>

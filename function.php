@@ -24,7 +24,7 @@ function insertHero($data)
     global $conn;
 
     // Upload Gambar
-    $hero_img = htmlspecialchars($data["hero_img"]);
+    $hero_img = upload();
     if (!$hero_img) {
         return false;
     }
@@ -116,7 +116,7 @@ function deleteHero($id)
 function insertwhyus($data)
 {
     global $conn;
-    $whyus_img = htmlspecialchars($data["whyus_img"]);
+    $whyus_img = upload();
     $whyus_title = htmlspecialchars($data["whyus_title"]);
     $whyus_subtitle = htmlspecialchars($data["whyus_subtitle"]);
 
@@ -197,7 +197,13 @@ function deletewhyus($id)
 function insertProductRecom($data)
 {
     global $conn;
-    $recommend_img = htmlspecialchars($data["recommend_img"]);
+    $recommend_img = upload();
+
+    if(!$recommend_img) {
+        return false;
+    }
+
+
     $recommend_title = htmlspecialchars($data["recommend_title"]);
 
 
@@ -225,6 +231,14 @@ function updateProductRecom($data)
 
     $recommend_id = $data["recommend_id"];
     $recommend_img = htmlspecialchars($data["recommend_img"]);
+    $recommend_imgLama = htmlspecialchars($data["gambarLama"]);
+
+    if($_FILES['gambar']['error'] === 4) {
+        $recommend_img = $recommend_imgLama;
+    } else {
+        $recommend_img = upload();
+    }
+
     $recommend_title = htmlspecialchars($data["recommend_title"]);
     $status = $data["status"];
 
@@ -259,7 +273,12 @@ function deleteProductRecom($id)
 function insertEvent($data)
 {
     global $conn;
-    $event_img = htmlspecialchars($data["event_img"]);
+    $event_img = upload();
+
+    if(!$event_img) {
+        return false;
+    }
+
     $event_type = htmlspecialchars($data["event_type"]);
 
     $status = $data["status"];
@@ -285,6 +304,14 @@ function updateEvent($data)
 
     $event_id = $data["event_id"];
     $event_img = htmlspecialchars($data["event_img"]);
+    $event_imgLama = htmlspecialchars($data["gambarLama"]);
+
+    if($_FILES['gambar']['error'] === 4) {
+        $event_img = $event_imgLama;
+    } else {
+        $event_img = upload();
+    }
+
     $event_type = htmlspecialchars($data["event_type"]);
     $status = $data["status"];
 
@@ -520,8 +547,6 @@ function upload()
 {
     $namaFile = $_FILES["gambar"]["name"];
     // $error = $_FILES["gambar"]["error"];
-    $size = $_FILES["gambar"]["size"];
-    $tmpName = $_FILES["gambar"]["tmp_name"];
 
     // Pengecekan Apakah yang di-upload adalah gambar
     $extensiGambarValid = ["jpg", "png", "jpeg", "svg"];
@@ -534,12 +559,22 @@ function upload()
     }
 
     // Pengecekan Ukuran Size Dari Gambar 
-    if ($size > 2000000) {
+    // Mendapatkan ukuran file gambar yang diunggah
+    $ukuran_file = $_FILES['nama_file']['size']; // asumsikan 'nama_file' adalah nama input file pada form
+    
+    // Batas ukuran file (dalam bytes), 6 MB = 6 * 1024 * 1024 bytes
+    $batas_ukuran = 6000000;
+    
+    // Memeriksa apakah ukuran file melebihi batas yang ditetapkan
+    if ($ukuran_file > $batas_ukuran) {
         echo "<script>alert('Ukuran Gambar Terlalu Besar');</script>";
-        return false;
+        return false; // Anda mungkin ingin melakukan tindakan lain selain mengembalikan false
     }
 
+    
+
     // Generate Nama file baru
+    $tmpName = $_FILES["gambar"]["tmp_name"];
     $namaFilebaru = uniqid();
     $namaFilebaru .= '.';
     $namaFilebaru .= $extensiGambar;

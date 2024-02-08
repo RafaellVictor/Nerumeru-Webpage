@@ -17,18 +17,18 @@ let TestimonialSwiper = new Swiper(".testimonial-Content", {
 
   breakpoints: {
     360: {
-      slidesPerView: 1,
-      centeredSlides: true,
+      slidesPerView: 1.2,
+  
     },
 
     430: {
       slidesPerView: 1.2,
-      centeredSlides: true,
+  
     },
 
     540: {
       slidesPerView: 1.5,
-      centeredSlides: true,
+ 
     },
 
     768: {
@@ -44,7 +44,7 @@ let TestimonialSwiper = new Swiper(".testimonial-Content", {
     },
 
     1024: {
-      slidesPerView: 2.2,
+      slidesPerView: 2.6,
       spaceBetween: 16,
       centeredSlides: true,
     },
@@ -52,7 +52,7 @@ let TestimonialSwiper = new Swiper(".testimonial-Content", {
     1280: {
       slidesPerView: 3,
       spaceBetween: 16,
-      centeredSlides: true,
+
     },
   },
 });
@@ -280,37 +280,12 @@ let filterContent = new Swiper(".filter-content", {
   },
 
   breakpoints: {
-    360: {
-      slidesPerView: 2.2,
-      spaceBetween: 6,
-    },
 
-    430: {
-      slidesPerView: 2.4,
-      spaceBetween: 6,
-    },
-
-    540: {
-      slidesPerView: 1.8,
-
-    },
-
-    768: {
-      slidesPerView: 3.2,
-      spaceBetween: 10,
-
-    },
 
     1024: {
       slidesPerView: 3.5,
       spaceBetween: 10,
 
-    },
-
-    1920: {
-      slidesPerView: 3.8,
-      spaceBetween: 10,
-    
     },
   },
 
@@ -347,17 +322,6 @@ let filterContentSm = new Swiper(".filter-contentSm", {
 
     },
 
-    1024: {
-      slidesPerView: 3.5,
-      spaceBetween: 10,
-
-    },
-
-    1920: {
-      slidesPerView: 3.8,
-      spaceBetween: 10,
-    
-    },
   },
 
 });

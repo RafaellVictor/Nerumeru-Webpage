@@ -189,7 +189,7 @@ $events = query("SELECT * FROM neru_event WHERE event_type = 'event'");
                   <?php foreach ($events as $event) : ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $event["event_id"] ?></td>
-                      <td class="w-60"><img src="<?= $event["event_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td class="w-60"><img src="img/WhatOnNerumeru/<?= $event["event_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
                       <td class="w-60"><?= $event["event_type"] ?></td>
                       <td><?= $event["insert_date"] ?></td>
                       <td><?= $event["lastUpdate_date"] ?></td>
