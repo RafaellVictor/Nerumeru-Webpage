@@ -38,6 +38,18 @@ if (pageName === "Admin-Homepage.php") {
   });
 }
 
+if (pageName === "Admin-Blog.php") {
+  document.querySelectorAll(".FrontendNav").forEach(function (element) {
+    element.classList.add("navAdmin-active");
+    const ParentBox = NavDrop.parentNode;
+    const NavdropNextElement = NavDrop.nextElementSibling;
+    SidebarAdmin.classList.add("overflow-y-auto");
+    NavDrop.classList.add("NavAdminToggle-active");
+    NavdropNextElement.classList.add("BoxNavAdmin-Active");
+    ParentBox.classList.add("parentAdminNav-Active");
+  });
+}
+
 if (pageName === "Admin-Dashboard.php") {
   document.querySelectorAll(".DashboardNav").forEach(function (element) {
     element.classList.add("navAdmin-active");

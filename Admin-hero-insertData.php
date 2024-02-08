@@ -75,13 +75,13 @@ if (isset($_POST["submit"])) {
                   </svg>
                 </a>
               </div>
-              <form class="w-full" action="" method="post">
+              <form class="w-full" action="" method="post" enctype="multipart/form-data">
                 <div class="grid grid-cols-2 gap-6">
                   <div class="flex flex-col w-full gap-3">
                   <div class="w-full flex flex-col gap-4  bg-white-neru rounded-md border-2 p-3">
                       <img src="img/dog-pict.png" class=" mx-auto" alt="">
                       <label for="">Hero Img <span class="text-red-500 font-medium">(Note : 2 Type File input file & link img)</span> </label>
-                      <input type="file">
+                      <input required  type="file" name="gambar" id="gambar">
                       <input class="w-full p-2 outline-none border-2" type="text" name="hero_img" />
                     </div>
                     <label for="">Title 1</label>

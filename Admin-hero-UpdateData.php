@@ -77,13 +77,14 @@ if (isset($_POST["submit"])) {
                   </svg>
                 </a>
               </div>
-              <form class="w-full" action="" method="post">
+              <form class="w-full" action="" method="post" enctype="multipart/form-data">
                 <div class="grid grid-cols-2 gap-6">
                   <div class="flex flex-col w-full gap-3">
                     <input type="hidden" name="hero_id" value="<?= $nerumeru["hero_id"] ?>">
+                    <input type="hidden" name="gambarLama" value="<?= $nerumeru["hero_img"] ?>">
                     <div class="w-full flex flex-col gap-4  bg-white-neru rounded-md border-2 p-3">
-                      <img class="mx-auto" src="<?= $nerumeru["hero_img"] ?>" alt="" />
-                      <input type="file" />
+                      <img class="mx-auto" src="img/<?= $nerumeru["hero_img"] ?>" alt="" />
+                      <input type="file" name="gambar" id="gambar" />
                       <input type="text" class="w-full p-2 outline-none border-2" name="hero_img" value="<?= $nerumeru["hero_img"] ?>" />
                     </div>
                     <label for="">Title 1</label>

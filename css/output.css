@@ -800,10 +800,6 @@ main {
   top: 4rem;
 }
 
-.top-20 {
-  top: 5rem;
-}
-
 .top-28 {
   top: 7rem;
 }
@@ -1151,6 +1147,14 @@ main {
   height: 2.75rem;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
+.h-14 {
+  height: 3.5rem;
+}
+
 .h-2 {
   height: 0.5rem;
 }
@@ -1256,6 +1260,10 @@ main {
   width: 2.5rem;
 }
 
+.w-12 {
+  width: 3rem;
+}
+
 .w-14 {
   width: 3.5rem;
 }
@@ -1340,6 +1348,10 @@ main {
   width: 23px;
 }
 
+.w-\[25\%\] {
+  width: 25%;
+}
+
 .w-\[35\%\] {
   width: 35%;
 }
@@ -1379,6 +1391,10 @@ main {
 
 .max-w-screen-lg {
   max-width: 1024px;
+}
+
+.max-w-screen-sm {
+  max-width: 640px;
 }
 
 .flex-shrink {
@@ -3207,8 +3223,8 @@ main {
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
 }
 
-.leading-tight {
-  line-height: 1.25;
+.leading-loose {
+  line-height: 2;
 }
 
 .tracking-widest {
@@ -4244,9 +4260,6 @@ input[type="number"]::-webkit-outer-spin-button {
   .shope-active {
     bottom: 6rem;
   }
-}
-
-.floatBTN-Active {
 }
 
 .togglePesanan-active > svg {
@@ -5861,7 +5874,7 @@ a.plyr__control:before {
 /* Admin */
 
 .parentAdminNav-Active {
-  margin-bottom: 480px;
+  margin-bottom: 300px;
 }
 
 .BoxNavAdmin-Active {
@@ -5948,6 +5961,24 @@ a.plyr__control:before {
 }
 
 /* Admin end */
+
+.filterBox-Active {
+  grid-column: span 8 / span 8;
+}
+
+@media (min-width: 768px) {
+  .filterBox-Active {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.filter-overlay-active {
+  --tw-translate-y: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
 
 @media (min-width: 640px) {
   .sm\:container {
@@ -6057,8 +6088,16 @@ a.plyr__control:before {
   text-align: center;
 }
 
+.group:hover .group-hover\:top-0 {
+  top: 0px;
+}
+
 .group:hover .group-hover\:z-20 {
   z-index: 20;
+}
+
+.group:hover .group-hover\:flex {
+  display: flex;
 }
 
 .group:hover .group-hover\:-translate-x-0 {
@@ -6135,10 +6174,6 @@ a.plyr__control:before {
 
   .md\:top-2\.5 {
     top: 0.625rem;
-  }
-
-  .md\:top-\[89px\] {
-    top: 89px;
   }
 
   .md\:col-span-2 {
@@ -6317,6 +6352,10 @@ a.plyr__control:before {
 
   .md\:w-full {
     width: 100%;
+  }
+
+  .md\:max-w-screen-xl {
+    max-width: 1200px;
   }
 
   .md\:grid-cols-2 {
@@ -6530,6 +6569,10 @@ a.plyr__control:before {
     right: 2.25rem;
   }
 
+  .lg\:top-20 {
+    top: 5rem;
+  }
+
   .lg\:col-span-2 {
     grid-column: span 2 / span 2;
   }
@@ -6690,8 +6733,8 @@ a.plyr__control:before {
     gap: 1.25rem;
   }
 
-  .lg\:gap-6 {
-    gap: 1.5rem;
+  .lg\:gap-7 {
+    gap: 1.75rem;
   }
 
   .lg\:p-0 {
@@ -6763,6 +6806,11 @@ a.plyr__control:before {
     line-height: 2rem;
   }
 
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
   .lg\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -6822,6 +6870,14 @@ a.plyr__control:before {
     margin-top: 15rem;
   }
 
+  .xl\:block {
+    display: block;
+  }
+
+  .xl\:hidden {
+    display: none;
+  }
+
   .xl\:h-\[120px\] {
     height: 120px;
   }
@@ -6850,6 +6906,10 @@ a.plyr__control:before {
     width: 55%;
   }
 
+  .xl\:max-w-screen-md {
+    max-width: 768px;
+  }
+
   .xl\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -6866,6 +6926,10 @@ a.plyr__control:before {
     gap: 1.25rem;
   }
 
+  .xl\:gap-6 {
+    gap: 1.5rem;
+  }
+
   .xl\:p-9 {
     padding: 2.25rem;
   }
@@ -6873,6 +6937,11 @@ a.plyr__control:before {
   .xl\:px-3 {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+  }
+
+  .xl\:py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .xl\:text-base {
@@ -6915,8 +6984,8 @@ a.plyr__control:before {
     height: 550px;
   }
 
-  .\32xl\:h-\[85px\] {
-    height: 85px;
+  .\32xl\:h-\[76px\] {
+    height: 76px;
   }
 
   .\32xl\:w-16 {
@@ -6937,10 +7006,6 @@ a.plyr__control:before {
 
   .\32xl\:w-\[45\%\] {
     width: 45%;
-  }
-
-  .\32xl\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .\32xl\:gap-10 {
@@ -6977,6 +7042,11 @@ a.plyr__control:before {
   .\32xl\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .\32xl\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   .\32xl\:text-5xl {
@@ -7017,8 +7087,8 @@ a.plyr__control:before {
     margin-top: 20rem;
   }
 
-  .\33xl\:h-28 {
-    height: 7rem;
+  .\33xl\:h-\[100px\] {
+    height: 100px;
   }
 
   .\33xl\:h-\[160px\] {
@@ -7061,8 +7131,16 @@ a.plyr__control:before {
     width: 45%;
   }
 
+  .\33xl\:max-w-screen-lg {
+    max-width: 1024px;
+  }
+
   .\33xl\:gap-16 {
     gap: 4rem;
+  }
+
+  .\33xl\:gap-4 {
+    gap: 1rem;
   }
 
   .\33xl\:gap-5 {
@@ -7096,6 +7174,11 @@ a.plyr__control:before {
   .\33xl\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .\33xl\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 
   .\33xl\:text-7xl {

@@ -278,9 +278,6 @@ input[type="number"]::-webkit-outer-spin-button {
   @apply 3xl:bottom-24 2xl:bottom-20 bottom-[70px];
 }
 
-.floatBTN-Active {
-}
-
 .togglePesanan-active > svg {
   @apply rotate-180;
 }
@@ -1643,7 +1640,7 @@ a.plyr__control:before {
 /* Admin */
 
 .parentAdminNav-Active {
-  @apply mb-[480px];
+  @apply mb-[300px];
 }
 
 .BoxNavAdmin-Active {
@@ -1670,7 +1667,6 @@ a.plyr__control:before {
   @apply flex gap-2 items-center font-medium;
 }
 
-
 .dataTables_filter > label > input {
   @apply outline-none px-4;
 }
@@ -1683,14 +1679,12 @@ a.plyr__control:before {
   @apply outline-none  bg-blue-Neru border-black border-2 rounded-md   text-center;
 }
 
-
-.dataTables_paginate.paging_simple_numbers  {
-  @apply  mt-4 hover:bg-none;
+.dataTables_paginate.paging_simple_numbers {
+  @apply mt-4 hover:bg-none;
 }
 
-
-.dataTables_info  {
-  @apply font-medium mt-4
+.dataTables_info {
+  @apply font-medium mt-4;
 }
 
 .Active-BoxTable {
@@ -1698,8 +1692,16 @@ a.plyr__control:before {
 }
 
 .NofiDeleteBoxActive {
-  @apply visible top-5  transition-all ease-in-out duration-300
+  @apply visible top-5  transition-all ease-in-out duration-300;
+}
+
+/* Admin end */
+
+.filterBox-Active {
+  @apply md:grid-cols-4 col-span-8;
 }
 
 
-/* Admin end */
+.filter-overlay-active {
+  @apply translate-y-0 shadow-lg;
+}

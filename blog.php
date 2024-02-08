@@ -1,3 +1,9 @@
+<?php
+include("function.php");
+$icons = query("SELECT * FROM blog WHERE status = '1' AND blog_type = 'icon' ;");
+$vidios = query("SELECT * FROM blog WHERE status = '1' AND blog_type = 'vidio' ;")[0];
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -26,77 +32,19 @@
             <hr class="3xl:w-20 2xl:w-16 md:w-14 w-10 md:border-8 border-[5px] border-blue-Neru rounded-sm" />
           </div>
           <div class="toggle-event grid md:grid-cols-4 grid-cols-3 lg:gap-20 md:gap-10 gap-5">
-            <span class="flex flex-col gap-2 items-center w-full">
-              <a href="#OurStory" class="rounded-full group relative overflow-hidden cursor-pointer bg-blue-Neru xl:p-9 p-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="xl:w-14 w-7 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M10 20.777a8.942 8.942 0 0 1 -2.48 -.969" />
-                  <path d="M14 3.223a9.003 9.003 0 0 1 0 17.554" />
-                  <path d="M4.579 17.093a8.961 8.961 0 0 1 -1.227 -2.592" />
-                  <path d="M3.124 10.5c.16 -.95 .468 -1.85 .9 -2.675l.169 -.305" />
-                  <path d="M6.907 4.579a8.954 8.954 0 0 1 3.093 -1.356" />
-                  <path d="M12 8v4l3 3" />
-                </svg>
-                <div class="bg-black bg-opacity-50 absolute flex flex-col items-center justify-center transition-all ease-in-out duration-300 top-0 inset-x-0 w-full h-full rounded-full -translate-y-full -translate-x-20 group-hover:translate-x-0 group-hover:translate-y-0"></div>
-                <div class="bg-black bg-opacity-50 absolute flex flex-col items-center justify-center text-white font-semibold transition-all ease-in-out duration-300 top-0 inset-x-0 w-full h-full rounded-full translate-y-full translate-x-20 group-hover:translate-x-0 group-hover:translate-y-0">
-                  <h6 class="md:text-base text-[10px] text-white font-semibold">
-                    Our Story
-                  </h6>
-                </div>
-              </a>
-            </span>
-            <span class="flex flex-col gap-2 items-center w-full">
-              <a href="#OurEvent" class="rounded-full group relative overflow-hidden cursor-pointer bg-blue-Neru xl:p-9 p-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="xl:w-14 w-7 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M4 5m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
-                  <path d="M16 3l0 4" />
-                  <path d="M8 3l0 4" />
-                  <path d="M4 11l16 0" />
-                  <path d="M8 15h2v2h-2z" />
-                </svg>
-                <div class="bg-black bg-opacity-50 absolute flex flex-col items-center justify-center transition-all ease-in-out duration-300 top-0 inset-x-0 w-full h-full rounded-full -translate-y-full -translate-x-20 group-hover:translate-x-0 group-hover:translate-y-0"></div>
-                <div class="bg-black bg-opacity-50 absolute flex flex-col items-center justify-center text-white font-semibold transition-all ease-in-out duration-300 top-0 inset-x-0 w-full h-full rounded-full translate-y-full translate-x-20 group-hover:translate-x-0 group-hover:translate-y-0">
-                  <h6 class="md:text-base text-[10px] text-white font-semibold">
-                    Our Event
-                  </h6>
-                </div>
-              </a>
-            </span>
-            <span class="flex flex-col gap-2 items-center w-full">
-              <a href="#HappyStory" class="rounded-full group relative overflow-hidden cursor-pointer bg-blue-Neru xl:p-9 p-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="xl:w-14 w-7 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M21 12a9 9 0 1 0 -8.012 8.946" />
-                  <path d="M9 10h.01" />
-                  <path d="M15 10h.01" />
-                  <path d="M9.5 15a3.59 3.59 0 0 0 2.774 .99" />
-                  <path d="M18.994 21.5l2.518 -2.58a1.74 1.74 0 0 0 .004 -2.413a1.627 1.627 0 0 0 -2.346 -.005l-.168 .172l-.168 -.172a1.627 1.627 0 0 0 -2.346 -.004a1.74 1.74 0 0 0 -.004 2.412l2.51 2.59z" />
-                </svg>
-                <div class="bg-black bg-opacity-50 absolute flex flex-col items-center justify-center transition-all ease-in-out duration-300 top-0 inset-x-0 w-full h-full rounded-full -translate-y-full -translate-x-20 group-hover:translate-x-0 group-hover:translate-y-0"></div>
-                <div class="bg-black bg-opacity-50 absolute flex flex-col items-center justify-center text-white font-semibold transition-all ease-in-out duration-300 top-0 inset-x-0 w-full h-full rounded-full translate-y-full translate-x-20 group-hover:translate-x-0 group-hover:translate-y-0">
-                  <h6 class="md:text-base text-[10px] text-white font-semibold">
-                    Happy Story
-                  </h6>
-                </div>
-              </a>
-            </span>
-            <span class="flex flex-col gap-2 items-center w-full">
-              <a href="#OurInsta" class="rounded-full group relative overflow-hidden cursor-pointer bg-blue-Neru xl:p-9 p-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="xl:w-14 w-7 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
-                  <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
-                  <path d="M16.5 7.5l0 .01" />
-                </svg>
-                <div class="bg-black bg-opacity-50 absolute flex flex-col items-center justify-center transition-all ease-in-out duration-300 top-0 inset-x-0 w-full h-full rounded-full -translate-y-full -translate-x-20 group-hover:translate-x-0 group-hover:translate-y-0"></div>
-                <div class="bg-black bg-opacity-50 absolute flex flex-col items-center justify-center text-white font-semibold transition-all ease-in-out duration-300 top-0 inset-x-0 w-full h-full rounded-full translate-y-full translate-x-20 group-hover:translate-x-0 group-hover:translate-y-0">
-                  <h6 class="md:text-base text-[10px] text-white font-semibold">
-                    Our insta
-                  </h6>
-                </div>
-              </a>
-            </span>
+            <?php foreach ($icons as $icon) : ?>
+              <span class="flex flex-col gap-2 items-center w-full">
+                <a href="#OurStory" class="rounded-full group relative overflow-hidden cursor-pointer bg-blue-Neru xl:p-9 p-6">
+                  <img src="<?= $icon["blog_icon"] ?>" class="xl:w-14 w-7 " alt="">
+                  <div class="bg-black bg-opacity-50 absolute flex flex-col items-center justify-center transition-all ease-in-out duration-300 top-0 inset-x-0 w-full h-full rounded-full -translate-y-full -translate-x-20 group-hover:translate-x-0 group-hover:translate-y-0"></div>
+                  <div class="bg-black bg-opacity-50 absolute flex flex-col items-center justify-center text-white font-semibold transition-all ease-in-out duration-300 top-0 inset-x-0 w-full h-full rounded-full translate-y-full translate-x-20 group-hover:translate-x-0 group-hover:translate-y-0">
+                    <h6 class="md:text-base text-[10px] text-white font-semibold">
+                      <?= $icon["blog_icon_title"] ?>
+                    </h6>
+                  </div>
+                </a>
+              </span>
+            <?php endforeach ?>
           </div>
         </div>
       </div>
@@ -105,7 +53,8 @@
       <div class="container">
         <div class="rounded-xl overflow-hidden player">
           <div class="plyr__video-embed" id="player">
-            <iframe src="https://www.youtube.com/embed/bTqVqk7FSmY?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe>
+            <!-- <video src="<?= $vidios["blog_vidio"] ?>" controls autoplay allowfullscreen allowtransparency allow="autoplay"></video> -->
+            <iframe src="https://youtu.be/TQ0ra_pZ1SM?si=J026Tm_NGh8GAj0b" allowfullscreen allowtransparency allow="autoplay"></iframe>
           </div>
         </div>
       </div>
@@ -123,27 +72,12 @@
         </div>
         <div class="swiper EventCoverflow-content mt-12" id="WhatsOn">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/IIPE doc 1.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/IIPE doc 2.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/IIPE doc 3.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/IIPE doc 4.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/IIPE doc 5.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/IIPE doc 6.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/IIPE doc 7.jpg" />
-            </div>
+            <?php $eventneru = query("SELECT * FROM neru_event WHERE event_type = 'event' AND status = 1") ?>
+            <?php foreach ($eventneru as $event) : ?>
+              <div class="swiper-slide">
+                <img src="<?= $event["event_img"] ?>" />
+              </div>
+            <?php endforeach; ?>
           </div>
         </div>
       </div>

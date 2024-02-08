@@ -33,8 +33,8 @@ require "function.php";
       <!-- 3xl:mt-80 2xl:mt-48 mt-10 -->
       <span class="flex md:flex-col flex-col-reverse">
         <div class="container relative 3xl:top-32 xl:top-20 md:top-2.5">
-          <div class="flex flex-col items-center lg:gap-6 gap-4">
-            <h2 id="text" class="md:w-[43%] w-[80%]  mx-auto 3xl:h-28 2xl:h-[85px] md:h-[56px] h-11 text-center font-extrabold leading-tight text-blue-Neru"></h2>
+          <div class="flex flex-col items-center 3xl:gap-4 xl:gap-6 lg:gap-7 gap-4">
+            <h2 id="text" class="3xl:text-5xl 2xl:text-4xl lg:text-3xl md:text-2xl text-xl md:w-[43%] w-[80%]  mx-auto 3xl:h-[100px] 2xl:h-[76px]  md:h-[56px] h-11 text-center font-extrabold leading-loose text-blue-Neru"></h2>
             <h6 class="text-center text-grey-neru xl:w-[30%] md:w-[50%] w-fit">
               <?= $hero_section["hero_subtitle"] ?>
             </h6>
@@ -45,7 +45,7 @@ require "function.php";
           </div>
         </div>
         <div class="container 3xl:mt-48 2xl:mt-24 xl:mt-20 md:mt-0 mt-5">
-          <img id="heroimg" src="<?= $hero_section["hero_img"] ?>" class="mx-auto xl:w-[55%] transition-transform ease-in-out duration-300 md:w-[60%] w-fit h-[45%]" alt="" />
+          <img id="heroimg" src="img/<?= $hero_section["hero_img"] ?>" class="mx-auto xl:w-[55%] transition-transform ease-in-out duration-300 md:w-[60%] w-fit h-[45%]" alt="" />
         </div>
       </span>
     </section>
@@ -59,8 +59,8 @@ require "function.php";
           <?php $whyus = query("SELECT * FROM whyus WHERE status=1;") ?>
           <?php foreach ($whyus as $whys) : ?>
             <div class="text-center relative group overflow-hidden cursor-pointer">
-              <img src="<?= $whys["whyus_img"] ?>" class="w-full object-fill" alt="" />
-              <div class="absolute -translate-y-full group-hover:translate-y-0 transition-all ease-in-out duration-200 n h-full inset-0 bg-blue-Neru bg-opacity-70 text-white p-4 flex items-center flex-col lg:gap-4 md:gap-2 gap-1 justify-center">
+              <img src="img/<?= $whys["whyus_img"] ?>" class="w-full object-fill" alt="" />
+              <div class="absolute -translate-y-full group-hover:translate-y-0 transition-all ease-in-out duration-300 n h-full inset-0 bg-blue-Neru bg-opacity-70 text-white p-4 flex items-center flex-col lg:gap-4 md:gap-2 gap-1 justify-center">
                 <h6 class="font-bold lg:text-base md:text-xs text-[8px]"><?= $whys["whyus_title"] ?></h6>
                 <h6 class="lg:text-sm md:text-xs text-[8px] font-medium lg:text-center text-justify line-clamp-4"><?= $whys["whyus_subtitle"] ?></h6>
               </div>
@@ -84,20 +84,20 @@ require "function.php";
             <div onclick="window.location.href ='sanitize.php';" style="background-image: url('<?= $productRecommend[2]["recommend_img"] ?>')" ; class="bg-blue-Neru md:row-span-3 md:col-span-2 col-span-2 row-span-1 bg-sanitize-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
               <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center translate-x-full group-hover:translate-x-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"><?= $productRecommend[2]["recommend_title"] ?></div>
             </div>
-            <div onclick="window.location.href ='trolly.php';" style="background-image: url('<?= $productRecommend[3]["recommend_img"] ?>')" ; class="bg-blue-Neru md:col-span-2 md:row-span-5 col-span-2 row-span-2 bg-trolly-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
-              <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center -translate-y-full group-hover:-translate-y-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"><?= $productRecommend[3]["recommend_title"] ?></div>
+            <div onclick="window.location.href ='trolly.php';" style="background-image: url('<?= $productRecommend[4]["recommend_img"] ?>')" ; class="bg-blue-Neru md:col-span-2 md:row-span-5 col-span-2 row-span-2 bg-trolly-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
+              <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center -translate-y-full group-hover:-translate-y-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"><?= $productRecommend[4]["recommend_title"] ?></div>
             </div>
             <div onclick="window.location.href ='toys.php';" style="background-image: url('<?= $productRecommend[1]["recommend_img"] ?>')" ; class="bg-blue-Neru w-full md:col-span-2 md:row-span-4 col-span-2 bg-toys-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
               <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center translate-y-full group-hover:translate-y-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"><?= $productRecommend[1]["recommend_title"] ?></div>
             </div>
-            <div onclick="window.location.href ='pillow.php';" style="background-image: url('<?= $productRecommend[4]["recommend_img"] ?>')" ; class="bg-blue-Neru md:col-span-2 md:row-span-4 col-span-4 bg-pillow-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
-              <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center translate-x-full group-hover:translate-x-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"><?= $productRecommend[4]["recommend_title"] ?></div>
+            <div onclick="window.location.href ='pillow.php';" style="background-image: url('<?= $productRecommend[3]["recommend_img"] ?>')" ; class="bg-blue-Neru md:col-span-2 md:row-span-4 col-span-4 bg-pillow-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
+              <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center translate-x-full group-hover:translate-x-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"><?= $productRecommend[3]["recommend_title"] ?></div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="whats'on nerumeru">
+    <section class="whats'on nerumeru overflow-hidden">
       <div class="container">
         <div class="title flex gap-2.5 flex-col items-center">
           <h3 class="font-extrabold 3xl:text-3xl 2xl:text-2xl md:text-2xl text-xl">What's On Nerumeru ?</h3>
@@ -105,57 +105,27 @@ require "function.php";
         </div>
         <div class="swiper ProductCoverflow-content mt-12" id="WhatsOn">
           <div class="swiper-wrapper pb-12">
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/agustus 2.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/Aug 1 (Cover).jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/Feb Upgrade-1.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/feeds 4 aug.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/July 8.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/june 3.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/Neru Stick 20cm (1).jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/onigiri 3.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/Sept 3-1.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/Sept 3-2.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/WhatOnNerumeru/sept-3 (Cover).jpg" />
-            </div>
+            <?php $eventneru = query("SELECT * FROM neru_event WHERE event_type = 'news' AND status = 1") ?>
+            <?php foreach ($eventneru as $event) : ?>
+              <div class="swiper-slide">
+                <img src="<?= $event["event_img"] ?>" />
+              </div>
+            <?php endforeach; ?>
           </div>
           <div class="swiper-pagination swiper-custom-pagination-WhatsOn"></div>
         </div>
       </div>
     </section>
     <section class="bio bg-blue-Neru 3xl:py-20 py-6">
+      <?php $bioneru = query("SELECT * FROM bio WHERE status = 1") ?>
       <div class="container">
         <div class="grid md:grid-cols-2 grid-cols-1 text-white gap-6">
           <h2 class="flex flex-col md:gap-8 gap-2.5 font-extrabold my-auto 2xl:text-5xl md:text-3xl lg:tracking-[10px] md:tracking-[5px]">
-            Nerumeru
-            <span class="2xl:text-7xl md:text-4xl lg:tracking-widest"> 寝る メル </span>
+            <?= $bioneru[0]["bio_title"] ?>
+            <span class="2xl:text-7xl md:text-4xl lg:tracking-widest"> <?= $bioneru[0]["bio_Subtitle"] ?></span>
           </h2>
           <h6 class="text-justify xl:text-base text-xs">
-            In this pandemic era for almost 2 years, more pets adopted in lovers' homes animals in Indonesia. This trend is taking effect in increasing awareness of the importance of quality products for pets. In order to answer this need, Neru Meru is here as a brand that is able to compete in
-            the domestic market and internationally with experience and technology with Japanese quality standards
-            <br />
-            <br />
-            Based on the love for pets, Neru Meru is here as a brand that is able to provide the best solutions for various pet needs. Innovative, precise, durable and made using the highest quality materials, every Neru Meru product is created for the comfort of pets and their human companions.
+            <?= $bioneru[0]["bio_full"] ?>
           </h6>
         </div>
       </div>
@@ -335,4 +305,5 @@ require "function.php";
     });
   });
 </script>
+
 </html>
