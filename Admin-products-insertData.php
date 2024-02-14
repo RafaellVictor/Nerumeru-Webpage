@@ -2,7 +2,7 @@
 
 require "function.php";
 
-if (!isset($_GET['type']) || !in_array($_GET['type'], ["Bedding", "Toys", "Sanitize", "Pillow"])) {
+if (!isset($_GET['type']) || !in_array($_GET['type'], ["Bedding", "Toys", "Sanitize", "Pillow", "Trolly"])) {
   echo "<script>document.location.href = 'Admin-Products.php';</script>";
   // exit;
 } else {
