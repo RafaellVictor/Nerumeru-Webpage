@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2024 at 02:17 PM
+-- Generation Time: Feb 14, 2024 at 08:03 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -56,7 +56,7 @@ CREATE TABLE `bio` (
 --
 
 INSERT INTO `bio` (`bio_id`, `bio_title`, `bio_Subtitle`, `bio_full`, `status`, `insert_date`, `lastUpdate_date`) VALUES
-(1, 'Nerumeru', 'å¯ã‚‹ ãƒ¡ãƒ«', 'In This Pandemic Era For Almost 2 Years, More Pets Adopted In Lovers&#039; Homes Animals In Indonesia. This Trend Is Taking Effect In Increasing Awareness Of The Importance Of Quality Products For Pets. In Order To Answer This Need, Neru Meru Is Here As A Brand That Is Able To Compete In The Domestic Market And Internationally With Experience And Technology With Japanese Quality Standards\r\n\r\nBased On The Love For Pets, Neru Meru Is Here As A Brand That Is Able To Provide The Best Solutions For Various Pet Needs. Innovative, Precise, Durable And Made Using The Highest Quality Materials, Every Neru Meru Product Is Created For The Comfort Of Pets And Their Human Companions.', 1, '2024-01-22 06:50:10', '2024-01-22 06:50:10');
+(1, 'Nerumeru', 'å¯ã‚‹ ãƒ¡ãƒ«', 'In This Pandemic Era For Almost 2 Years, More Pets Adopted In Lovers&#039; Homes Animals In Indonesia. This Trend Is Taking Effect In Increasing Awareness Of The Importance Of Quality Products For Pets. In Order To Answer This Need, Neru Meru Is Here As A Brand That Is Able To Compete In The Domestic Market And Internationally With Experience And Technology With Japanese Quality Standards\r\n\r\nBased On The Love For Pets, Neru Meru Is Here As A Brand That Is Able To Provide The Best Solutions For Various Pet Needs. Innovative, Precise, Durable And Made Using The Highest Quality Materials, Every Neru Meru Product Is Created For The Comfort Of Pets And Their Human Companions.', 1, '2024-02-12 09:41:39', '2024-02-12 09:41:39');
 
 -- --------------------------------------------------------
 
@@ -68,6 +68,7 @@ CREATE TABLE `blog` (
   `blog_id` int(11) NOT NULL,
   `blog_type` varchar(50) NOT NULL,
   `blog_icon` varchar(100) NOT NULL,
+  `blog_targetLink` varchar(500) NOT NULL,
   `blog_icon_title` varchar(100) NOT NULL,
   `blog_vidio` varchar(500) NOT NULL,
   `status` int(1) NOT NULL,
@@ -79,12 +80,12 @@ CREATE TABLE `blog` (
 -- Dumping data for table `blog`
 --
 
-INSERT INTO `blog` (`blog_id`, `blog_type`, `blog_icon`, `blog_icon_title`, `blog_vidio`, `status`, `insert_date`, `lastUpdate_date`) VALUES
-(1, 'icon', 'img/SVG/history-toggle.svg', 'Our Story', '', 1, '2024-01-29 20:49:08', '2024-01-29 20:49:08'),
-(2, 'icon', 'img/SVG/mood-heart.svg', 'Happy Story', '', 1, '2024-01-29 20:49:14', '2024-01-29 20:49:14'),
-(3, 'icon', 'img/SVG/brand-instagram.svg', 'Our Insta', '', 1, '2024-01-29 20:49:18', '2024-01-29 20:49:18'),
-(7, 'icon', 'img/SVG/calendar-event.svg', 'Our Event', '', 1, '2024-01-29 20:49:22', '2024-01-29 20:49:22'),
-(8, 'vidio', '', '', 'vidio\\A Glimpse of NeruMeru Factory.mp4', 1, '2024-01-29 20:41:06', '2024-01-29 20:41:06');
+INSERT INTO `blog` (`blog_id`, `blog_type`, `blog_icon`, `blog_targetLink`, `blog_icon_title`, `blog_vidio`, `status`, `insert_date`, `lastUpdate_date`) VALUES
+(1, 'icon', 'img/SVG/history-toggle.svg', '#OurStory', 'Our Story', '', 1, '2024-02-12 10:00:49', '2024-02-12 10:00:49'),
+(2, 'icon', 'img/SVG/mood-heart.svg', '#HappyStory', 'Happy Story', '', 1, '2024-02-12 10:05:02', '2024-02-12 10:05:02'),
+(3, 'icon', 'img/SVG/brand-instagram.svg', '#OurInsta', 'Our Insta', '', 1, '2024-02-12 10:05:12', '2024-02-12 10:05:12'),
+(7, 'icon', 'img/SVG/calendar-event.svg', '#OurEvent', 'Our Event', '', 1, '2024-02-12 10:05:19', '2024-02-12 10:05:19'),
+(8, 'vidio', '', '', '', 'vidio\\A Glimpse of NeruMeru Factory.mp4', 1, '2024-01-29 20:41:06', '2024-01-29 20:41:06');
 
 -- --------------------------------------------------------
 
@@ -152,7 +153,7 @@ CREATE TABLE `neru_event` (
 
 INSERT INTO `neru_event` (`event_id`, `event_type`, `event_img`, `status`, `insert_date`, `lastUpdate_date`) VALUES
 (6, 'event', 'IIPE doc 1.jpg', 1, '2024-02-08 16:19:39', '2024-02-08 16:19:39'),
-(10, 'news', 'Feb Upgrade-1.jpg', 1, '2024-02-08 15:16:17', '2024-02-08 15:16:17'),
+(10, 'news', 'june 3.jpg', 1, '2024-02-12 09:41:03', '2024-02-12 09:41:03'),
 (21, 'event', 'IIPE doc 2.jpg', 1, '2024-02-08 16:20:02', '2024-02-08 16:20:02'),
 (22, 'event', 'IIPE doc 3.jpg', 1, '2024-02-08 16:20:08', '2024-02-08 16:20:08'),
 (23, 'event', 'IIPE doc 4.jpg', 1, '2024-02-08 16:20:15', '2024-02-08 16:20:15'),
@@ -160,7 +161,13 @@ INSERT INTO `neru_event` (`event_id`, `event_type`, `event_img`, `status`, `inse
 (25, 'event', 'IIPE doc 6.jpg', 1, '2024-02-08 16:20:30', '2024-02-08 16:20:30'),
 (26, 'event', 'IIPE doc 7.jpg', 1, '2024-02-08 16:20:40', '2024-02-08 16:20:40'),
 (27, 'event', 'IIPE doc 5.jpg', 1, '2024-02-08 16:20:50', '2024-02-08 16:20:50'),
-(32, 'news', 'feeds 4 aug.jpg', 1, '2024-02-08 15:17:09', '2024-02-08 15:17:09');
+(32, 'news', 'feeds 4 aug.jpg', 1, '2024-02-08 15:17:09', '2024-02-08 15:17:09'),
+(33, 'news', 'July 8.jpg', 1, '2024-02-12 09:37:33', '2024-02-12 09:37:33'),
+(34, 'news', 'agustus 2.jpg', 1, '2024-02-12 09:37:51', '2024-02-12 09:37:51'),
+(35, 'news', 'Neru Stick 20cm (1).jpg', 1, '2024-02-12 09:38:03', '2024-02-12 09:38:03'),
+(36, 'news', 'Sept 3-1.jpg', 1, '2024-02-12 09:38:21', '2024-02-12 09:38:21'),
+(38, 'news', 'Sept 3-2.jpg', 1, '2024-02-12 09:38:48', '2024-02-12 09:38:48'),
+(39, 'news', 'sept-3 (Cover).jpg', 1, '2024-02-12 09:39:59', '2024-02-12 09:39:59');
 
 -- --------------------------------------------------------
 
@@ -221,6 +228,7 @@ CREATE TABLE `recommendsection` (
   `recommend_id` int(11) NOT NULL,
   `recommend_img` varchar(100) NOT NULL,
   `recommend_title` varchar(100) NOT NULL,
+  `recommend_targetLink` varchar(500) NOT NULL,
   `status` int(1) NOT NULL,
   `insert_date` datetime NOT NULL DEFAULT current_timestamp(),
   `lastupdate_date` datetime NOT NULL DEFAULT current_timestamp()
@@ -230,12 +238,12 @@ CREATE TABLE `recommendsection` (
 -- Dumping data for table `recommendsection`
 --
 
-INSERT INTO `recommendsection` (`recommend_id`, `recommend_img`, `recommend_title`, `status`, `insert_date`, `lastupdate_date`) VALUES
-(1, 'Group 39632.png', 'NERU BEDDING', 1, '2024-02-08 12:49:07', '2024-02-08 12:49:07'),
-(3, 'card-item5.png', 'NERU SANITIZE', 1, '2024-02-08 12:40:25', '2024-02-08 12:40:25'),
-(4, 'card-item-6.png', 'NERU TROLLY', 1, '2024-02-08 12:40:45', '2024-02-08 12:40:45'),
-(6, 'card-item3.png', 'NERU PILLOW', 1, '2024-02-08 12:41:40', '2024-02-08 12:41:40'),
-(9, 'card-item-2.png', 'Toys', 1, '2024-02-08 14:50:08', '2024-02-08 14:50:08');
+INSERT INTO `recommendsection` (`recommend_id`, `recommend_img`, `recommend_title`, `recommend_targetLink`, `status`, `insert_date`, `lastupdate_date`) VALUES
+(1, 'Group 39632.png', 'NERU BEDDING', '', 1, '2024-02-08 12:49:07', '2024-02-08 12:49:07'),
+(3, 'card-item5.png', 'NERU SANITIZE', '', 1, '2024-02-08 12:40:25', '2024-02-08 12:40:25'),
+(4, 'card-item-6.png', 'NERU TROLLY', '', 1, '2024-02-08 12:40:45', '2024-02-08 12:40:45'),
+(6, 'card-item3.png', 'NERU PILLOW', '', 1, '2024-02-08 12:41:40', '2024-02-08 12:41:40'),
+(9, 'card-item-2.png', 'Toys', '', 1, '2024-02-08 14:50:08', '2024-02-08 14:50:08');
 
 -- --------------------------------------------------------
 
@@ -265,8 +273,17 @@ CREATE TABLE `user` (
   `user_phone` varchar(100) NOT NULL,
   `user_username` varchar(100) NOT NULL,
   `user_email` varchar(100) NOT NULL,
-  `user_img` varchar(100) NOT NULL
+  `user_img` varchar(1000) NOT NULL,
+  `insert_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `lastUpdate_date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `user_name`, `user_password`, `user_locations`, `user_phone`, `user_username`, `user_email`, `user_img`, `insert_date`, `lastUpdate_date`) VALUES
+(8, '', '$2y$10$n.P7PJGZH5KA6qwEvzSM5O8m5QlLAALduD/mnaCoIfgNWjOr55UUS', '', '081314801945', 'El_hirani', 'nuel.hirani8@gmail.com', '', '2024-02-14 08:21:19', '2024-02-14 08:21:19');
 
 -- --------------------------------------------------------
 
@@ -404,7 +421,7 @@ ALTER TABLE `bio`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `blog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `blog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `custombed`
@@ -422,7 +439,7 @@ ALTER TABLE `herosection`
 -- AUTO_INCREMENT for table `neru_event`
 --
 ALTER TABLE `neru_event`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `order`
@@ -452,7 +469,7 @@ ALTER TABLE `testimonial`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `whyus`

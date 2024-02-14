@@ -90,6 +90,8 @@ if (isset($_POST["submit"])) {
                                     <div class="flex flex-col w-full gap-3">
                                         <label for="">Status Content</label>
                                         <input required class="w-full p-2 outline-none border-2" name="status" value="0" readonly type="text" />
+                                        <label for="">Recommend Target link</label>
+                                        <input required class="w-full p-2 outline-none border-2" name="recommend_targetLink" type="text" />
                                         <button type="submit" name="submit" class="bg-green-400 p-2 rounded-md text-white font-semibold w-fit self-end">Tambah Data</button>
                                     </div>
                                 </div>

@@ -195,6 +195,7 @@ $bioNeru = query("SELECT * FROM bio");
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Img</th>
+                    <th class="border-[1px] border-black-neru border-opacity-30">Target link</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">insert on</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Last update</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Status</th>
@@ -206,6 +207,7 @@ $bioNeru = query("SELECT * FROM bio");
                     <tr class="text-center">
                       <td class="w-14"><?= $recom["recommend_id"] ?></td>
                       <td class="w-60"><img src="img/<?= $recom["recommend_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td class="w-14"><?= $recom["recommend_targetLink"] ?></td>
                       <td><?= $recom["insert_date"] ?></td>
                       <td><?= $recom["lastupdate_date"] ?></td>
                       <td class="">

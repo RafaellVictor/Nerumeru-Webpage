@@ -82,6 +82,7 @@ $events = query("SELECT * FROM neru_event WHERE event_type = 'event'");
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Icon</th>
+                    <th class="border-[1px] border-black-neru border-opacity-30">Target Link</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">insert on</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Last update</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Status</th>
@@ -92,7 +93,8 @@ $events = query("SELECT * FROM neru_event WHERE event_type = 'event'");
                   <?php foreach ($Blogs as $blogicon) : ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $blogicon["blog_id"] ?></td>
-                      <td class="w-60 bg-blue-Neru"><img src="<?= $blogicon["blog_icon"] ?>" class="w-[25%] object-contain mx-auto" alt="" /></td>
+                      <td class="w-40 bg-blue-Neru"><img src="<?= $blogicon["blog_icon"] ?>" class="w-[25%] object-contain mx-auto" alt="" /></td>
+                      <td class="w-14"><?= $blogicon["blog_targetLink"] ?></td>
                       <td><?= $blogicon["insert_date"] ?></td>
                       <td><?= $blogicon["lastUpdate_date"] ?></td>
                       <td class="">

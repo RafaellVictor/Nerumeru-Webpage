@@ -87,8 +87,8 @@ if (isset($_POST["submit"])) {
                                     </div>
                                     <div class="flex flex-col w-full gap-3">
                                         <select name="event_type" class="w-full p-2 outline-none border-2" name="status" id="status">
-                                            <option value="event">event</option>
                                             <option value="news">news</option>
+                                            <option value="event">event</option>
                                         </select>
                                         <label for="">Status Content</label>
                                         <input required class="w-full p-2 outline-none border-2" name="status" value="0" readonly type="text" />

@@ -31,7 +31,8 @@
                       <path d="M9 12h12l-3 -3" />
                       <path d="M18 15l3 -3" />
                     </svg>
-                    <a href="login_Register.php">
+                    <!-- Setelah session_destroy() dipanggil, pengguna diarahkan ke halaman login_Register.php -->
+                    <a href="logout.php">
                       <h6 class="flex gap-1 items-center">Logout</h6>
                     </a>
                   </span>
@@ -130,7 +131,7 @@
                   </form>
                   <div class="col-span-2 w-full flex flex-col gap-4 items-center">
                     <img src="img/Person Test.png" class="md:w-32 md:h-32 w-24 h-24 object-cover rounded-full" alt="" />
-                    <label class="border-[1px] border-grey-neru flex justify-between font-spartanMedium items-center p-2">
+                    <label class="border-[1px] cursor-pointer border-grey-neru flex justify-between font-spartanMedium items-center p-2">
                       <h6>Pilih Gambar</h6>
                       <input type="file" class="hidden" />
                     </label>
@@ -150,11 +151,11 @@
                       <path d="M5 12l14 0" />
                     </svg>
                     <a class="">
-                      <h6 class="md:text-sm text-xs">Tambah Alamat </h6>
+                      <h6 class="md:text-sm text-xs">Tambah Alamat</h6>
                     </a>
                   </span>
                 </div>
-                <div class="user-informations flex flex-col gap-4 border-2 p-6 rounded-lg border-blue-Neru  bg-blue-Neru bg-opacity-5">
+                <div class="user-informations flex flex-col gap-4  border-2 p-6 rounded-lg">
                   <div class="flex md:flex-row flex-col justify-between items-center gap-4">
                     <div class="wrapper lg:w-1/2 w-full flex flex-col gap-2">
                       <span class="flex md:flex-row flex-col lg:items-center items-start gap-2">
@@ -164,17 +165,22 @@
                       </span>
                       <h6 class="font-light lg:text-base text-sm">Jalan Kakap Raya No.155, RT.1/RW.3, Karawaci Baru, Karawaci (Rumah hijau besar) KARAWACI, KOTA TANGERANG, BANTEN, ID, 15116</h6>
                       <div class="flex gap-2 items-center md:w-1/2 w-full justify-start mt-4">
-                        <a id="UbahAlamat" class="lg:text-base text-sm flex gap-1 items-center text-green-500 cursor-pointer">
+                        <a class="lg:text-base text-sm flex gap-1 items-center text-green-500 cursor-pointer">
                           <h6>Ubah Alamat</h6>
                         </a>
                         <hr class="border-[1px] h-4 border-separate border-black" />
-                        <a id="UbahAlamat" class="lg:text-base text-sm flex gap-1 items-center text-red-500 cursor-pointer">
+                        <a class="lg:text-base text-sm flex gap-1 items-center text-red-500 cursor-pointer">
                           <h6>Hapus</h6>
                         </a>
                       </div>
                     </div>
-                    <div class="flex gap-2 items-center md:w-1/2 w-full md:justify-end justify-start mt-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="md:block hidden w-6 text-blue-Neru" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="flex gap-2 pilihAlamat items-center non-active-locations md:w-1/2 w-full md:justify-end justify-start mt-4">
+                      <a class="md:bg-blue-Neru  rounded-lg px-4 text-center justify-center py-2 lg:text-base text-sm flex gap-1 items-center text-black md:border-0 border-2 md:text-white md:w-fit w-full  cursor-pointer">
+                        <h6 class="md:text-sm text-xs">Pilih Alamat</h6>
+                      </a>
+                    </div>
+                    <div class="alamatTerpilih flex gap-2 items-center   md:w-1/2 w-full md:justify-end justify-start mt-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 text-blue-Neru" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path d="M5 12l5 5l10 -10" />
                       </svg>
@@ -182,7 +188,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="user-informations bg-white flex flex-col gap-4 border-2 p-6 rounded-lg">
+                <div class="user-informations bg-white flex flex-col  gap-4 border-2 p-6 rounded-lg">
                   <div class="flex md:flex-row flex-col justify-between items-center gap-4">
                     <div class="wrapper lg:w-1/2 w-full flex flex-col gap-2">
                       <span class="flex md:flex-row flex-col lg:items-center items-start gap-2">
@@ -192,23 +198,30 @@
                       </span>
                       <h6 class="font-light lg:text-base text-sm">Jalan Kakap Raya No.155, RT.1/RW.3, Karawaci Baru, Karawaci (Rumah hijau besar) KARAWACI, KOTA TANGERANG, BANTEN, ID, 15116</h6>
                       <div class="flex gap-2 items-center md:w-1/2 w-full justify-start mt-4">
-                        <a id="UbahAlamat" class="lg:text-base text-sm flex gap-1 items-center text-green-500 cursor-pointer">
+                        <a class="lg:text-base text-sm flex gap-1 items-center text-green-500 cursor-pointer">
                           <h6>Ubah Alamat</h6>
                         </a>
                         <hr class="border-[1px] h-4 border-separate border-black" />
-                        <a id="UbahAlamat" class="lg:text-base text-sm flex gap-1 items-center text-red-500 cursor-pointer">
+                        <a class="lg:text-base text-sm flex gap-1 items-center text-red-500 cursor-pointer">
                           <h6>Hapus</h6>
                         </a>
                       </div>
                     </div>
-                    <div class="flex gap-2 items-center md:w-1/2 w-full md:justify-end justify-start mt-4">
-                      <a id="UbahAlamat" class="md:bg-blue-Neru rounded-lg px-4 text-center justify-center py-2 lg:text-base text-sm flex gap-1 items-center text-black md:border-0 border-2 md:text-white md:w-fit w-full  cursor-pointer">
+                    <div class="flex gap-2 pilihAlamat items-center  md:w-1/2 w-full md:justify-end justify-start mt-4">
+                      <a class="md:bg-blue-Neru  rounded-lg px-4 text-center justify-center py-2 lg:text-base text-sm flex gap-1 items-center text-black md:border-0 border-2 md:text-white md:w-fit w-full  cursor-pointer">
                         <h6 class="md:text-sm text-xs">Pilih Alamat</h6>
                       </a>
+                    </div>
+                    <div class="alamatTerpilih flex gap-2  items-center non-active-locations  md:w-1/2 w-full md:justify-end justify-start mt-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 text-blue-Neru" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M5 12l5 5l10 -10" />
+                      </svg>
+                      <button class="bg-blue-Neru md:hidden block rounded-lg p-2 text-xs text-white font-medium w-full">Alamat Terpilih</button>
                     </div>
                   </div>
                 </div>
-                <div class="user-informations bg-white flex flex-col gap-4 border-2 p-6 rounded-lg">
+                <div class="user-informations bg-white flex flex-col  gap-4 border-2 p-6 rounded-lg">
                   <div class="flex md:flex-row flex-col justify-between items-center gap-4">
                     <div class="wrapper lg:w-1/2 w-full flex flex-col gap-2">
                       <span class="flex md:flex-row flex-col lg:items-center items-start gap-2">
@@ -218,19 +231,26 @@
                       </span>
                       <h6 class="font-light lg:text-base text-sm">Jalan Kakap Raya No.155, RT.1/RW.3, Karawaci Baru, Karawaci (Rumah hijau besar) KARAWACI, KOTA TANGERANG, BANTEN, ID, 15116</h6>
                       <div class="flex gap-2 items-center md:w-1/2 w-full justify-start mt-4">
-                        <a id="UbahAlamat" class="lg:text-base text-sm flex gap-1 items-center text-green-500 cursor-pointer">
+                        <a class="lg:text-base text-sm flex gap-1 items-center text-green-500 cursor-pointer">
                           <h6>Ubah Alamat</h6>
                         </a>
                         <hr class="border-[1px] h-4 border-separate border-black" />
-                        <a id="UbahAlamat" class="lg:text-base text-sm flex gap-1 items-center text-red-500 cursor-pointer">
+                        <a class="lg:text-base text-sm flex gap-1 items-center text-red-500 cursor-pointer">
                           <h6>Hapus</h6>
                         </a>
                       </div>
                     </div>
-                    <div class="flex gap-2 items-center md:w-1/2 w-full md:justify-end justify-start mt-4">
-                      <a id="UbahAlamat" class="md:bg-blue-Neru rounded-lg px-4 text-center justify-center py-2 lg:text-base text-sm flex gap-1 items-center text-black md:border-0 border-2 md:text-white md:w-fit w-full  cursor-pointer">
+                    <div class="flex gap-2 items-center pilihAlamat   md:w-1/2 w-full md:justify-end justify-start mt-4">
+                      <a class="md:bg-blue-Neru  rounded-lg px-4 text-center justify-center py-2 lg:text-base text-sm flex gap-1 items-center text-black md:border-0 border-2 md:text-white md:w-fit w-full  cursor-pointer">
                         <h6 class="md:text-sm text-xs">Pilih Alamat</h6>
                       </a>
+                    </div>
+                    <div class="alamatTerpilih flex gap-2 items-center non-active-locations  md:w-1/2 w-full md:justify-end justify-start mt-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 text-blue-Neru" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M5 12l5 5l10 -10" />
+                      </svg>
+                      <button class="bg-blue-Neru md:hidden block rounded-lg p-2 text-xs text-white font-medium w-full">Alamat Terpilih</button>
                     </div>
                   </div>
                 </div>
@@ -499,6 +519,11 @@
       </div>
       <!-- Profile End -->
     </section>
+    <section>
+      <div id="notification" class="fixed bg-green-500 right-1/2 translate-x-1/2 top-24 transition-all z-50 ease-in-out duration-300  text-white px-4 py-2 rounded-lg invisible ">
+        Alamat berhasil diubah
+      </div>
+    </section>
     <?php include "layout/floatingButton.php" ?>
   </main>
   <?php include "layout/footer.php" ?>
@@ -509,5 +534,57 @@
 <script src="js/profile.js"></script>
 <script src="js/nav.js"></script>
 <script src="js/floatingbtn.js"></script>
+<script>
+  const pilihAlamat = document.querySelectorAll('.pilihAlamat');
+  const alamatTerpilih = document.querySelectorAll('.alamatTerpilih');
+  const userInformations = document.querySelectorAll('.user-informations');
+  const notification = document.getElementById('notification');
+
+  pilihAlamat.forEach((OtherToggle, index) => {
+    OtherToggle.addEventListener("click", () => {
+      // Menonaktifkan semua elemen alamat terpilih
+      alamatTerpilih.forEach(alamat => {
+        alamat.classList.add('non-active-locations');
+      });
+
+      // Menghapus kelas non-active-locations dari semua tombol pilih alamat
+      pilihAlamat.forEach(pilih => {
+        pilih.classList.remove('non-active-locations');
+      });
+
+      // Mengaktifkan alamat terpilih yang sesuai dengan tombol yang diklik
+      alamatTerpilih[index].classList.remove('non-active-locations');
+
+      // Menonaktifkan tombol pilih alamat yang diklik
+      OtherToggle.classList.add('non-active-locations');
+
+      // Mengubah kelas pada user informations
+      userInformations.forEach((userInfo, idx) => {
+        if (idx === index) {
+          userInfo.classList.remove('locationsUnChoose');
+          userInfo.classList.add('locationsChoose');
+        } else {
+          userInfo.classList.add('locationsUnChoose');
+          userInfo.classList.remove('locationsChoose');
+        }
+      });
+
+      // Menampilkan pesan "Alamat berhasil diubah"
+      notification.classList.remove('invisible');
+      notification.classList.add('animations');
+
+
+      // Sembunyikan pesan setelah beberapa detik
+      setTimeout(() => {
+        notification.classList.add('invisible');
+        notification.classList.remove('animations');
+      }, 500); // Menampilkan pesan selama 1 detik
+    });
+  });
+
+  // Menentukan index pertama memiliki kelas 'locationsChoose'
+  userInformations[0].classList.add('locationsChoose');
+</script>
+
 
 </html>
