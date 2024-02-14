@@ -89,7 +89,6 @@ function updateHero($data)
                 hero_subtitle = '$hero_subtitle', 
                 hero_button1 = '$hero_button1', 
                 hero_button2 = '$hero_button2', 
-                insert_date = NOW(),
                 lastUpdate_date = NOW(),
                 status = '$status'
               WHERE hero_id = $hero_id";
@@ -168,7 +167,6 @@ function updatewhyus($data)
                 whyus_title = '$whyus_title', 
                 whyus_subtitle = '$whyus_subtitle', 
                 status = '$status',
-                insert_date = NOW(),
                 lastUpdate_date = NOW()
            
               WHERE whyus_id = $whyus_id";
@@ -246,7 +244,6 @@ function updateProductRecom($data)
                 recommend_img = '$recommend_img', 
                 recommend_title = '$recommend_title', 
                 status = '$status',
-                insert_date = NOW(),
                 lastUpdate_date = NOW()
               WHERE recommend_id = $recommend_id";
 
@@ -319,7 +316,6 @@ function updateEvent($data)
                 event_type = '$event_type',
                 event_img = '$event_img', 
                 status = '$status',
-                insert_date = NOW(),
                 lastUpdate_date = NOW()
               WHERE event_id = $event_id";
 
@@ -385,7 +381,6 @@ function updateBio($data)
                 bio_subtitle = '$bio_subtitle',
                 bio_full = '$bio_full',
                 status = '$status',
-                insert_date = NOW(),
                 lastUpdate_date = NOW()
               WHERE bio_id = $bio_id";
 
@@ -449,7 +444,6 @@ function updateBlogIcon($data)
                 blog_icon = '$blog_icon',
                 blog_icon_title = '$blog_icon_title',
                 status = '$status',
-                insert_date = NOW(),
                 lastUpdate_date = NOW()
               WHERE blog_id = $blog_id";
 
@@ -518,7 +512,6 @@ function updateBanner($data)
                 banner_subtitle = '$banner_subtitle',
                 banner_button = '$banner_button',
                 status = '$status',
-                insert_date = NOW(),
                 lastUpdate_date = NOW()
               WHERE banner_id = $banner_id";
 
@@ -539,6 +532,111 @@ function deleteBanner($id)
     return mysqli_affected_rows($conn);
 }
 // banner end
+
+
+
+// Product function
+// =========================
+// Bedding  
+function insertProduct($data)
+{
+    global $conn;
+
+    // Upload Gambar
+    $product_img = upload();
+    if (!$product_img) {
+        return false;
+    }
+
+    $product_type = htmlspecialchars($data["product_type"]);
+    $product_name = htmlspecialchars($data["product_name"]);
+    $product_stock = htmlspecialchars($data["product_stock"]);
+    $product_color = htmlspecialchars($data["product_color"]);
+    $product_price = htmlspecialchars($data["product_price"]);
+    $product_specification = htmlspecialchars($data["product_specification"]);
+    $product_weight = htmlspecialchars($data["product_weight"]);
+    $product_warranty = htmlspecialchars($data["product_warranty"]);
+    $product_rating = htmlspecialchars($data["product_rating"]);
+    $status = $data["status"];
+
+
+    $query = "INSERT INTO product 
+    VALUES (
+        '',
+        '$product_img',
+        '$product_type',
+        '$product_name',
+        '$product_stock',
+        '$product_color',
+        '$product_price',
+        '$product_specification',
+        '$product_weight',
+        '$product_warranty',
+        '$product_rating',
+        NOW(),
+        NOW(),
+        '$status'
+    )";
+
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+function updateProduct($data)
+{
+    global $conn;
+
+    $product_id = $data["product_id"];
+    $product_img = htmlspecialchars($data["product_img"]);
+    $product_imgLama = htmlspecialchars($data["gambarLama"]);
+
+    if($_FILES['gambar']['error'] === 4) {
+        $product_img = $product_imgLama;
+    } else {
+        $product_img = upload();
+    }
+
+    $product_name = htmlspecialchars($data["product_name"]);
+    $product_stock = htmlspecialchars($data["product_stock"]);
+    $product_color = htmlspecialchars($data["product_color"]);
+    $product_price = htmlspecialchars($data["product_price"]);
+    $product_specification = htmlspecialchars($data["product_specification"]);
+    $product_weight = htmlspecialchars($data["product_weight"]);
+    $product_warranty = htmlspecialchars($data["product_warranty"]);
+    $product_rating = htmlspecialchars($data["product_rating"]);
+    $status = $data["status"];
+
+    $query = "UPDATE product SET 
+                product_img = '$product_img',
+                product_name = '$product_name', 
+                product_color = '$product_color', 
+                product_price = '$product_price', 
+                product_stock = '$product_stock', 
+                product_specification = '$product_specification', 
+                product_weight = '$product_weight', 
+                product_warranty = '$product_warranty', 
+                product_rating = '$product_rating',
+                lastUpdate_date = NOW(),
+                status = '$status'
+              WHERE product_id = $product_id";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+function deleteProduct($id)
+{
+
+    global $conn;
+
+    $query = "DELETE FROM product WHERE product_id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+// Product function  End
 
 
 

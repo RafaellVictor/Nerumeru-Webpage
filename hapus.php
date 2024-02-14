@@ -142,3 +142,18 @@ if (isset($_GET['banner_id'])) {
         </script>";
     }
 }
+
+if (isset($_GET['product_id'])) {
+    $product_id = $_GET['product_id'];
+    if (deleteProduct($product_id) > 0) {
+        echo "<script>
+                alert('Data berhasil dihapus');
+                window.location.href = 'Admin-Products.php';
+              </script>";
+    } else {
+        echo "<script>
+                alert('Data gagal dihapus');
+                window.location.href = 'Admin-Products.php';
+              </script>";
+    }
+}

@@ -50,10 +50,14 @@ if (pageName === "Admin-Blog.php") {
   });
 }
 
-
-
 if (pageName === "Admin-Dashboard.php") {
   document.querySelectorAll(".DashboardNav").forEach(function (element) {
+    element.classList.add("navAdmin-active");
+  });
+}
+
+if (pageName === "Admin-Products.php") {
+  document.querySelectorAll(".ProductsNav").forEach(function (element) {
     element.classList.add("navAdmin-active");
   });
 }
@@ -71,23 +75,21 @@ NavDrop.addEventListener("click", () => {
   ParentBox.classList.toggle("parentAdminNav-Active");
 });
 
+const NotificationBoxDelete = document.getElementById("TrashNotifications");
+const CancelDelete = document.getElementById("CancelDelete");
+const TogglerTrash = document.querySelectorAll(".HapusDataToggler");
 
-
-  const NotificationBoxDelete = document.getElementById("TrashNotifications");
-  const CancelDelete = document.getElementById("CancelDelete");
-  const TogglerTrash = document.querySelectorAll(".HapusDataToggler");
-
-  TogglerTrash.forEach((OtherTrash) => {
-    OtherTrash.addEventListener("click", () => {
-      NotificationBoxDelete.classList.add("NofiDeleteBoxActive");
-    });
+TogglerTrash.forEach((OtherTrash) => {
+  OtherTrash.addEventListener("click", () => {
+    NotificationBoxDelete.classList.add("NofiDeleteBoxActive");
   });
+});
 
-  CancelDelete.addEventListener("click", () => {
-    NotificationBoxDelete.classList.remove("NofiDeleteBoxActive");
-  });
+CancelDelete.addEventListener("click", () => {
+  NotificationBoxDelete.classList.remove("NofiDeleteBoxActive");
+});
 
-  function cancelDelete() {
-    // Sembunyikan popup
-    document.getElementById("TrashNotifications").classList.add("invisible");
-  }
+function cancelDelete() {
+  // Sembunyikan popup
+  document.getElementById("TrashNotifications").classList.add("invisible");
+}
