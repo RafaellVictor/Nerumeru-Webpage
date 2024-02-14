@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 14, 2024 at 08:03 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: Feb 14, 2024 at 03:15 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -207,16 +207,28 @@ CREATE TABLE `order_details` (
 
 CREATE TABLE `product` (
   `product_id` int(11) NOT NULL,
+  `product_img` varchar(500) NOT NULL,
   `product_type` varchar(100) NOT NULL,
   `product_name` varchar(100) NOT NULL,
+  `product_stock` int(11) NOT NULL,
   `product_color` varchar(100) NOT NULL,
   `product_price` varchar(100) NOT NULL,
-  `product_stock` int(11) NOT NULL,
-  `product_spesification` varchar(2000) NOT NULL,
+  `product_specification` varchar(2000) NOT NULL,
   `product_weight` varchar(100) NOT NULL,
   `product_warranty` varchar(500) NOT NULL,
-  `product_rating` int(5) NOT NULL
+  `product_rating` int(5) NOT NULL,
+  `insert_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `lastUpdate_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `status` tinyint(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`product_id`, `product_img`, `product_type`, `product_name`, `product_stock`, `product_color`, `product_price`, `product_specification`, `product_weight`, `product_warranty`, `product_rating`, `insert_date`, `lastUpdate_date`, `status`) VALUES
+(1, '65c02ba40bc93.png', 'Bedding', 'Bedding Stick', 15, 'Black', 'Rp. 125.000', 'Yes', '123kg', 'Yes', 5, '2024-02-09 14:53:36', '2024-02-09 15:11:20', 0),
+(3, 'Coba - NeruStick.png', 'Bedding', 'Bedding Stick', 5, 'sd', 'Rp. 125.000', 'sdf', '123kg', 'Yes', 5, '2024-02-09 12:12:34', '2024-02-09 12:12:34', 0);
 
 -- --------------------------------------------------------
 
@@ -258,6 +270,28 @@ CREATE TABLE `testimonial` (
   `product_rating` int(5) NOT NULL,
   `testimonial_commtent` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `trolly`
+--
+
+CREATE TABLE `trolly` (
+  `trolly_id` int(11) NOT NULL,
+  `trolly_size` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `trolly_color` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `insert_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `lastUpdate_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `status` tinyint(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `trolly`
+--
+
+INSERT INTO `trolly` (`trolly_id`, `trolly_size`, `trolly_color`, `insert_date`, `lastUpdate_date`, `status`) VALUES
+(2, '5', 'green', '2024-02-14 20:31:49', '2024-02-14 21:13:24', 0);
 
 -- --------------------------------------------------------
 
@@ -372,7 +406,7 @@ ALTER TABLE `order_details`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`product_id`),
-  ADD UNIQUE KEY `product_type` (`product_type`);
+  ADD KEY `product_type` (`product_type`);
 
 --
 -- Indexes for table `recommendsection`
@@ -387,6 +421,12 @@ ALTER TABLE `testimonial`
   ADD PRIMARY KEY (`testimonial_id`),
   ADD UNIQUE KEY `user_id` (`user_id`),
   ADD UNIQUE KEY `product_id` (`product_id`);
+
+--
+-- Indexes for table `trolly`
+--
+ALTER TABLE `trolly`
+  ADD PRIMARY KEY (`trolly_id`);
 
 --
 -- Indexes for table `user`
@@ -433,7 +473,7 @@ ALTER TABLE `custombed`
 -- AUTO_INCREMENT for table `herosection`
 --
 ALTER TABLE `herosection`
-  MODIFY `hero_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `hero_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `neru_event`
@@ -451,7 +491,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `recommendsection`
@@ -464,6 +504,12 @@ ALTER TABLE `recommendsection`
 --
 ALTER TABLE `testimonial`
   MODIFY `testimonial_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `trolly`
+--
+ALTER TABLE `trolly`
+  MODIFY `trolly_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`
