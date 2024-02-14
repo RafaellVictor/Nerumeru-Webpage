@@ -543,7 +543,6 @@ function deleteBanner($id)
 
 // Product function
 // =========================
-// Bedding  
 function insertProduct($data)
 {
     global $conn;
@@ -645,6 +644,64 @@ function deleteProduct($id)
 // Product function  End
 
 
+// Trolly function
+// =========================
+function insertTrolly($data)
+{
+    global $conn;
+
+    $trolly_size = htmlspecialchars($data["trolly_size"]);
+    $trolly_color = htmlspecialchars($data["trolly_color"]);
+    $status = $data["status"];
+
+    $query = "INSERT INTO trolly 
+    VALUES (
+        '',
+        '$trolly_size',
+        '$trolly_color',
+        NOW(),
+        NOW(),
+        '$status'
+    )";
+
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+function updateTrolly($data)
+{
+    global $conn;
+
+    $trolly_id = $data["trolly_id"];
+
+    $trolly_size = htmlspecialchars($data["trolly_size"]);
+    $trolly_color = htmlspecialchars($data["trolly_color"]);
+    $status = $data["status"];
+
+    $query = "UPDATE trolly SET 
+                trolly_size = '$trolly_size',
+                trolly_color = '$trolly_color', 
+                lastUpdate_date = NOW(),
+                status = '$status'
+              WHERE trolly_id = $trolly_id";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+function deleteTrolly($id)
+{
+
+    global $conn;
+
+    $query = "DELETE FROM trolly WHERE trolly_id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+// Trolly function  End
 
 
 function upload()

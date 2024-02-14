@@ -176,3 +176,22 @@ if (isset($_GET['product_id']) && isset($_GET['status'])) { // Mengecek apakah p
         echo "Error update data: " . mysqli_error($conn); // Menampilkan pesan error
     }
 }
+
+if (isset($_GET['trolly_id']) && isset($_GET['status'])) { // Mengecek apakah parameter id dan status ada di URL
+    $idtrolly = $_GET['trolly_id']; // Mengambil nilai id dari URL
+    $status = $_GET['status']; // Mengambil nilai status dari URL
+
+    // Mengubah status menjadi lawan dari status saat ini (0 menjadi 1 atau 1 menjadi 0)
+    $newStatus = ($status == 1) ? 0 : 1;
+
+    $query = "UPDATE trolly SET status='$newStatus' WHERE trolly_id='$idtrolly'"; // Query update status banner
+    $running = mysqli_query($conn, $query); // Menjalankan query
+
+    if ($running) {
+        echo "<script>alert('Data berhasil diupdate')</script>"; // Menampilkan pesan sukses
+        header('Location:Admin-Products.php'); // Redirect ke halaman homebanner.php
+        exit();
+    } else {
+        echo "Error update data: " . mysqli_error($conn); // Menampilkan pesan error
+    }
+}

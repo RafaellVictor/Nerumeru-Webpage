@@ -157,3 +157,18 @@ if (isset($_GET['product_id'])) {
               </script>";
     }
 }
+
+if (isset($_GET['trolly_id'])) {
+    $trolly_id = $_GET['trolly_id'];
+    if (deleteTrolly($trolly_id) > 0) {
+        echo "<script>
+                alert('Data berhasil dihapus');
+                window.location.href = 'Admin-Products.php';
+              </script>";
+    } else {
+        echo "<script>
+                alert('Data gagal dihapus');
+                window.location.href = 'Admin-Products.php';
+              </script>";
+    }
+}

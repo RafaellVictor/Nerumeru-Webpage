@@ -2,28 +2,25 @@
 
 require "function.php";
 
-
-$id = $_GET['product_id'];
-
-$nerumeru = query("SELECT * FROM product WHERE product_id = $id")[0];
-
 if (isset($_POST["submit"])) {
-  if (updateProduct($_POST) > 0) {
+  if (insertTrolly($_POST) > 0) {
     echo
     "<script>
-        alert('Data berhasil di Ubah');
+        alert('Data berhasil di Tambahkan');
         document.location.href = 'Admin-Products.php';
     </script>";
   } else {
     echo
     "<script>
-        alert('Data Gagal di Ubah');
+        alert('Data Gagal di Tambahkan');
         document.location.href = 'Admin-Products.php';
     </script>";
   }
 }
 
 ?>
+
+
 
 <!doctype html>
 <html lang="en">
@@ -80,50 +77,13 @@ if (isset($_POST["submit"])) {
               <form class="w-full" action="" method="post" enctype="multipart/form-data">
                 <div class="grid grid-cols-2 gap-6">
                   <div class="flex flex-col w-full gap-3">
-                  <input type="hidden" name="product_id" value="<?= $nerumeru["product_id"] ?>">
-                  <input type="hidden" name="gambarLama" value="<?= $nerumeru["product_img"] ?>">
-                  <div class="w-full flex flex-col gap-4  bg-white-neru rounded-md border-2 p-3">
-                      <img src="img/dog-pict.png" class=" mx-auto" alt="">
-                      <label for="">Product Img <span class="text-red-500 font-medium">(Note : 2 Type File input file & link img)</span> </label>
-                      <input   type="file" name="gambar" id="gambar">
-                      <input class="w-full p-2 outline-none border-2" type="text" name="product_img" />
-                    </div>
-                    <label for="">Product Type</label>
-                    <input  class="w-full p-2 outline-none border-2" value="<?= $nerumeru["product_type"] ?>" name="product_type" placeholder="Product Type" readonly type="text" />
-                    <label for="">Product Name</label>
-                    <input  class="w-full p-2 outline-none border-2" value="<?= $nerumeru["product_name"] ?>" name="product_name" placeholder="Product Name" type="text" />
-                    <label for="">Product Stock</label>
-                    <input  class="w-full p-2 outline-none border-2" value="<?= $nerumeru["product_stock"] ?>" name="product_stock" placeholder="Product Stock" type="number" />
-                    <label for="">Product Color</label>
-                    <input  class="w-full p-2 outline-none border-2" value="<?= $nerumeru["product_color"] ?>" name="product_color" placeholder="Product Color" type="text" />
-                  </div>
-                  <div class="flex flex-col w-full gap-3">
-                    <label for="">Product Price</label>
-                    <input  class="w-full p-2 outline-none border-2" value="<?= $nerumeru["product_price"] ?>" name="product_price" placeholder="Product Price" type="text" />
-                    <label for="">Product Specification</label>
-                    <textarea  class="p-2 outline-none border-2 text-start" name="product_specification" placeholder="Product Specification" cols="30" rows="10"><?= $nerumeru["product_specification"] ?></textarea>
-                    <label for="">Product Weight</label>
-                    <input  class="w-full p-2 outline-none border-2" value="<?= $nerumeru["product_weight"] ?>" name="product_weight" placeholder="Product Weight" type="text" />
-                    <label for="">Product Warranty</label>
-                    <input  class="w-full p-2 outline-none border-2" value="<?= $nerumeru["product_warranty"] ?>" name="product_warranty" placeholder="Product Warranty" type="text" />
-                    <label for="">Product Rating</label>
-                    <input  class="w-full p-2 outline-none border-2" value="<?= $nerumeru["product_rating"] ?>" name="product_rating" placeholder="Product Rating" type="number" />
-                    <select class="w-full p-2 outline-none border-2" name="status" id="status">
-                      <option> <?= $nerumeru["status"] ?>
-                        <?php if($nerumeru["status"] === "1") : ?>
-                          <?= "= Item Active" ?>
-                        <?php else: ?>
-                          <?= "= Item Non-Active" ?>
-                        <?php endif; ?>
-                      </option>
-                      <optgroup label="Active">
-                        <option value="1">1</option>
-                      </optgroup>
-                      <optgroup label="Non-Active">
-                        <option value="0">0</option>
-                      </optgroup>
-                    </select>
-                    <button type="submit" name="submit" class="bg-green-400 p-2 rounded-md text-white font-semibold w-fit self-end">Update Data</button>
+                    <label for="">Trolly Size</label>
+                    <input required class="w-full p-2 outline-none border-2" name="trolly_size" placeholder="Trolly Size" type="text" />
+                    <label for="">Trolly Color</label>
+                    <input required class="w-full p-2 outline-none border-2" name="trolly_color" placeholder="Trolly Color" type="text" />
+                    <label for="">Status Content</label>
+                    <input required class="w-full p-2 outline-none border-2" name="status" value="0" readonly type="text" />
+                    <button type="submit" name="submit" class="bg-green-400 p-2 rounded-md text-white font-semibold w-fit self-start">Tambah Data</button>
                   </div>
                 </div>
               </form>
