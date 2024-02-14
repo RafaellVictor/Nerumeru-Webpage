@@ -68,6 +68,12 @@ if (pageName === "Admin-Products.php") {
   });
 }
 
+if (pageName === "Admin-Products.php") {
+  document.querySelectorAll(".ProductsNav").forEach(function (element) {
+    element.classList.add("navAdmin-active");
+  });
+}
+
 // Navlink end
 
 // Navlink Active Navbar End
