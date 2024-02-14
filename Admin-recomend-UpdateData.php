@@ -109,6 +109,8 @@ if (isset($_POST["submit"])) {
                                                 <option value="0">0</option>
                                             </optgroup>
                                         </select>
+                                        <label for="">Recommend Target link</label>
+                                        <input required class="w-full p-2 outline-none border-2" name="recommend_targetLink" value="<?=$recommend["recommend_targetLink"] ?>" type="text" />
                                         <button type="submit" name="submit" class="bg-green-400 p-2 rounded-md text-white font-semibold w-fit self-end">Update Data</button>
                                     </div>
                                 </div>

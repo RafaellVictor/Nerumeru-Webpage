@@ -1,7 +1,5 @@
 <?php
 require "function.php";
-
-
 ?>
 
 <!doctype html>

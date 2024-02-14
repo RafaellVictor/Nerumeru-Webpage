@@ -1705,3 +1705,19 @@ a.plyr__control:before {
 .filter-overlay-active {
   @apply translate-y-0 shadow-lg;
 }
+
+.non-active-locations {
+  @apply hidden
+}
+
+.locationsUnChoose {
+  @apply bg-white
+}
+
+.locationsChoose {
+  @apply bg-blue-Neru bg-opacity-5 border-blue-Neru
+}
+
+.animations {
+  @apply top-28 ;
+}

@@ -800,6 +800,10 @@ main {
   top: 4rem;
 }
 
+.top-24 {
+  top: 6rem;
+}
+
 .top-28 {
   top: 7rem;
 }
@@ -2717,10 +2721,6 @@ main {
 
 .bg-opacity-30 {
   --tw-bg-opacity: 0.3;
-}
-
-.bg-opacity-5 {
-  --tw-bg-opacity: 0.05;
 }
 
 .bg-opacity-50 {
@@ -5980,6 +5980,26 @@ a.plyr__control:before {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.non-active-locations {
+  display: none;
+}
+
+.locationsUnChoose {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.locationsChoose {
+  --tw-border-opacity: 1;
+  border-color: rgb(37 93 180 / var(--tw-border-opacity));
+  background-color: rgb(37 93 180 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.05;
+}
+
+.animations {
+  top: 7rem;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     padding: 1rem;
@@ -6993,6 +7013,11 @@ a.plyr__control:before {
     height: 76px;
   }
 
+  .\32xl\:h-fit {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+
   .\32xl\:w-16 {
     width: 4rem;
   }
@@ -7110,6 +7135,11 @@ a.plyr__control:before {
 
   .\33xl\:h-\[760px\] {
     height: 760px;
+  }
+
+  .\33xl\:h-fit {
+    height: -moz-fit-content;
+    height: fit-content;
   }
 
   .\33xl\:w-10 {

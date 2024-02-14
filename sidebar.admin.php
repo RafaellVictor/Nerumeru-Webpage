@@ -13,7 +13,7 @@
     </div>
     <nav class="mt-6 pb-5">
       <div class="flex flex-col gap-3">
-        <div class="flex flex-col DashboardNav navBarAdmin items-center justify-start w-full px-3 text-gray-800 border-l-8 border-opacity-0 transition-all ease-in-out duration-300 border-blue-Neru dark:text-white" href="#">
+        <div class="flex flex-col  DashboardNav navBarAdmin items-center justify-start w-full px-3 text-gray-800 border-l-8 border-opacity-0 transition-all ease-in-out duration-300 border-blue-Neru dark:text-white" href="#">
           <span onclick="window.location.href ='Admin-Dashboard.php';" class="cursor-pointer mx-2 text-sm font-medium w-full p-3 bg-white-neru rounded-lg flex items-center gap-6">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 15 15" fill="none">
               <g clip-path="url(#clip0_953_28)">
@@ -40,8 +40,8 @@
             <h6 class="font-medium text-blue-Neru">Products</h6>
           </span>
         </div>
-        <div class="flex flex-col navBarAdmin cursor-pointer items-center justify-start w-full px-3 text-gray-800 border-l-8 border-blue-Neru border-opacity-0 transition-all ease-in-out duration-300 dark:text-white" href="#">
-          <span class="mx-2 text-sm font-medium w-full p-3 bg-white-neru rounded-lg flex items-center gap-6">
+        <div class="flex flex-col CustomerNav  navBarAdmin cursor-pointer items-center justify-start w-full px-3 text-gray-800 border-l-8 border-blue-Neru border-opacity-0 transition-all ease-in-out duration-300 dark:text-white" href="#">
+          <span onclick="window.location.href ='Admin-Customer.php';" class="mx-2 text-sm font-medium w-full p-3 bg-white-neru rounded-lg flex items-center gap-6">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 15 15" fill="none">
               <path d="M1.87402 12.0989C1.87402 10.3061 2.88146 8.85242 4.12402 8.85242H6.37402C7.61659 8.85242 8.62402 10.3061 8.62402 12.0989" stroke="#2762BE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
               <path d="M6.64114 3.47776C7.40999 4.24661 7.40999 5.49315 6.64114 6.26199C5.8723 7.03084 4.62576 7.03084 3.85691 6.26199C3.08806 5.49315 3.08806 4.24661 3.85691 3.47776C4.62576 2.70891 5.8723 2.70891 6.64114 3.47776" stroke="#2762BE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />

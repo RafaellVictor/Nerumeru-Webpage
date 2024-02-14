@@ -1,6 +1,6 @@
 <section class="floating-btn">
   <div class="wrapper container flex flex-col gap-1.5 w-fit z-20 3xl:right-6 2xl:right-3 right-0 fixed bottom-0" id="FloatingBtn">
-    <button id="insta" class="transition-all ease-in-out duration-700 absolute bottom-4 border-[1px] z-50 border-white-neru bg-blue-Neru p-4 flex rounded-full flex-col items-end gap-1">
+    <button id="insta" onclick="window.location.href ='https://www.instagram.com/nerumeru.id/';" class="transition-all ease-in-out duration-700 absolute bottom-4 border-[1px] z-50 border-white-neru bg-blue-Neru p-4 flex rounded-full flex-col items-end gap-1">
       <svg xmlns="http://www.w3.org/2000/svg" class="3xl:w-10 2xl:w-7 w-4 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
@@ -8,14 +8,14 @@
         <path d="M16.5 7.5l0 .01" />
       </svg>
     </button>
-    <button id="whatsapp" class="transition-all ease-in-out duration-500 absolute bottom-4 border-[1px] z-50 border-white-neru bg-blue-Neru p-4 flex rounded-full flex-col items-end gap-1">
+    <button id="whatsapp" onclick="window.location.href ='https://www.tokopedia.com/nerumeru';" class="transition-all ease-in-out duration-500 absolute bottom-4 border-[1px] z-50 border-white-neru bg-blue-Neru p-4 flex rounded-full flex-col items-end gap-1">
       <svg xmlns="http://www.w3.org/2000/svg" class="3xl:w-10 2xl:w-7 w-4 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
         <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
       </svg>
     </button>
-    <button id="shopee" class="transition-all ease-in-out duration-300 absolute bottom-4 border-[1px] z-50 border-white-neru bg-blue-Neru p-4 flex rounded-full flex-col items-end gap-1">
+    <button id="shopee" onclick="window.location.href ='https://shopee.co.id/nerumeru.id';" class="transition-all ease-in-out duration-300 absolute bottom-4 border-[1px] z-50 border-white-neru bg-blue-Neru p-4 flex rounded-full flex-col items-end gap-1">
       <svg xmlns="http://www.w3.org/2000/svg" class="3xl:w-10 2xl:w-7 w-4 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M4 7l.867 12.143a2 2 0 0 0 2 1.857h10.276a2 2 0 0 0 2 -1.857l.867 -12.143h-16z" />

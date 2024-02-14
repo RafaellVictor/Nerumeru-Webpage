@@ -34,7 +34,7 @@ $vidios = query("SELECT * FROM blog WHERE status = '1' AND blog_type = 'vidio' ;
           <div class="toggle-event grid md:grid-cols-4 grid-cols-3 lg:gap-20 md:gap-10 gap-5">
             <?php foreach ($icons as $icon) : ?>
               <span class="flex flex-col gap-2 items-center w-full">
-                <a href="#OurStory" class="rounded-full group relative overflow-hidden cursor-pointer bg-blue-Neru xl:p-9 p-6">
+                <a href="<?= $icon["blog_targetLink"] ?>" class="rounded-full group relative overflow-hidden cursor-pointer bg-blue-Neru xl:p-9 p-6">
                   <img src="<?= $icon["blog_icon"] ?>" class="xl:w-14 w-7 " alt="">
                   <div class="bg-black bg-opacity-50 absolute flex flex-col items-center justify-center transition-all ease-in-out duration-300 top-0 inset-x-0 w-full h-full rounded-full -translate-y-full -translate-x-20 group-hover:translate-x-0 group-hover:translate-y-0"></div>
                   <div class="bg-black bg-opacity-50 absolute flex flex-col items-center justify-center text-white font-semibold transition-all ease-in-out duration-300 top-0 inset-x-0 w-full h-full rounded-full translate-y-full translate-x-20 group-hover:translate-x-0 group-hover:translate-y-0">

@@ -67,12 +67,12 @@ function updateHero($data)
     $hero_img = htmlspecialchars($data["hero_img"]);
     $hero_imgLama = htmlspecialchars($data["gambarLama"]);
 
-    if($_FILES['gambar']['error'] === 4) {
+    if ($_FILES['gambar']['error'] === 4) {
         $hero_img = $hero_imgLama;
     } else {
         $hero_img = upload();
     }
-    
+
     $hero_title1 = htmlspecialchars($data["hero_title1"]);
     $hero_title2 = htmlspecialchars($data["hero_title2"]);
     $hero_title3 = htmlspecialchars($data["hero_title3"]);
@@ -119,7 +119,7 @@ function insertwhyus($data)
     $whyus_title = htmlspecialchars($data["whyus_title"]);
     $whyus_subtitle = htmlspecialchars($data["whyus_subtitle"]);
 
-    if(!$whyus_img) {
+    if (!$whyus_img) {
         return false;
     }
 
@@ -152,8 +152,8 @@ function updatewhyus($data)
     $whyus_img = htmlspecialchars($data["whyus_img"]);
     $whyus_imgLama = htmlspecialchars($data["gambarLama"]);
 
-    if($_FILES['gambar']['error'] === 4) {
-            $whyus_img = $whyus_imgLama;
+    if ($_FILES['gambar']['error'] === 4) {
+        $whyus_img = $whyus_imgLama;
     } else {
         $whyus_img = upload();
     }
@@ -197,13 +197,13 @@ function insertProductRecom($data)
     global $conn;
     $recommend_img = upload();
 
-    if(!$recommend_img) {
+    if (!$recommend_img) {
         return false;
     }
 
 
     $recommend_title = htmlspecialchars($data["recommend_title"]);
-
+    $recommend_link = htmlspecialchars($data["recommend_targetLink"]);
 
 
     $status = $data["status"];
@@ -213,6 +213,7 @@ function insertProductRecom($data)
         '',
         '$recommend_img',
         '$recommend_title',
+        '$recommend_link',
         '$status',
         NOW(),
         NOW()
@@ -230,8 +231,8 @@ function updateProductRecom($data)
     $recommend_id = $data["recommend_id"];
     $recommend_img = htmlspecialchars($data["recommend_img"]);
     $recommend_imgLama = htmlspecialchars($data["gambarLama"]);
-
-    if($_FILES['gambar']['error'] === 4) {
+    $recommend_link = htmlspecialchars($data["recommend_targetLink"]);
+    if ($_FILES['gambar']['error'] === 4) {
         $recommend_img = $recommend_imgLama;
     } else {
         $recommend_img = upload();
@@ -243,6 +244,7 @@ function updateProductRecom($data)
     $query = "UPDATE recommendsection SET 
                 recommend_img = '$recommend_img', 
                 recommend_title = '$recommend_title', 
+                recommend_targetLink = '$recommend_link', 
                 status = '$status',
                 lastUpdate_date = NOW()
               WHERE recommend_id = $recommend_id";
@@ -272,7 +274,7 @@ function insertEvent($data)
     global $conn;
     $event_img = upload();
 
-    if(!$event_img) {
+    if (!$event_img) {
         return false;
     }
 
@@ -303,7 +305,7 @@ function updateEvent($data)
     $event_img = htmlspecialchars($data["event_img"]);
     $event_imgLama = htmlspecialchars($data["gambarLama"]);
 
-    if($_FILES['gambar']['error'] === 4) {
+    if ($_FILES['gambar']['error'] === 4) {
         $event_img = $event_imgLama;
     } else {
         $event_img = upload();
@@ -409,6 +411,7 @@ function insertBlogIcon($data)
     global $conn;
     $blog_type = htmlspecialchars($data["blog_type"]);
     $blog_icon = htmlspecialchars($data["blog_icon"]);
+    $blog_link = htmlspecialchars($data["blog_targetLink"]);
     $blog_icon_title = htmlspecialchars($data["blog_icon_title"]);
     $status = $data["status"];
 
@@ -417,6 +420,7 @@ function insertBlogIcon($data)
         '',
         '$blog_type',
         '$blog_icon',
+        '$blog_link',
         '$blog_icon_title',
         '',
         '$status',
@@ -436,12 +440,14 @@ function updateBlogIcon($data)
     $blog_id = $data["blog_id"];
     $blog_type = htmlspecialchars($data["blog_type"]);
     $blog_icon = htmlspecialchars($data["blog_icon"]);
+    $blog_link = htmlspecialchars($data["blog_targetLink"]);
     $blog_icon_title = htmlspecialchars($data["blog_icon_title"]);
     $status = $data["status"];
 
     $query = "UPDATE blog SET 
                 blog_type = '$blog_type',
                 blog_icon = '$blog_icon',
+                blog_targetLink = '$blog_link',
                 blog_icon_title = '$blog_icon_title',
                 status = '$status',
                 lastUpdate_date = NOW()
@@ -659,17 +665,17 @@ function upload()
     // Pengecekan Ukuran Size Dari Gambar 
     // Mendapatkan ukuran file gambar yang diunggah
     $ukuran_file = $_FILES['nama_file']['size']; // asumsikan 'nama_file' adalah nama input file pada form
-    
+
     // Batas ukuran file (dalam bytes), 6 MB = 6 * 1024 * 1024 bytes
     $batas_ukuran = 6000000;
-    
+
     // Memeriksa apakah ukuran file melebihi batas yang ditetapkan
     if ($ukuran_file > $batas_ukuran) {
         echo "<script>alert('Ukuran Gambar Terlalu Besar');</script>";
         return false; // Anda mungkin ingin melakukan tindakan lain selain mengembalikan false
     }
 
-    
+
 
     // Generate Nama file baru
     $tmpName = $_FILES["gambar"]["tmp_name"];
@@ -684,4 +690,36 @@ function upload()
         echo "<script>alert('Gagal mengunggah gambar');</script>";
         return false;
     }
+}
+
+function registerAccount($data)
+{
+    global $conn;
+    $user_email = htmlspecialchars($data['user_email']);
+    $user_phone = htmlspecialchars($data['user_phone']);
+    $user_password = mysqli_real_escape_string($conn, $data['user_password']);
+
+    // Encrypted Code Password Security
+    $encrypted_password = password_hash($user_password, PASSWORD_DEFAULT);
+
+    // Insert Into Database
+    $query = "INSERT INTO user 
+              (user_password, user_phone, user_email, insert_date, lastUpdate_date)
+              VALUES (
+                '$encrypted_password',
+                '$user_phone', 
+                '$user_email', 
+                NOW(),
+                NOW()
+                )";
+
+    // Execute Query
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+
+function login() {
+    
 }

@@ -50,6 +50,12 @@ if (pageName === "Admin-Blog.php") {
   });
 }
 
+if (pageName === "Admin-Customer.php") {
+  document.querySelectorAll(".CustomerNav").forEach(function (element) {
+    element.classList.add("navAdmin-active");
+  });
+}
+
 if (pageName === "Admin-Dashboard.php") {
   document.querySelectorAll(".DashboardNav").forEach(function (element) {
     element.classList.add("navAdmin-active");
