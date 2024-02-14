@@ -11,10 +11,19 @@ RegisToggle.addEventListener("click", () => {
   BoxRegister.classList.add("BoxRegis-active");
 });
 
-const togglePassword = document.getElementById("togglePassword");
-const passwordInput = document.getElementById("passwordInput");
+const togglePasswordRegis = document.getElementById("togglePasswordRegis");
+const passwordInputRegis = document.getElementById("passwordInputRegis");
 
-togglePassword.addEventListener("click", function () {
-  const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-  passwordInput.setAttribute("type", type);
+const togglePasswordLogin = document.getElementById("togglePasswordLogin");
+const passwordInputLogin = document.getElementById("passwordInputLogin");
+
+togglePasswordRegis.addEventListener("click", function () {
+  const type = passwordInputRegis.getAttribute("type") === "password" ? "text" : "password";
+  passwordInputRegis.setAttribute("type", type);
+});
+
+
+togglePasswordLogin.addEventListener("click", function () {
+  const type = passwordInputLogin.getAttribute("type") === "password" ? "text" : "password";
+  passwordInputLogin.setAttribute("type", type);
 });

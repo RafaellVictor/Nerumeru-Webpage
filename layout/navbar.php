@@ -49,21 +49,25 @@ session_start();
         </a>
         <?php
         // Periksa apakah ada session yang didefinisikan untuk user
-        if (isset($_SESSION['user_id'], $_SESSION['user_username']) && !empty($_SESSION["user_username"])) {
+        if (isset($_SESSION['user_id'], $_SESSION['user_username'])) {
           // Jika ada, ambil data pengguna dari sesi
           $user_id = $_SESSION['user_id'];
           $user_username = $_SESSION['user_username'];
-          echo '<a href="Profile.php" class="bg-blue-Neru lg:px-16 px-12 md:text-base text-xs rounded-lg lg:py-2 py-1 text-white">' . $user_username . '</a>';
-        }
-        // Cek jika $_SESSION dari user_username yang diambil ada isi nya atau tidak
-        elseif (empty($_SESSION['user_username'])) {
-          // Tampilkan tombol dengan informasi pengguna
-          echo '<a href="Profile.php" class="bg-blue-Neru lg:px-16 px-12 md:text-base text-xs rounded-lg lg:py-2 py-1 text-white">Profile</a>';
+
+          // Periksa apakah user_username sudah diisi atau tidak
+          if (!empty($user_username)) {
+            echo '<a href="Profile.php" class="bg-blue-Neru lg:px-16 px-12 md:text-base text-xs rounded-lg lg:py-2 py-1 text-white">' . $user_username . '</a>';
+          } else {
+            // Jika user_username masih kosong, tampilkan "Profile"
+            echo '<a href="Profile.php" class="bg-blue-Neru lg:px-16 px-12 md:text-base text-xs rounded-lg lg:py-2 py-1 text-white">Profile</a>';
+          }
         } else {
-          // Jika tidak ada session atau tidak ada user_username dalam session
+          // Jika tidak ada session atau tidak ada user_id dan user_username dalam session
           echo '<a href="login_Register.php" class="bg-blue-Neru lg:px-16 px-12 md:text-base text-xs rounded-lg lg:py-2 py-1 text-white">Login</a>';
         }
         ?>
+
+
         <button id="navBurger" class="md:hidden flex flex-col gap-1">
           <span class="w-[23px] h-1 rounded-full bg-black transition-all origin-top-right ease-in-out duration-300"></span>
           <span class="w-[23px] h-1 rounded-full bg-black transition-all ease-in-out duration-300"></span>
