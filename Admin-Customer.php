@@ -69,7 +69,7 @@ $Users= query("SELECT * FROM user");
                   <?php foreach ($Users as $user) : ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $user["user_id"] ?></td>
-                      <td class="w-40"><img src="<?= $user["user_img"] ?>" class="w-fit object-contain mx-auto" alt="" /></td>
+                      <td class="w-40"><img src="img/<?= $user["user_img"] ?>" class="w-fit object-contain mx-auto" alt="" /></td>
                       <td class="w-14"><?= $user["user_username"] ?></td>
                       <td class="w-14"><?= $user["user_email"] ?></td>
                       <td><?= $user["insert_date"] ?></td>

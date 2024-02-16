@@ -1,8 +1,4 @@
-<?php
-
-session_start();
-
-?>
+<?php require "function.php" ?>
 <header id="navCont" class="transition-all ease-in-out duration-300 fixed top-0 inset-x-0 z-30 bg-white">
   <nav class="container relative">
     <ul class="flex items-center font-semibold">

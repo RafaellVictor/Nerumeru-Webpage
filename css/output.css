@@ -800,10 +800,6 @@ main {
   top: 4rem;
 }
 
-.top-24 {
-  top: 6rem;
-}
-
 .top-28 {
   top: 7rem;
 }
@@ -1009,6 +1005,10 @@ main {
 
 .mt-6 {
   margin-top: 1.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .mt-\[75px\] {
@@ -1334,10 +1334,6 @@ main {
 
 .w-96 {
   width: 24rem;
-}
-
-.w-\[15\%\] {
-  width: 15%;
 }
 
 .w-\[20\%\] {
@@ -4268,9 +4264,15 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .BoxPesanan-Active {
-  top: 3rem;
+  top: 3.5rem;
   z-index: 10;
   opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .BoxPesanan-Active {
+    top: 86px;
+  }
 }
 
 .DropDownBox-Active {
@@ -5874,7 +5876,7 @@ a.plyr__control:before {
 /* Admin */
 
 .parentAdminNav-Active {
-  margin-bottom: 300px;
+  margin-bottom: 200px;
 }
 
 .BoxNavAdmin-Active {
@@ -5997,7 +5999,7 @@ a.plyr__control:before {
 }
 
 .animations {
-  top: 7rem;
+  top: 6rem;
 }
 
 @media (min-width: 640px) {
@@ -6252,6 +6254,10 @@ a.plyr__control:before {
     display: block;
   }
 
+  .md\:inline {
+    display: inline;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -6327,6 +6333,10 @@ a.plyr__control:before {
 
   .md\:w-6 {
     width: 1.5rem;
+  }
+
+  .md\:w-64 {
+    width: 16rem;
   }
 
   .md\:w-7 {
@@ -6589,6 +6599,10 @@ a.plyr__control:before {
     right: 2.25rem;
   }
 
+  .lg\:right-auto {
+    right: auto;
+  }
+
   .lg\:top-20 {
     top: 5rem;
   }
@@ -6607,6 +6621,10 @@ a.plyr__control:before {
 
   .lg\:mt-28 {
     margin-top: 7rem;
+  }
+
+  .lg\:mt-32 {
+    margin-top: 8rem;
   }
 
   .lg\:mt-44 {

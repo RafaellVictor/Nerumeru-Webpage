@@ -25,7 +25,7 @@ if (isset($_POST['submitLogin'])) {
   $user_password = $_POST["user_password"];
 
   // Gunakan parameterized queries
-  $stmt = $conn->prepare("SELECT * FROM user WHERE user_email = ? OR user_username = ?");
+  $stmt = $conn->prepare("SELECT * FROM user WHERE user_email = ? OR user_phone = ?");
   $stmt->bind_param("ss", $user_identifier, $user_identifier);
   $stmt->execute();
   $result = $stmt->get_result();
@@ -45,16 +45,13 @@ if (isset($_POST['submitLogin'])) {
       $error = "Kata Sandi Salah";
     }
   } else {
-    $error = "Username/Email salah";
+    $error = "Email/No Tlpn salah";
   }
 }
 
 ?>
-
-
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -64,7 +61,6 @@ if (isset($_POST['submitLogin'])) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <title>Nerumeru | Login</title>
 </head>
-
 <body>
   <main class="my-0 bg-forest bg-no-repeat bg-cover">
     <section class="my-0 login_Register h-screen w-full flex justify-center items-center">
@@ -80,7 +76,7 @@ if (isset($_POST['submitLogin'])) {
               <form action="" method="post" class="w-full font-semibold mt-6 flex flex-col">
                 <span class="flex flex-col gap-8">
                   <div class="flex w-full relative">
-                    <input type="text" required name="user_identifier" placeholder="Email / Username" class="inputLogin xl:text-base md:text-base text-sm w-full py-3 outline-none bg-transparent border-b-2 border-white" />
+                    <input type="text" required name="user_identifier" placeholder="Email / No Tlpn" class="inputLogin xl:text-base md:text-base text-sm w-full py-3 outline-none bg-transparent border-b-2 border-white" />
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon absolute right-0 bottom-1/2 translate-y-1/2 icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
@@ -88,7 +84,7 @@ if (isset($_POST['submitLogin'])) {
                     </svg>
                   </div>
                   <div class="flex w-full relative">
-                  <input type="password" required name="user_password" id="passwordInputLogin" placeholder="Password" class="inputLogin xl:text-base md:text-base text-sm w-full py-3 outline-none bg-transparent border-b-2 border-white" />
+                    <input type="password" required name="user_password" id="passwordInputLogin" placeholder="Password" class="inputLogin xl:text-base md:text-base text-sm w-full py-3 outline-none bg-transparent border-b-2 border-white" />
                     <svg id="togglePasswordLogin" xmlns="http://www.w3.org/2000/svg" class="icon absolute right-0 bottom-1/2 translate-y-1/2 icon-tabler icon-tabler-eye-off cursor-pointer" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />

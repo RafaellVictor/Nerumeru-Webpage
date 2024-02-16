@@ -1,9 +1,3 @@
-<?php
-include("function.php");
-$icons = query("SELECT * FROM blog WHERE status = '1' AND blog_type = 'icon' ;");
-$vidios = query("SELECT * FROM blog WHERE status = '1' AND blog_type = 'vidio' ;")[0];
-
-?>
 <!doctype html>
 <html lang="en">
 
@@ -18,6 +12,12 @@ $vidios = query("SELECT * FROM blog WHERE status = '1' AND blog_type = 'vidio' ;
 
 <body>
   <?php include "layout/navbar.php" ?>
+  <?php
+
+  $icons = query("SELECT * FROM blog WHERE status = '1' AND blog_type = 'icon' ;");
+  $vidios = query("SELECT * FROM blog WHERE status = '1' AND blog_type = 'vidio' ;")[0];
+
+  ?>
   <main>
     <section class="hero lg:mt-44 md:mt-32">
       <div class="container max-w-screen-lg flex flex-col">

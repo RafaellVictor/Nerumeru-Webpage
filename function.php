@@ -1,7 +1,9 @@
 <?php
 
+
 $conn = mysqli_connect('localhost', 'root', '', 'nerumeru');
 
+session_start();
 // Global Function
 function query($query)
 {
@@ -547,53 +549,6 @@ function deleteBanner($id)
 // banner end
 
 
-
-
-function upload()
-{
-    $namaFile = $_FILES["gambar"]["name"];
-    // $error = $_FILES["gambar"]["error"];
-
-    // Pengecekan Apakah yang di-upload adalah gambar
-    $extensiGambarValid = ["jpg", "png", "jpeg", "svg"];
-    $extensiGambar = explode(".", $namaFile);
-    $extensiGambar = strtolower(end($extensiGambar));
-
-    if (!in_array($extensiGambar, $extensiGambarValid)) {
-        echo "<script>alert('Yang Anda Upload Bukan Gambar');</script>";
-        return false;
-    }
-
-    // Pengecekan Ukuran Size Dari Gambar 
-    // Mendapatkan ukuran file gambar yang diunggah
-    $ukuran_file = $_FILES['nama_file']['size']; // asumsikan 'nama_file' adalah nama input file pada form
-
-    // Batas ukuran file (dalam bytes), 6 MB = 6 * 1024 * 1024 bytes
-    $batas_ukuran = 6000000;
-
-    // Memeriksa apakah ukuran file melebihi batas yang ditetapkan
-    if ($ukuran_file > $batas_ukuran) {
-        echo "<script>alert('Ukuran Gambar Terlalu Besar');</script>";
-        return false; // Anda mungkin ingin melakukan tindakan lain selain mengembalikan false
-    }
-
-
-
-    // Generate Nama file baru
-    $tmpName = $_FILES["gambar"]["tmp_name"];
-    $namaFilebaru = uniqid();
-    $namaFilebaru .= '.';
-    $namaFilebaru .= $extensiGambar;
-
-    // Lolos Pengecekan , Gambar Siap di-upload 
-    if (move_uploaded_file($tmpName, "img/" . $namaFilebaru)) {
-        return $namaFile;
-    } else {
-        echo "<script>alert('Gagal mengunggah gambar');</script>";
-        return false;
-    }
-}
-
 function registerAccount($data)
 {
     global $conn;
@@ -622,6 +577,209 @@ function registerAccount($data)
 }
 
 
-function login() {
-    
+// function UpdateProfile($data)
+// {
+//     global $conn;
+
+//     $user_imgLama = htmlspecialchars($data["gambarLama"]);
+
+//     // Jika ada file gambar yang diunggah, proses upload
+//     if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] !== 4) {
+//         $user_img = upload();
+//     } else {
+//         // Jika tidak, gunakan gambar yang sudah ada
+//         $user_img = $user_imgLama;
+//     }
+
+//     $user_id = isset($data['user_id']) ? htmlspecialchars($data['user_id']) : '';
+//     $user_username = htmlspecialchars($data['user_username']);
+//     $user_email = htmlspecialchars($data['user_email']);
+//     $user_phone = htmlspecialchars($data['user_phone']);
+
+//     $query = "UPDATE user SET
+//                 user_phone = '$user_phone',
+//                 user_username = '$user_username',    
+//                 user_email = '$user_email',    
+//                 user_img = '$user_img',    
+//                 lastUpdate_date = NOW()
+//                 WHERE user_id = '$user_id'
+//             ";
+
+//     mysqli_query($conn, $query);
+//     return mysqli_affected_rows($conn);
+// }
+
+// function updateProfileData()
+// {
+//     global $conn;
+
+//     $response = array(); // Membuat array untuk menyimpan pesan kesalahan atau pesan sukses
+
+//     // Memeriksa apakah semua variabel yang diperlukan ada
+//     if (
+//         isset($_POST["user_username"]) &&
+//         isset($_POST["user_email"]) &&
+//         isset($_POST["user_phone"]) &&
+//         isset($_POST["user_id"])
+//     ) {
+//         $user_id = $_POST["user_id"];
+//         $user_username = $_POST["user_username"];
+//         $user_email = $_POST["user_email"];
+//         $user_phone = $_POST["user_phone"];
+
+//         // Update data pengguna ke database
+//         $update_query = "UPDATE user SET user_username = ?, user_email = ?, user_phone = ? WHERE user_id = ?";
+//         $update_stmt = $conn->prepare($update_query);
+//         $update_stmt->bind_param("sssi", $user_username, $user_email, $user_phone, $user_id);
+
+//         // Melakukan update
+//         if ($update_stmt->execute()) {
+//             // Beri pesan sukses kepada pengguna
+//             $response['success'] = "Data profil berhasil diperbarui!";
+//         } else {
+//             // Jika gagal melakukan update, beri pesan error kepada pengguna
+//             $response['error'] = "Gagal memperbarui data profil.";
+//         }
+//     } else {
+//         // Jika satu atau lebih variabel yang diperlukan tidak tersedia, beri pesan error kepada pengguna
+//         $response['error'] = "Data tidak lengkap.";
+//     }
+
+//     return $response; // Mengembalikan pesan kesalahan atau pesan sukses
+// }
+
+
+function updateProfileData($conn)
+{
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submitUpdateProfileData"])) {
+
+        // Panggil fungsi upload() untuk mengunggah gambar
+        $namaFile = upload();
+
+        // Periksa apakah pengguna sudah login
+        if (isset($_SESSION['user_id'])) {
+            // Ambil user_id dari session
+            $user_id = $_SESSION['user_id'];
+
+            // Lakukan query untuk mengupdate data pengguna
+            $username = $_POST['user_username'];
+            $email = $_POST['user_email'];
+            $phone = $_POST['user_phone'];
+
+            // Jika ada gambar yang diunggah, update juga kolom user_img
+            if ($namaFile !== false) {
+                $query = "UPDATE user SET user_username='$username', user_email='$email', user_phone='$phone', user_img='$namaFile' WHERE user_id = $user_id";
+                if ($conn->query($query) === TRUE) {
+                    return array('success' => 'Data berhasil diperbarui');
+                } else {
+                    return array('error' => 'Gagal memperbarui data: ' . $conn->error);
+                }
+            } else {
+                // Jika tidak ada gambar yang diunggah
+                $query = "UPDATE user SET user_username='$username', user_email='$email', user_phone='$phone' WHERE user_id = $user_id";
+                if ($conn->query($query) === TRUE) {
+                    return array('success' => 'Data berhasil diperbarui');
+                } else {
+                    return array('error' => 'Gagal memperbarui data: ' . $conn->error);
+                }
+            }
+        } else {
+            // Jika pengguna belum login, tampilkan pesan kesalahan
+            return array('error' => 'Login Terlebih Dahulu');
+        }
+    }
+}
+
+
+function updatePassword()
+{
+    global $conn;
+
+    $response = array(); // Membuat array untuk menyimpan pesan kesalahan atau pesan sukses
+
+    // Memeriksa apakah semua variabel yang diperlukan ada
+    if (isset($_POST["old_password"]) && isset($_POST["new_password"]) && isset($_SESSION["user_id"])) {
+        $old_password = $_POST["old_password"];
+        $new_password = $_POST["new_password"];
+
+        // Periksa apakah password lama benar
+        $query = "SELECT user_password FROM user WHERE user_id = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("i", $_SESSION["user_id"]);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        // Memeriksa apakah ada hasil yang ditemukan
+        if ($result->num_rows === 1) {
+            $row = $result->fetch_assoc();
+            $hashed_password = $row["user_password"];
+
+            if (password_verify($old_password, $hashed_password)) {
+                // Hash password baru
+                $new_hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+
+                // Update password di database
+                $update_query = "UPDATE user SET user_password = ? WHERE user_id = ?";
+                $update_stmt = $conn->prepare($update_query);
+                $update_stmt->bind_param("si", $new_hashed_password, $_SESSION["user_id"]);
+                $update_stmt->execute();
+
+                // Beri pesan sukses kepada pengguna
+                $response['success'] = "Password berhasil diperbarui!";
+            } else {
+                // Password lama tidak cocok, beri pesan error kepada pengguna
+                $response['error'] = "Password lama tidak cocok. Gagal diperbaharui";
+            }
+        } else {
+            // Tidak ada baris yang ditemukan, beri pesan error kepada pengguna
+            $response['error'] = "User tidak ditemukan.";
+        }
+    } else {
+        // Jika satu atau lebih variabel yang diperlukan tidak tersedia, beri pesan error kepada pengguna
+        $response['error'] = "Data tidak lengkap.";
+    }
+
+    return $response; // Mengembalikan pesan kesalahan atau pesan sukses
+}
+
+
+
+function upload()
+{
+    if ($_FILES["gambar"]["size"] == 0) {
+        // Jika tidak ada file yang diupload, kembalikan nilai false
+        return false;
+    }
+
+    // Lakukan proses upload gambar
+    $namaFile = $_FILES["gambar"]["name"];
+    $extensiGambarValid = ["jpg", "png", "jpeg", "svg"];
+    $extensiGambar = pathinfo($namaFile, PATHINFO_EXTENSION);
+
+    // Validasi ekstensi gambar
+    if (!in_array($extensiGambar, $extensiGambarValid)) {
+        echo "<script>alert('Yang Anda Upload Bukan Gambar');</script>";
+        return false;
+    }
+
+    // Validasi ukuran gambar
+    $ukuran_file = $_FILES['gambar']['size'];
+    $batas_ukuran = 6000000; // 6 MB
+
+    if ($ukuran_file > $batas_ukuran) {
+        echo "<script>alert('Ukuran Gambar Terlalu Besar');</script>";
+        return false;
+    }
+
+    // Generate nama file baru dan pindahkan file ke direktori yang ditentukan
+    $tmpName = $_FILES["gambar"]["tmp_name"];
+    $namaFilebaru = uniqid() . '.' . $extensiGambar;
+    $uploadPath = "img/" . $namaFilebaru;
+
+    if (move_uploaded_file($tmpName, $uploadPath)) {
+        return $namaFilebaru;
+    } else {
+        echo "<script>alert('Gagal mengunggah gambar');</script>";
+        return false;
+    }
 }

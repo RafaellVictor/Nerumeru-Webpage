@@ -13,17 +13,74 @@
 
 <body>
   <?php include "layout/navbar.php" ?>
+  <?php
+
+  // Pastikan untuk memulai sesi
+
+  // Periksa apakah pengguna sudah login
+  // Periksa apakah pengguna sudah login
+  if (isset($_SESSION['user_id'])) {
+    // Ambil user_id dari session
+    $user_id = $_SESSION['user_id'];
+
+    // Lakukan query untuk mengambil data pengguna
+    $query = "SELECT * FROM user WHERE user_id = $user_id";
+    $result = $conn->query($query);
+
+    // Periksa apakah query berhasil
+    if ($result->num_rows > 0) {
+      // Ambil data pengguna
+      $userData = $result->fetch_assoc();
+    } else {
+      echo "Data pengguna tidak ditemukan.";
+    }
+
+    // Tutup koneksi ke database
+  } else {
+    // Jika pengguna belum login, tampilkan pesan kesalahan
+    echo "<script>
+    alert('Login Terlebih Dahulu');
+    window.location.href = 'login_Register.php'; // Redirect menggunakan JavaScript
+  </script>";
+    exit(); // Hentikan eksekusi skrip PHP setelah mengirimkan pesan kesalahan
+  }
+
+
+  // Memanggil fungsi updateProfileData()
+  $updateResponse = updateProfileData($conn);
+
+  // Menampilkan pesan kesalahan atau pesan sukses
+  if (isset($updateResponse['error'])) {
+    $error_message = $updateResponse['error'];
+  } elseif (isset($updateResponse['success'])) {
+    $success_message = $updateResponse['success'];
+  }
+
+
+  // Memanggil fungsi updatePassword()
+  if (isset($_POST["submitUpdatePassword"])) {
+    $updateResponse = updatePassword();
+
+    // Menampilkan pesan kesalahan atau pesan sukses
+    if (isset($updateResponse['error'])) {
+      $error_message = $updateResponse['error'];
+    } elseif (isset($updateResponse['success'])) {
+      $success_message = $updateResponse['success'];
+    }
+  }
+
+  ?>
   <main>
-    <section class="profle lg:mt-44 md:mt-32">
+    <section class="profle lg:mt-32 mt-8">
       <!-- Profile Mode -->
       <div class="container">
         <div class="grid grid-cols-8 gap-5">
           <div class="lg:col-span-2 col-span-8 row-span-6 px-8 py-8 bg-white rounded-md">
             <div class="sticky top-32">
               <div class="head flex items-center gap-6">
-                <img src="img/Image.png" class="w-[15%]" alt="" />
+                <img src="img/<?= $userData["user_img"] ?>" onerror="this.src='https://i.pinimg.com/564x/91/83/cb/9183cb908632a53bf619bbbcdfb68ae7.jpg'" class="object-cover w-12 h-12 rounded-full" alt="" />
                 <span class="flex flex-col">
-                  <h6 class="font-medium line-clamp-1">Immanuel Christian Hirani</h6>
+                  <h6 class="font-medium line-clamp-1 lg:text-base md:text-lg"><?= $userData["user_username"] ?></h6>
                   <span class="flex items-center gap-2 text-grey-neru">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -33,7 +90,7 @@
                     </svg>
                     <!-- Setelah session_destroy() dipanggil, pengguna diarahkan ke halaman login_Register.php -->
                     <a href="logout.php">
-                      <h6 class="flex gap-1 items-center">Logout</h6>
+                      <h6 class="flex gap-1 items-center  lg:text-base md:text-lg">Logout</h6>
                     </a>
                   </span>
                 </span>
@@ -77,73 +134,49 @@
                   <h6 class="font-semibold">Profile Saya</h6>
                 </div>
                 <hr class="my-4" />
-                <div class="body lg:grid grid-cols-6 flex flex-col-reverse gap-12 lg:py-0 py-6 lg:items-center items-start mt-6">
-                  <form class="flex flex-col gap-4 w-full col-span-4">
-                    <div class="flex md:flex-row flex-col md:gap-6 gap-4">
-                      <label for="" class="md:w-28 w-24">
-                        <h6>Username</h6>
-                      </label>
-                      <label for="">
-                        <h6>Zhaprael668</h6>
-                      </label>
-                    </div>
-                    <hr class="lg:hidden" />
-                    <div class="flex md:flex-row lg:items-center flex-col md:gap-6 gap-4">
-                      <label for="" class="md:w-28 w-24">
-                        <h6>Name</h6>
-                      </label>
-                      <input type="text" class="2xl:text-base xl:text-sm md:text-base text-sm md:w-1/2 w-full outline-none border-[1px] shadow-inner border-grey-neru p-2" placeholder="Immanuel Christian Hirani" />
-                    </div>
-                    <hr class="lg:hidden" />
-                    <div class="flex md:flex-row flex-col md:gap-6 gap-4">
-                      <label for="" class="md:w-28 w-24">
-                        <h6>Email</h6>
-                      </label>
-                      <span class="flex md:gap-3 gap-1.5 items-center text-grey-neru">
-                        <label for="" class="underline">
-                          <h6>nuel.hirani8@gmail.com</h6>
+                <div class="body relative ">
+                  <form action="" method="post" class="lg:grid grid-cols-6 flex flex-col-reverse gap-12 lg:py-0 py-6  mt-6" enctype="multipart/form-data">
+                    <input type="hidden" value="<?= $userData["user_id"] ?>">
+                    <input type="hidden" name="gambarLama" value="<?= $userData["user_img"] ?>">
+                    <div class="flex flex-col gap-4 w-full col-span-4">
+                      <div class="flex md:flex-row lg:items-center flex-col md:gap-6 gap-4">
+                        <label class="md:w-28 w-24">
+                          <h6>Username</h6>
                         </label>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="md:w-6 w-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path d="M12 15l8.385 -8.415a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3z" />
-                          <path d="M16 5l3 3" />
-                          <path d="M9 7.07a7 7 0 0 0 1 13.93a7 7 0 0 0 6.929 -6" />
-                        </svg>
-                      </span>
-                    </div>
-                    <hr class="lg:hidden" />
-                    <div class="flex md:flex-row flex-col md:gap-6 gap-4">
-                      <label for="" class="md:w-28 w-24">
-                        <h6>No Telephone</h6>
-                      </label>
-                      <span class="flex md:gap-3 gap-1.5 items-center text-grey-neru">
-                        <label for="" class="underline">
-                          <h6>0813-1480-1945</h6>
+                        <input type="text" name="user_username" class="2xl:text-base xl:text-sm md:text-base text-sm md:w-1/2 w-full outline-none border-[1px] shadow-inner border-grey-neru p-2" value="<?= $userData["user_username"] ?>" />
+                      </div>
+                      <hr class="lg:hidden" />
+                      <div class="flex md:flex-row flex-col md:gap-6 gap-4">
+                        <label class="md:w-28 w-24">
+                          <h6>Email</h6>
                         </label>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="md:w-6 w-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path d="M12 15l8.385 -8.415a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3z" />
-                          <path d="M16 5l3 3" />
-                          <path d="M9 7.07a7 7 0 0 0 1 13.93a7 7 0 0 0 6.929 -6" />
-                        </svg>
+                        <input type="Email" name="user_email" class="2xl:text-base xl:text-sm md:text-base text-sm md:w-1/2 w-full outline-none border-[1px] shadow-inner border-grey-neru p-2" value="<?= $userData["user_email"] ?>" />
+                      </div>
+                      <hr class="lg:hidden" />
+                      <div class="flex md:flex-row flex-col md:gap-6 gap-4">
+                        <label class="md:w-28 w-24">
+                          <h6>Phone</h6>
+                        </label>
+                        <input type="number" name="user_phone" class="2xl:text-base xl:text-sm md:text-base text-sm md:w-1/2 w-full outline-none border-[1px] shadow-inner border-grey-neru p-2" value="<?= $userData["user_phone"] ?>" />
+                      </div>
+                      <button name="submitUpdateProfileData" type="submit" class="bg-blue-Neru w-fit absolute bottom-0 lg:right-auto right-0  md:py-2 py-1.5 md:px-4 px-3 md:text-base text-sm rounded-lg text-white font-medium" type="submit">Update Data</button>
+                    </div>
+                    <div class="col-span-2 w-full flex flex-col gap-4 items-center">
+                      <img id="previewImage" src="img/<?= $userData["user_img"] ?>" onerror="this.src='https://i.pinimg.com/564x/91/83/cb/9183cb908632a53bf619bbbcdfb68ae7.jpg'" class="md:w-32 md:h-32 w-24 h-24 object-cover rounded-full" alt="" />
+                      <label for="gambarInput" class="border-[1px] cursor-pointer border-grey-neru flex justify-between font-spartanMedium items-center p-2">
+                        <h6>Pilih Gambar</h6>
+                        <input type="file" id="gambarInput" name="gambar" id="gambar" class="hidden" />
+                      </label>
+                      <span class="lg:w-1/2 w-full">
+                        <h6 class="text-center">Ukuran gambar: maks. 1 MB Format gambar: .JPEG, .PNG</h6>
                       </span>
                     </div>
                   </form>
-                  <div class="col-span-2 w-full flex flex-col gap-4 items-center">
-                    <img src="img/Person Test.png" class="md:w-32 md:h-32 w-24 h-24 object-cover rounded-full" alt="" />
-                    <label class="border-[1px] cursor-pointer border-grey-neru flex justify-between font-spartanMedium items-center p-2">
-                      <h6>Pilih Gambar</h6>
-                      <input type="file" class="hidden" />
-                    </label>
-                    <span class="lg:w-1/2 w-full">
-                      <h6 class="text-center">Ukuran gambar: maks. 1 MB Format gambar: .JPEG, .PNG</h6>
-                    </span>
-                  </div>
                 </div>
               </div>
               <div id="Alamat" class="bg-white lg:p-8 md:p-6 p-4  rounded-md flex flex-col gap-6">
                 <div class="head flex justify-between items-center">
-                  <h6 class="font-semibold">Alamat Saya <span class="text-blue-Neru font-semibold ">(Max 3 alamat)</span> </h6>
+                  <h6 class="font-semibold">Alamat Saya <span class="text-blue-Neru font-semibold md:inline block">(Max 3 alamat)</span> </h6>
                   <span class="flex justify-between items-center px-4 py-2 bg-blue-Neru rounded-lg font-semibold text-white gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -180,7 +213,7 @@
                       </a>
                     </div>
                     <div class="alamatTerpilih flex gap-2 items-center   md:w-1/2 w-full md:justify-end justify-start mt-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 text-blue-Neru" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 text-blue-Neru md:block hidden" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path d="M5 12l5 5l10 -10" />
                       </svg>
@@ -213,7 +246,7 @@
                       </a>
                     </div>
                     <div class="alamatTerpilih flex gap-2  items-center non-active-locations  md:w-1/2 w-full md:justify-end justify-start mt-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 text-blue-Neru" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 text-blue-Neru md:block hidden" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path d="M5 12l5 5l10 -10" />
                       </svg>
@@ -246,7 +279,7 @@
                       </a>
                     </div>
                     <div class="alamatTerpilih flex gap-2 items-center non-active-locations  md:w-1/2 w-full md:justify-end justify-start mt-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 text-blue-Neru" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 text-blue-Neru md:block hidden" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path d="M5 12l5 5l10 -10" />
                       </svg>
@@ -255,42 +288,55 @@
                   </div>
                 </div>
               </div>
-              <div id="Password" class="bg-white lg:p-8 md:p-6 p-4 rounded-md">
+              <div id="Password" class="bg-white relative lg:p-8 md:p-6 p-4 rounded-md">
                 <div class="head flex gap-1 items-center justify-between">
-                  <h6 class="font-semibold">Ubah Password</h6>
+                  <h6 class="font-semibold">Update Password ?</h6>
                 </div>
                 <hr class="my-4" />
-                <div class="user-informations bg-white flex flex-col gap-4">
-                  <div class="flex md:flex-row w-full flex-col gap-6 lg:items-center items-start">
-                    <label for="" class="w-40">
-                      <h6>Password</h6>
-                    </label>
-                    <span class="flex items-center gap-4">
-                      <input type="text" class="w-full outline-none border-[1px] shadow-inner border-grey-neru p-2" placeholder="********" />
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
-                        <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" />
-                        <path d="M3 3l18 18" />
-                      </svg>
-                    </span>
+                <form method="post">
+                  <?php
+                  if (isset($error_message)) {
+                    echo '<script>alert("' . $error_message . '");</script>';
+                  }
+                  if (isset($success_message)) {
+                    echo '<script>alert("' . $success_message . '");</script>';
+                  }
+                  ?>
+
+                  <div class="user-informations  flex flex-col gap-4">
+                    <div class="flex md:flex-row w-full flex-col gap-6 lg:items-center items-start">
+                      <label class="w-40">
+                        <h6>Old Password</h6>
+                      </label>
+                      <span class="flex items-center gap-4">
+                        <input type="password" required name="old_password" class="passwordInput w-full outline-none border-[1px] shadow-inner border-grey-neru p-2" placeholder="********" />
+                        <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer showPasswordBtn w-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                          <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
+                          <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" />
+                          <path d="M3 3l18 18" />
+                        </svg>
+
+                      </span>
+                    </div>
+                    <div class="flex md:flex-row flex-col gap-6 lg:items-center items-start">
+                      <label class="w-40">
+                        <h6>New Password</h6>
+                      </label>
+                      <span class="flex items-center gap-4">
+                        <input type="password" required name="new_password" class="passwordInput w-full outline-none border-[1px] shadow-inner border-grey-neru p-2" placeholder="********" />
+                        <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer showPasswordBtn w-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                          <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
+                          <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" />
+                          <path d="M3 3l18 18" />
+                        </svg>
+                      </span>
+                    </div>
+                    <hr />
+                    <button name="submitUpdatePassword" class="bg-blue-Neru w-fit self-end   md:py-2 py-1.5 md:px-4 px-3 md:text-base text-sm rounded-lg text-white font-medium" type="submit">Update Password</button>
                   </div>
-                  <div class="flex md:flex-row flex-col gap-6 lg:items-center items-start">
-                    <label for="" class="w-40">
-                      <h6>Confirm Password</h6>
-                    </label>
-                    <span class="flex items-center gap-4">
-                      <input type="text" class="w-full outline-none border-[1px] shadow-inner border-grey-neru p-2" placeholder="********" />
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
-                        <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" />
-                        <path d="M3 3l18 18" />
-                      </svg>
-                    </span>
-                  </div>
-                  <hr />
-                </div>
+                </form>
               </div>
             </div>
           </div>
@@ -340,7 +386,7 @@
                       <path d="M6 9l6 6l6 -6"></path>
                     </svg>
                   </button>
-                  <div class="durasiBox bg-white shadow-md p-2 absolute right-0 top-4 w-52 rounded-sm opacity-0 -z-10 transition-all ease-in-out duration-300 md:h-36 h-28 overflow-y-auto">
+                  <div class="durasiBox bg-white shadow-md p-2 absolute right-0 top-4 md:w-64 w-52 rounded-sm opacity-0 -z-10 transition-all ease-in-out duration-300 md:h-36 h-28 overflow-y-auto">
                     <h6 class="py-2 px-4 hover:bg-black hover:bg-opacity-5 md:text-base text-xs">Semua Pesanan</h6>
                     <h6 class="py-2 px-4 hover:bg-black hover:bg-opacity-5 md:text-base text-xs">Menunggu Pembayaran</h6>
                     <h6 class="py-2 px-4 hover:bg-black hover:bg-opacity-5 md:text-base text-xs">Sedang Dikemas</h6>
@@ -520,7 +566,7 @@
       <!-- Profile End -->
     </section>
     <section>
-      <div id="notification" class="fixed bg-green-500 right-1/2 translate-x-1/2 top-24 transition-all z-50 ease-in-out duration-300  text-white px-4 py-2 rounded-lg invisible ">
+      <div id="notification" class="fixed bg-green-500 right-1/2 translate-x-1/2 md:text-base text-xs top-16 transition-all z-50 ease-in-out duration-300  text-white px-4 py-2 rounded-lg invisible ">
         Alamat berhasil diubah
       </div>
     </section>
@@ -585,6 +631,42 @@
   // Menentukan index pertama memiliki kelas 'locationsChoose'
   userInformations[0].classList.add('locationsChoose');
 </script>
+<script>
+  function togglePasswordVisibility() {
+    var passwordInputs = document.querySelectorAll('.passwordInput');
+    var showPasswordBtns = document.querySelectorAll('.showPasswordBtn');
 
+    showPasswordBtns.forEach(function(btn, index) {
+      btn.addEventListener('click', function() {
+        var input = passwordInputs[index];
+        if (input.type === 'password') {
+          input.type = 'text';
+          // Mengubah ikon mata menjadi silau
+
+        } else {
+          input.type = 'password';
+          // Mengubah ikon silau menjadi mata
+
+        }
+      });
+    });
+  }
+  togglePasswordVisibility(); // Panggil fungsi ini untuk menginisialisasi
+</script>
+<script>
+  const gambarInput = document.getElementById('gambarInput');
+  const previewImage = document.getElementById('previewImage');
+
+  gambarInput.addEventListener('change', function() {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function() {
+        previewImage.src = reader.result;
+      }
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
 
 </html>
