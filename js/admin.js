@@ -56,9 +56,6 @@ if (pageName === "Admin-Customer.php") {
   });
 }
 
-
-
-
 if (pageName === "Admin-Dashboard.php") {
   document.querySelectorAll(".DashboardNav").forEach(function (element) {
     element.classList.add("navAdmin-active");
@@ -78,23 +75,41 @@ NavDrop.addEventListener("click", () => {
   ParentBox.classList.toggle("parentAdminNav-Active");
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Ambil semua tombol "Lihat Details"
+  const detailTogglers = document.querySelectorAll(".DateDetailToggler");
 
+  // Tambahkan event listener ke setiap tombol
+  detailTogglers.forEach(function (toggler) {
+    toggler.addEventListener("click", function () {
+      const targetModalId = this.getAttribute("data-target");
+      const targetModal = document.querySelector(targetModalId);
 
-  const NotificationBoxDelete = document.getElementById("TrashNotifications");
-  const CancelDelete = document.getElementById("CancelDelete");
-  const TogglerTrash = document.querySelectorAll(".HapusDataToggler");
+      // Semua box yang mungkin terbuka
+      const allModals = document.querySelectorAll(".userChangesDetail");
 
-  TogglerTrash.forEach((OtherTrash) => {
-    OtherTrash.addEventListener("click", () => {
-      NotificationBoxDelete.classList.add("NofiDeleteBoxActive");
+      // Sembunyikan semua box terlebih dahulu
+      allModals.forEach(function (modal) {
+        modal.classList.remove("BoxDate-Active");
+      });
+
+      // Tampilkan modal yang sesuai
+      if (targetModal) {
+        targetModal.classList.add("BoxDate-Active");
+
+        // Set timeout untuk menutup modal setelah 30 detik
+        setTimeout(function () {
+          targetModal.classList.remove("BoxDate-Active");
+        }, 10000); // 30 detik
+      }
+
+      // Ambil tombol close
+      const closeButton = targetModal.querySelector("#buttonClose");
+
+      // Tambahkan event listener untuk tombol close
+      closeButton.addEventListener("click", () => {
+        targetModal.classList.remove("BoxDate-Active");
+      });
     });
   });
-
-  CancelDelete.addEventListener("click", () => {
-    NotificationBoxDelete.classList.remove("NofiDeleteBoxActive");
-  });
-
-  function cancelDelete() {
-    // Sembunyikan popup
-    document.getElementById("TrashNotifications").classList.add("invisible");
-  }
+});

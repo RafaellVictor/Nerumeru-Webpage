@@ -159,7 +159,7 @@
                         </label>
                         <input type="number" name="user_phone" class="2xl:text-base xl:text-sm md:text-base text-sm md:w-1/2 w-full outline-none border-[1px] shadow-inner border-grey-neru p-2" value="<?= $userData["user_phone"] ?>" />
                       </div>
-                      <button name="submitUpdateProfileData" type="submit" class="bg-blue-Neru w-fit absolute bottom-0 lg:right-auto right-0  md:py-2 py-1.5 md:px-4 px-3 md:text-base text-sm rounded-lg text-white font-medium" type="submit">Update Data</button>
+                      <button name="submitUpdateProfileData" type="submit" class="bg-blue-Neru w-fit lg:self-start self-end md:absolute bottom-0 lg:right-auto right-0  md:py-2 py-1.5 md:px-4 px-3 md:text-base text-sm rounded-lg text-white font-medium" type="submit">Update Data</button>
                     </div>
                     <div class="col-span-2 w-full flex flex-col gap-4 items-center">
                       <img id="previewImage" src="img/<?= $userData["user_img"] ?>" onerror="this.src='https://i.pinimg.com/564x/91/83/cb/9183cb908632a53bf619bbbcdfb68ae7.jpg'" class="md:w-32 md:h-32 w-24 h-24 object-cover rounded-full" alt="" />
@@ -167,7 +167,7 @@
                         <h6>Pilih Gambar</h6>
                         <input type="file" id="gambarInput" name="gambar" id="gambar" class="hidden" />
                       </label>
-                      <span class="lg:w-1/2 w-full">
+                      <span class="xl:w-1/2 w-full">
                         <h6 class="text-center">Ukuran gambar: maks. 1 MB Format gambar: .JPEG, .PNG</h6>
                       </span>
                     </div>
@@ -190,7 +190,7 @@
                 </div>
                 <div class="user-informations flex flex-col gap-4  border-2 p-6 rounded-lg">
                   <div class="flex md:flex-row flex-col justify-between items-center gap-4">
-                    <div class="wrapper lg:w-1/2 w-full flex flex-col gap-2">
+                    <div class="wrapper xl:w-1/2 w-full flex flex-col gap-2">
                       <span class="flex md:flex-row flex-col lg:items-center items-start gap-2">
                         <h6 class="font-semibold">Immanuel Christian Hirani</h6>
                         <hr class="md:block hidden border-[1px] h-4 border-separate border-black" />
@@ -223,7 +223,7 @@
                 </div>
                 <div class="user-informations bg-white flex flex-col  gap-4 border-2 p-6 rounded-lg">
                   <div class="flex md:flex-row flex-col justify-between items-center gap-4">
-                    <div class="wrapper lg:w-1/2 w-full flex flex-col gap-2">
+                    <div class="wrapper xl:w-1/2 w-full flex flex-col gap-2">
                       <span class="flex md:flex-row flex-col lg:items-center items-start gap-2">
                         <h6 class="font-semibold">Immanuel Christian Hirani</h6>
                         <hr class="md:block hidden border-[1px] h-4 border-separate border-black" />
@@ -256,7 +256,7 @@
                 </div>
                 <div class="user-informations bg-white flex flex-col  gap-4 border-2 p-6 rounded-lg">
                   <div class="flex md:flex-row flex-col justify-between items-center gap-4">
-                    <div class="wrapper lg:w-1/2 w-full flex flex-col gap-2">
+                    <div class="wrapper xl:w-1/2 w-full flex flex-col gap-2">
                       <span class="flex md:flex-row flex-col lg:items-center items-start gap-2">
                         <h6 class="font-semibold">Immanuel Christian Hirani</h6>
                         <hr class="md:block hidden border-[1px] h-4 border-separate border-black" />

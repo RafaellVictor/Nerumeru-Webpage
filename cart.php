@@ -59,7 +59,7 @@
             <li><a href="" class="text-blue-Neru">Cart</a></li>
           </ul>
         </div>
-        <div class="grid lg:grid-cols-7 md:grid-cols-8 grid-cols-4 lg:gap-4 gap-2">
+        <div class="grid xl:grid-cols-7 md:grid-cols-8 grid-cols-4 lg:gap-4 gap-2">
           <div class="left-content md:col-span-5 col-span-4 flex flex-col gap-3">
             <div class="user-informations bg-white px-4 py-6 flex flex-col gap-4">
               <span class="flex justify-between items-center">
@@ -100,7 +100,7 @@
             <div class="cart-item bg-white lg:p-5 p-3">
               <hr class="mb-5" />
               <div class="flex md:gap-6 gap-4 items-center">
-                <img src="img/card-item-2.png" class="lg:w-[20%] md:w-[30%] w-[35%]" alt="" />
+                <img src="img/card-item-2.png" class="xl:w-[20%] md:w-[30%] w-[35%]" alt="" />
                 <div class="item-informations flex justify-between w-full">
                   <span class="flex flex-col 3xl:gap-5 2xl:gap-3 xl:gap-2 gap-2.5">
                     <h5 class="font-semibold lg:text-base md:text-sm text-xs">NeruBedding - Silver Grey</h5>
@@ -161,7 +161,7 @@
             <div class="cart-item bg-white lg:p-5 p-3">
               <hr class="mb-5" />
               <div class="flex md:gap-6 gap-4 items-center">
-                <img src="img/card-item-2.png" class="lg:w-[20%] md:w-[30%] w-[35%]" alt="" />
+                <img src="img/card-item-2.png" class="xl:w-[20%] md:w-[30%] w-[35%]" alt="" />
                 <div class="item-informations flex justify-between w-full">
                   <span class="flex flex-col 3xl:gap-5 2xl:gap-3 xl:gap-2 gap-2.5">
                     <h5 class="font-semibold lg:text-base md:text-sm text-xs">NeruBedding - Silver Grey</h5>
@@ -222,7 +222,7 @@
             <div class="cart-item bg-white lg:p-5 p-3">
               <hr class="mb-5" />
               <div class="flex md:gap-6 gap-4 items-center">
-                <img src="img/card-item-2.png" class="lg:w-[20%] md:w-[30%] w-[35%]" alt="" />
+                <img src="img/card-item-2.png" class="xl:w-[20%] md:w-[30%] w-[35%]" alt="" />
                 <div class="item-informations flex justify-between w-full">
                   <span class="flex flex-col 3xl:gap-5 2xl:gap-3 xl:gap-2 gap-2.5">
                     <h5 class="font-semibold lg:text-base md:text-sm text-xs">NeruBedding - Silver Grey</h5>
@@ -283,7 +283,7 @@
             <div class="cart-item bg-white lg:p-5 p-3">
               <hr class="mb-5" />
               <div class="flex md:gap-6 gap-4 items-center">
-                <img src="img/card-item-2.png" class="lg:w-[20%] md:w-[30%] w-[35%]" alt="" />
+                <img src="img/card-item-2.png" class="xl:w-[20%] md:w-[30%] w-[35%]" alt="" />
                 <div class="item-informations flex justify-between w-full">
                   <span class="flex flex-col 3xl:gap-5 2xl:gap-3 xl:gap-2 gap-2.5">
                     <h5 class="font-semibold lg:text-base md:text-sm text-xs">NeruBedding - Silver Grey</h5>
@@ -342,7 +342,7 @@
               </div>
             </div>
           </div>
-          <div class="right-content lg:col-span-2 md:col-span-3 col-span-4">
+          <div class="right-content xl:col-span-2 md:col-span-3 col-span-4">
             <div class="flex flex-col gap-3 sticky top-28">
               <div class="kurir bg-white px-4 py-6 flex flex-col gap-4">
                 <span class="flex justify-between items-center">
@@ -438,7 +438,7 @@
         </div>
       </div>
       <div class="text-start fixed inset-0 bg-black bg-opacity-0 flex justify-center items-center -z-20 text-black">
-        <div id="BoxAlamat" class="alamat-wrapper opacity-0 bg-white lg:w-[30%] md:w-[70%] w-[90%] h-fit">
+        <div id="BoxAlamat" class="alamat-wrapper opacity-0 bg-white xl:w-[30%] lg:w-[50%] md:w-[70%] w-[90%] h-fit">
           <div class="p-4">
             <h6>Informasi User</h6>
           </div>

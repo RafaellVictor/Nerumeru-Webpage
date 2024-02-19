@@ -23,7 +23,7 @@
       <div class="container max-w-screen-lg flex flex-col">
         <div class="content-wrapper flex flex-col 2xl:gap-12 gap-8">
           <div class="logo flex flex-col gap-4 items-center justify-center">
-            <img src="img/logoNerumeru.png" class="xl:w-[10%] w-[20%]" alt="" />
+            <img src="img/logoNerumeru.png" class="lg:w-[10%] w-[20%]" alt="" />
           </div>
           <div class="title flex 2xl:gap-12 gap-8 flex-col items-center">
             <h3 class="font-semibold text-center tracking-widest">
@@ -35,10 +35,10 @@
             <?php foreach ($icons as $icon) : ?>
               <span class="flex flex-col gap-2 items-center w-full">
                 <a href="<?= $icon["blog_targetLink"] ?>" class="rounded-full group relative overflow-hidden cursor-pointer bg-blue-Neru xl:p-9 p-6">
-                  <img src="<?= $icon["blog_icon"] ?>" class="xl:w-14 w-7 " alt="">
+                  <img src="<?= $icon["blog_icon"] ?>" class="lg:w-14 w-7 " alt="">
                   <div class="bg-black bg-opacity-50 absolute flex flex-col items-center justify-center transition-all ease-in-out duration-300 top-0 inset-x-0 w-full h-full rounded-full -translate-y-full -translate-x-20 group-hover:translate-x-0 group-hover:translate-y-0"></div>
                   <div class="bg-black bg-opacity-50 absolute flex flex-col items-center justify-center text-white font-semibold transition-all ease-in-out duration-300 top-0 inset-x-0 w-full h-full rounded-full translate-y-full translate-x-20 group-hover:translate-x-0 group-hover:translate-y-0">
-                    <h6 class="md:text-base text-[10px] text-white font-semibold">
+                    <h6 class="xl:text-base lg:text-[11px] text-[10px] text-white font-semibold">
                       <?= $icon["blog_icon_title"] ?>
                     </h6>
                   </div>

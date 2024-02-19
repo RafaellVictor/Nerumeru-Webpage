@@ -142,3 +142,20 @@ if (isset($_GET['banner_id'])) {
         </script>";
     }
 }
+
+if (isset($_GET['user_id'])) {
+    $id_user = $_GET['user_id'];
+    if (deleteUser($id_user) > 0) {
+        echo
+        "<script>
+            alert('Data berhasil di hapus');
+            document.location.href = 'Admin-Customer.php';
+        </script>";
+    } else {
+        echo
+        "<script>
+            alert('Data Gagal di hapus');
+            document.location.href = 'Admin-Customer.php';
+        </script>";
+    }
+}

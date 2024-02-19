@@ -2,7 +2,10 @@
 
 require "function.php";
 
-$Users= query("SELECT * FROM user");
+$Users = query("SELECT * FROM user");
+
+
+
 
 
 ?>
@@ -51,6 +54,7 @@ $Users= query("SELECT * FROM user");
               </div>
             </div>
           </header>
+
           <div class="max-h-screen w-full overflow-y-auto">
             <div id="UserData" class="container  BoxTableData bg-white rounded-lg shadow-md 3xl:h-fit 2xl:h-fit overflow-y-auto mt-4">
               <table id="myTable2" class="myTableDisplay 3xl:text-lg text-sm py-6 display nowrap table hover order-column row-border stripe">
@@ -60,8 +64,8 @@ $Users= query("SELECT * FROM user");
                     <th class="border-[1px] border-black-neru border-opacity-30">Img</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Username</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Email</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30">insert on</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30">Last update</th>
+                    <th class="border-[1px] border-black-neru border-opacity-30">Locations</th>
+                    <th class="border-[1px] border-black-neru border-opacity-30">Changes Details </th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Action</th>
                   </tr>
                 </thead>
@@ -69,17 +73,41 @@ $Users= query("SELECT * FROM user");
                   <?php foreach ($Users as $user) : ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $user["user_id"] ?></td>
-                      <td class="w-40"><img src="img/<?= $user["user_img"] ?>" class="w-fit object-contain mx-auto" alt="" /></td>
-                      <td class="w-14"><?= $user["user_username"] ?></td>
-                      <td class="w-14"><?= $user["user_email"] ?></td>
-                      <td><?= $user["insert_date"] ?></td>
-                      <td><?= $user["lastUpdate_date"] ?></td>
-                      <td>
+                      <td class="w-32"><img src="img/<?= $user["user_img"] ?>" class="w-[60%] object-contain mx-auto" alt="" /></td>
+                      <td class="w-28"><?= $user["user_username"] ?></td>
+                      <td class="w-28"><?= $user["user_email"] ?></td>
+                      <td class="w-28"><a class="bg-blue-Neru py-1.5 px-4 md:text-base text-sm rounded-lg text-white">Lihat Lokasi</a></td>
+                      <td class="w-28">
+                        <button data-target="#userInfo<?= $user["user_id"] ?>" class="cursor-pointer DateDetailToggler bg-blue-Neru py-1.5 px-4 md:text-base text-sm rounded-lg text-white">Lihat Details</button>
+                      </td>
+                      <td class="w-28">
                         <span class="flex items-center gap-2 justify-center">
                           <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?user_id=<?= $user["user_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
+                    <div id="userInfo<?= $user["user_id"] ?>" class="userChangesDetail container hidden z-10 transition-all ease-in-out duration-300 bg-blue-Neru absolute top-0 shadow-lg  translate-x-[48%]  text-white font-semibold w-[600px] h-[150px] rounded-lg">
+                      <div class="wrap flex flex-col gap-3 ">
+                        <div class="child-wrap">
+                          <h6>User Melakukan Registrasi (Date)</h6>
+                          <div class="flex gap-3 items-center">
+                            <h6><?= $user["user_username"] ?></h6> |
+                            <h6><?= $user["insert_date"] ?></h6>
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="child-wrap">
+                          <h6>User Melakukan Update Data Terakhir (Date)</h6>
+                          <div class="flex gap-3 items-center">
+                            <h6><?= $user["user_username"] ?></h6> |
+                            <h6><?= $user["lastUpdate_date"] ?></h6>
+                          </div>
+                        </div>
+                          <div id="buttonClose" class="cursor-pointer w-9 h-9 absolute right-2 top-2 text-blue-Neru rounded-full p-3 bg-white flex items-center">
+                            X
+                          </div>
+                      </div>
+                    </div>
                   <?php endforeach; ?>
                 </tbody>
               </table>
@@ -95,9 +123,8 @@ $Users= query("SELECT * FROM user");
               </div>
             </form> -->
           </div>
+          <!-- Main Menu End -->
         </div>
-        <!-- Main Menu End -->
-      </div>
     </section>
   </main>
 </body>
@@ -106,6 +133,7 @@ $Users= query("SELECT * FROM user");
 <script src="js/button.js"></script>
 <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 <script src="js/admin.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.3.5/js/dataTables.buttons.min.js"></script>
@@ -135,7 +163,6 @@ $Users= query("SELECT * FROM user");
   if (savedActiveButtonIndex !== null && savedActiveButtonIndex >= 0 && savedActiveButtonIndex < totalItems) {
     ButtonTogglerActive[savedActiveButtonIndex].classList.add("ButtonAdminMenuActive");
     if (BoxTableData[savedActiveButtonIndex]) {
-      // Periksa apakah elemen ada sebelum menambahkan kelas
       BoxTableData[savedActiveButtonIndex].classList.add("Active-BoxTable"); // Aktifkan data yang sesuai
     }
   } else {
@@ -143,7 +170,6 @@ $Users= query("SELECT * FROM user");
     ButtonTogglerActive[0].classList.add("ButtonAdminMenuActive");
     saveActiveButton(0); // Menyimpan status toggler yang aktif ke dalam localStorage
     if (BoxTableData[0]) {
-      // Periksa apakah elemen ada sebelum menambahkan kelas
       BoxTableData[0].classList.add("Active-BoxTable"); // Aktifkan data pertama
     }
   }
@@ -157,14 +183,12 @@ $Users= query("SELECT * FROM user");
       });
       BoxTableData.forEach((box, boxIndex) => {
         if (index === boxIndex && box) {
-          // Periksa apakah elemen ada sebelum menambahkan kelas
           box.classList.add("Active-BoxTable");
         } else if (box) {
           box.classList.remove("Active-BoxTable");
         }
       });
       OtherButton.classList.add("ButtonAdminMenuActive");
-      // Memanggil fungsi untuk menyimpan status toggler yang aktif ke dalam localStorage setiap kali ada perubahan
       saveActiveButton(index);
     });
   });

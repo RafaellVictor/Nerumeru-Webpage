@@ -668,7 +668,7 @@ function updateProfileData($conn)
 
             // Jika ada gambar yang diunggah, update juga kolom user_img
             if ($namaFile !== false) {
-                $query = "UPDATE user SET user_username='$username', user_email='$email', user_phone='$phone', user_img='$namaFile' WHERE user_id = $user_id";
+                $query = "UPDATE user SET user_username='$username', user_email='$email', user_phone='$phone', user_img='$namaFile' , lastUpdate_date=NOW() WHERE user_id = $user_id";
                 if ($conn->query($query) === TRUE) {
                     return array('success' => 'Data berhasil diperbarui');
                 } else {
@@ -676,7 +676,7 @@ function updateProfileData($conn)
                 }
             } else {
                 // Jika tidak ada gambar yang diunggah
-                $query = "UPDATE user SET user_username='$username', user_email='$email', user_phone='$phone' WHERE user_id = $user_id";
+                $query = "UPDATE user SET user_username='$username', user_email='$email', user_phone='$phone' , lastUpdate_date=NOW() WHERE user_id = $user_id";
                 if ($conn->query($query) === TRUE) {
                     return array('success' => 'Data berhasil diperbarui');
                 } else {
@@ -688,6 +688,18 @@ function updateProfileData($conn)
             return array('error' => 'Login Terlebih Dahulu');
         }
     }
+}
+
+function deleteUser($id)
+{
+
+    global $conn;
+
+    $query = "DELETE FROM user WHERE user_id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
 }
 
 
