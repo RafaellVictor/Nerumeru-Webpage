@@ -51,6 +51,7 @@ if (isset($_POST['submitLogin'])) {
 ?>
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -60,6 +61,7 @@ if (isset($_POST['submitLogin'])) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <title>Nerumeru | Login</title>
 </head>
+
 <body>
   <main class="my-0 bg-forest bg-no-repeat bg-cover">
     <section class="my-0 login_Register h-screen w-full flex justify-center items-center">
