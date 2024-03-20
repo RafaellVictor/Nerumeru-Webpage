@@ -158,3 +158,95 @@ if (isset($_GET['banner_id']) && isset($_GET['status'])) { // Mengecek apakah pa
     }
 }
 
+
+if (isset($_GET['id_location']) && isset($_GET['status'])) {
+    $idlokasi = $_GET['id_location'];
+    $status = $_GET['status'];
+
+    // Mengubah status menjadi lawan dari status saat ini (0 menjadi 1 atau 1 menjadi 0)
+    $newStatus = ($status == 1) ? 0 : 1;
+
+    // Memperbarui status lokasi yang dipilih
+    $queryUpdateSelected = "UPDATE user_locations SET status='$newStatus' WHERE id='$idlokasi'";
+    $runningUpdateSelected = mysqli_query($conn, $queryUpdateSelected);
+
+    if (!$runningUpdateSelected) {
+        echo "Error update data: " . mysqli_error($conn);
+        exit();
+    }
+
+    // Memperbarui status item sebelumnya menjadi 0 kecuali yang sedang dipilih
+    $queryUpdatePrevious = "UPDATE user_locations SET status='0' WHERE id != '$idlokasi'";
+    $runningUpdatePrevious = mysqli_query($conn, $queryUpdatePrevious);
+
+    if (!$runningUpdatePrevious) {
+        echo "Error update data: " . mysqli_error($conn);
+        exit();
+    }
+
+    echo "<script>alert('Lokasi berhasil Dipilih')</script>";
+    header('Location:Profile.php');
+    exit();
+}
+
+
+if (isset($_GET['id_locationCart']) && isset($_GET['status'])) {
+    $idlokasi = $_GET['id_locationCart'];
+    $status = $_GET['status'];
+
+    // Mengubah status menjadi lawan dari status saat ini (0 menjadi 1 atau 1 menjadi 0)
+    $newStatus = ($status == 1) ? 0 : 1;
+
+    // Memperbarui status lokasi yang dipilih
+    $queryUpdateSelected = "UPDATE user_locations SET status='$newStatus' WHERE id='$idlokasi'";
+    $runningUpdateSelected = mysqli_query($conn, $queryUpdateSelected);
+
+    if (!$runningUpdateSelected) {
+        echo "Error update data: " . mysqli_error($conn);
+        exit();
+    }
+
+    // Memperbarui status item sebelumnya menjadi 0 kecuali yang sedang dipilih
+    $queryUpdatePrevious = "UPDATE user_locations SET status='0' WHERE id != '$idlokasi'";
+    $runningUpdatePrevious = mysqli_query($conn, $queryUpdatePrevious);
+
+    if (!$runningUpdatePrevious) {
+        echo "Error update data: " . mysqli_error($conn);
+        exit();
+    }
+
+    echo "<script>alert('Lokasi berhasil Dipilih')</script>";
+    header('Location:Cart.php');
+    exit();
+}
+
+
+
+// if (isset($_GET['id_location']) && isset($_GET['status'])) {
+//     $idlokasi = $_GET['id_location'];
+//     $status = $_GET['status'];
+
+//     $newStatus = ($status == 1) ? 1 : 0;
+
+//     // Memperbarui status item yang dipilih
+//     $queryUpdateSelected = "UPDATE user_locations SET status='$newStatus' WHERE id='$idlokasi'";
+//     $runningUpdateSelected = mysqli_query($conn, $queryUpdateSelected);
+
+//     if (!$runningUpdateSelected) {
+//         echo "Error update data: " . mysqli_error($conn);
+//         exit();
+//     }
+
+//     // Memperbarui status item sebelumnya menjadi 0
+//     $queryUpdatePrevious = "UPDATE user_locations SET status='0' WHERE id != '$idlokasi'";
+//     $runningUpdatePrevious = mysqli_query($conn, $queryUpdatePrevious);
+
+//     if (!$runningUpdatePrevious) {
+//         echo "Error update data: " . mysqli_error($conn);
+//         exit();
+//     }
+
+//     echo "<script>alert('Lokasi berhasil Dipilih')</script>";
+//     header('Location: Profile.php');
+//     exit();
+// }

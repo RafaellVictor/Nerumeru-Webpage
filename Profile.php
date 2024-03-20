@@ -14,7 +14,6 @@
 <body>
   <?php include "layout/navbar.php" ?>
   <?php
-
   // Pastikan untuk memulai sesi
 
   // Periksa apakah pengguna sudah login
@@ -45,17 +44,95 @@
     exit(); // Hentikan eksekusi skrip PHP setelah mengirimkan pesan kesalahan
   }
 
-
-  // Memanggil fungsi updateProfileData()
-  $updateResponse = updateProfileData($conn);
-
-  // Menampilkan pesan kesalahan atau pesan sukses
-  if (isset($updateResponse['error'])) {
-    $error_message = $updateResponse['error'];
-  } elseif (isset($updateResponse['success'])) {
-    $success_message = $updateResponse['success'];
+  if (isset($_POST["submitLocation"])) {
+    if (insertlocations($_POST) > 0) {
+      echo
+      "<script>
+          alert('Data berhasil di Tambahkan');
+          document.location.href = 'Profile.php';
+      </script>";
+    } else {
+      echo
+      "<script>
+          alert('Data Gagal di Tambahkan');
+          document.location.href = 'Profile.php';
+      </script>";
+    }
   }
 
+  if (isset($_SESSION["user_id"])) {
+    // Include your database connection file and create $conn object
+
+    // Assuming you've sanitized your input, you can directly use $_SESSION["user_id"]
+    $user_id = $_SESSION["user_id"];
+
+    // Prepare and execute the query with proper parameter binding
+    $query = "SELECT * FROM user_locations INNER JOIN user ON user_locations.user_id = user.user_id WHERE user_locations.user_id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // Check if there are any results
+    if ($result->num_rows > 0) {
+      $locations = array();
+
+      while ($row = $result->fetch_assoc()) {
+        $locations[] = $row;
+      }
+
+      // Process fetched data as needed
+    } else {
+      echo "Data Pengguna untuk menampilkan alamat tidak ditemukan";
+    }
+  } else {
+    // If the user is not logged in, show an error message
+    echo "<script>
+      alert('Login Terlebih Dahulu');
+      window.location.href = 'login_Register.php'; // Redirect using JavaScript
+      </script>";
+    exit(); // Stop PHP script execution after sending the error message
+  }
+
+
+
+
+  // Menampilkan pesan kesalahan atau pesan sukses
+  if (isset($_POST["submitUpdateProfileData"])) {
+    $result = updateProfileData($conn);
+
+    if (is_array($result) && isset($result['error'])) {
+      echo "<script>
+      alert('" . $result['error'] . "');
+      document.location.href = 'Profile.php';
+  </script>";
+    } elseif ($result > 0) {
+      echo "<script>
+      alert('Data berhasil diubah');
+      document.location.href = 'Profile.php';
+  </script>";
+    } else {
+      echo "<script>
+      alert('Data gagal diubah');
+      document.location.href = 'Profile.php';
+  </script>";
+    }
+  }
+
+
+  if (isset($_POST["submitLocationUpdate"])) {
+    if (updatelokasi($_POST, $conn) > 0) {
+      echo "<script>
+        alert('Data berhasil diubah');
+        document.location.href = 'Profile.php';
+        </script>";
+    } else {
+      echo "<script>
+        alert('Data Gagal diubah');
+        document.location.href = 'Profile.php';
+        </script>";
+    }
+  }
 
   // Memanggil fungsi updatePassword()
   if (isset($_POST["submitUpdatePassword"])) {
@@ -70,8 +147,8 @@
   }
 
   ?>
-  <main>
-    <section class="profle lg:mt-32 mt-8">
+  <main class="md:my-24 my-10 md:mt-24 mt-16">
+    <section class="profle lg:mt-12 mt-0">
       <!-- Profile Mode -->
       <div class="container">
         <div class="grid grid-cols-8 gap-5">
@@ -80,7 +157,7 @@
               <div class="head flex items-center gap-6">
                 <img src="img/<?= $userData["user_img"] ?>" onerror="this.src='https://i.pinimg.com/564x/91/83/cb/9183cb908632a53bf619bbbcdfb68ae7.jpg'" class="object-cover w-12 h-12 rounded-full" alt="" />
                 <span class="flex flex-col">
-                  <h6 class="font-medium line-clamp-1 lg:text-base md:text-lg"><?= $userData["user_username"] ?></h6>
+                  <h6 class="font-medium line-clamp-1 lg:text-base md:text-lg"><?= !empty($userData["user_username"]) ? $userData["user_username"] : "Profile" ?></h6>
                   <span class="flex items-center gap-2 text-grey-neru">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -135,7 +212,7 @@
                 </div>
                 <hr class="my-4" />
                 <div class="body relative ">
-                  <form action="" method="post" class="lg:grid grid-cols-6 flex flex-col-reverse gap-12 lg:py-0 py-6  mt-6" enctype="multipart/form-data">
+                  <form action="" method="post" class="lg:grid grid-cols-6 flex flex-col-reverse gap-12 lg:py-0 py-6 mt-6" enctype="multipart/form-data">
                     <input type="hidden" value="<?= $userData["user_id"] ?>">
                     <input type="hidden" name="gambarLama" value="<?= $userData["user_img"] ?>">
                     <div class="flex flex-col gap-4 w-full col-span-4">
@@ -143,7 +220,7 @@
                         <label class="md:w-28 w-24">
                           <h6>Username</h6>
                         </label>
-                        <input type="text" name="user_username" class="2xl:text-base xl:text-sm md:text-base text-sm md:w-1/2 w-full outline-none border-[1px] shadow-inner border-grey-neru p-2" value="<?= $userData["user_username"] ?>" />
+                        <input type="text" name="user_username" placeholder="Username" class="2xl:text-base xl:text-sm md:text-base text-sm md:w-1/2 w-full outline-none border-[1px] shadow-inner border-grey-neru p-2" value="<?= $userData["user_username"] ?>" />
                       </div>
                       <hr class="lg:hidden" />
                       <div class="flex md:flex-row flex-col md:gap-6 gap-4">
@@ -176,117 +253,111 @@
               </div>
               <div id="Alamat" class="bg-white lg:p-8 md:p-6 p-4  rounded-md flex flex-col gap-6">
                 <div class="head flex justify-between items-center">
-                  <h6 class="font-semibold">Alamat Saya <span class="text-blue-Neru font-semibold md:inline block">(Max 3 alamat)</span> </h6>
-                  <span class="flex justify-between items-center px-4 py-2 bg-blue-Neru rounded-lg font-semibold text-white gap-2">
+                  <h6 class="font-semibold">Alamat <span class="text-blue-Neru font-semibold md:inline block">(Max 3 alamat)</span> </h6>
+                  <a id="OpenLocationsPopUp" class="cursor-pointer flex justify-between items-center px-4 py-2 bg-blue-Neru rounded-lg font-semibold text-white gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M12 5l0 14" />
                       <path d="M5 12l14 0" />
                     </svg>
-                    <a class="">
-                      <h6 class="md:text-sm text-xs">Tambah Alamat</h6>
-                    </a>
-                  </span>
+                    <h6 class="md:text-sm text-xs">Tambah Alamat</h6>
+                  </a>
                 </div>
-                <div class="user-informations flex flex-col gap-4  border-2 p-6 rounded-lg">
-                  <div class="flex md:flex-row flex-col justify-between items-center gap-4">
-                    <div class="wrapper xl:w-1/2 w-full flex flex-col gap-2">
-                      <span class="flex md:flex-row flex-col lg:items-center items-start gap-2">
-                        <h6 class="font-semibold">Immanuel Christian Hirani</h6>
-                        <hr class="md:block hidden border-[1px] h-4 border-separate border-black" />
-                        <h6 class="font-light">(0813-1480-1495)</h6>
-                      </span>
-                      <h6 class="font-light lg:text-base text-sm">Jalan Kakap Raya No.155, RT.1/RW.3, Karawaci Baru, Karawaci (Rumah hijau besar) KARAWACI, KOTA TANGERANG, BANTEN, ID, 15116</h6>
-                      <div class="flex gap-2 items-center md:w-1/2 w-full justify-start mt-4">
-                        <a class="lg:text-base text-sm flex gap-1 items-center text-green-500 cursor-pointer">
-                          <h6>Ubah Alamat</h6>
-                        </a>
-                        <hr class="border-[1px] h-4 border-separate border-black" />
-                        <a class="lg:text-base text-sm flex gap-1 items-center text-red-500 cursor-pointer">
-                          <h6>Hapus</h6>
-                        </a>
+                <?php if (empty($locations)) : ?>
+                  <div class="w-full rounded-lg border-2 text-blue-Neru flex flex-col items-center justify-center border-opacity-10 border-black md:h-[150px] h-[100px]">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M14 19.5l-5 -2.5l-6 3v-13l6 -3l6 3l6 -3v9" />
+                      <path d="M9 4v13" />
+                      <path d="M15 7v6.5" />
+                      <path d="M22 22l-5 -5" />
+                      <path d="M17 22l5 -5" />
+                    </svg>
+                    <h6 class="lg:text-base md:text-sm text-xs font-medium">Alamat Kosong</h6>
+                  </div>
+                <?php else : ?>
+                  <?php foreach ($locations as $location) : ?>
+                    <?php if ($location["status"] == 1) : ?>
+                      <div class="user-informations bg-blue-Neru bg-opacity-5 border-blue-Neru flex flex-col gap-4 border-2 p-6 rounded-lg">
+                        <div class="flex md:flex-row flex-col justify-between items-center gap-4">
+                          <div class="wrapper xl:w-1/2 w-full flex flex-col gap-2">
+                            <span class="flex md:flex-row flex-col lg:items-center items-start gap-2">
+                              <h6 class="font-semibold"><?= $location["user_username_location"] ?></h6>
+                              <hr class="md:block hidden border-[1px] h-4 border-separate border-black" />
+                              <h6 class="font-light">(<?= $location["user_phone_location"] ?>)</h6>
+                            </span>
+                            <h6 class="font-light lg:text-base text-sm"><?= $location["user_location"] ?></h6>
+                            <div class="flex gap-2 items-center  w-full justify-start mt-4">
+                              <button data-target="#popupLocationsUpdate<?= $location["id"] ?>" class="LocationsPopUpToggler text-white bg-green-500 px-4 py-1 rounded-full text-2xl cursor-pointer ">
+                                <h6 class="md:text-xs text-[10px]">Ubah Alamat</h6>
+                              </button>
+                              <hr class="border-[1px] h-4 border-separate border-black" />
+                              <span class="lg:text-base text-sm flex gap-1 items-center text-red-500 cursor-pointer">
+                                <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?id_location=<?= $location["id"] ?>" class="HapusDataToggler text-white bg-red-500 px-4 py-1 rounded-full text-2xl cursor-pointer ">
+                                  <h6 class="md:text-xs text-[10px]">Hapus</h6>
+                                </a>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="alamatTerpilih flex gap-2 items-center md:w-1/2 w-full md:justify-end justify-start mt-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 text-blue-Neru md:block hidden" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                              <path d="M5 12l5 5l10 -10" />
+                            </svg>
+                            <button class="bg-blue-Neru md:hidden block rounded-lg p-2 text-xs text-white font-medium w-full">Alamat Terpilih</button>
+                          </div>
+                        </div>
+                      </div>
+                    <?php else : ?>
+                      <div class="user-informations bg-white flex flex-col gap-4 border-2 p-6 rounded-lg">
+                        <div class="flex md:flex-row flex-col justify-between items-center gap-4">
+                          <div class="wrapper xl:w-1/2 w-full flex flex-col gap-2">
+                            <span class="flex md:flex-row flex-col lg:items-center items-start gap-2">
+                              <h6 class="font-semibold"><?= $location["user_username_location"] ?></h6>
+                              <hr class="md:block hidden border-[1px] h-4 border-separate border-black" />
+                              <h6 class="font-light">(<?= $location["user_phone_location"] ?>)</h6>
+                            </span>
+                            <h6 class="font-light lg:text-base text-sm"><?= $location["user_location"] ?></h6>
+                            <div class="flex gap-2 items-center w-full justify-start mt-4">
+                              <a data-target="#popupLocationsUpdate<?= $location["id"] ?>" class="LocationsPopUpToggler text-white bg-green-500 px-4 py-1 rounded-full text-2xl cursor-pointer ">
+                                <h6 class="md:text-xs text-[10px]">Ubah Alamat</h6>
+                              </a>
+                              <hr class="border-[1px] h-4 border-separate border-black" />
+                              <a class="lg:text-base text-sm flex gap-1 items-center text-red-500 cursor-pointer">
+                                <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?id_location=<?= $location["id"] ?>" class="HapusDataToggler text-white bg-red-500 px-4 py-1 rounded-full text-2xl cursor-pointer ">
+                                  <h6 class="md:text-xs text-[10px]">Hapus</h6>
+                                </a>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="flex gap-2 pilihAlamat items-center md:w-1/2 w-full md:justify-end justify-start mt-4">
+                            <a href="status.php?id_location=<?= $location["id"] ?>&status=<?= $location["status"] ?>" onclick="return alert('Alamat Berhasil Di pilih')" class="md:bg-blue-Neru rounded-lg px-4 text-center justify-center py-2 lg:text-base text-sm flex gap-1 items-center text-black md:border-0 border-2 md:text-white md:w-fit w-full cursor-pointer">
+                              <h6 class="md:text-sm text-xs">Pilih Alamat</h6>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    <?php endif; ?>
+                    <?php include("layout/modal/ModalLocations.php") ?>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+                <!-- Input New Data user Locations -->
+                <div id="popupLocations" class="fixed hidden  bg-black bg-opacity-50 z-50 inset-0 items-center justify-center">
+                  <form action="Profile.php" method="POST">
+                    <div class="boxinput-userLocations relative flex p-4 flex-col gap-4 md:w-[650px] w-[340px] bg-white-neru rounded-lg">
+                      <label for="">Reciver Name</label>
+                      <input required placeholder="Cth : immanuel Christian" type="text" class="bg-white shadow-md border-2 rounded-lg border-opacity-20 border-black w-full p-2 outline-none" name="user_username-location">
+                      <label for="">Phone number reciver</label>
+                      <input required placeholder="Cth : 081314801945" type="text" class="bg-white shadow-md border-2 rounded-lg border-opacity-20 border-black w-full p-2 outline-none" name="user_phone-location">
+                      <textarea required placeholder="Cth : Jalan Kakap raya no 155" name="user_location" class="bg-white border-2 rounded-lg border-opacity-20 border-black shadow-md w-full p-2 outline-none" id="" cols="30" rows="10"></textarea>
+                      <button type="submit" name="submitLocation" class="bg-blue-Neru px-3.5 py-1.5 rounded-lg w-fit text-white font-semibold text-sm self-end">Tambah Alamat</button>
+                      <div id="CloseLocations" class="cursor-pointer w-10 h-10 text-white font-semibold rounded-br-none bg-blue-Neru rounded-tr-none rounded-full flex items-center justify-center absolute top-0 right-0">
+                        X
                       </div>
                     </div>
-                    <div class="flex gap-2 pilihAlamat items-center non-active-locations md:w-1/2 w-full md:justify-end justify-start mt-4">
-                      <a class="md:bg-blue-Neru  rounded-lg px-4 text-center justify-center py-2 lg:text-base text-sm flex gap-1 items-center text-black md:border-0 border-2 md:text-white md:w-fit w-full  cursor-pointer">
-                        <h6 class="md:text-sm text-xs">Pilih Alamat</h6>
-                      </a>
-                    </div>
-                    <div class="alamatTerpilih flex gap-2 items-center   md:w-1/2 w-full md:justify-end justify-start mt-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 text-blue-Neru md:block hidden" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M5 12l5 5l10 -10" />
-                      </svg>
-                      <button class="bg-blue-Neru md:hidden block rounded-lg p-2 text-xs text-white font-medium w-full">Alamat Terpilih</button>
-                    </div>
-                  </div>
+                  </form>
                 </div>
-                <div class="user-informations bg-white flex flex-col  gap-4 border-2 p-6 rounded-lg">
-                  <div class="flex md:flex-row flex-col justify-between items-center gap-4">
-                    <div class="wrapper xl:w-1/2 w-full flex flex-col gap-2">
-                      <span class="flex md:flex-row flex-col lg:items-center items-start gap-2">
-                        <h6 class="font-semibold">Immanuel Christian Hirani</h6>
-                        <hr class="md:block hidden border-[1px] h-4 border-separate border-black" />
-                        <h6 class="font-light">(0813-1480-1495)</h6>
-                      </span>
-                      <h6 class="font-light lg:text-base text-sm">Jalan Kakap Raya No.155, RT.1/RW.3, Karawaci Baru, Karawaci (Rumah hijau besar) KARAWACI, KOTA TANGERANG, BANTEN, ID, 15116</h6>
-                      <div class="flex gap-2 items-center md:w-1/2 w-full justify-start mt-4">
-                        <a class="lg:text-base text-sm flex gap-1 items-center text-green-500 cursor-pointer">
-                          <h6>Ubah Alamat</h6>
-                        </a>
-                        <hr class="border-[1px] h-4 border-separate border-black" />
-                        <a class="lg:text-base text-sm flex gap-1 items-center text-red-500 cursor-pointer">
-                          <h6>Hapus</h6>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="flex gap-2 pilihAlamat items-center  md:w-1/2 w-full md:justify-end justify-start mt-4">
-                      <a class="md:bg-blue-Neru  rounded-lg px-4 text-center justify-center py-2 lg:text-base text-sm flex gap-1 items-center text-black md:border-0 border-2 md:text-white md:w-fit w-full  cursor-pointer">
-                        <h6 class="md:text-sm text-xs">Pilih Alamat</h6>
-                      </a>
-                    </div>
-                    <div class="alamatTerpilih flex gap-2  items-center non-active-locations  md:w-1/2 w-full md:justify-end justify-start mt-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 text-blue-Neru md:block hidden" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M5 12l5 5l10 -10" />
-                      </svg>
-                      <button class="bg-blue-Neru md:hidden block rounded-lg p-2 text-xs text-white font-medium w-full">Alamat Terpilih</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="user-informations bg-white flex flex-col  gap-4 border-2 p-6 rounded-lg">
-                  <div class="flex md:flex-row flex-col justify-between items-center gap-4">
-                    <div class="wrapper xl:w-1/2 w-full flex flex-col gap-2">
-                      <span class="flex md:flex-row flex-col lg:items-center items-start gap-2">
-                        <h6 class="font-semibold">Immanuel Christian Hirani</h6>
-                        <hr class="md:block hidden border-[1px] h-4 border-separate border-black" />
-                        <h6 class="font-light">(0813-1480-1495)</h6>
-                      </span>
-                      <h6 class="font-light lg:text-base text-sm">Jalan Kakap Raya No.155, RT.1/RW.3, Karawaci Baru, Karawaci (Rumah hijau besar) KARAWACI, KOTA TANGERANG, BANTEN, ID, 15116</h6>
-                      <div class="flex gap-2 items-center md:w-1/2 w-full justify-start mt-4">
-                        <a class="lg:text-base text-sm flex gap-1 items-center text-green-500 cursor-pointer">
-                          <h6>Ubah Alamat</h6>
-                        </a>
-                        <hr class="border-[1px] h-4 border-separate border-black" />
-                        <a class="lg:text-base text-sm flex gap-1 items-center text-red-500 cursor-pointer">
-                          <h6>Hapus</h6>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="flex gap-2 items-center pilihAlamat   md:w-1/2 w-full md:justify-end justify-start mt-4">
-                      <a class="md:bg-blue-Neru  rounded-lg px-4 text-center justify-center py-2 lg:text-base text-sm flex gap-1 items-center text-black md:border-0 border-2 md:text-white md:w-fit w-full  cursor-pointer">
-                        <h6 class="md:text-sm text-xs">Pilih Alamat</h6>
-                      </a>
-                    </div>
-                    <div class="alamatTerpilih flex gap-2 items-center non-active-locations  md:w-1/2 w-full md:justify-end justify-start mt-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 text-blue-Neru md:block hidden" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M5 12l5 5l10 -10" />
-                      </svg>
-                      <button class="bg-blue-Neru md:hidden block rounded-lg p-2 text-xs text-white font-medium w-full">Alamat Terpilih</button>
-                    </div>
-                  </div>
-                </div>
+                <!-- Input New Data user Locations end -->
               </div>
               <div id="Password" class="bg-white relative lg:p-8 md:p-6 p-4 rounded-md">
                 <div class="head flex gap-1 items-center justify-between">
@@ -304,7 +375,7 @@
                   ?>
 
                   <div class="user-informations  flex flex-col gap-4">
-                    <div class="flex md:flex-row w-full flex-col gap-6 lg:items-center items-start">
+                    <div class="flex md:flex-row w-full flex-col gap-3 lg:items-center items-start">
                       <label class="w-40">
                         <h6>Old Password</h6>
                       </label>
@@ -319,7 +390,7 @@
 
                       </span>
                     </div>
-                    <div class="flex md:flex-row flex-col gap-6 lg:items-center items-start">
+                    <div class="flex md:flex-row flex-col gap-3 lg:items-center items-start">
                       <label class="w-40">
                         <h6>New Password</h6>
                       </label>
@@ -567,7 +638,7 @@
     </section>
     <section>
       <div id="notification" class="fixed bg-green-500 right-1/2 translate-x-1/2 md:text-base text-xs top-16 transition-all z-50 ease-in-out duration-300  text-white px-4 py-2 rounded-lg invisible ">
-        Alamat berhasil diubah
+        Alamat Dipilih
       </div>
     </section>
     <?php include "layout/floatingButton.php" ?>
@@ -580,7 +651,7 @@
 <script src="js/profile.js"></script>
 <script src="js/nav.js"></script>
 <script src="js/floatingbtn.js"></script>
-<script>
+<!-- <script>
   const pilihAlamat = document.querySelectorAll('.pilihAlamat');
   const alamatTerpilih = document.querySelectorAll('.alamatTerpilih');
   const userInformations = document.querySelectorAll('.user-informations');
@@ -629,8 +700,7 @@
   });
 
   // Menentukan index pertama memiliki kelas 'locationsChoose'
-  userInformations[0].classList.add('locationsChoose');
-</script>
+</script> -->
 <script>
   function togglePasswordVisibility() {
     var passwordInputs = document.querySelectorAll('.passwordInput');

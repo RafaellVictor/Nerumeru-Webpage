@@ -47,6 +47,58 @@
   }
 
 
+  if (isset($_SESSION["user_id"])) {
+    // Include your database connection file and create $conn object
+
+    // Assuming you've sanitized your input, you can directly use $_SESSION["user_id"]
+    $user_id = $_SESSION["user_id"];
+
+    // Query to fetch locations with status = 1
+    $query1 = "SELECT * FROM user_locations INNER JOIN user ON user_locations.user_id = user.user_id WHERE user_locations.user_id = ? AND status = 1";
+    $stmt1 = $conn->prepare($query1);
+    $stmt1->bind_param("i", $user_id);
+    $stmt1->execute();
+    $result1 = $stmt1->get_result();
+
+    // Check if there are any results with status = 1
+    if ($result1->num_rows > 0) {
+      // Fetch the first row as an associative array
+      $location = $result1->fetch_assoc();
+      // Process fetched data as needed
+    } else {
+      echo "Data Pengguna untuk menampilkan alamat dengan status 1 tidak ditemukan";
+    }
+
+    // Query to fetch all user locations
+    $query2 = "SELECT * FROM user_locations INNER JOIN user ON user_locations.user_id = user.user_id WHERE user_locations.user_id = ?";
+    $stmt2 = $conn->prepare($query2);
+    $stmt2->bind_param("i", $user_id);
+    $stmt2->execute();
+    $result2 = $stmt2->get_result();
+
+    // Check if there are any results for all locations
+    if ($result2->num_rows > 0) {
+      $locations = array();
+
+      while ($row = $result2->fetch_assoc()) {
+        $locations[] = $row;
+      }
+
+      // Process fetched data as needed
+    } else {
+      echo "Data Pengguna untuk menampilkan semua alamat tidak ditemukan";
+    }
+  } else {
+    // If the user is not logged in, show an error message
+    echo "<script>
+      alert('Login Terlebih Dahulu');
+      window.location.href = 'login_Register.php'; // Redirect using JavaScript
+      </script>";
+    exit(); // Stop PHP script execution after sending the error message
+  }
+
+
+
   ?>
   <main>
     <section class="cart lg:mt-44 md:mt-32">
@@ -64,7 +116,7 @@
             <div class="user-informations bg-white px-4 py-6 flex flex-col gap-4">
               <span class="flex justify-between items-center">
                 <h5 class="font-semibold lg:text-base text-sm">Detail Pengeriman</h5>
-                <a id="UbahAlamat" class="lg:text-base text-sm flex gap-1 items-center text-green-500 cursor-pointer">
+                <button id="UbahAlamat" data-target="#BoxAlamat<?= $location["id"] ?>" class="lg:text-base text-sm flex gap-1 items-center text-green-500 cursor-pointer">
                   <h6>Ubah Details</h6>
                   <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-6 md:w-5 w-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -73,29 +125,44 @@
                     <path d="M9 7.07a7 7 0 0 0 1 13.93a7 7 0 0 0 6.929 -6"></path>
                   </svg>
                   <!-- z-30 -->
-                </a>
+                </button>
               </span>
               <hr />
-              <div class="wrapper flex flex-col gap-6">
-                <span>
-                  <h6 class="font-semibold lg:text-base text-sm">Nama & Telephone</h6>
-                  <h6 class="font-light lg:text-base text-sm">
-                    Immanuel Christian Hirani <br />
-                    (0813-1480-1495)
-                  </h6>
-                </span>
-                <span>
-                  <h6 class="font-semibold lg:text-base text-sm">Alamat</h6>
-                  <h6 class="font-light lg:text-base text-sm">Tanggerang , Banten , Jalan kakap raya no 15 kecamatan karawaci,kelurahan Cibodas sari</h6>
-                </span>
-              </div>
+              <?php if (empty($location)) : ?>
+                <div class="wrapper flex flex-col items-center  gap-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-x" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M14 19.5l-5 -2.5l-6 3v-13l6 -3l6 3l6 -3v9" />
+                    <path d="M9 4v13" />
+                    <path d="M15 7v6.5" />
+                    <path d="M22 22l-5 -5" />
+                    <path d="M17 22l5 -5" />
+                  </svg>
+                  <h6 class="lg:text-base md:text-sm text-xs font-medium">Alamat Kosong / Lengkapi Alamat Terlebih Dahulu !</h6>
+                </div>
+              <?php else : ?>
+                <div class="wrapper flex flex-col gap-6">
+                  <span>
+                    <h6 class="font-semibold lg:text-base text-sm">Nama & Telephone</h6>
+                    <h6 class="font-light lg:text-base text-sm">
+                      <span><?= $location["user_username_location"] ?></span><br />
+                      <span>(<?= $location["user_phone_location"] ?>)</span>
+                    </h6>
+                  </span>
+                  <span>
+                    <h6 class="font-semibold lg:text-base text-sm">Alamat</h6>
+                    <h6 class="font-light lg:text-base text-sm"><?= $location["user_location"] ?></h6>
+                  </span>
+                </div>
+                <?php include "layout/modal/ModalLocationCart.php"; ?>
+              <?php endif; ?>
               <hr />
-              <div class="relative overflow-hidden cursor-pointer self-end group text-blue-Neru border-2 border-blue-Neru md:px-6 px-4 py-2 rounded-lg">
-                <a href="" class="relative group-hover:z-20">
+              <button id="ToggleLocationsBoxSelector" class="relative overflow-hidden cursor-pointer self-end group text-blue-Neru border-2 border-blue-Neru md:px-5 px-4 py-1.5 rounded-lg">
+                <span class="relative group-hover:z-20">
                   <h6 class="md:text-sm text-xs group-hover:text-white font-semibold">Pilih Alamat Lain?</h6>
-                </a>
+                </span>
                 <div class="z-10 w-full h-full rounded-md flex items-center justify-center text-white bg-blue-Neru absolute inset-x-0 top-0 -translate-x-full group-hover:translate-x-0 transition-all ease-linear duration-200"></div>
-              </div>
+              </button>
             </div>
             <div class="cart-item bg-white lg:p-5 p-3">
               <hr class="mb-5" />
@@ -437,66 +504,7 @@
           </div>
         </div>
       </div>
-      <div class="text-start fixed inset-0 bg-black bg-opacity-0 flex justify-center items-center -z-20 text-black">
-        <div id="BoxAlamat" class="alamat-wrapper opacity-0 bg-white xl:w-[30%] lg:w-[50%] md:w-[70%] w-[90%] h-fit">
-          <div class="p-4">
-            <h6>Informasi User</h6>
-          </div>
-          <hr />
-          <div class="flex flex-col gap-3 p-4">
-            <div class="flex justify-between items-center">
-              <h6 class="md:text-base text-xs capitalize">
-                Immanuel Christian Hirani <br />
-                <span class="font-light md:text-sm text-xs">(+62)-813-1480-1945 </span>
-              </h6>
-              <a id="UbahAlamatToggle-Feat" type="button" class="cursor-pointer md:text-sm text-xs text-blue-Neru font-semibold">
-                <h6>Ubah</h6>
-              </a>
-            </div>
-            <div class="w-[80%]">
-              <h6 class="md:text-sm text-xs font-light capitalize">Jalan Kakap Raya No.155, RT.1/RW.3, Karawaci Baru, Karawaci (Rumah hijau besar) KARAWACI, KOTA TANGERANG, BANTEN, ID, 15116</h6>
-            </div>
-          </div>
-          <hr />
-          <div class="flex items-center justify-end p-4">
-            <button class="outline outline-[1px] outline-slate-200 md:text-sm text-xs px-9 py-2 font-semibold capitalize hover:bg-blue-Neru hover:text-white closeBox cursor-pointer">Tutup</button>
-          </div>
-        </div>
-        <div id="Feat-UbahAlamat" class="hidden relative bg-white 3xl:w-[30%] 2xl:w-[40%] lg:w-[50%] md:w-[60%] w-[90%] h-[60%] overflow-y-auto rounded-md lg:px-10 lg:py-4 p-6">
-          <h5 class="font-semibold text-center lg:text-lg md:text-base text-sm">Ubah Alamat</h5>
-          <span class="absolute top-5 lg:right-9 right-5 closeBoxFeatUbahAlamat">
-            <svg xmlns="http://www.w3.org/2000/svg" class="md:w-6 w-5 text-red-600 cursor-pointer" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M18 6l-12 12" />
-              <path d="M6 6l12 12" />
-            </svg>
-          </span>
-          <div class="flex flex-col justify-center gap-6">
-            <label class="flex flex-col gap-1.5 font-medium lg:text-base md:text-sm text-xs" for="">Pinpoint
-              <div class="border-[1px] p-3 flex justify-between w-full bg-white shadow-md rounded-md">
-                <svg xmlns="http://www.w3.org/2000/svg" class="md:w-5 w-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M18.364 4.636a9 9 0 0 1 .203 12.519l-.203 .21l-4.243 4.242a3 3 0 0 1 -4.097 .135l-.144 -.135l-4.244 -4.243a9 9 0 0 1 12.728 -12.728zm-6.364 3.364a3 3 0 1 0 0 6a3 3 0 0 0 0 -6z" stroke-width="0" fill="currentColor" />
-                </svg>
-                <a href="" class="text-blue-Neru font-medium">Ubah</a>
-              </div>
-            </label>
-            <label class="flex flex-col gap-1.5 font-medium lg:text-base md:text-sm text-xs" for="">Label Alamat
-              <input type="text" class="border-[1px] outline-none rounded-md shadow-md p-3 md:text-base text-xs" placeholder="Rumah" />
-            </label>
-            <label class="flex flex-col gap-1.5 font-medium lg:text-base md:text-sm text-xs" for="">Alamat Lengkap
-              <textarea name="" placeholder="Cth : Jalan  dukuh 3 no 106 , Tanggerang , Karawaci Baru" class="shadow-md lg:text-base md:text-sm text-xs border-[1px] outline-none rounded-md p-3" id="" cols="10" rows="5"></textarea>
-            </label>
-            <label class="flex flex-col gap-1.5 font-medium lg:text-base md:text-sm text-xs" for="">Catatan Untuk Kurir (Opsional)
-              <input type="text" class="border-[1px] outline-none rounded-md shadow-md p-3 lg:text-base md:text-sm text-xs" placeholder="Cth : Rumah Hijau Besar Spanduk pecel lele" />
-            </label>
-            <label class="flex flex-col gap-1.5 font-medium lg:text-base md:text-sm text-xs" for="">Nama Penerima
-              <input type="text" class="border-[1px] outline-none rounded-md shadow-md p-3 lg:text-base md:text-sm text-xs" placeholder="Cth : Immanuel" />
-            </label>
-            <button class="bg-blue-Neru px-6 py-2 w-fit text-white-neru font-semibold mx-auto rounded-md md:text-base text-xs">Simpan</button>
-          </div>
-        </div>
-      </div>
+      <?php include "layout/modal/ModalLocationsSelector.php" ?>
       <div class="text-start fixed inset-0 bg-black bg-opacity-0 flex justify-center items-center -z-20 text-black">
         <div id="PaymentBox" class="alamat-wrapper transition-all ease-in-out duration-300 opacity-0 bg-white lg:w-[30%] md:w-[70%] w-[90%] h-fit rounded-lg">
           <div class="p-4 flex justify-between">
@@ -569,5 +577,46 @@
 <script src="js/accordion.js"></script>
 <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 <script src="js/floatingbtn.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var locationsWrapper = document.querySelector('.wrapperLocationSelector');
+
+    function setWrapperHeight() {
+      // Get the number of locations
+      var locationsCount = document.querySelectorAll('.user-informations').length;
+
+      // Check if the number of locations is greater than 3
+      if (locationsCount > 3 && window.innerWidth <= 480) { // Misalnya, batas untuk "ukuran mobile" adalah 768px
+        // Change the max-h-screen to h-[600px]
+        locationsWrapper.classList.remove('max-h-screen');
+        locationsWrapper.classList.add('h-[600px]');
+      } else {
+        // Revert the styles if conditions are not met
+        locationsWrapper.classList.remove('h-[600px]');
+        locationsWrapper.classList.add('max-h-screen');
+      }
+    }
+
+    // Call setWrapperHeight initially and on window resize
+    setWrapperHeight();
+    window.addEventListener('resize', setWrapperHeight);
+  });
+</script>
+
+
+<script>
+  const TogglelocationsBoxSelector = document.getElementById("ToggleLocationsBoxSelector")
+  const locationsBoxSelector = document.getElementById("locationSelectorBox")
+  const CloseToggle = document.getElementById("closeBoxFeatUbahAlamatSelector")
+
+  TogglelocationsBoxSelector.addEventListener("click", () => {
+    TogglelocationsBoxSelector.classList.add("toggleActive");
+    locationsBoxSelector.classList.remove("hidden");
+  })
+
+  CloseToggle.addEventListener("click", () => {
+    locationsBoxSelector.classList.add("hidden")
+  })
+</script>
 
 </html>

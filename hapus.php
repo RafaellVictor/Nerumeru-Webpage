@@ -159,3 +159,21 @@ if (isset($_GET['user_id'])) {
         </script>";
     }
 }
+
+
+if (isset($_GET['id_location'])) {
+    $id_user = $_GET['id_location'];
+    if (deleteLocation($id_user) > 0) {
+        echo
+        "<script>
+            alert('lokasi berhasil di hapus');
+            document.location.href = 'Profile.php';
+        </script>";
+    } else {
+        echo
+        "<script>
+            alert('lokasi gagal di hapus');
+            document.location.href = 'Profile.php';
+        </script>";
+    }
+}

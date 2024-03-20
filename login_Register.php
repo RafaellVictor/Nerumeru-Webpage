@@ -38,7 +38,6 @@ if (isset($_POST['submitLogin'])) {
     if (password_verify($user_password, $row["user_password"])) {
       session_start();
       $_SESSION['user_id'] = $row['user_id'];
-      $_SESSION['user_username'] = $row['user_username'];
       header("Location: index.php");
       exit;
     } else {
@@ -117,7 +116,7 @@ if (isset($_POST['submitLogin'])) {
               <form action="" method="post" class="w-full font-semibold mt-6 flex flex-col">
                 <span class="flex flex-col gap-8">
                   <div class="flex w-full relative">
-                    <input type="text" required name="user_email" placeholder="Email" class="inputLogin xl:text-base md:text-base text-sm w-full py-3 outline-none bg-transparent border-b-2 border-white" />
+                    <input type="email" required name="user_email" placeholder="Email" class="inputLogin xl:text-base md:text-base text-sm w-full py-3 outline-none bg-transparent border-b-2 border-white" />
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon absolute right-0 bottom-1/2 translate-y-1/2 icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
@@ -125,7 +124,7 @@ if (isset($_POST['submitLogin'])) {
                     </svg>
                   </div>
                   <div class="flex w-full relative">
-                    <input type="text" required name="user_phone" placeholder="No Tlpn" class="inputLogin xl:text-base md:text-base text-sm w-full py-3 outline-none bg-transparent border-b-2 border-white" />
+                    <input type="number" required name="user_phone" placeholder="No Tlpn" class="inputLogin xl:text-base md:text-base text-sm w-full py-3 outline-none bg-transparent border-b-2 border-white" />
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon absolute right-0 bottom-1/2 translate-y-1/2 icon-tabler icon-tabler-phone-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />

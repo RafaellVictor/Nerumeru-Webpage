@@ -54,9 +54,8 @@ $Users = query("SELECT * FROM user");
               </div>
             </div>
           </header>
-
           <div class="max-h-screen w-full overflow-y-auto">
-            <div id="UserData" class="container  BoxTableData bg-white rounded-lg shadow-md 3xl:h-fit 2xl:h-fit overflow-y-auto mt-4">
+            <div id="UserData" class="container BoxTableData bg-white rounded-lg shadow-md 3xl:h-fit 2xl:h-fit overflow-y-auto mt-4">
               <table id="myTable2" class="myTableDisplay 3xl:text-lg text-sm py-6 display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
@@ -76,9 +75,32 @@ $Users = query("SELECT * FROM user");
                       <td class="w-32"><img src="img/<?= $user["user_img"] ?>" class="w-[60%] object-contain mx-auto" alt="" /></td>
                       <td class="w-28"><?= $user["user_username"] ?></td>
                       <td class="w-28"><?= $user["user_email"] ?></td>
-                      <td class="w-28"><a class="bg-blue-Neru py-1.5 px-4 md:text-base text-sm rounded-lg text-white">Lihat Lokasi</a></td>
                       <td class="w-28">
-                        <button data-target="#userInfo<?= $user["user_id"] ?>" class="cursor-pointer DateDetailToggler bg-blue-Neru py-1.5 px-4 md:text-base text-sm rounded-lg text-white">Lihat Details</button>
+                        <a href="Admin-userLocations.php?user_id=<?= $user["user_id"]  ?>" type="submit" class="flex items-center justify-center w-fit gap-2 px-4 bg-blue-Neru py-2 text-sm rounded-lg text-white" name="submit_location">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-2" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 18.5l-3 -1.5l-6 3v-13l6 -3l6 3l6 -3v7.5" />
+                            <path d="M9 4v13" />
+                            <path d="M15 7v5.5" />
+                            <path d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879z" />
+                            <path d="M19 18v.01" />
+                          </svg>
+                          Lokasi
+                        </a>
+                      </td>
+                      <td class="w-28">
+                        <button data-target="#userInfo<?= $user["user_id"] ?>" class="flex gap-2 items-center cursor-pointer DateDetailToggler bg-blue-Neru py-2 px-4  text-sm rounded-lg text-white">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+                            <path d="M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                            <path d="M15 3v4" />
+                            <path d="M7 3v4" />
+                            <path d="M3 11h16" />
+                            <path d="M18 16.496v1.504l1 1" />
+                          </svg>
+                          Date
+                        </button>
                       </td>
                       <td class="w-28">
                         <span class="flex items-center gap-2 justify-center">
@@ -86,28 +108,7 @@ $Users = query("SELECT * FROM user");
                         </span>
                       </td>
                     </tr>
-                    <div id="userInfo<?= $user["user_id"] ?>" class="userChangesDetail container hidden z-10 transition-all ease-in-out duration-300 bg-blue-Neru absolute top-0 shadow-lg  translate-x-[48%]  text-white font-semibold w-[600px] h-[150px] rounded-lg">
-                      <div class="wrap flex flex-col gap-3 ">
-                        <div class="child-wrap">
-                          <h6>User Melakukan Registrasi (Date)</h6>
-                          <div class="flex gap-3 items-center">
-                            <h6><?= $user["user_username"] ?></h6> |
-                            <h6><?= $user["insert_date"] ?></h6>
-                          </div>
-                        </div>
-                        <hr>
-                        <div class="child-wrap">
-                          <h6>User Melakukan Update Data Terakhir (Date)</h6>
-                          <div class="flex gap-3 items-center">
-                            <h6><?= $user["user_username"] ?></h6> |
-                            <h6><?= $user["lastUpdate_date"] ?></h6>
-                          </div>
-                        </div>
-                          <div id="buttonClose" class="cursor-pointer w-9 h-9 absolute right-2 top-2 text-blue-Neru rounded-full p-3 bg-white flex items-center">
-                            X
-                          </div>
-                      </div>
-                    </div>
+                    <?php include("layout/modal/ModalCustomers.php") ?>
                   <?php endforeach; ?>
                 </tbody>
               </table>

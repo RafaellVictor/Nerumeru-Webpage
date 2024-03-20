@@ -172,6 +172,7 @@
               </svg>
               <h6>Blog Page</h6>
             </a>
+            
           </div>
         </div>
         <hr class="w-[70%] border-[1px] self-end" />
