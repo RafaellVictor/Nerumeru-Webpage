@@ -83,13 +83,13 @@ $trolly = query("SELECT * FROM trolly");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable" class="myTableDisplay 3xl:text-lg text-sm py-6 display nowrap table hover order-column row-border stripe">
+              <table id="myTable" class="myTableDisplay 3xl:text-lg text-sm py-6 display table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Image</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Type</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30 w-40">Name</th>
+                    <th class="border-[1px] border-black-neru border-opacity-30 w-36">Name</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Stock</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Inserted On</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Last Updated</th>
@@ -105,9 +105,9 @@ $trolly = query("SELECT * FROM trolly");
                   foreach ($filteredNerumeru as $bedding) :  ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $bedding["product_id"] ?></td>
-                      <td class="w-60"><img src="img/<?= $bedding["product_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td class="w-14"><img src="img/<?= $bedding["product_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
                       <td class="w-14"><?= $bedding["product_type"] ?></td>
-                      <td class="w-14"><?= $bedding["product_name"] ?></td>
+                      <td class="w-14 text-justify"><?= $bedding["product_name"] ?></td>
                       <td class="w-14"><?= $bedding["product_stock"] ?></td>
                       <td><?= $bedding["insert_date"] ?></td>
                       <td><?= $bedding["lastUpdate_date"] ?></td>
@@ -141,13 +141,13 @@ $trolly = query("SELECT * FROM trolly");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable2" class="myTableDisplay py-6 3xl:text-lg text-sm display nowrap table hover order-column row-border stripe">
+              <table id="myTable2" class="myTableDisplay py-6 3xl:text-lg text-sm display table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Image</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Type</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30 w-40">Name</th>
+                    <th class="border-[1px] border-black-neru border-opacity-30 w-36">Name</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Stock</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Inserted On</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Last Updated</th>
@@ -163,9 +163,9 @@ $trolly = query("SELECT * FROM trolly");
                     foreach ($filteredNerumeru as $toys) :  ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $toys["product_id"] ?></td>
-                      <td class="w-60"><img src="img/<?= $toys["product_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td class="w-14"><img src="img/<?= $toys["product_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
                       <td class="w-14"><?= $toys["product_type"] ?></td>
-                      <td class="w-14"><?= $toys["product_name"] ?></td>
+                      <td class="w-14 text-justify"><?= $toys["product_name"] ?></td>
                       <td class="w-14"><?= $toys["product_stock"] ?></td>
                       <td><?= $toys["insert_date"] ?></td>
                       <td><?= $toys["lastUpdate_date"] ?></td>
@@ -199,13 +199,13 @@ $trolly = query("SELECT * FROM trolly");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable3" class="myTableDisplay py-6 3xl:text-lg text-sm display nowrap table hover order-column row-border stripe">
+              <table id="myTable3" class="myTableDisplay py-6 3xl:text-lg text-sm display table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Image</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Type</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30 w-40">Name</th>
+                    <th class="border-[1px] border-black-neru border-opacity-30 w-36">Name</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Stock</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Inserted On</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Last Updated</th>
@@ -221,9 +221,9 @@ $trolly = query("SELECT * FROM trolly");
                     foreach ($filteredNerumeru as $sanitize) :  ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $sanitize["product_id"] ?></td>
-                      <td class="w-60"><img src="img/<?= $sanitize["product_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td class="w-14"><img src="img/<?= $sanitize["product_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
                       <td class="w-14"><?= $sanitize["product_type"] ?></td>
-                      <td class="w-14"><?= $sanitize["product_name"] ?></td>
+                      <td class="w-14 text-justify"><?= $sanitize["product_name"] ?></td>
                       <td class="w-14"><?= $sanitize["product_stock"] ?></td>
                       <td><?= $sanitize["insert_date"] ?></td>
                       <td><?= $sanitize["lastupdate_date"] ?></td>
@@ -257,13 +257,13 @@ $trolly = query("SELECT * FROM trolly");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable4" class="myTableDisplay 3xl:text-lg text-sm py-6 display nowrap table hover order-column row-border stripe">
+              <table id="myTable4" class="myTableDisplay 3xl:text-lg text-sm py-6 display table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Image</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Type</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30 w-40">Name</th>
+                    <th class="border-[1px] border-black-neru border-opacity-30 w-36">Name</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Stock</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Inserted On</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Last Updated</th>
@@ -279,9 +279,9 @@ $trolly = query("SELECT * FROM trolly");
                     foreach ($filteredNerumeru as $pillow) :  ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $pillow["product_id"] ?></td>
-                      <td class="w-60"><img src="img/<?= $pillow["product_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td class="w-14"><img src="img/<?= $pillow["product_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
                       <td class="w-14"><?= $pillow["product_type"] ?></td>
-                      <td class="w-14"><?= $pillow["product_name"] ?></td>
+                      <td class="w-14 text-justify"><?= $pillow["product_name"] ?></td>
                       <td class="w-14"><?= $pillow["product_stock"] ?></td>
                       <td><?= $pillow["insert_date"] ?></td>
                       <td><?= $pillow["lastUpdate_date"] ?></td>
