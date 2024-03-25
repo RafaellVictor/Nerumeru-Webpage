@@ -1715,9 +1715,18 @@ a.plyr__control:before {
 }
 
 .locationsChoose {
-  @apply bg-blue-Neru bg-opacity-5 border-blue-Neru
+  @apply bg-blue-Neru bg-opacity-5 border-blue-Neru;
 }
 
 .animations {
   @apply top-24;
+}
+
+
+.BoxDate-Active {
+  @apply block
+}
+
+.Addlocations-User-Active {
+  @apply flex;
 }

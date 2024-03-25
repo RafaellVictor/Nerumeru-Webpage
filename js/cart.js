@@ -2,16 +2,37 @@ const durationCargo = document.getElementById("durationCargo");
 const options = document.querySelectorAll(".durasiBox h6");
 const pilihanCargo = document.getElementById("CargoPilihan");
 const optionsCargoBox = document.querySelectorAll(".pilihanCargoBox h6");
-const boxalamat = document.getElementById("BoxAlamat");
-const ubahalamat = document.getElementById("UbahAlamat");
-const boxalamatParent = boxalamat.parentNode;
 const closeBox = document.querySelectorAll(".closeBox");
+const boxalamat = document.querySelector(".alamat-wrapper");
+const boxalamatParent = boxalamat.parentNode;
 const closeBoxFeatAlamat = document.querySelector(".closeBoxFeatUbahAlamat");
 const checkoutToggle = document.getElementById("checkoutToggle");
 const PaymentBox = document.getElementById("PaymentBox");
 const PaymentBoxParent = PaymentBox.parentNode;
 const UbahAlamatToggle = document.getElementById("UbahAlamatToggle-Feat");
 const FeatUbahAlamat = document.getElementById("Feat-UbahAlamat");
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Mengambil elemen-elemen dari DOM setelah DOMContentLoaded event terjadi
+  const boxalamat = document.querySelector(".alamat-wrapper");
+  const ubahalamat = document.getElementById("UbahAlamat");
+  const boxalamatParent = boxalamat.parentNode;
+
+  // Menambahkan event listener untuk menangani klik pada tombol UbahAlamat
+  ubahalamat.addEventListener("click", () => {
+    // Mendapatkan data-target dari tombol yang diklik
+    const targetId = ubahalamat.getAttribute("data-target");
+
+    // Mendapatkan elemen boxalamat berdasarkan targetId
+    const boxAlamat = document.querySelector(targetId);
+
+    // Menambahkan kelas aktif ke elemen
+    ubahalamat.classList.add("active");
+    boxAlamat.classList.add("box-Cart-active");
+    boxalamatParent.classList.add("box-parent-active");
+    document.body.classList.add("overflow-hidden");
+  });
+});
 
 // Menyimpan referensi ke elemen yang aktif saat ini
 let activeElement = null;
@@ -70,16 +91,8 @@ optionsCargoBox.forEach((option) => {
 
 // Alamat
 
-ubahalamat.addEventListener("click", () => {
-  ubahalamat.classList.add("active");
-  boxalamat.classList.add("box-Cart-active");
-  boxalamatParent.classList.add("box-parent-active");
-  document.body.classList.add("overflow-hidden");
-});
-
 closeBox.forEach((Otherclosebox) => {
   Otherclosebox.addEventListener("click", () => {
-    ubahalamat.classList.remove("active");
     boxalamat.classList.remove("box-Cart-active");
     boxalamatParent.classList.remove("box-parent-active");
     checkoutToggle.classList.remove("active");
@@ -116,14 +129,12 @@ function handleRadioChange(selectedRadio) {
 
 // Radio Checkbox end
 
-closeBoxFeatAlamat.addEventListener('click' , () => {
-  boxalamat.classList.remove('hidden')
-  FeatUbahAlamat.classList.add('hidden')
-})
+closeBoxFeatAlamat.addEventListener("click", () => {
+  boxalamat.classList.remove("hidden");
+  FeatUbahAlamat.classList.add("hidden");
+});
 
-
-
-UbahAlamatToggle.addEventListener('click' ,() => {
-  FeatUbahAlamat.classList.remove('hidden')
-  boxalamat.classList.add('hidden')
-})
+UbahAlamatToggle.addEventListener("click", () => {
+  FeatUbahAlamat.classList.remove("hidden");
+  boxalamat.classList.add("hidden");
+});

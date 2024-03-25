@@ -2,7 +2,10 @@
 
 require "function.php";
 
-$Users= query("SELECT * FROM user");
+$Users = query("SELECT * FROM user");
+
+
+
 
 
 ?>
@@ -52,7 +55,7 @@ $Users= query("SELECT * FROM user");
             </div>
           </header>
           <div class="max-h-screen w-full overflow-y-auto">
-            <div id="UserData" class="container  BoxTableData bg-white rounded-lg shadow-md 3xl:h-fit 2xl:h-fit overflow-y-auto mt-4">
+            <div id="UserData" class="container BoxTableData bg-white rounded-lg shadow-md 3xl:h-fit 2xl:h-fit overflow-y-auto mt-4">
               <table id="myTable2" class="myTableDisplay 3xl:text-lg text-sm py-6 display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
@@ -60,8 +63,8 @@ $Users= query("SELECT * FROM user");
                     <th class="border-[1px] border-black-neru border-opacity-30">Img</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Username</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Email</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30">insert on</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30">Last update</th>
+                    <th class="border-[1px] border-black-neru border-opacity-30">Locations</th>
+                    <th class="border-[1px] border-black-neru border-opacity-30">Changes Details </th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Action</th>
                   </tr>
                 </thead>
@@ -69,17 +72,43 @@ $Users= query("SELECT * FROM user");
                   <?php foreach ($Users as $user) : ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $user["user_id"] ?></td>
-                      <td class="w-40"><img src="img/<?= $user["user_img"] ?>" class="w-fit object-contain mx-auto" alt="" /></td>
-                      <td class="w-14"><?= $user["user_username"] ?></td>
-                      <td class="w-14"><?= $user["user_email"] ?></td>
-                      <td><?= $user["insert_date"] ?></td>
-                      <td><?= $user["lastUpdate_date"] ?></td>
-                      <td>
+                      <td class="w-32"><img src="img/<?= $user["user_img"] ?>" class="w-[60%] object-contain mx-auto" alt="" /></td>
+                      <td class="w-28"><?= $user["user_username"] ?></td>
+                      <td class="w-28"><?= $user["user_email"] ?></td>
+                      <td class="w-28">
+                        <a href="Admin-userLocations.php?user_id=<?= $user["user_id"]  ?>" type="submit" class="flex items-center justify-center w-fit gap-2 px-4 bg-blue-Neru py-2 text-sm rounded-lg text-white" name="submit_location">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-2" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 18.5l-3 -1.5l-6 3v-13l6 -3l6 3l6 -3v7.5" />
+                            <path d="M9 4v13" />
+                            <path d="M15 7v5.5" />
+                            <path d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879z" />
+                            <path d="M19 18v.01" />
+                          </svg>
+                          Lokasi
+                        </a>
+                      </td>
+                      <td class="w-28">
+                        <button data-target="#userInfo<?= $user["user_id"] ?>" class="flex gap-2 items-center cursor-pointer DateDetailToggler bg-blue-Neru py-2 px-4  text-sm rounded-lg text-white">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+                            <path d="M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                            <path d="M15 3v4" />
+                            <path d="M7 3v4" />
+                            <path d="M3 11h16" />
+                            <path d="M18 16.496v1.504l1 1" />
+                          </svg>
+                          Date
+                        </button>
+                      </td>
+                      <td class="w-28">
                         <span class="flex items-center gap-2 justify-center">
                           <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?user_id=<?= $user["user_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
+                    <?php include("layout/modal/ModalCustomers.php") ?>
                   <?php endforeach; ?>
                 </tbody>
               </table>
@@ -95,9 +124,8 @@ $Users= query("SELECT * FROM user");
               </div>
             </form> -->
           </div>
+          <!-- Main Menu End -->
         </div>
-        <!-- Main Menu End -->
-      </div>
     </section>
   </main>
 </body>
@@ -106,6 +134,7 @@ $Users= query("SELECT * FROM user");
 <script src="js/button.js"></script>
 <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 <script src="js/admin.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.3.5/js/dataTables.buttons.min.js"></script>
@@ -135,7 +164,6 @@ $Users= query("SELECT * FROM user");
   if (savedActiveButtonIndex !== null && savedActiveButtonIndex >= 0 && savedActiveButtonIndex < totalItems) {
     ButtonTogglerActive[savedActiveButtonIndex].classList.add("ButtonAdminMenuActive");
     if (BoxTableData[savedActiveButtonIndex]) {
-      // Periksa apakah elemen ada sebelum menambahkan kelas
       BoxTableData[savedActiveButtonIndex].classList.add("Active-BoxTable"); // Aktifkan data yang sesuai
     }
   } else {
@@ -143,7 +171,6 @@ $Users= query("SELECT * FROM user");
     ButtonTogglerActive[0].classList.add("ButtonAdminMenuActive");
     saveActiveButton(0); // Menyimpan status toggler yang aktif ke dalam localStorage
     if (BoxTableData[0]) {
-      // Periksa apakah elemen ada sebelum menambahkan kelas
       BoxTableData[0].classList.add("Active-BoxTable"); // Aktifkan data pertama
     }
   }
@@ -157,14 +184,12 @@ $Users= query("SELECT * FROM user");
       });
       BoxTableData.forEach((box, boxIndex) => {
         if (index === boxIndex && box) {
-          // Periksa apakah elemen ada sebelum menambahkan kelas
           box.classList.add("Active-BoxTable");
         } else if (box) {
           box.classList.remove("Active-BoxTable");
         }
       });
       OtherButton.classList.add("ButtonAdminMenuActive");
-      // Memanggil fungsi untuk menyimpan status toggler yang aktif ke dalam localStorage setiap kali ada perubahan
       saveActiveButton(index);
     });
   });

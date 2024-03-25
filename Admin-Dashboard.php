@@ -1,3 +1,12 @@
+
+<?php 
+
+require "function.php";
+
+
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>

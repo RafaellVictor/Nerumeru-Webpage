@@ -157,7 +157,7 @@
           </div>
         </div>
       </div>
-      <div id="overlay-Filter-Moderen" class="absolute lg:hidden -translate-y-full transition-all ease-in-out duration-300 lg:top-20 top-16  z-10 w-full">
+      <div id="overlay-Filter-Moderen" class="absolute xl:hidden -translate-y-full transition-all ease-in-out duration-300 lg:top-20 top-16  z-10 w-full">
         <div class="bg-white">
           <div class=" text-center container h-fit">
             <div id="filterBox" class="md:max-w-screen-xl  max-w-screen-sm  w-full">

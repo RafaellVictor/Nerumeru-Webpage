@@ -158,12 +158,15 @@ if (isset($_GET['banner_id']) && isset($_GET['status'])) { // Mengecek apakah pa
     }
 }
 
+
 if (isset($_GET['product_id']) && isset($_GET['status'])) { // Mengecek apakah parameter id dan status ada di URL
     $idproduct = $_GET['product_id']; // Mengambil nilai id dari URL
     $status = $_GET['status']; // Mengambil nilai status dari URL
 
+
     // Mengubah status menjadi lawan dari status saat ini (0 menjadi 1 atau 1 menjadi 0)
     $newStatus = ($status == 1) ? 0 : 1;
+
 
     $query = "UPDATE product SET status='$newStatus' WHERE product_id='$idproduct'"; // Query update status banner
     $running = mysqli_query($conn, $query); // Menjalankan query
@@ -184,6 +187,7 @@ if (isset($_GET['trolly_id']) && isset($_GET['status'])) { // Mengecek apakah pa
     // Mengubah status menjadi lawan dari status saat ini (0 menjadi 1 atau 1 menjadi 0)
     $newStatus = ($status == 1) ? 0 : 1;
 
+
     $query = "UPDATE trolly SET status='$newStatus' WHERE trolly_id='$idtrolly'"; // Query update status banner
     $running = mysqli_query($conn, $query); // Menjalankan query
 
@@ -195,3 +199,4 @@ if (isset($_GET['trolly_id']) && isset($_GET['status'])) { // Mengecek apakah pa
         echo "Error update data: " . mysqli_error($conn); // Menampilkan pesan error
     }
 }
+

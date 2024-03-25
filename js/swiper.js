@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     breakpoints: {
       360: {
-        slidesPerView: 3,
+        slidesPerView: 1.8,
         loop: checkLoopSlides(),
         centeredSlides: checkCenteredSlides(),
       },
@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     breakpoints: {
       360: {
-        slidesPerView: 3,
+        slidesPerView: 1.8,
         loop: checkLoopSlides(),
         centeredSlides: checkCenteredSlides(),
       },

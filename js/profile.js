@@ -48,3 +48,50 @@ pesananBoxToggle.addEventListener("click", () => {
   pesananBoxToggle.classList.toggle("togglePesanan-active");
   nextsiblings.classList.toggle("BoxPesanan-Active");
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const OpenLocationsPopUp = document.getElementById("OpenLocationsPopUp");
+  const popupLocations = document.getElementById("popupLocations");
+  const CloseLocations = document.getElementById("CloseLocations");
+
+  OpenLocationsPopUp.addEventListener("click", () => {
+    popupLocations.classList.add("Addlocations-User-Active");
+    popupLocations.classList.remove("hidden");
+  });
+
+  CloseLocations.addEventListener("click", () => {
+    popupLocations.classList.remove("Addlocations-User-Active");
+    popupLocations.classList.add("hidden");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Ambil semua tombol "Lihat Details"
+  const detailTogglers = document.querySelectorAll(".LocationsPopUpToggler");
+
+  // Tambahkan event listener ke setiap tombol
+  detailTogglers.forEach(function (toggler) {
+    toggler.addEventListener("click", function () {
+      const targetModalId = this.getAttribute("data-target");
+      const targetModal = document.querySelector(targetModalId);
+      const allModals = document.querySelectorAll(".popupLocationsUpdate");
+
+      // Sembunyikan semua box terlebih dahulu
+      allModals.forEach(function (modal) {
+        modal.classList.remove("Addlocations-User-Active");
+      });
+
+      // Tampilkan modal yang sesuai
+      if (targetModal) {
+        targetModal.classList.add("Addlocations-User-Active");
+      }
+
+      const closeBtn = targetModal.querySelector("#CloseLocationsUpdate");
+      if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+          targetModal.classList.remove("Addlocations-User-Active");
+        });
+      }
+    });
+  });
+});

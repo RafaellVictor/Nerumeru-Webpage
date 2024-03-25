@@ -740,118 +740,131 @@ function registerAccount($data)
 }
 
 
-// function UpdateProfile($data)
-// {
-//     global $conn;
+function insertlocations($data)
+{
+    global $conn;
 
-//     $user_imgLama = htmlspecialchars($data["gambarLama"]);
+    // Pastikan session user_id tersedia dan tidak kosong
+    if (isset($_SESSION["user_id"]) && !empty($_SESSION["user_id"])) {
+        $user_id = $_SESSION["user_id"];
 
-//     // Jika ada file gambar yang diunggah, proses upload
-//     if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] !== 4) {
-//         $user_img = upload();
-//     } else {
-//         // Jika tidak, gunakan gambar yang sudah ada
-//         $user_img = $user_imgLama;
-//     }
+        $username_location_receiver = mysqli_real_escape_string($conn, htmlspecialchars($data["user_username-location"]));
+        $phone_location_receiver = mysqli_real_escape_string($conn, htmlspecialchars($data["user_phone-location"]));
+        $location_receiver = mysqli_real_escape_string($conn, htmlspecialchars($data["user_location"]));
 
-//     $user_id = isset($data['user_id']) ? htmlspecialchars($data['user_id']) : '';
-//     $user_username = htmlspecialchars($data['user_username']);
-//     $user_email = htmlspecialchars($data['user_email']);
-//     $user_phone = htmlspecialchars($data['user_phone']);
+        // Perhatikan penamaan kolom di dalam query
+        $query_location = "INSERT INTO user_locations (user_id, user_location, user_phone_location, user_username_location)
+                        VALUES ('$user_id', '$location_receiver', '$phone_location_receiver', '$username_location_receiver')";
 
-//     $query = "UPDATE user SET
-//                 user_phone = '$user_phone',
-//                 user_username = '$user_username',    
-//                 user_email = '$user_email',    
-//                 user_img = '$user_img',    
-//                 lastUpdate_date = NOW()
-//                 WHERE user_id = '$user_id'
-//             ";
+        // Execute Query untuk menambahkan lokasi
+        mysqli_query($conn, $query_location);
 
-//     mysqli_query($conn, $query);
-//     return mysqli_affected_rows($conn);
-// }
-
-// function updateProfileData()
-// {
-//     global $conn;
-
-//     $response = array(); // Membuat array untuk menyimpan pesan kesalahan atau pesan sukses
-
-//     // Memeriksa apakah semua variabel yang diperlukan ada
-//     if (
-//         isset($_POST["user_username"]) &&
-//         isset($_POST["user_email"]) &&
-//         isset($_POST["user_phone"]) &&
-//         isset($_POST["user_id"])
-//     ) {
-//         $user_id = $_POST["user_id"];
-//         $user_username = $_POST["user_username"];
-//         $user_email = $_POST["user_email"];
-//         $user_phone = $_POST["user_phone"];
-
-//         // Update data pengguna ke database
-//         $update_query = "UPDATE user SET user_username = ?, user_email = ?, user_phone = ? WHERE user_id = ?";
-//         $update_stmt = $conn->prepare($update_query);
-//         $update_stmt->bind_param("sssi", $user_username, $user_email, $user_phone, $user_id);
-
-//         // Melakukan update
-//         if ($update_stmt->execute()) {
-//             // Beri pesan sukses kepada pengguna
-//             $response['success'] = "Data profil berhasil diperbarui!";
-//         } else {
-//             // Jika gagal melakukan update, beri pesan error kepada pengguna
-//             $response['error'] = "Gagal memperbarui data profil.";
-//         }
-//     } else {
-//         // Jika satu atau lebih variabel yang diperlukan tidak tersedia, beri pesan error kepada pengguna
-//         $response['error'] = "Data tidak lengkap.";
-//     }
-
-//     return $response; // Mengembalikan pesan kesalahan atau pesan sukses
-// }
+        return mysqli_affected_rows($conn);
+    } else {
+        // Handle jika user_id tidak tersedia
+        return 0;
+    }
+}
 
 
 function updateProfileData($conn)
 {
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submitUpdateProfileData"])) {
 
-        // Panggil fungsi upload() untuk mengunggah gambar
-        $namaFile = upload();
+    // Panggil fungsi upload() untuk mengunggah gambar
+    $namaFile = upload();
 
-        // Periksa apakah pengguna sudah login
-        if (isset($_SESSION['user_id'])) {
-            // Ambil user_id dari session
-            $user_id = $_SESSION['user_id'];
+    // Periksa apakah pengguna sudah login
+    if (isset($_SESSION['user_id'])) {
+        // Ambil user_id dari session
+        $user_id = $_SESSION['user_id'];
 
-            // Lakukan query untuk mengupdate data pengguna
-            $username = $_POST['user_username'];
-            $email = $_POST['user_email'];
-            $phone = $_POST['user_phone'];
+        // Lakukan query untuk mengupdate data pengguna
+        $username = $_POST['user_username'];
+        $email = $_POST['user_email'];
+        $phone = $_POST['user_phone'];
 
-            // Jika ada gambar yang diunggah, update juga kolom user_img
-            if ($namaFile !== false) {
-                $query = "UPDATE user SET user_username='$username', user_email='$email', user_phone='$phone', user_img='$namaFile' WHERE user_id = $user_id";
-                if ($conn->query($query) === TRUE) {
-                    return array('success' => 'Data berhasil diperbarui');
-                } else {
-                    return array('error' => 'Gagal memperbarui data: ' . $conn->error);
-                }
+        // Prevent SQL Injection
+        $username = mysqli_real_escape_string($conn, $username);
+        $email = mysqli_real_escape_string($conn, $email);
+        $phone = mysqli_real_escape_string($conn, $phone);
+
+        // Jika ada gambar yang diunggah, update juga kolom user_img
+        if ($namaFile !== false) {
+            $query = "UPDATE user SET user_username='$username', user_email='$email', user_phone='$phone', user_img='$namaFile' , lastUpdate_date=NOW() WHERE user_id = $user_id";
+            $result = mysqli_query($conn, $query);
+            if ($result) {
+                return mysqli_affected_rows($conn);
             } else {
-                // Jika tidak ada gambar yang diunggah
-                $query = "UPDATE user SET user_username='$username', user_email='$email', user_phone='$phone' WHERE user_id = $user_id";
-                if ($conn->query($query) === TRUE) {
-                    return array('success' => 'Data berhasil diperbarui');
-                } else {
-                    return array('error' => 'Gagal memperbarui data: ' . $conn->error);
-                }
+                return mysqli_error($conn);
             }
         } else {
-            // Jika pengguna belum login, tampilkan pesan kesalahan
-            return array('error' => 'Login Terlebih Dahulu');
+            // Jika tidak ada gambar yang diunggah
+            $query = "UPDATE user SET user_username='$username', user_email='$email', user_phone='$phone' , lastUpdate_date=NOW() WHERE user_id = $user_id";
+            $result = mysqli_query($conn, $query);
+            if ($result) {
+                return mysqli_affected_rows($conn);
+            } else {
+                return mysqli_error($conn);
+            }
         }
+    } else {
+        // Jika pengguna belum login, tampilkan pesan kesalahan
+        return array('error' => 'Login Terlebih Dahulu');
     }
 }
+
+function updatelokasi($data, $conn)
+{
+    // Periksa apakah pengguna sudah login
+    if (isset($_SESSION['user_id'])) {
+        // Ambil user_id dari session
+        $user_id = $_SESSION['user_id'];
+
+        // Lakukan query untuk mengupdate data pengguna
+        $username = $data['user_username-location'];
+        $id = $data["id"];
+        $phone = $data['user_phone-location'];
+        $location = $data['user_location'];
+
+        // Lakukan query untuk mengupdate lokasi pengguna
+        $query = "UPDATE user_locations SET user_username_location='$username', user_phone_location='$phone', user_location='$location' WHERE user_id = $user_id AND id = $id";
+        mysqli_query($conn, $query);
+        return mysqli_affected_rows($conn);
+    } else {
+        // Jika pengguna belum login, tampilkan pesan kesalahan
+        return array('error' => 'Login Terlebih Dahulu');
+    }
+}
+
+
+
+function deleteUser($id)
+{
+
+    global $conn;
+
+    $query = "DELETE FROM user WHERE user_id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+// Location
+
+function deleteLocation($id)
+{
+
+    global $conn;
+
+    $query = "DELETE FROM user_locations WHERE id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+// Location End
 
 
 function updatePassword()

@@ -142,3 +142,38 @@ if (isset($_GET['banner_id'])) {
         </script>";
     }
 }
+
+if (isset($_GET['user_id'])) {
+    $id_user = $_GET['user_id'];
+    if (deleteUser($id_user) > 0) {
+        echo
+        "<script>
+            alert('Data berhasil di hapus');
+            document.location.href = 'Admin-Customer.php';
+        </script>";
+    } else {
+        echo
+        "<script>
+            alert('Data Gagal di hapus');
+            document.location.href = 'Admin-Customer.php';
+        </script>";
+    }
+}
+
+
+if (isset($_GET['id_location'])) {
+    $id_user = $_GET['id_location'];
+    if (deleteLocation($id_user) > 0) {
+        echo
+        "<script>
+            alert('lokasi berhasil di hapus');
+            document.location.href = 'Profile.php';
+        </script>";
+    } else {
+        echo
+        "<script>
+            alert('lokasi gagal di hapus');
+            document.location.href = 'Profile.php';
+        </script>";
+    }
+}

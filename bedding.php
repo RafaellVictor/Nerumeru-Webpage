@@ -33,7 +33,7 @@
             </div>
           </div>
           <div class="col-span-1 md:w-1/2 w-full md:absolute top-0 flex justify-end items-end self-end">
-            <img src="img/Custom-Bed.png" class="3xl:w-[45%] lg:w-[55%] md:w-[85%] w-full  object-contain" alt="" />
+            <img src="img/Custom-Bed.png" class="3xl:w-[45%] xl:w-[55%] lg:w-[72%] md:w-[90%] w-full  object-contain" alt="" />
           </div>
         </div>
       </section>
