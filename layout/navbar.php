@@ -50,14 +50,19 @@
           // Ambil user_id dari session
           $user_id = $_SESSION['user_id'];
 
-          // Lakukan query untuk mengambil data pengguna
-          $query = "SELECT * FROM user WHERE user_id = $user_id";
-          $result = $conn->query($query);
+          // Lakukan query untuk mengambil data pengguna menggunakan prepared statement
+          $query = "SELECT * FROM user WHERE user_id = ?";
+          $stmt = $conn->prepare($query);
+          $stmt->bind_param("i", $user_id);
+          $stmt->execute();
+          $result = $stmt->get_result();
 
           // Periksa apakah query berhasil
           if ($result->num_rows > 0) {
             // Ambil data pengguna
             $userData = $result->fetch_assoc();
+            $result->free_result(); // Melepas hasil query
+
             // Periksa apakah user_username tidak kosong
             if (!empty($userData["user_username"])) {
               // jika Ada data pada user_username
@@ -68,12 +73,14 @@
             }
           } else {
             // jika tidak ada data yang sesuai dengan user_id
-            echo "Data pengguna tidak ditemukan.";
+            echo "Tidak dapat menemukan informasi pengguna. Silakan periksa kembali atau hubungi administrator.";
           }
         } else {
           // Jika tidak ada session atau tidak ada user_id dalam session
           echo '<a href="login_Register.php" class="bg-blue-Neru lg:px-16 px-12 md:text-base text-xs rounded-lg lg:py-2 py-1 text-white">Login</a>';
         }
+
+        //  Kode 2 Jika Di perlukan menggunakan stm untuk menggurangi kejahatan XOR
         // Sql Injeciton Preventing
         // if (isset($_SESSION['user_id'])) {
         //   // Ambil user_id dari session

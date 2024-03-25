@@ -4,7 +4,7 @@ require "function.php";
 
 $userid = $_GET["user_id"];
 
-$Users = query("SELECT * FROM user_locations INNER JOIN user ON user_locations.user_id = user.user_id WHERE user_locations.user_id = $userid");
+$Users = query("SELECT * FROM user_locations INNER JOIN user ON user_locations.user_id = user.user_id WHERE user_locations.user_id = $userid")[0];
 
 
 

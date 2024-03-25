@@ -94,9 +94,6 @@
     exit(); // Stop PHP script execution after sending the error message
   }
 
-
-
-
   // Menampilkan pesan kesalahan atau pesan sukses
   if (isset($_POST["submitUpdateProfileData"])) {
     $result = updateProfileData($conn);
