@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 14, 2024 at 08:03 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: Mar 25, 2024 at 11:20 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -56,7 +56,7 @@ CREATE TABLE `bio` (
 --
 
 INSERT INTO `bio` (`bio_id`, `bio_title`, `bio_Subtitle`, `bio_full`, `status`, `insert_date`, `lastUpdate_date`) VALUES
-(1, 'Nerumeru', 'å¯ã‚‹ ãƒ¡ãƒ«', 'In This Pandemic Era For Almost 2 Years, More Pets Adopted In Lovers&#039; Homes Animals In Indonesia. This Trend Is Taking Effect In Increasing Awareness Of The Importance Of Quality Products For Pets. In Order To Answer This Need, Neru Meru Is Here As A Brand That Is Able To Compete In The Domestic Market And Internationally With Experience And Technology With Japanese Quality Standards\r\n\r\nBased On The Love For Pets, Neru Meru Is Here As A Brand That Is Able To Provide The Best Solutions For Various Pet Needs. Innovative, Precise, Durable And Made Using The Highest Quality Materials, Every Neru Meru Product Is Created For The Comfort Of Pets And Their Human Companions.', 1, '2024-02-12 09:41:39', '2024-02-12 09:41:39');
+(1, 'Nerumeru', 'å¯ã‚‹ ãƒ¡ãƒ«', 'In This Pandemic Era For Almost 2 Years, More Pets Adopted In Lovers&#039; Homes Animals In Indonesia. This Trend Is Taking Effect In Increasing Awareness Of The Importance Of Quality Products For Pets. In Order To Answer This Need, Neru Meru Is Here As A Brand That Is Able To Compete In The Domestic Market And Internationally With Experience And Technology With Japanese Quality Standards\n\nBased On The Love For Pets, Neru Meru Is Here As A Brand That Is Able To Provide The Best Solutions For Various Pet Needs. Innovative, Precise, Durable And Made Using The Highest Quality Materials, Every Neru Meru Product Is Created For The Comfort Of Pets And Their Human Companions.', 1, '2024-02-12 09:41:39', '2024-02-12 09:41:39');
 
 -- --------------------------------------------------------
 
@@ -207,16 +207,30 @@ CREATE TABLE `order_details` (
 
 CREATE TABLE `product` (
   `product_id` int(11) NOT NULL,
+  `product_img` varchar(500) NOT NULL,
   `product_type` varchar(100) NOT NULL,
   `product_name` varchar(100) NOT NULL,
-  `product_color` varchar(100) NOT NULL,
-  `product_price` varchar(100) NOT NULL,
   `product_stock` int(11) NOT NULL,
-  `product_spesification` varchar(2000) NOT NULL,
+  `product_color` varchar(100) NOT NULL,
+  `product_price` int(11) NOT NULL,
+  `product_specification` varchar(2000) NOT NULL,
   `product_weight` varchar(100) NOT NULL,
   `product_warranty` varchar(500) NOT NULL,
-  `product_rating` int(5) NOT NULL
+  `product_rating` int(5) NOT NULL,
+  `insert_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `lastUpdate_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `status` tinyint(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`product_id`, `product_img`, `product_type`, `product_name`, `product_stock`, `product_color`, `product_price`, `product_specification`, `product_weight`, `product_warranty`, `product_rating`, `insert_date`, `lastUpdate_date`, `status`) VALUES
+(1, '65f1598a26cf4.jpg', 'Bedding', 'Neru Arch - Tempat Tidur Kasur Kucing Anjing Peliharaan', 5, 'Silver Grey', 485000, 'NeruArch - NeruMeru Non-Waterproof series\r\nProduct Sizel: 75 x 55 cm\r\n\r\nSangat nyaman untuk tidur hewan kesayangan anda.\r\nFavorit para anjing maupun kucing, terdapat bantal dipinggiran untuk kenyamanan hewan peliharaan anda.\r\n\r\nSpefisikasi:\r\n- Synthetic Goosedown (Bulu angsa sintetis) &amp; Dacron\r\n- Antislip\r\n- Detachable pillow\r\n- Machine washable\r\n- Reversed Zipper\r\n\r\nTersedia versi Waterproof pada etalase lain', '1kg', '1 Year (Foam, 20% Deflated) - 1 year warranty for inner foam if there is a 20% decrease', 5, '2024-02-25 00:00:00', '2024-03-13 14:45:14', 0),
+(2, '65e86b4e25d4c.png', 'Toys', 'Toys Stick', 123, 'Black', 0, 'asd', '123kg', '1 Year (Foam, 20% Deflated) - 1 year warranty for inner foam if there is a 20% decrease', 5, '2024-03-06 00:00:00', '2024-03-06 20:10:38', 1),
+(3, '65f15a5989673.jpg', 'Bedding', 'Neru Arch - Waterproof Kasur Anjing Kucing Anti Air', 5, 'Deep Blue', 485000, 'Neru Arch Waterproof Version\r\nKasur yang sangat nyaman untuk hewan peliharaan anda, dilengkapi dengan bantal pinggiran bisa untuk headrest\r\nUkuran total: 75 x 55 cm\r\n\r\nFilling: Synthetic Goosedown\r\nRing Filling: Sillicon\r\nAntislip Pad\r\nDetachable Pillow\r\nReversed Zipper', '1kg', '1 Year (Foam, 20% Deflated) - 1 year warranty for inner foam if there is a 20% decrease', 5, '2024-03-13 14:48:41', '2024-03-13 14:48:41', 0),
+(4, '65f15af6aa239.jpg', 'Bedding', 'Neru Meru - Neru Takeshi - Orthopedic Pet Bed Kasur Anjing Kucing', 5, 'Mellow Rose', 850000, 'Neru Takeshi Ukuran 80x60 cm, tinggi dinding 10 cm\r\nNeru Meru - Neru Takeshi adalah kasur ortopedik khusus hewan peliharaan\r\n\r\nFoam Specification :\r\n3 cm Soft Memory Foam (White)\r\n5 cm Medium Support Foam (Yellow)\r\n\r\nInner Fabric : Polyester Cotton (Dark Grey)\r\nWater Resistant, Breathable, with Machine Washable Cover\r\n\r\nOuter Fabric : Premium Fabric made of Polyester, Super Tough, Comfortable, Soft with Machine Washable Cover and Anti Slip Fabric\r\n\r\nZipper :\r\nYKK (Middle-Inner)\r\nYKK (Under-Outer)\r\n\r\nColor Variant :\r\n1. Silver Grey\r\n2. Smoky Grey\r\n3. Icy Blue\r\n4. Mellow Rose\r\n5. Blazing Yellow\r\n6. Marina\r\n7. Tree Top\r\n8. Lava Smoke\r\n9. Nimbus Cloud\r\n10. Nautical Blue\r\n\r\nWarranty : 1 Year (Foam, 20% Deflated) - Garansi 1 tahun untuk foam dalam apabila ada penurunan 20%\r\n\r\nPERHATIAN:\r\nAda pertanyaan atau butuh info detail lainnya, klik Chat Tokopedia for fast response.\r\nPerhatikan pilihan warna, ukuran dan varian barang sebelum check-out. Karena, akan kami kirimkan berdasarkan pesanan Anda.\r\nHappy shopping dan terima kasih\r\nLihat Lebih Sedikit', '1kg', '1 Year (Foam, 20% Deflated) - 1 year warranty for inner foam if there is a 20% decrease', 5, '2024-03-13 14:51:18', '2024-03-13 14:51:18', 0);
 
 -- --------------------------------------------------------
 
@@ -239,7 +253,7 @@ CREATE TABLE `recommendsection` (
 --
 
 INSERT INTO `recommendsection` (`recommend_id`, `recommend_img`, `recommend_title`, `recommend_targetLink`, `status`, `insert_date`, `lastupdate_date`) VALUES
-(1, 'Group 39632.png', 'NERU BEDDING', '', 1, '2024-02-08 12:49:07', '2024-02-08 12:49:07'),
+(1, 'Group 39632.png', 'NERU BEDDIN', 'dawdaw', 1, '2024-02-16 09:06:16', '2024-02-16 09:06:16'),
 (3, 'card-item5.png', 'NERU SANITIZE', '', 1, '2024-02-08 12:40:25', '2024-02-08 12:40:25'),
 (4, 'card-item-6.png', 'NERU TROLLY', '', 1, '2024-02-08 12:40:45', '2024-02-08 12:40:45'),
 (6, 'card-item3.png', 'NERU PILLOW', '', 1, '2024-02-08 12:41:40', '2024-02-08 12:41:40'),
@@ -262,18 +276,39 @@ CREATE TABLE `testimonial` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `trolly`
+--
+
+CREATE TABLE `trolly` (
+  `trolly_id` int(11) NOT NULL,
+  `trolly_size` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `trolly_color` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `insert_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `lastUpdate_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `status` tinyint(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `trolly`
+--
+
+INSERT INTO `trolly` (`trolly_id`, `trolly_size`, `trolly_color`, `insert_date`, `lastUpdate_date`, `status`) VALUES
+(1, '5', 'Green', '2024-03-06 20:53:05', '2024-03-06 20:59:03', 0),
+(2, '6', 'Blue', '2024-03-06 20:55:36', '2024-03-06 20:55:36', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
-  `user_name` varchar(100) NOT NULL,
-  `user_password` varchar(100) NOT NULL,
-  `user_locations` varchar(1000) NOT NULL,
-  `user_phone` varchar(100) NOT NULL,
   `user_username` varchar(100) NOT NULL,
-  `user_email` varchar(100) NOT NULL,
-  `user_img` varchar(1000) NOT NULL,
+  `user_email` varchar(50) NOT NULL,
+  `user_phone` varchar(14) NOT NULL,
+  `user_password` varchar(1000) NOT NULL,
+  `user_img` varchar(100) NOT NULL,
   `insert_date` datetime NOT NULL DEFAULT current_timestamp(),
   `lastUpdate_date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
@@ -282,8 +317,34 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `user_name`, `user_password`, `user_locations`, `user_phone`, `user_username`, `user_email`, `user_img`, `insert_date`, `lastUpdate_date`) VALUES
-(8, '', '$2y$10$n.P7PJGZH5KA6qwEvzSM5O8m5QlLAALduD/mnaCoIfgNWjOr55UUS', '', '081314801945', 'El_hirani', 'nuel.hirani8@gmail.com', '', '2024-02-14 08:21:19', '2024-02-14 08:21:19');
+INSERT INTO `user` (`user_id`, `user_username`, `user_email`, `user_phone`, `user_password`, `user_img`, `insert_date`, `lastUpdate_date`) VALUES
+(3, 'Immanuel Christian hirani', 'nuel.hirani8@gmail.com', '081314801945', '$2y$10$icJdeiaQgeTZl.kOQobrgOt3li5iV3bXmh3PFai7m.7ExfxolO3qq', '65d8464fdc387.png', '2024-02-23 11:32:06', '2024-02-25 13:09:24'),
+(5, 'Rafael', 'rafael@gmail.com', '1982329128793', '$2y$10$ARpA5mO7gTQe.5ln7FWuOuOydb/.ZKyQga4CXplCE3ojkzPDEqIYO', '65d8b0610330d.png', '2024-02-23 21:45:15', '2024-02-23 21:49:05'),
+(6, 'Fahrezza', 'eja@gmail.com', '0813418801482', '$2y$10$BJix/pdWJCsxV64.TtXnweWjqdXZNIQm9TttZdcikgYTSfpj2r232', '65d9320ed4071.jpg', '2024-02-24 07:01:48', '2024-02-24 07:02:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_locations`
+--
+
+CREATE TABLE `user_locations` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `user_location` varchar(1000) NOT NULL,
+  `user_phone_location` varchar(14) NOT NULL,
+  `user_username_location` varchar(50) NOT NULL,
+  `status` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `user_locations`
+--
+
+INSERT INTO `user_locations` (`id`, `user_id`, `user_location`, `user_phone_location`, `user_username_location`, `status`) VALUES
+(14, 6, ' Jl. Kakap Raya No.155, RT.001/RW.003, Karawaci Baru, Kec. Karawaci, Kota Tangerang, Banten 15116', '081314801945', 'Immanuel Chrsristian Hirani', 0),
+(15, 3, 'Jl. Jenderal Sudirman No.1, Cikokol, Kec. Tangerang, Kota Tangerang, Banten 15117', '081119287116', 'Rafael Victor Christian ', 0),
+(16, 3, ' Jl. Kakap Raya No.155, RT.001/RW.003, Karawaci Baru, Kec. Karawaci, Kota Tangerang, Banten 15116', '081314801945', 'Immanuel Hirani', 1);
 
 -- --------------------------------------------------------
 
@@ -372,7 +433,7 @@ ALTER TABLE `order_details`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`product_id`),
-  ADD UNIQUE KEY `product_type` (`product_type`);
+  ADD KEY `product_type` (`product_type`) USING BTREE;
 
 --
 -- Indexes for table `recommendsection`
@@ -389,11 +450,23 @@ ALTER TABLE `testimonial`
   ADD UNIQUE KEY `product_id` (`product_id`);
 
 --
+-- Indexes for table `trolly`
+--
+ALTER TABLE `trolly`
+  ADD PRIMARY KEY (`trolly_id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `user_id` (`user_id`,`user_email`);
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indexes for table `user_locations`
+--
+ALTER TABLE `user_locations`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `whyus`
@@ -433,7 +506,7 @@ ALTER TABLE `custombed`
 -- AUTO_INCREMENT for table `herosection`
 --
 ALTER TABLE `herosection`
-  MODIFY `hero_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `hero_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `neru_event`
@@ -451,13 +524,13 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `recommendsection`
 --
 ALTER TABLE `recommendsection`
-  MODIFY `recommend_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `recommend_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `testimonial`
@@ -466,16 +539,38 @@ ALTER TABLE `testimonial`
   MODIFY `testimonial_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `trolly`
+--
+ALTER TABLE `trolly`
+  MODIFY `trolly_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `user_locations`
+--
+ALTER TABLE `user_locations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `whyus`
 --
 ALTER TABLE `whyus`
   MODIFY `whyus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `user_locations`
+--
+ALTER TABLE `user_locations`
+  ADD CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

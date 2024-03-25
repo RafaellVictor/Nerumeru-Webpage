@@ -549,6 +549,169 @@ function deleteBanner($id)
 // banner end
 
 
+// Product function
+// =========================
+function insertProduct($data)
+{
+    global $conn;
+
+    // Upload Gambar
+    $product_img = upload();
+    if (!$product_img) {
+        return false;
+    }
+
+    $product_type = htmlspecialchars($data["product_type"]);
+    $product_name = htmlspecialchars($data["product_name"]);
+    $product_stock = htmlspecialchars($data["product_stock"]);
+    $product_color = htmlspecialchars($data["product_color"]);
+    $product_price = htmlspecialchars($data["product_price"]);
+    $product_specification = htmlspecialchars($data["product_specification"]);
+    $product_weight = htmlspecialchars($data["product_weight"]);
+    $product_warranty = htmlspecialchars($data["product_warranty"]);
+    $product_rating = htmlspecialchars($data["product_rating"]);
+    $status = $data["status"];
+
+
+    $query = "INSERT INTO product 
+    VALUES (
+        '',
+        '$product_img',
+        '$product_type',
+        '$product_name',
+        '$product_stock',
+        '$product_color',
+        '$product_price',
+        '$product_specification',
+        '$product_weight',
+        '$product_warranty',
+        '$product_rating',
+        NOW(),
+        NOW(),
+        '$status'
+    )";
+
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+function updateProduct($data)
+{
+    global $conn;
+
+    $product_id = $data["product_id"];
+    $product_img = htmlspecialchars($data["product_img"]);
+    $product_imgLama = htmlspecialchars($data["gambarLama"]);
+
+    if($_FILES['gambar']['error'] === 4) {
+        $product_img = $product_imgLama;
+    } else {
+        $product_img = upload();
+    }
+
+    $product_name = htmlspecialchars($data["product_name"]);
+    $product_stock = htmlspecialchars($data["product_stock"]);
+    $product_color = htmlspecialchars($data["product_color"]);
+    $product_price = htmlspecialchars($data["product_price"]);
+    $product_specification = htmlspecialchars($data["product_specification"]);
+    $product_weight = htmlspecialchars($data["product_weight"]);
+    $product_warranty = htmlspecialchars($data["product_warranty"]);
+    $product_rating = htmlspecialchars($data["product_rating"]);
+    $status = $data["status"];
+
+    $query = "UPDATE product SET 
+                product_img = '$product_img',
+                product_name = '$product_name', 
+                product_color = '$product_color', 
+                product_price = '$product_price', 
+                product_stock = '$product_stock', 
+                product_specification = '$product_specification', 
+                product_weight = '$product_weight', 
+                product_warranty = '$product_warranty', 
+                product_rating = '$product_rating',
+                lastUpdate_date = NOW(),
+                status = '$status'
+              WHERE product_id = $product_id";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+function deleteProduct($id)
+{
+
+    global $conn;
+
+    $query = "DELETE FROM product WHERE product_id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+// Product function  End
+
+
+// Trolly function
+// =========================
+function insertTrolly($data)
+{
+    global $conn;
+
+    $trolly_size = htmlspecialchars($data["trolly_size"]);
+    $trolly_color = htmlspecialchars($data["trolly_color"]);
+    $status = $data["status"];
+
+    $query = "INSERT INTO trolly 
+    VALUES (
+        '',
+        '$trolly_size',
+        '$trolly_color',
+        NOW(),
+        NOW(),
+        '$status'
+    )";
+
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+function updateTrolly($data)
+{
+    global $conn;
+
+    $trolly_id = $data["trolly_id"];
+
+    $trolly_size = htmlspecialchars($data["trolly_size"]);
+    $trolly_color = htmlspecialchars($data["trolly_color"]);
+    $status = $data["status"];
+
+    $query = "UPDATE trolly SET 
+                trolly_size = '$trolly_size',
+                trolly_color = '$trolly_color', 
+                lastUpdate_date = NOW(),
+                status = '$status'
+              WHERE trolly_id = $trolly_id";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+function deleteTrolly($id)
+{
+
+    global $conn;
+
+    $query = "DELETE FROM trolly WHERE trolly_id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+// Trolly function  End
+
+
 function registerAccount($data)
 {
     global $conn;
