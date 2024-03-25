@@ -703,11 +703,6 @@ main {
   right: 0px;
 }
 
-.inset-y-0 {
-  top: 0px;
-  bottom: 0px;
-}
-
 .-bottom-20 {
   bottom: -5rem;
 }
@@ -2104,10 +2099,6 @@ main {
   gap: 3rem;
 }
 
-.gap-16 {
-  gap: 4rem;
-}
-
 .gap-2 {
   gap: 0.5rem;
 }
@@ -2138,11 +2129,6 @@ main {
 
 .gap-9 {
   gap: 2.25rem;
-}
-
-.gap-x-16 {
-  -moz-column-gap: 4rem;
-       column-gap: 4rem;
 }
 
 .gap-x-2 {
@@ -2677,11 +2663,6 @@ main {
   border-color: rgb(172 169 169 / var(--tw-border-opacity));
 }
 
-.border-slate-300 {
-  --tw-border-opacity: 1;
-  border-color: rgb(203 213 225 / var(--tw-border-opacity));
-}
-
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -2774,10 +2755,6 @@ main {
 
 .bg-opacity-0 {
   --tw-bg-opacity: 0;
-}
-
-.bg-opacity-10 {
-  --tw-bg-opacity: 0.1;
 }
 
 .bg-opacity-20 {
@@ -2937,10 +2914,6 @@ main {
 .object-center {
   -o-object-position: center;
      object-position: center;
-}
-
-.p-0 {
-  padding: 0px;
 }
 
 .p-1 {
@@ -3655,10 +3628,6 @@ main {
 
 .outline-grey-neru {
   outline-color: #ACA9A9;
-}
-
-.outline-slate-100 {
-  outline-color: #f1f5f9;
 }
 
 .outline-slate-200 {
@@ -6304,10 +6273,6 @@ a.plyr__control:before {
     grid-column: span 5 / span 5;
   }
 
-  .md\:col-span-6 {
-    grid-column: span 6 / span 6;
-  }
-
   .md\:row-span-3 {
     grid-row: span 3 / span 3;
   }
@@ -6318,10 +6283,6 @@ a.plyr__control:before {
 
   .md\:row-span-5 {
     grid-row: span 5 / span 5;
-  }
-
-  .md\:row-span-full {
-    grid-row: 1 / -1;
   }
 
   .md\:my-24 {
@@ -6569,10 +6530,6 @@ a.plyr__control:before {
 
   .md\:gap-4 {
     gap: 1rem;
-  }
-
-  .md\:gap-5 {
-    gap: 1.25rem;
   }
 
   .md\:gap-6 {
@@ -7104,10 +7061,6 @@ a.plyr__control:before {
     gap: 0.5rem;
   }
 
-  .xl\:gap-2\.5 {
-    gap: 0.625rem;
-  }
-
   .xl\:gap-5 {
     gap: 1.25rem;
   }
@@ -7211,18 +7164,9 @@ a.plyr__control:before {
     gap: 0.75rem;
   }
 
-  .\32xl\:gap-3\.5 {
-    gap: 0.875rem;
-  }
-
   .\32xl\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
-  }
-
-  .\32xl\:px-6 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
   }
 
   .\32xl\:px-7 {
@@ -7345,10 +7289,6 @@ a.plyr__control:before {
 
   .\33xl\:gap-5 {
     gap: 1.25rem;
-  }
-
-  .\33xl\:gap-6 {
-    gap: 1.5rem;
   }
 
   .\33xl\:px-16 {
