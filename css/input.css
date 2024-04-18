@@ -44,9 +44,10 @@
   }
 }
 
-#SidebarAdmin::-webkit-scrollbar {
+#sidebar-admin-wrapper::-webkit-scrollbar {
   display: none;
 }
+
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -1639,19 +1640,11 @@ a.plyr__control:before {
 
 /* Admin */
 
-.parentAdminNav-Active {
-  @apply mb-[200px];
-}
-
-.BoxNavAdmin-Active {
-  @apply visible top-20 opacity-100 transition-all ease-out duration-500;
-}
-
-.navAdmin-active {
+.Parent-nav-active {
   @apply border-opacity-100;
-}
+} 
 
-.NavAdminToggle-active > svg {
+.nav-active > svg {
   @apply rotate-180;
 }
 
@@ -1701,17 +1694,16 @@ a.plyr__control:before {
   @apply md:grid-cols-4 col-span-8;
 }
 
-
 .filter-overlay-active {
   @apply translate-y-0 shadow-lg;
 }
 
 .non-active-locations {
-  @apply hidden
+  @apply hidden;
 }
 
 .locationsUnChoose {
-  @apply bg-white
+  @apply bg-white;
 }
 
 .locationsChoose {
@@ -1722,9 +1714,8 @@ a.plyr__control:before {
   @apply top-24;
 }
 
-
 .BoxDate-Active {
-  @apply block
+  @apply block;
 }
 
 .Addlocations-User-Active {

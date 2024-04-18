@@ -1,6 +1,6 @@
-
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,9 +26,11 @@
       <img src="img/Bulat-Hero.png" class="absolute top-0 right-1/2 translate-x-1/2 -z-10 w-full md:block hidden" alt="" />
       <!-- 3xl:mt-80 2xl:mt-48 mt-10 -->
       <span class="flex md:flex-col flex-col-reverse">
-        <div class="container relative 3xl:top-32 xl:top-20 md:top-2.5">
+        <div class="container relative 3xl:top-[125px] xl:top-20 md:top-2.5">
           <div class="flex flex-col items-center 3xl:gap-4 xl:gap-6 lg:gap-7 gap-4">
-            <h2 id="text" class="3xl:text-5xl 2xl:text-4xl lg:text-3xl md:text-2xl text-xl md:w-[43%] w-[80%]  mx-auto 3xl:h-[100px] 2xl:h-[76px]  md:h-[56px] h-11 text-center font-extrabold  text-blue-Neru"></h2>
+            <div class="3xl:w-[42%] xl:w-[40%] md:w-[45%] w-[80%] mx-auto 3xl:h-[120px] 2xl:h-[100px] lg:h-[95px] md:h-[80px] h-14 ">
+              <h2 id="text" class="3xl:text-5xl 2xl:text-4xl lg:text-3xl  md:text-2xl text-xl text-center font-extrabold 3xl:leading-[65px] 2xl:leading-[50px] lg:leading-[45px] md:leading-[40px] text-blue-Neru"></h2>
+            </div>
             <h6 class="text-center text-grey-neru xl:w-[30%] md:w-[50%] w-fit">
               <?= $hero_section["hero_subtitle"] ?>
             </h6>
@@ -39,7 +41,7 @@
           </div>
         </div>
         <div class="container 3xl:mt-48 2xl:mt-24 xl:mt-20 md:mt-0 mt-5">
-          <img id="heroimg" src="img/<?= $hero_section["hero_img"] ?>" class="mx-auto xl:w-[55%] transition-transform ease-in-out duration-300 md:w-[60%] w-fit h-[45%]" alt="" />
+          <img id="heroimg" src="img/<?= $hero_section["hero_img"] ?>" class="mx-auto xl:w-[55%] transition-transform ease-in-out duration-300 md:w-[60%] w-[80%] h-[45%]" alt="" />
         </div>
       </span>
     </section>
@@ -72,21 +74,21 @@
         <div class="text-white text-center mt-12">
           <?php $productRecommend = query("SELECT * FROM recommendsection WHERE status=1;") ?>
           <div class="grid md:grid-cols-6 md:grid-rows-6 grid-cols-4 grid-rows-4 md:gap-4 gap-2 h-[600px] max-w-screen mx-auto lg:text-4xl md:text-xl text-sm">
-            <div onclick="window.location.href ='bedding.php';" style="background-image: url('img/<?= $productRecommend[0]["recommend_img"] ?>')" ; class="md:col-span-4 md:row-span-4 col-span-4 row-span-1 bg-blue-Neru  bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
+            <a href='<?= $productRecommend[0]["recommend_targetLink"]; ?>' class="md:col-span-4 md:row-span-4 col-span-4 row-span-1 bg-blue-Neru bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer" style="background-image: url('img/<?= $productRecommend[0]["recommend_img"] ?>');">
               <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center -translate-x-full group-hover:-translate-x-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"><?= $productRecommend[0]["recommend_title"] ?></div>
-            </div>
-            <div onclick="window.location.href ='sanitize.php';" style="background-image: url('img/<?= $productRecommend[2]["recommend_img"] ?>')" ; class="bg-blue-Neru md:row-span-3 md:col-span-2 col-span-2 row-span-1 bg-sanitize-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
+            </a>
+            <a href='<?= $productRecommend[2]["recommend_targetLink"]; ?>' style="background-image: url('img/<?= $productRecommend[2]["recommend_img"] ?>')" ; class="bg-blue-Neru md:row-span-3 md:col-span-2 col-span-2 row-span-1 bg-sanitize-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
               <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center translate-x-full group-hover:translate-x-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"><?= $productRecommend[2]["recommend_title"] ?></div>
-            </div>
-            <div onclick="window.location.href ='trolly.php';" style="background-image: url('img/<?= $productRecommend[4]["recommend_img"] ?>')" ; class="bg-blue-Neru md:col-span-2 md:row-span-5 col-span-2 row-span-2 bg-trolly-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
+            </a>
+            <a href='<?= $productRecommend[4]["recommend_targetLink"]; ?>' style="background-image: url('img/<?= $productRecommend[4]["recommend_img"] ?>')" ; class="bg-blue-Neru md:col-span-2 md:row-span-5 col-span-2 row-span-2 bg-trolly-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
               <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center -translate-y-full group-hover:-translate-y-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"><?= $productRecommend[4]["recommend_title"] ?></div>
-            </div>
-            <div onclick="window.location.href ='toys.php';" style="background-image: url('img/<?= $productRecommend[1]["recommend_img"] ?>')" ; class="bg-blue-Neru w-full md:col-span-2 md:row-span-4 col-span-2 bg-toys-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
+            </a>
+            <a href='<?= $productRecommend[1]["recommend_targetLink"]; ?>' style="background-image: url('img/<?= $productRecommend[1]["recommend_img"] ?>')" ; class="bg-blue-Neru w-full md:col-span-2 md:row-span-4 col-span-2 bg-toys-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
               <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center translate-y-full group-hover:translate-y-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"><?= $productRecommend[1]["recommend_title"] ?></div>
-            </div>
-            <div onclick="window.location.href ='pillow.php';" style="background-image: url('img/<?= $productRecommend[3]["recommend_img"] ?>')" ; class="bg-blue-Neru md:col-span-2 md:row-span-4 col-span-4 bg-pillow-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
+            </a>
+            <a href='<?= $productRecommend[3]["recommend_targetLink"]; ?>' style="background-image: url('img/<?= $productRecommend[3]["recommend_img"] ?>')" ; class="bg-blue-Neru md:col-span-2 md:row-span-4 col-span-4 bg-pillow-catalog bg-no-repeat bg-cover bg-center relative overflow-hidden group cursor-pointer">
               <div class="overlay-text bg-black bg-opacity-70 absolute inset-0 flex items-center translate-x-full group-hover:translate-x-0 transition-all ease-in-out duration-500 justify-center font-extrabold tracking-widest"><?= $productRecommend[3]["recommend_title"] ?></div>
-            </div>
+            </a>
           </div>
         </div>
       </div>

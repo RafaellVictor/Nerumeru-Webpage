@@ -296,7 +296,7 @@
                               </span>
                             </div>
                           </div>
-                          <div class="alamatTerpilih flex gap-2 items-center md:w-1/2 w-full md:justify-end justify-start mt-4">
+                          <div class="alamatTerpilih flex gap-2 items-center md:w-1/2 w-full md:justify-end justify-start">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 text-blue-Neru md:block hidden" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                               <path d="M5 12l5 5l10 -10" />
@@ -327,7 +327,7 @@
                               </a>
                             </div>
                           </div>
-                          <div class="flex gap-2 pilihAlamat items-center md:w-1/2 w-full md:justify-end justify-start mt-4">
+                          <div class="flex gap-2 pilihAlamat items-center md:w-1/2 w-full md:justify-end justify-start">
                             <a href="status.php?id_location=<?= $location["id"] ?>&status=<?= $location["status"] ?>" onclick="return alert('Alamat Berhasil Di pilih')" class="md:bg-blue-Neru rounded-lg px-4 text-center justify-center py-2 lg:text-base text-sm flex gap-1 items-center text-black md:border-0 border-2 md:text-white md:w-fit w-full cursor-pointer">
                               <h6 class="md:text-sm text-xs">Pilih Alamat</h6>
                             </a>

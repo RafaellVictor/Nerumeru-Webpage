@@ -47,7 +47,6 @@ if (isset($_POST['submitLogin'])) {
     $error = "Email/No Tlpn salah";
   }
 }
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -68,7 +67,7 @@ if (isset($_POST['submitLogin'])) {
       <div class="fixed inset-0 bg-blue-Neru bg-opacity-25"></div>
       <div class="container w-fit relative z-50">
         <div class="form-wrapper">
-          <div class="overflow-hidden relative mx-auto flex flex-col gap-3 items-center text-white justify-center px-16 rounded-lg w-[539px] h-[582px] backdrop-blur-2xl">
+          <div class="overflow-hidden relative mx-auto flex flex-col gap-3 items-center text-white justify-center md:px-16 px-6 rounded-lg md:w-[539px] w-[330px] md:h-[582px] h-[450px] backdrop-blur-2xl">
             <div id="BoxLogin" class="w-full flex flex-col gap-9 items-center text-white">
               <h3 class="font-semibold">Login</h3>
               <?php if (isset($error)) : ?>
@@ -113,7 +112,7 @@ if (isset($_POST['submitLogin'])) {
                 </h6>
               </form>
             </div>
-            <div id="BoxRegister" class="absolute z-10 transition-all ease-in-out duration-500 invisible -translate-y-full bg-blue-Neru h-full bottom-0 rounded-t-lg justify-center px-16 inset-x-0 w-full flex flex-col gap-9 items-center text-white">
+            <div id="BoxRegister" class="absolute z-10 transition-all ease-in-out duration-500 invisible -translate-y-full bg-blue-Neru h-full bottom-0 rounded-t-lg justify-center md:px-16 px-6 inset-x-0 w-full flex flex-col gap-9 items-center text-white">
               <h3 class="font-semibold">Register</h3>
               <form action="" method="post" class="w-full font-semibold mt-6 flex flex-col">
                 <span class="flex flex-col gap-8">

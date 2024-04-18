@@ -46,7 +46,6 @@
     exit(); // Hentikan eksekusi skrip PHP setelah mengirimkan pesan kesalahan
   }
 
-
   if (isset($_SESSION["user_id"])) {
     // Include your database connection file and create $conn object
 
@@ -64,9 +63,6 @@
     if ($result1->num_rows > 0) {
       // Fetch the first row as an associative array
       $location = $result1->fetch_assoc();
-      // Process fetched data as needed
-    } else {
-      echo "Data Pengguna untuk menampilkan alamat dengan status 1 tidak ditemukan";
     }
 
     // Query to fetch all user locations
@@ -83,10 +79,6 @@
       while ($row = $result2->fetch_assoc()) {
         $locations[] = $row;
       }
-
-      // Process fetched data as needed
-    } else {
-      echo "Data Pengguna untuk menampilkan semua alamat tidak ditemukan";
     }
   } else {
     // If the user is not logged in, show an error message
@@ -101,7 +93,7 @@
 
   ?>
   <main>
-    <section class="cart lg:mt-44 md:mt-32">
+    <section class="cart lg:mt-40 md:mt-32">
       <div class="container flex flex-col gap-6">
         <div class="breadcrumb font-semibold">
           <ul class="flex gap-4 items-center md:text-base text-sm">
@@ -138,7 +130,7 @@
                     <path d="M22 22l-5 -5" />
                     <path d="M17 22l5 -5" />
                   </svg>
-                  <h6 class="lg:text-base md:text-sm text-xs font-medium">Alamat Kosong / Lengkapi Alamat Terlebih Dahulu !</h6>
+                  <h6 class="lg:text-base md:text-sm text-xs font-medium">Alamat Kosong / Lengkapi Alamat !</h6>
                 </div>
               <?php else : ?>
                 <div class="wrapper flex flex-col gap-6">

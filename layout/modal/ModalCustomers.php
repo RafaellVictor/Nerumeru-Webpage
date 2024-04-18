@@ -1,4 +1,4 @@
-<div id="userInfo<?= $user["user_id"] ?>" class="userChangesDetail container hidden z-10 transition-all ease-in-out duration-300 bg-blue-Neru absolute top-2 shadow-lg  translate-x-[48%]  text-white font-semibold w-[600px] h-[150px] rounded-lg">
+<div id="userInfo<?= $user["user_id"] ?>" class="userChangesDetail container hidden z-50 transition-all ease-in-out duration-300 bg-blue-Neru absolute top-2 shadow-lg  translate-x-[48%]  text-white font-semibold w-[600px] h-[150px] rounded-lg">
     <div class="wrap flex flex-col gap-3 ">
         <div class="child-wrap">
             <h6>User Melakukan Registrasi (Date)</h6>

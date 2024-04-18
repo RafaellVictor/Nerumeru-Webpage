@@ -66,10 +66,10 @@
             // Periksa apakah user_username tidak kosong
             if (!empty($userData["user_username"])) {
               // jika Ada data pada user_username
-              echo '<a href="Profile.php" class="bg-blue-Neru lg:px-16 px-12 md:text-base text-xs rounded-lg lg:py-2 py-1.5 text-white line-clamp-1">' . substr($userData["user_username"], 0, 8) . '</a>';
+              echo '<a href="Profile.php" class="bg-blue-Neru lg:px-16 px-12 md:text-base text-xs rounded-lg lg:py-2 py-2 text-white line-clamp-1">' . substr($userData["user_username"], 0, 8) . '</a>';
             } else {
               // jika user_username kosong, tampilkan default "Profile"
-              echo '<a href="Profile.php" class="bg-blue-Neru lg:px-16 px-12 md:text-base text-xs rounded-lg lg:py-2 py-1.5 text-white line-clamp-1">Profile</a>';
+              echo '<a href="Profile.php" class="bg-blue-Neru lg:px-16 px-12 md:text-base text-xs rounded-lg lg:py-2 py-2 text-white line-clamp-1">Profile</a>';
             }
           } else {
             // jika tidak ada data yang sesuai dengan user_id
@@ -77,48 +77,9 @@
           }
         } else {
           // Jika tidak ada session atau tidak ada user_id dalam session
-          echo '<a href="login_Register.php" class="bg-blue-Neru lg:px-16 px-12 md:text-base text-xs rounded-lg lg:py-2 py-1 text-white">Login</a>';
+          echo '<a href="login_Register.php" class="bg-blue-Neru lg:px-16 px-12 md:text-base text-xs rounded-lg lg:py-2 py-2 text-white">Login</a>';
         }
-
-        //  Kode 2 Jika Di perlukan menggunakan stm untuk menggurangi kejahatan XOR
-        // Sql Injeciton Preventing
-        // if (isset($_SESSION['user_id'])) {
-        //   // Ambil user_id dari session
-        //   $user_id = $_SESSION['user_id'];
-
-        //   // Lakukan query untuk mengambil data pengguna
-        //   $query = "SELECT * FROM user WHERE user_id = ?";
-        //   $stmt = $conn->prepare($query);
-        //   $stmt->bind_param("i", $user_id);
-        //   $stmt->execute();
-        //   $result = $stmt->get_result();
-
-        //   // Periksa apakah query berhasil
-        //   if ($result->num_rows > 0) {
-        //     // Ambil data pengguna
-        //     $userData = $result->fetch_assoc();
-        //     // Periksa apakah user_username tidak kosong
-        //     if (!empty($userData["user_username"])) {
-        //       // jika Ada data pada user_username
-        //       echo '<a href="Profile.php" class="bg-blue-Neru lg:px-16 px-12 md:text-base text-xs rounded-lg lg:py-2 py-1.5 text-white line-clamp-1">' . substr($userData["user_username"], 0, 8) . '</a>';
-        //     } else {
-        //       // jika user_username kosong, tampilkan default "Profile"
-        //       echo '<a href="Profile.php" class="bg-blue-Neru lg:px-16 px-12 md:text-base text-xs rounded-lg lg:py-2 py-1.5 text-white line-clamp-1">Profile</a>';
-        //     }
-        //   } else {
-        //     // jika tidak ada data yang sesuai dengan user_id
-        //     echo "Data pengguna tidak ditemukan.";
-        //   }
-        //   // Tutup statement
-        //   $stmt->close();
-        // }
-        // // Jika tidak ada session atau tidak ada user_id dalam session
-        // if (!isset($_SESSION['user_id'])) {
-        //   echo '<a href="login_Register.php" class="bg-blue-Neru lg:px-16 px-12 md:text-base text-xs rounded-lg lg:py-2 py-1 text-white">Login</a>';
-        // }
         ?>
-
-
         <button id="navBurger" class="md:hidden flex flex-col gap-1">
           <span class="w-[23px] h-1 rounded-full bg-black transition-all origin-top-right ease-in-out duration-300"></span>
           <span class="w-[23px] h-1 rounded-full bg-black transition-all ease-in-out duration-300"></span>

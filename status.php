@@ -200,3 +200,58 @@ if (isset($_GET['trolly_id']) && isset($_GET['status'])) { // Mengecek apakah pa
     }
 }
 
+if (isset($_GET['id_location']) && isset($_GET['status'])) {
+    $idlocation = $_GET['id_location'];
+    $status = $_GET['status'];
+
+    // Memperbarui status yang sebelumnya diatur ke 0
+    $queryUpdatePreviousStatus = "UPDATE user_locations SET status='0' WHERE id != '$idlocation'";
+    $runningUpdatePreviousStatus = mysqli_query($conn, $queryUpdatePreviousStatus);
+
+    if (!$runningUpdatePreviousStatus) {
+        echo "Error updating previous status: " . mysqli_error($conn);
+        exit();
+    }
+
+    // Mengubah status menjadi lawan dari status saat ini (0 menjadi 1 atau 1 menjadi 0)
+    $newStatus = ($status == 1) ? 0 : 1;
+
+    $query = "UPDATE user_locations SET status='$newStatus' WHERE id='$idlocation'";
+    $running = mysqli_query($conn, $query);
+
+    if ($running) {
+        echo "<script>alert('Data berhasil diupdate')</script>";
+        header('Location:Profile.php');
+        exit();
+    } else {
+        echo "Error update data: " . mysqli_error($conn);
+    }
+}
+
+if (isset($_GET['id_locationCart']) && isset($_GET['status'])) {
+    $idlocation = $_GET['id_locationCart'];
+    $status = $_GET['status'];
+
+    // Memperbarui status yang sebelumnya diatur ke 0
+    $queryUpdatePreviousStatus = "UPDATE user_locations SET status='0' WHERE id != '$idlocation'";
+    $runningUpdatePreviousStatus = mysqli_query($conn, $queryUpdatePreviousStatus);
+
+    if (!$runningUpdatePreviousStatus) {
+        echo "Error updating previous status: " . mysqli_error($conn);
+        exit();
+    }
+
+    // Mengubah status menjadi lawan dari status saat ini (0 menjadi 1 atau 1 menjadi 0)
+    $newStatus = ($status == 1) ? 0 : 1;
+
+    $query = "UPDATE user_locations SET status='$newStatus' WHERE id='$idlocation'";
+    $running = mysqli_query($conn, $query);
+
+    if ($running) {
+        echo "<script>alert('Data berhasil diupdate')</script>";
+        header('Location:cart.php');
+        exit();
+    } else {
+        echo "Error update data: " . mysqli_error($conn);
+    }
+}

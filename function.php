@@ -604,7 +604,7 @@ function updateProduct($data)
     $product_img = htmlspecialchars($data["product_img"]);
     $product_imgLama = htmlspecialchars($data["gambarLama"]);
 
-    if($_FILES['gambar']['error'] === 4) {
+    if ($_FILES['gambar']['error'] === 4) {
         $product_img = $product_imgLama;
     } else {
         $product_img = upload();
@@ -711,7 +711,6 @@ function deleteTrolly($id)
 }
 // Trolly function  End
 
-
 function registerAccount($data)
 {
     global $conn;
@@ -719,24 +718,42 @@ function registerAccount($data)
     $user_phone = htmlspecialchars($data['user_phone']);
     $user_password = mysqli_real_escape_string($conn, $data['user_password']);
 
-    // Encrypted Code Password Security
-    $encrypted_password = password_hash($user_password, PASSWORD_DEFAULT);
+    // Check if email already exists
+    $email_check_query = "SELECT * FROM user WHERE user_email='$user_email' LIMIT 1";
+    $result_email = mysqli_query($conn, $email_check_query);
+    $user_email_row = mysqli_fetch_assoc($result_email);
 
-    // Insert Into Database
-    $query = "INSERT INTO user 
-              (user_password, user_phone, user_email, insert_date, lastUpdate_date)
-              VALUES (
-                '$encrypted_password',
-                '$user_phone', 
-                '$user_email', 
-                NOW(),
-                NOW()
-                )";
+    // Check if phone number already exists
+    $phone_check_query = "SELECT * FROM user WHERE user_phone='$user_phone' LIMIT 1";
+    $result_phone = mysqli_query($conn, $phone_check_query);
+    $user_phone_row = mysqli_fetch_assoc($result_phone);
 
-    // Execute Query
-    mysqli_query($conn, $query);
+    if ($user_email_row) {
+        // Email already exists, return error or handle accordingly
+        return "Email already exists";
+    } elseif ($user_phone_row) {
+        // Phone number already exists, return error or handle accordingly
+        return "Phone number already exists";
+    } else {
+        // Encrypted Code Password Security
+        $encrypted_password = password_hash($user_password, PASSWORD_DEFAULT);
 
-    return mysqli_affected_rows($conn);
+        // Insert Into Database
+        $query = "INSERT INTO user 
+                  (user_password, user_phone, user_email, insert_date, lastUpdate_date)
+                  VALUES (
+                    '$encrypted_password',
+                    '$user_phone', 
+                    '$user_email', 
+                    NOW(),
+                    NOW()
+                    )";
+
+        // Execute Query
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+    }
 }
 
 
