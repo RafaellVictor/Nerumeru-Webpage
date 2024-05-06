@@ -177,3 +177,38 @@ if (isset($_GET['id_location'])) {
         </script>";
     }
 }
+
+
+if (isset($_GET['product_id'])) {
+    $id_product = $_GET['product_id'];
+    if (deleteproduct($id_product) > 0) {
+        echo
+        "<script>
+            alert('Data berhasil di hapus');
+            document.location.href = 'Admin-Products.php';
+        </script>";
+    } else {
+        echo
+        "<script>
+            alert('Data Gagal di hapus');
+            document.location.href = 'Admin-Products.php';
+        </script>";
+    }
+}
+
+if (isset($_GET['img_id'])) {
+    $id_product = $_GET['img_id'];
+    if (deleteproductMultiImg($id_product) > 0) {
+        echo "
+        <script>
+            alert('Data berhasil dihapus');
+            window.location.href = 'Admin-Multi-Img.php?product_id=" . $id_product . "';
+        </script>";
+    } else {
+        echo "
+        <script>
+            alert('Data gagal dihapus');
+            window.location.href = 'Admin-Multi-Img.php?product_id=" . $id_product . "';
+        </script>";
+    }
+}

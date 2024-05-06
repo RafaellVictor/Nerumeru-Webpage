@@ -26,7 +26,7 @@ function insertHero($data)
     global $conn;
 
     // Upload Gambar
-    $hero_img = upload();
+    $hero_img = upload('gambar');
     if (!$hero_img) {
         return false;
     }
@@ -72,7 +72,7 @@ function updateHero($data)
     if ($_FILES['gambar']['error'] === 4) {
         $hero_img = $hero_imgLama;
     } else {
-        $hero_img = upload();
+        $hero_img = upload('gambar');
     }
 
     $hero_title1 = htmlspecialchars($data["hero_title1"]);
@@ -118,7 +118,7 @@ function deleteHero($id)
 function insertwhyus($data)
 {
     global $conn;
-    $whyus_img = upload();
+    $whyus_img = upload('gambar');
     $whyus_title = htmlspecialchars($data["whyus_title"]);
     $whyus_subtitle = htmlspecialchars($data["whyus_subtitle"]);
 
@@ -158,7 +158,7 @@ function updatewhyus($data)
     if ($_FILES['gambar']['error'] === 4) {
         $whyus_img = $whyus_imgLama;
     } else {
-        $whyus_img = upload();
+        $whyus_img = upload('gambar');
     }
 
     $whyus_title = htmlspecialchars($data["whyus_title"]);
@@ -199,7 +199,7 @@ function deletewhyus($id)
 function insertProductRecom($data)
 {
     global $conn;
-    $recommend_img = upload();
+    $recommend_img = upload('gambar');
 
     if (!$recommend_img) {
         return false;
@@ -239,7 +239,7 @@ function updateProductRecom($data)
     if ($_FILES['gambar']['error'] === 4) {
         $recommend_img = $recommend_imgLama;
     } else {
-        $recommend_img = upload();
+        $recommend_img = upload('gambar');
     }
 
     $recommend_title = htmlspecialchars($data["recommend_title"]);
@@ -277,7 +277,7 @@ function deleteProductRecom($id)
 function insertEvent($data)
 {
     global $conn;
-    $event_img = upload();
+    $event_img = upload('gambar');
 
     if (!$event_img) {
         return false;
@@ -313,7 +313,7 @@ function updateEvent($data)
     if ($_FILES['gambar']['error'] === 4) {
         $event_img = $event_imgLama;
     } else {
-        $event_img = upload();
+        $event_img = upload('gambar');
     }
 
     $event_type = htmlspecialchars($data["event_type"]);
@@ -556,7 +556,7 @@ function insertProduct($data)
     global $conn;
 
     // Upload Gambar
-    $product_img = upload();
+    $product_img = upload('gambar');
     if (!$product_img) {
         return false;
     }
@@ -567,6 +567,7 @@ function insertProduct($data)
     $product_color = htmlspecialchars($data["product_color"]);
     $product_price = htmlspecialchars($data["product_price"]);
     $product_specification = htmlspecialchars($data["product_specification"]);
+    $product_categories = htmlspecialchars($data["product_categories"]);
     $product_weight = htmlspecialchars($data["product_weight"]);
     $product_warranty = htmlspecialchars($data["product_warranty"]);
     $product_rating = htmlspecialchars($data["product_rating"]);
@@ -583,6 +584,7 @@ function insertProduct($data)
         '$product_color',
         '$product_price',
         '$product_specification',
+        '$product_categories',
         '$product_weight',
         '$product_warranty',
         '$product_rating',
@@ -607,7 +609,7 @@ function updateProduct($data)
     if ($_FILES['gambar']['error'] === 4) {
         $product_img = $product_imgLama;
     } else {
-        $product_img = upload();
+        $product_img = upload('gambar');
     }
 
     $product_name = htmlspecialchars($data["product_name"]);
@@ -615,6 +617,7 @@ function updateProduct($data)
     $product_color = htmlspecialchars($data["product_color"]);
     $product_price = htmlspecialchars($data["product_price"]);
     $product_specification = htmlspecialchars($data["product_specification"]);
+    $product_categories = htmlspecialchars($data["product_categories"]);
     $product_weight = htmlspecialchars($data["product_weight"]);
     $product_warranty = htmlspecialchars($data["product_warranty"]);
     $product_rating = htmlspecialchars($data["product_rating"]);
@@ -627,6 +630,7 @@ function updateProduct($data)
                 product_price = '$product_price', 
                 product_stock = '$product_stock', 
                 product_specification = '$product_specification', 
+                product_categories = '$product_categories', 
                 product_weight = '$product_weight', 
                 product_warranty = '$product_warranty', 
                 product_rating = '$product_rating',
@@ -787,8 +791,8 @@ function insertlocations($data)
 function updateProfileData($conn)
 {
 
-    // Panggil fungsi upload() untuk mengunggah gambar
-    $namaFile = upload();
+    // Panggil fungsi upload('gambar') untuk mengunggah gambar
+    $namaFile = upload('gambar');
 
     // Periksa apakah pengguna sudah login
     if (isset($_SESSION['user_id'])) {
@@ -883,6 +887,20 @@ function deleteLocation($id)
 
 // Location End
 
+// Multi Img Product 
+function deleteproductMultiImg($id)
+{
+    global $conn;
+
+    $query = "DELETE FROM other_product_img WHERE product_id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+// Multi Img Product End
+
 
 function updatePassword()
 {
@@ -937,15 +955,15 @@ function updatePassword()
 
 
 
-function upload()
+function upload($input_name)
 {
-    if ($_FILES["gambar"]["size"] == 0) {
+    if ($_FILES[$input_name]["size"] == 0) {
         // Jika tidak ada file yang diupload, kembalikan nilai false
         return false;
     }
 
     // Lakukan proses upload gambar
-    $namaFile = $_FILES["gambar"]["name"];
+    $namaFile = $_FILES[$input_name]["name"];
     $extensiGambarValid = ["jpg", "png", "jpeg", "svg"];
     $extensiGambar = pathinfo($namaFile, PATHINFO_EXTENSION);
 
@@ -956,8 +974,8 @@ function upload()
     }
 
     // Validasi ukuran gambar
-    $ukuran_file = $_FILES['gambar']['size'];
-    $batas_ukuran = 6000000; // 6 MB
+    $ukuran_file = $_FILES[$input_name]['size'];
+    $batas_ukuran = 60000000; // 60 MB
 
     if ($ukuran_file > $batas_ukuran) {
         echo "<script>alert('Ukuran Gambar Terlalu Besar');</script>";
@@ -965,7 +983,7 @@ function upload()
     }
 
     // Generate nama file baru dan pindahkan file ke direktori yang ditentukan
-    $tmpName = $_FILES["gambar"]["tmp_name"];
+    $tmpName = $_FILES[$input_name]["tmp_name"];
     $namaFilebaru = uniqid() . '.' . $extensiGambar;
     $uploadPath = "img/" . $namaFilebaru;
 
@@ -973,6 +991,100 @@ function upload()
         return $namaFilebaru;
     } else {
         echo "<script>alert('Gagal mengunggah gambar');</script>";
+        return false;
+    }
+}
+
+function insertMultiImg($data)
+{
+    global $conn;
+
+    $product_img1 = upload('gambar1');
+    $product_img2 = upload('gambar2');
+    $product_img3 = upload('gambar3');
+
+    // Ensure at least one image is uploaded
+    if (!$product_img1 || !$product_img2 || !$product_img3) {
+        return false;
+    }
+
+    $product_id = $data['product_id'];
+
+    // Corrected SQL syntax: VALUES (not VALUE), and removed quotes around column names
+    $query = "INSERT INTO other_product_img (product_id, product_img_1, product_img_2, product_img_3, insert_date, lastUpdate_date)
+              VALUES
+              (
+                '$product_id', 
+                '$product_img1', 
+                '$product_img2', 
+                '$product_img3', 
+                NOW(), 
+                NOW()
+              )";
+
+    try {
+        mysqli_query($conn, $query);
+        return mysqli_affected_rows($conn);
+    } catch (mysqli_sql_exception $e) {
+        // Print SQL error message for debugging
+        echo "SQL Error: " . $e->getMessage();
+        return false;
+    }
+}
+
+
+
+
+function UpdateMultiImg($data)
+{
+    global $conn;
+
+    $product_id = $data["product_id"];
+
+    // Check if array keys exist before accessing them
+    $product_img1 = isset($data["product_img_1"]) ? htmlspecialchars($data["product_img_1"]) : '';
+    $product_img2 = isset($data["product_img_2"]) ? htmlspecialchars($data["product_img_2"]) : '';
+    $product_img3 = isset($data["product_img_3"]) ? htmlspecialchars($data["product_img_3"]) : '';
+
+    $product_imgLama1 = isset($data["gambarLama1"]) ? htmlspecialchars($data["gambarLama1"]) : '';
+    $product_imgLama2 = isset($data["gambarLama2"]) ? htmlspecialchars($data["gambarLama2"]) : '';
+    $product_imgLama3 = isset($data["gambarLama3"]) ? htmlspecialchars($data["gambarLama3"]) : '';
+
+    // Handle image uploads
+    if ($_FILES['gambar1']['error'] === 4) {
+        $product_img1 = $product_imgLama1; // Retain old image if no new one uploaded
+    } else {
+        $product_img1 = upload('gambar1');
+    }
+
+    if ($_FILES['gambar2']['error'] === 4) {
+        $product_img2 = $product_imgLama2; // Retain old image if no new one uploaded
+    } else {
+        $product_img2 = upload('gambar2');
+    }
+
+    if ($_FILES['gambar3']['error'] === 4) {
+        $product_img3 = $product_imgLama3; // Retain old image if no new one uploaded
+    } else {
+        $product_img3 = upload('gambar3');
+    }
+
+    // Corrected SQL syntax: VALUES (not VALUE), and removed quotes around column names
+    $query = "UPDATE other_product_img SET
+             product_id = '$product_id',
+             product_img_1 = '$product_img1', 
+             product_img_2 = '$product_img2', 
+             product_img_3 = '$product_img3', 
+             lastUpdate_date = NOW()
+             WHERE product_id = '$product_id'
+             ";
+
+    try {
+        mysqli_query($conn, $query);
+        return mysqli_affected_rows($conn);
+    } catch (mysqli_sql_exception $e) {
+        // Print SQL error message for debugging
+        echo "SQL Error: " . $e->getMessage();
         return false;
     }
 }

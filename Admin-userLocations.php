@@ -34,13 +34,13 @@ $Users = query("SELECT * FROM user_locations INNER JOIN user ON user_locations.u
                 <div class="flex flex-col gap-4 container">
                     <?php include "layout/header-admin.php"; ?>
                     <div class="max-h-screen w-full overflow-y-auto">
-                        <a href="Admin-Customer.php" class="flex items-center gap-3">
-                            <Span class="bg-blue-Neru w-10 h-10  flex items-center justify-center rounded-full text-white text-xl">
-                                <</Span>
-                                    <h6>Back</h6>
-                        </a>
+
                         <div id="UserData" class="container BoxTableData bg-white rounded-lg shadow-md 3xl:h-fit 2xl:h-fit overflow-y-auto mt-4">
-                            <table id="myTable2" class="myTableDisplay 3xl:text-lg text-sm py-6 display table hover order-column row-border stripe">
+                            <a href="Admin-Customer.php" class="flex items-center gap-3 mb-3">
+                                <Span class="bg-blue-Neru w-10 h-10  flex items-center justify-center rounded-full text-white text-xl">
+                                    < </Span>
+                            </a>
+                            <table id="myTable2" class="myTableDisplay text-basepy-6 display table hover order-column row-border stripe">
                                 <thead>
                                     <tr class="bg-blue-Neru text-white">
                                         <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
@@ -59,7 +59,6 @@ $Users = query("SELECT * FROM user_locations INNER JOIN user ON user_locations.u
                                                 <h6 class="text-base text-justify"><?= $user["user_location"] ?></h6>
                                             </td>
                                         </tr>
-                                        <?php include("layout/modal/ModalCustomers.php") ?>
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>

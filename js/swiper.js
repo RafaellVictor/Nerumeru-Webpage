@@ -18,17 +18,14 @@ let TestimonialSwiper = new Swiper(".testimonial-Content", {
   breakpoints: {
     360: {
       slidesPerView: 1.2,
-  
     },
 
     430: {
       slidesPerView: 1.2,
-  
     },
 
     540: {
       slidesPerView: 1.5,
- 
     },
 
     768: {
@@ -52,7 +49,6 @@ let TestimonialSwiper = new Swiper(".testimonial-Content", {
     1280: {
       slidesPerView: 3,
       spaceBetween: 16,
-
     },
   },
 });
@@ -105,35 +101,61 @@ let bannerSwiper = new Swiper(".banner-content ", {
   },
 });
 
-let Otherproduct = new Swiper(".otherProduct-Content", {
-  loop: true,
-  grabCursor: true,
-  // If we need pagination
+document.addEventListener("DOMContentLoaded", function () {
+  const Otherproduct = new Swiper(".otherProduct-Content", {
+    grabCursor: true,
+    // If we need pagination
 
-  // Navigation arrows
-  navigation: {
-    nextEl: "#next",
-    prevEl: "#prev",
-  },
-
-  breakpoints: {
-    360: {
-      slidesPerView: 1.9,
-      spaceBetween: 6,
-      centeredSlides: true,
+    // Navigation arrows
+    navigation: {
+      nextEl: "#next",
+      prevEl: "#prev",
     },
 
-    600: {
-      slidesPerView: 3,
-      spaceBetween: 9,
-      centeredSlides: true,
+    breakpoints: {
+      360: {
+        slidesPerView: 1.7,
+        spaceBetween: 6,
+        loop: checkLoopSlides(),
+        centeredSlides: checkCenteredSlides(),
+      },
+
+      600: {
+        slidesPerView: 2.5,
+        spaceBetween: 9,
+        loop: checkLoopSlides(),
+        centeredSlides: checkCenteredSlides(),
+      },
+      968: {
+        slidesPerView: 3.5,
+        spaceBetween: 10,
+        loop: checkLoopSlides(),
+        centeredSlides: checkCenteredSlides(),
+      },
+
+      1920: {
+        slidesPerView: 4,
+        spaceBetween: 12,
+        loop: checkLoopSlides(),
+        centeredSlides: checkCenteredSlides(),
+      },
     },
-    968: {
-      slidesPerView: 4,
-      spaceBetween: 10,
-      centeredSlides: true,
-    },
-  },
+  });
+
+  function checkLoopSlides() {
+    let swiperSlidesCount = document.querySelectorAll(".otherProduct-Content .swiper-slide").length;
+
+    // Set loop to false if the number of slides is less than or equal to 5
+    return swiperSlidesCount > 10;
+  }
+
+  function checkCenteredSlides() {
+    // Get the number of swiper slides inside .location-content
+    let swiperSlidesCount = document.querySelectorAll(".otherProduct-Content .swiper-slide").length;
+
+    // Set centeredSlides to false if the number of slides is less than or equal to 5
+    return swiperSlidesCount > 10;
+  }
 });
 
 // Coverflow
@@ -271,30 +293,24 @@ var swiper2 = new Swiper(".mySwiper2", {
 });
 
 let filterContent = new Swiper(".filter-content", {
-
   grabCursor: true,
-  
+
   navigation: {
     nextEl: "#nextFilterSm",
     prevEl: "#prevFilterSm",
   },
 
   breakpoints: {
-
-
     1024: {
       slidesPerView: 3.5,
       spaceBetween: 10,
-
     },
   },
-
 });
 
 let filterContentSm = new Swiper(".filter-contentSm", {
-
   grabCursor: true,
-  
+
   navigation: {
     nextEl: "#nextFilterSm2",
     prevEl: "#prevFilterSm2",
@@ -313,16 +329,11 @@ let filterContentSm = new Swiper(".filter-contentSm", {
 
     540: {
       slidesPerView: 1.8,
-
     },
 
     768: {
       slidesPerView: 3.2,
       spaceBetween: 10,
-
     },
-
   },
-
 });
-

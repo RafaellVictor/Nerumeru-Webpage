@@ -113,7 +113,7 @@ require "function.php";
             <div class="card w-full cursor-pointer 3xl:h-[177px] h-[175px] flex flex-col gap-3 justify-center  relative overflow-hidden group rounded-md bg-white shadow-sm py-4 px-6">
               <div class="flex gap-3 items-center">
                 <i class="ti ti-report-money text-xl text-blue-Neru bg-blue-Neru bg-opacity-30 py-2 px-2 rounded-lg"></i>
-                <h6 class="font-semibold">Last Month sales</h6>
+                <h6 class="font-semibold">This Month sales</h6>
               </div>
               <div class="flex items-center flex-wrap w-fit gap-4">
                 <h5 class="font-semibold w-fit  text-blue-Neru text">Rp.52.000.000</h5>

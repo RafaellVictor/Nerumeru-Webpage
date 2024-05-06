@@ -64,12 +64,12 @@ $trolly = query("SELECT * FROM trolly");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable" class="myTableDisplay 3xl:text-lg text-sm py-6 display table hover order-column row-border stripe">
+              <table id="myTable" class="myTableDisplay 3xl:text-base md:text-sm text-xs py-6 display table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Image</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30 w-36">Name</th>
+                    <th class="border-[1px] border-black-neru border-opacity-30 w-32">Name</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Stock</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Inserted On</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Last Updated</th>
@@ -85,8 +85,15 @@ $trolly = query("SELECT * FROM trolly");
                   foreach ($filteredNerumeru as $bedding) :  ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $bedding["product_id"] ?></td>
-                      <td class="w-36"><img src="img/<?= $bedding["product_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
-                      <td class="w-14 text-sm text-justify"><?= $bedding["product_name"] ?></td>
+                      <td class="3xl:w-44 w-36">
+                        <img src="img/<?= $bedding["product_img"] ?>" class="w-[80%] object-contain mx-auto preview-img-toggle cursor-pointer" alt="" />
+                        <div class="mt-3 mb-1">
+                        <a href="Admin-Multi-Img.php?product_id=<?= $bedding["product_id"] ?>" class="bg-blue-Neru w-fit 3xl:px-6 px-4 py-2 rounded-lg 3xl:text-sm text-xs text-white font-semibold">Multi Preview</a>
+                        </div>
+                     
+                      </td>
+                      <td class="3xl:w-14 w-8  text-justify"><?= $bedding["product_name"] ?></td>
+
                       <td class="w-14"><?= $bedding["product_stock"] ?></td>
                       <td><?= $bedding["insert_date"] ?></td>
                       <td><?= $bedding["lastUpdate_date"] ?></td>
@@ -101,8 +108,8 @@ $trolly = query("SELECT * FROM trolly");
                       </td>
                       <td>
                         <span class="flex items-center gap-2 justify-center">
-                          <a href="Admin-products-UpdateData.php?product_id=<?= $bedding["product_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?product_id=<?= $bedding["product_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                          <a href="Admin-products-UpdateData.php?product_id=<?= $bedding["product_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 3xl:text-2xl text-base cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?product_id=<?= $bedding["product_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full 3xl:text-2xl text-base cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -120,12 +127,13 @@ $trolly = query("SELECT * FROM trolly");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable2" class="myTableDisplay py-6 3xl:text-lg text-sm display table hover order-column row-border stripe">
+              <table id="myTable2" class="myTableDisplay py-6 3xl:text-base md:text-sm text-xs display table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Image</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30 w-36">Name</th>
+                    <th class="border-[1px] border-black-neru border-opacity-30 w-32">Name</th>
+
                     <th class="border-[1px] border-black-neru border-opacity-30">Stock</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Inserted On</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Last Updated</th>
@@ -141,8 +149,9 @@ $trolly = query("SELECT * FROM trolly");
                   foreach ($filteredNerumeru as $toys) :  ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $toys["product_id"] ?></td>
-                      <td class="w-36"><img src="img/<?= $toys["product_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
-                      <td class="w-14 text-sm text-justify"><?= $toys["product_name"] ?></td>
+                      <td class="3xl:w-44 w-28"><img src="img/<?= $toys["product_img"] ?>" class="w-[80%] object-contain mx-auto  preview-img-toggle cursor-pointer" alt="" /></td>
+                      <td class="3xl:w-24 w-12  text-justify"><?= $toys["product_name"] ?></td>
+
                       <td class="w-14"><?= $toys["product_stock"] ?></td>
                       <td><?= $toys["insert_date"] ?></td>
                       <td><?= $toys["lastUpdate_date"] ?></td>
@@ -157,8 +166,8 @@ $trolly = query("SELECT * FROM trolly");
                       </td>
                       <td>
                         <span class="flex items-center gap-2 justify-center">
-                          <a href="Admin-products-UpdateData.php?product_id=<?= $toys["product_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?product_id=<?= $toys["product_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                          <a href="Admin-products-UpdateData.php?product_id=<?= $toys["product_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 3xl:text-2xl text-base cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?product_id=<?= $toys["product_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full 3xl:text-2xl text-base cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -176,12 +185,13 @@ $trolly = query("SELECT * FROM trolly");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable3" class="myTableDisplay py-6 3xl:text-lg text-sm display table hover order-column row-border stripe">
+              <table id="myTable3" class="myTableDisplay py-6 3xl:text-base md:text-sm text-xs display table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Image</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30 w-36">Name</th>
+                    <th class="border-[1px] border-black-neru border-opacity-30 w-32">Name</th>
+
                     <th class="border-[1px] border-black-neru border-opacity-30">Stock</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Inserted On</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Last Updated</th>
@@ -197,8 +207,9 @@ $trolly = query("SELECT * FROM trolly");
                   foreach ($filteredNerumeru as $sanitize) :  ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $sanitize["product_id"] ?></td>
-                      <td class="w-36"><img src="img/<?= $sanitize["product_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
-                      <td class="w-14 text-sm text-justify"><?= $sanitize["product_name"] ?></td>
+                      <td class="3xl:w-44 w-28"><img src="img/<?= $sanitize["product_img"] ?>" class="w-[80%] object-contain mx-auto  preview-img-toggle cursor-pointer" alt="" /></td>
+                      <td class="3xl:w-24 w-12  text-justify"><?= $sanitize["product_name"] ?></td>
+
                       <td class="w-14"><?= $sanitize["product_stock"] ?></td>
                       <td><?= $sanitize["insert_date"] ?></td>
                       <td><?= $sanitize["lastupdate_date"] ?></td>
@@ -213,8 +224,8 @@ $trolly = query("SELECT * FROM trolly");
                       </td>
                       <td>
                         <span class="flex items-center gap-2 justify-center">
-                          <a href="Admin-products-UpdateData.php?product_id=<?= $sanitize["product_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?product_id=<?= $sanitize["product_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                          <a href="Admin-products-UpdateData.php?product_id=<?= $sanitize["product_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 3x:text-2xl text-base cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?product_id=<?= $sanitize["product_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full 3xl:text-2xl text-base cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -232,12 +243,13 @@ $trolly = query("SELECT * FROM trolly");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable4" class="myTableDisplay 3xl:text-lg text-sm py-6 display table hover order-column row-border stripe">
+              <table id="myTable4" class="myTableDisplay 3xl:text-base md:text-sm text-xs py-6 display table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Image</th>
-                    <th class="border-[1px] border-black-neru border-opacity-30 w-36">Name</th>
+                    <th class="border-[1px] border-black-neru border-opacity-30 w-32">Name</th>
+
                     <th class="border-[1px] border-black-neru border-opacity-30">Stock</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Inserted On</th>
                     <th class="border-[1px] border-black-neru border-opacity-30">Last Updated</th>
@@ -253,8 +265,9 @@ $trolly = query("SELECT * FROM trolly");
                   foreach ($filteredNerumeru as $pillow) :  ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $pillow["product_id"] ?></td>
-                      <td class="w-36"><img src="img/<?= $pillow["product_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
-                      <td class="w-14 text-sm text-justify"><?= $pillow["product_name"] ?></td>
+                      <td class="3xl:w-44 w-28"><img src="img/<?= $pillow["product_img"] ?>" class="w-[80%]  preview-img-toggle cursor-pointer object-contain mx-auto" alt="" /></td>
+                      <td class="3xl:w-24 w-12  text-justify"><?= $pillow["product_name"] ?></td>
+
                       <td class="w-14"><?= $pillow["product_stock"] ?></td>
                       <td><?= $pillow["insert_date"] ?></td>
                       <td><?= $pillow["lastUpdate_date"] ?></td>
@@ -269,8 +282,8 @@ $trolly = query("SELECT * FROM trolly");
                       </td>
                       <td>
                         <span class="flex items-center gap-2 justify-center">
-                          <a href="Admin-products-UpdateData.php?product_id=<?= $pillow["product_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?product_id=<?= $pillow["product_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                          <a href="Admin-products-UpdateData.php?product_id=<?= $pillow["product_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 3xl:text-2xl text-base cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?product_id=<?= $pillow["product_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full 3xl:text-2xl text-base cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -288,7 +301,7 @@ $trolly = query("SELECT * FROM trolly");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable5" class="myTableDisplay py-6 display 3xl:text-lg text-sm    table hover order-column row-border stripe">
+              <table id="myTable5" class="myTableDisplay py-6 display 3xl:text-base md:text-sm text-xs   table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
@@ -331,6 +344,13 @@ $trolly = query("SELECT * FROM trolly");
           </div>
         </div>
         <!-- Main Menu End -->
+        <!-- Image Preview -->
+        <div id="wrapperImg-Preview" class="bg-black fixed h-full w-full invisible bg-opacity-30 z-50">
+          <div class="rounded-md absolute bottom-1/2 right-[45%] translate-y-1/2 h-fit p-2 bg-white">
+            <img id="previewImgPopUp" class="object-contain w-[500px] h-[500px]" src="" alt="">
+          </div>
+        </div>
+        <!-- Image Preview End -->
       </div>
     </section>
   </main>
@@ -401,6 +421,37 @@ $trolly = query("SELECT * FROM trolly");
       // Memanggil fungsi untuk menyimpan status toggler yang aktif ke dalam localStorage setiap kali ada perubahan
       saveActiveButton(index);
     });
+  });
+</script>
+<script>
+  // Ambil elemen gambar yang akan di-klik
+  const previewImgToggles = document.querySelectorAll('.preview-img-toggle');
+
+  // Ambil elemen preview gambar
+  const previewContainer = document.getElementById('wrapperImg-Preview');
+
+  // Ambil elemen preview gambar
+  const previewImgPopUp = document.getElementById('previewImgPopUp');
+
+  // Tambahkan event listener untuk setiap gambar yang akan di-klik
+  previewImgToggles.forEach(function(previewImgToggle) {
+    previewImgToggle.addEventListener('click', function() {
+      // Dapatkan sumber gambar dari gambar yang di-klik
+      const imgSrc = this.getAttribute('src');
+
+      // Ubah sumber gambar di dalam preview
+      previewImgPopUp.setAttribute('src', imgSrc);
+
+      // Tampilkan preview
+      previewContainer.classList.remove('invisible');
+    });
+  });
+
+  // Sembunyikan preview saat di-klik di luar gambar
+  previewContainer.addEventListener('click', function(event) {
+    if (event.target === this) {
+      this.classList.add('invisible');
+    }
   });
 </script>
 

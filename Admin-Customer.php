@@ -37,7 +37,7 @@ $Users = query("SELECT * FROM user");
           <?php include "layout/header-admin.php"; ?>
           <div class="max-h-screen w-full overflow-y-auto">
             <div id="UserData" class="container BoxTableData bg-white rounded-lg shadow-md 3xl:h-fit 2xl:h-fit overflow-y-auto mt-4">
-              <table id="myTable2" class="myTableDisplay 3xl:text-lg text-sm py-6 display nowrap table hover order-column row-border stripe">
+              <table id="myTable2" class="myTableDisplay 3xl:text-base md:text-sm text-xs py-6 display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>

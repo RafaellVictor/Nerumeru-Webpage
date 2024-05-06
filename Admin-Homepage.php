@@ -71,7 +71,7 @@ $bioNeru = query("SELECT * FROM bio");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable" class="myTableDisplay 3xl:text-lg text-sm py-6 display nowrap table hover order-column row-border stripe">
+              <table id="myTable" class="myTableDisplay text-basepy-6 display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
@@ -86,7 +86,7 @@ $bioNeru = query("SELECT * FROM bio");
                   <?php foreach ($hero as $neru) : ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $neru["hero_id"] ?></td>
-                      <td class="w-60"><img src="img/<?= $neru["hero_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td class="3xl:w-44 w-32"><img src="img/<?= $neru["hero_img"] ?>" class="w-[80%] object-contain mx-auto preview-img-toggle cursor-pointer" alt="" /></td>
                       <td><?= $neru["insert_date"] ?></td>
                       <td><?= $neru["lastUpdate_date"] ?></td>
                       <td class="">
@@ -100,8 +100,8 @@ $bioNeru = query("SELECT * FROM bio");
                       </td>
                       <td>
                         <span class="flex items-center gap-2 justify-center">
-                          <a href="Admin-hero-UpdateData.php?hero_id=<?= $neru["hero_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?hero_id=<?= $neru["hero_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                          <a href="Admin-hero-UpdateData.php?hero_id=<?= $neru["hero_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 3xl:text-2xl text-base  cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?hero_id=<?= $neru["hero_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full 3xl:text-2xl text-base cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -120,7 +120,7 @@ $bioNeru = query("SELECT * FROM bio");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable2" class="myTableDisplay py-6 3xl:text-lg text-sm display nowrap table hover order-column row-border stripe">
+              <table id="myTable2" class="myTableDisplay py-6 3xl:text-base md:text-sm text-xsdisplay nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
@@ -137,7 +137,7 @@ $bioNeru = query("SELECT * FROM bio");
                     <tr class="text-center">
 
                       <td class="w-14"><?= $whys["whyus_id"] ?></td>
-                      <td class="w-60"><img src="img/<?= $whys["whyus_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td class="3xl:w-44 w-32"><img src="img/<?= $whys["whyus_img"] ?>" class="w-[80%] object-contain mx-auto preview-img-toggle cursor-pointer" alt="" /></td>
                       <td><?= $whys["insert_date"] ?></td>
                       <td><?= $whys["lastUpdate_date"] ?></td>
                       <td class="">
@@ -151,8 +151,8 @@ $bioNeru = query("SELECT * FROM bio");
                       </td>
                       <td>
                         <span class="flex items-center gap-2 justify-center">
-                          <a href="Admin-whyus-UpdateData.php?whyus_id=<?= $whys["whyus_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?whyus_id=<?= $whys["whyus_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                          <a href="Admin-whyus-UpdateData.php?whyus_id=<?= $whys["whyus_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 3xl:text-2xl text-base  cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?whyus_id=<?= $whys["whyus_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full 3xl:text-2xl text-base cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -171,7 +171,7 @@ $bioNeru = query("SELECT * FROM bio");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable3" class="myTableDisplay py-6 3xl:text-lg text-sm display nowrap table hover order-column row-border stripe">
+              <table id="myTable3" class="myTableDisplay py-6 3xl:text-base md:text-sm text-xsdisplay nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
@@ -187,7 +187,7 @@ $bioNeru = query("SELECT * FROM bio");
                   <?php foreach ($recommend as $recom) : ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $recom["recommend_id"] ?></td>
-                      <td class="w-60"><img src="img/<?= $recom["recommend_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td class="3xl:w-44 w-32"><img src="img/<?= $recom["recommend_img"] ?>" class="w-[80%] object-contain mx-auto preview-img-toggle cursor-pointer" alt="" /></td>
                       <td class="w-14"><?= $recom["recommend_targetLink"] ?></td>
                       <td><?= $recom["insert_date"] ?></td>
                       <td><?= $recom["lastupdate_date"] ?></td>
@@ -202,8 +202,8 @@ $bioNeru = query("SELECT * FROM bio");
                       </td>
                       <td>
                         <span class="flex items-center gap-2 justify-center">
-                          <a href="Admin-recomend-UpdateData.php?recommend_id=<?= $recom['recommend_id'] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?recommend_id=<?= $recom["recommend_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                          <a href="Admin-recomend-UpdateData.php?recommend_id=<?= $recom['recommend_id'] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 3xl:text-2xl text-base  cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?recommend_id=<?= $recom["recommend_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full 3xl:text-2xl text-base cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -221,7 +221,7 @@ $bioNeru = query("SELECT * FROM bio");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable4" class="myTableDisplay 3xl:text-lg text-sm py-6 display nowrap table hover order-column row-border stripe">
+              <table id="myTable4" class="myTableDisplay 3xl:text-base md:text-sm text-xspy-6 display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
@@ -237,8 +237,8 @@ $bioNeru = query("SELECT * FROM bio");
                   <?php foreach ($event as $evnt) : ?>
                     <tr class="text-center">
                       <td class="w-14"><?= $evnt["event_id"] ?></td>
-                      <td class="w-60"><img src="img/WhatOnNerumeru/<?= $evnt["event_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
-                      <td class="w-60"><?= $evnt["event_type"] ?></td>
+                      <td class="3xl:w-44 w-32"><img src="img/WhatOnNerumeru/<?= $evnt["event_img"] ?>" class="w-[80%] object-contain mx-auto preview-img-toggle cursor-pointer" alt="" /></td>
+                      <td class="3xl:w-44 w-32"><?= $evnt["event_type"] ?></td>
                       <td><?= $evnt["insert_date"] ?></td>
                       <td><?= $evnt["lastUpdate_date"] ?></td>
                       <td class="">
@@ -252,8 +252,8 @@ $bioNeru = query("SELECT * FROM bio");
                       </td>
                       <td>
                         <span class="flex items-center gap-2 justify-center">
-                          <a href="Admin-news-UpdateData.php?news_id=<?= $evnt['event_id'] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?news_id=<?= $evnt["event_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                          <a href="Admin-news-UpdateData.php?news_id=<?= $evnt['event_id'] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 3xl:text-2xl text-base  cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?news_id=<?= $evnt["event_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full 3xl:text-2xl text-base cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -272,7 +272,7 @@ $bioNeru = query("SELECT * FROM bio");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable5" class="myTableDisplay py-6 display 3xl:text-lg text-sm    table hover order-column row-border stripe">
+              <table id="myTable5" class="myTableDisplay py-6 display 3xl:text-base md:text-sm text-xs  table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
                     <th class="border-[1px] border-black-neru border-opacity-30">ID</th>
@@ -309,8 +309,8 @@ $bioNeru = query("SELECT * FROM bio");
                       </td>
                       <td class="">
                         <span class="flex items-center gap-2 justify-center">
-                          <a href="Admin-bio-UpdateData.php?bio_id=<?= $bio["bio_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?bio_id=<?= $bio["bio_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                          <a href="Admin-bio-UpdateData.php?bio_id=<?= $bio["bio_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 3xl:text-2xl text-base  cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" href="hapus.php?bio_id=<?= $bio["bio_id"] ?>" class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full 3xl:text-2xl text-base cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -328,7 +328,7 @@ $bioNeru = query("SELECT * FROM bio");
                   Tambah Data
                 </a>
               </div>
-              <table id="myTable6" class="myTableDisplay py-6 display nowrap table hover order-column row-border stripe">
+              <table id="myTable6" class="myTableDisplay py-6 3xl:text-base md:text-sm text-xs display nowrap table hover order-column row-border stripe">
                 <thead>
                   <tr class="bg-blue-Neru text-white">
 
@@ -346,7 +346,7 @@ $bioNeru = query("SELECT * FROM bio");
                     <tr class="text-center">
 
                       <td class="w-14"><?= $neru["hero_id"] ?></td>
-                      <td class="w-60"><img src="<?= $neru["hero_img"] ?>" class="w-[80%] object-contain mx-auto" alt="" /></td>
+                      <td class="3xl:w-44 w-32"><img src="<?= $neru["hero_img"] ?>" class="w-[80%] object-contain mx-auto preview-img-toggle cursor-pointer" alt="" /></td>
                       <td><?= $neru["insert_date"] ?></td>
                       <td><?= $neru["lastUpdate_date"] ?></td>
                       <td class="">
@@ -360,8 +360,8 @@ $bioNeru = query("SELECT * FROM bio");
                       </td>
                       <td>
                         <span class="flex items-center gap-2 justify-center">
-                          <a href="Admin-hero-UpdateData.php?hero_id=<?= $neru["hero_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 text-2xl cursor-pointer"><i class="ti ti-pencil"></i></a>
-                          <a class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full text-2xl cursor-pointer "><i class="ti ti-trash"></i></a>
+                          <a href="Admin-hero-UpdateData.php?hero_id=<?= $neru["hero_id"] ?>" class="text-white rounded-full px-2 py-1 bg-green-500 3xl:text-2xl text-base  cursor-pointer"><i class="ti ti-pencil"></i></a>
+                          <a class="HapusDataToggler text-white bg-red-500 px-2 py-1 rounded-full 3xl:text-2xl text-base cursor-pointer "><i class="ti ti-trash"></i></a>
                         </span>
                       </td>
                     </tr>
@@ -373,6 +373,13 @@ $bioNeru = query("SELECT * FROM bio");
           </div>
         </div>
         <!-- Main Menu End -->
+        <!-- Image Preview -->
+        <div id="wrapperImg-Preview" class="bg-black fixed h-full w-full invisible bg-opacity-30 z-50">
+          <div class="rounded-md absolute bottom-1/2 right-[45%] translate-y-1/2 h-fit p-2 bg-white">
+            <img id="previewImgPopUp" class="object-contain w-[500px] h-[500px]" src="" alt="">
+          </div>
+        </div>
+        <!-- Image Preview End -->
       </div>
     </section>
   </main>
@@ -443,6 +450,37 @@ $bioNeru = query("SELECT * FROM bio");
       // Memanggil fungsi untuk menyimpan status toggler yang aktif ke dalam localStorage setiap kali ada perubahan
       saveActiveButton(index);
     });
+  });
+</script>
+<script>
+  // Ambil elemen gambar yang akan di-klik
+  const previewImgToggles = document.querySelectorAll('.preview-img-toggle');
+
+  // Ambil elemen preview gambar
+  const previewContainer = document.getElementById('wrapperImg-Preview');
+
+  // Ambil elemen preview gambar
+  const previewImgPopUp = document.getElementById('previewImgPopUp');
+
+  // Tambahkan event listener untuk setiap gambar yang akan di-klik
+  previewImgToggles.forEach(function(previewImgToggle) {
+    previewImgToggle.addEventListener('click', function() {
+      // Dapatkan sumber gambar dari gambar yang di-klik
+      const imgSrc = this.getAttribute('src');
+
+      // Ubah sumber gambar di dalam preview
+      previewImgPopUp.setAttribute('src', imgSrc);
+
+      // Tampilkan preview
+      previewContainer.classList.remove('invisible');
+    });
+  });
+
+  // Sembunyikan preview saat di-klik di luar gambar
+  previewContainer.addEventListener('click', function(event) {
+    if (event.target === this) {
+      this.classList.add('invisible');
+    }
   });
 </script>
 

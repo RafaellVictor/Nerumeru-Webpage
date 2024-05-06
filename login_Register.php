@@ -17,6 +17,10 @@ if (isset($_POST["submitRegis"])) {
   }
 }
 
+if (isset($_SESSION["user_id"])) {
+  header("Location: index.php");
+}
+
 
 
 // Pastikan koneksi ke database sudah dibuat sebelumnya
@@ -36,7 +40,6 @@ if (isset($_POST['submitLogin'])) {
 
     // Cek password
     if (password_verify($user_password, $row["user_password"])) {
-      session_start();
       $_SESSION['user_id'] = $row['user_id'];
       header("Location: index.php");
       exit;

@@ -21,22 +21,31 @@ if (isset($_GET['whyus_id']) && isset($_GET['status'])) { // Mengecek apakah par
     }
 }
 
-if (isset($_GET['hero_id']) && isset($_GET['status'])) { // Mengecek apakah parameter id dan status ada di URL
-    $idhero = $_GET['hero_id']; // Mengambil nilai id dari URL
-    $status = $_GET['status']; // Mengambil nilai status dari URL
+if (isset($_GET['hero_id']) && isset($_GET['status'])) {
+    $idhero = $_GET['hero_id'];
+    $status = $_GET['status'];
+
+    // Memperbarui status yang sebelumnya diatur ke 0
+    $queryUpdatePreviousStatus = "UPDATE herosection SET status='0' WHERE hero_id != '$idhero'";
+    $runningUpdatePreviousStatus = mysqli_query($conn, $queryUpdatePreviousStatus);
+
+    if (!$runningUpdatePreviousStatus) {
+        echo "Error updating previous status: " . mysqli_error($conn);
+        exit();
+    }
 
     // Mengubah status menjadi lawan dari status saat ini (0 menjadi 1 atau 1 menjadi 0)
     $newStatus = ($status == 1) ? 0 : 1;
 
-    $query = "UPDATE herosection SET status='$newStatus' WHERE hero_id='$idhero'"; // Query update status banner
-    $running = mysqli_query($conn, $query); // Menjalankan query
+    $query = "UPDATE herosection SET status='$newStatus' WHERE hero_id='$idhero'";
+    $running = mysqli_query($conn, $query);
 
     if ($running) {
-        echo "<script>alert('Data berhasil diupdate')</script>"; // Menampilkan pesan sukses
-        header('Location:Admin-Homepage.php'); // Redirect ke halaman homebanner.php
+        echo "<script>alert('Data berhasil diupdate')</script>";
+        header('Location:Admin-Homepage.php');
         exit();
     } else {
-        echo "Error update data: " . mysqli_error($conn); // Menampilkan pesan error
+        echo "Error update data: " . mysqli_error($conn);
     }
 }
 
@@ -100,24 +109,34 @@ if (isset($_GET['news_id']) && isset($_GET['status'])) { // Mengecek apakah para
     }
 }
 
-if (isset($_GET['bio_id']) && isset($_GET['status'])) { // Mengecek apakah parameter id dan status ada di URL
-    $idBio = $_GET['bio_id']; // Mengambil nilai id dari URL
-    $status = $_GET['status']; // Mengambil nilai status dari URL
+if (isset($_GET['bio_id']) && isset($_GET['status'])) {
+    $idBio = $_GET['bio_id'];
+    $status = $_GET['status'];
+
+    // Memperbarui status yang sebelumnya diatur ke 0
+    $queryUpdatePreviousStatus = "UPDATE bio SET status='0' WHERE bio_id != '$idBio'";
+    $runningUpdatePreviousStatus = mysqli_query($conn, $queryUpdatePreviousStatus);
+
+    if (!$runningUpdatePreviousStatus) {
+        echo "Error updating previous status: " . mysqli_error($conn);
+        exit();
+    }
 
     // Mengubah status menjadi lawan dari status saat ini (0 menjadi 1 atau 1 menjadi 0)
     $newStatus = ($status == 1) ? 0 : 1;
 
-    $query = "UPDATE bio SET status='$newStatus' WHERE bio_id='$idBio'"; // Query update status banner
-    $running = mysqli_query($conn, $query); // Menjalankan query
+    $query = "UPDATE bio SET status='$newStatus' WHERE bio_id='$idBio'";
+    $running = mysqli_query($conn, $query);
 
     if ($running) {
-        echo "<script>alert('Data berhasil diupdate')</script>"; // Menampilkan pesan sukses
-        header('Location:Admin-Homepage.php'); // Redirect ke halaman homebanner.php
+        echo "<script>alert('Data berhasil diupdate')</script>";
+        header('Location:Admin-Homepage.php');
         exit();
     } else {
-        echo "Error update data: " . mysqli_error($conn); // Menampilkan pesan error
+        echo "Error update data: " . mysqli_error($conn);
     }
 }
+
 
 if (isset($_GET['blog_id']) && isset($_GET['status'])) { // Mengecek apakah parameter id dan status ada di URL
     $idBlog = $_GET['blog_id']; // Mengambil nilai id dari URL
@@ -250,6 +269,26 @@ if (isset($_GET['id_locationCart']) && isset($_GET['status'])) {
     if ($running) {
         echo "<script>alert('Data berhasil diupdate')</script>";
         header('Location:cart.php');
+        exit();
+    } else {
+        echo "Error update data: " . mysqli_error($conn);
+    }
+}
+
+
+if (isset($_GET['img_id']) && isset($_GET['status'])) { // Mengecek apakah parameter id dan status ada di URL
+    $idImg = $_GET['img_id'];
+    $status = $_GET['status'];
+
+    // Mengubah status menjadi lawan dari status saat ini (0 menjadi 1 atau 1 menjadi 0)
+    $newStatus = ($status == 1) ? 0 : 1;
+
+    $query = "UPDATE other_product_img SET status_multiImg='$newStatus' WHERE product_id='$idImg'";
+    $running = mysqli_query($conn, $query); // Menjalankan query
+
+    if ($running) {
+        echo "<script>alert('Data berhasil diupdate')</script>";
+        header("Location: Admin-Multi-img.php?product_id=$idImg");
         exit();
     } else {
         echo "Error update data: " . mysqli_error($conn);
